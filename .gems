@@ -1,0 +1,6 @@
+autotest (4.3.2)
+autotest-growl (0.2.4)
+mocha (0.9.8)
+rake (0.8.7)
+rdoc (2.5.8)
+redgreen (1.2.2)
