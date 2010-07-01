@@ -1,6 +1,7 @@
-require "rexml/rexml"
 require 'hashie'
-require 'httparty'
+require 'httpclient'
+require 'crack/xml'
+require 'cgi'
 
 module ASIN
   
@@ -17,24 +18,27 @@ module ASIN
 
   def configure(options={})
     @options = {
-      :ResponseGroup => :Medium,
-      :XMLEscaping => :Double,
+      :ResponseGroup => :Small,
       :Service => :AWSECommerceService,
+      :XMLEscaping => :Double,
+      :ContentType => 'text/plain;charset="UTF-8"'
     }
     @options = @options.merge options
   end
   
-  def lookup(asin, options={})
-    Item.new call(:Operation => :ItemLookup, :ItemId => asin)
+  def lookup(asin, params={})
+    Item.new call(params.merge(:Operation => :ItemLookup, :ItemId => asin))
   end
   
   BASE_URL = 'http://free.apisigning.com/onca/xml?'
   
   def call(params={})
     configure if @options.nil?
-    params.merge! @options
-    url = BASE_URL + params.map{|key, value| "#{key}=#{value}" }.join('&')
-    HTTParty.get(url, :format => :xml, :timeout=>10).to_hash
+    url = BASE_URL + params.merge(@options).map{|key, value| "#{key}=#{CGI.escape(value.to_s)}" }.join('&')
+    resp = HTTPClient.new.get_content(url)
+    resp = resp.force_encoding('utf-8') # shady workaround cause amazon returns bad utf-8 chars
+    resp = Crack::XML.parse(resp)
+    resp
   end
 
 end
