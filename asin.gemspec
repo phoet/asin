@@ -15,8 +15,9 @@ Gem::Specification.new do |s|
   s.files = [ 'readme.textile', 'lib/asin.rb' ]
   s.test_files = [ 'test/test_helper.rb', 'test/test_asin.rb' ]
   
-  s.add_dependency('crack', '>= 0.1.7')
-  s.add_dependency('hashie', '>= 0.2.1')
-  s.add_dependency('httpclient', '>= 2.1.5.2')
+  # trying not to be too restrictive...
+  s.add_dependency('crack', '>= 0.1.0')
+  s.add_dependency('hashie', '>= 0.2.0')
+  s.add_dependency('httpclient', '>= 2.1.0')
 end
 

@@ -6,22 +6,26 @@ require 'cgi'
 module ASIN
   
   class Item
+    
+    attr_reader :raw
+    
     def initialize(hash)
-      @h = Hashie::Mash.new(hash).ItemLookupResponse.Items.Item
+      @raw = Hashie::Mash.new(hash).ItemLookupResponse.Items.Item
     end
     
     def title
-      @h.ItemAttributes.Title
+      @raw.ItemAttributes.Title
     end
     
   end
 
   def configure(options={})
+    # some defaults that make sense
     @options = {
-      :ResponseGroup => :Small,
       :Service => :AWSECommerceService,
-      :XMLEscaping => :Double,
-      :ContentType => 'text/plain;charset="UTF-8"'
+      :XMLEscaping => :Double, # => :Single, :Double
+      :ContentType => 'text/plain;charset="UTF-8"', # trying to force utf-8
+      :ResponseGroup => :Small, # => :Small, :Medium, :Large
     }
     @options = @options.merge options
   end
@@ -34,9 +38,9 @@ module ASIN
   
   def call(params={})
     configure if @options.nil?
-    url = BASE_URL + params.merge(@options).map{|key, value| "#{key}=#{CGI.escape(value.to_s)}" }.join('&')
+    p url = BASE_URL + @options.merge(params).map{|key, value| "#{key}=#{CGI.escape(value.to_s)}" }.join('&')
     resp = HTTPClient.new.get_content(url)
-    resp = resp.force_encoding('UTF-8') # shady workaround cause amazon returns bad utf-8 chars
+    p resp = resp.force_encoding('UTF-8') # shady workaround cause amazon returns bad utf-8 chars
     resp = Crack::XML.parse(resp)
     resp
   end
