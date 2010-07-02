@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class TestWhichRuby < Test::Unit::TestCase
+class TestAsin < Test::Unit::TestCase
   
   def setup
     @helper = Object.new
@@ -8,9 +8,9 @@ class TestWhichRuby < Test::Unit::TestCase
   end
 
   # comment in and add your key to test real calls
-  def test_r_type_from_engine
-    p item = @helper.lookup('1430218150', :AWSAccessKeyId => 'AKIAJFA5X7RTOKFNPVZQ')
-    assert_match(/Learn Objective/, item.title)
-  end
+  # def test_r_type_from_engine
+  #   p item = @helper.lookup('1430218150', :AWSAccessKeyId => 'your-api-key')
+  #   assert_match(/Learn Objective/, item.title)
+  # end
 
 end

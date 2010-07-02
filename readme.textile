@@ -6,7 +6,7 @@ It currently just supports the _ItemLookup_ via REST but is easy to extend and u
 
 If you want to have a look at "the whole Amazon E-Commerce-API go here":http://docs.amazonwebservices.com/AWSEcommerceService/4-0/.
 
-The code currently runs only on 1.9 due to encoding issues with the Amazon REST output.
+The code currently runs only on __Ruby 1.9__ due to encoding issues with the Amazon REST output (if YOU know how to backport this, you are welcome!).
 
 h2. How-To
 

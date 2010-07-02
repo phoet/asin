@@ -7,11 +7,11 @@ module ASIN
   
   class Item
     def initialize(hash)
-      @h = Hashie::Mash.new(hash)
+      @h = Hashie::Mash.new(hash).ItemLookupResponse.Items.Item
     end
     
     def title
-      @h.ItemLookupResponse.Items.Item.ItemAttributes.Title
+      @h.ItemAttributes.Title
     end
     
   end
@@ -36,7 +36,7 @@ module ASIN
     configure if @options.nil?
     url = BASE_URL + params.merge(@options).map{|key, value| "#{key}=#{CGI.escape(value.to_s)}" }.join('&')
     resp = HTTPClient.new.get_content(url)
-    resp = resp.force_encoding('utf-8') # shady workaround cause amazon returns bad utf-8 chars
+    resp = resp.force_encoding('UTF-8') # shady workaround cause amazon returns bad utf-8 chars
     resp = Crack::XML.parse(resp)
     resp
   end
