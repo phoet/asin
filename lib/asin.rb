@@ -37,13 +37,13 @@ module ASIN
 
   def call(params)
     configure if @options.nil?
-    signed = doasign(params)
+    signed = create_signed_query_string(params)
     resp = HTTPClient.new.get_content("http://#{@options[:host]}#{@options[:path]}?#{signed}")
     resp = resp.force_encoding('UTF-8') # shady workaround cause amazon returns bad utf-8 chars
     Crack::XML.parse(resp)
   end
 
-  def doasign(params) # http://cloudcarpenters.com/blog/amazon_products_api_request_signing/
+  def create_signed_query_string(params) # http://cloudcarpenters.com/blog/amazon_products_api_request_signing/
     params[:Service] = :AWSECommerceService
     params[:AWSAccessKeyId] = @options[:key]
     params[:Timestamp] = Time.now.strftime('%Y-%m-%dT%H:%M:%SZ') # needed for signing
