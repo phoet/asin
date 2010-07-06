@@ -1,10 +1,10 @@
 Gem::Specification.new do |s|
   s.name = 'asin'
-  s.version = '0.0.2'
+  s.version = '0.0.4'
   s.rubyforge_project = 'none'
 
   s.author = 'Peter Schröder'
-  s.description = 'A mazon S imple IN terface or whatever you want to call this'
+  s.description = 'Amazon Simple INterface or whatever you want to call this'
   s.email = 'phoetmail@googlemail.com'
   s.homepage = 'http://github.com/phoet/asin'
   s.summary = 'Simple interface to Amazon Item lookup over apisigning.com'
