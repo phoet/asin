@@ -46,7 +46,7 @@ module ASIN
   def create_signed_query_string(params) # http://cloudcarpenters.com/blog/amazon_products_api_request_signing/
     params[:Service] = :AWSECommerceService
     params[:AWSAccessKeyId] = @options[:key]
-    params[:Timestamp] = Time.now.strftime('%Y-%m-%dT%H:%M:%SZ') # needed for signing
+    params[:Timestamp] = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%SZ') # utc timestamp needed for signing
     
     query = params.map{|key, value| "#{key}=#{CGI.escape(value.to_s)}" }.sort.join('&')
     

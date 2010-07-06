@@ -1,13 +1,12 @@
 Gem::Specification.new do |s|
   s.name = 'asin'
-  s.version = '0.0.4'
-  s.rubyforge_project = 'none'
+  s.version = '0.0.5'
 
   s.author = 'Peter Schröder'
   s.description = 'Amazon Simple INterface or whatever you want to call this'
   s.email = 'phoetmail@googlemail.com'
   s.homepage = 'http://github.com/phoet/asin'
-  s.summary = 'Simple interface to Amazon Item lookup over apisigning.com'
+  s.summary = 'Simple interface to Amazon Item lookup'
 
   s.has_rdoc = true
   s.rdoc_options = ['-a', '--inline-source', '--charset=UTF-8']
