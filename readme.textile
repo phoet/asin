@@ -10,7 +10,7 @@ The code currently runs only on __Ruby 1.9__ due to encoding issues with the Ama
 
 h2. Usage
 
-<pre>
+<pre lang="ruby">
 require 'asin'
 include ASIN
 configure :secret => 'your-secret', :key => 'your-key'
