@@ -1,3 +1,20 @@
+require "rake/rdoctask"
+require "rake/gempackagetask"
+
+spec = eval(File.new("asin.gemspec").readlines.join("\n"))
+
+Rake::GemPackageTask.new(spec) do |pkg|
+  pkg.need_zip = true
+  pkg.need_tar = true
+end
+
+
+Rake::RDocTask.new(:rdoc_dev) do |rd|
+  rd.rdoc_files.include("lib/**/*.rb", "readme.textile")
+  rd.options + ['-a', '--inline-source', '--charset=UTF-8']
+end
+
+desc "the test task"
 task :test do
   require 'rake/testtask'
   Rake::TestTask.new do |t|

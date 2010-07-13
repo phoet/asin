@@ -24,3 +24,9 @@ item.title
 item.raw.ItemAttributes.ListPrice.FormattedPrice
 => $39.99
 </pre>
+
+h2. TODO
+
+* Logging
+* More Docs
+* More Tests
