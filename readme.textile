@@ -8,6 +8,15 @@ If you want to have a look at "the whole Amazon E-Commerce-API go here":http://d
 
 The code currently runs only on __Ruby 1.9__ due to encoding issues with the Amazon REST output (if YOU know how to backport this, you are welcome!).
 
+h2. Installation
+
+The gem is tested only against 1.9.1 (to be compatible with Heroku Bamboo Stack) and requires Ruby 1.9 or higher.
+
+<pre lang="bash">
+rvm use 1.9.1
+gem install asin
+</pre>
+
 h2. Usage
 
 <pre lang="ruby">
