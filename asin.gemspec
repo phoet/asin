@@ -12,7 +12,7 @@ spec = Gem::Specification.new do |s|
 
   s.has_rdoc = true
   s.rdoc_options = ['-a', '--inline-source', '--charset=UTF-8']
-  s.extra_rdoc_files = ['readme.rdoc']
+  s.extra_rdoc_files = ['README']
   s.files = Dir.glob('lib/*.rb')
   s.test_files = Dir.glob('test/test_*.rb')
   
