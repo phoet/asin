@@ -10,7 +10,7 @@ end
 
 
 Rake::RDocTask.new(:rdoc_dev) do |rd|
-  rd.rdoc_files.include("lib/**/*.rb", "readme.textile")
+  rd.rdoc_files.include("lib/**/*.rb", "readme.rdoc")
   rd.options + ['-a', '--inline-source', '--charset=UTF-8']
 end
 
