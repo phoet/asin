@@ -13,7 +13,7 @@ spec = Gem::Specification.new do |s|
   s.has_rdoc = true
   s.rdoc_options = ['-a', '--inline-source', '--charset=UTF-8']
   
-  s.files = Dir.glob('lib/*.rb') + %w(readme.rdoc)
+  s.files = Dir.glob('lib/*.rb') + %w(README.rdoc)
   s.test_files = Dir.glob('test/test_*.rb')
   
   s.required_ruby_version = '>= 1.9'
