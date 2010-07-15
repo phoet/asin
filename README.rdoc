@@ -8,7 +8,7 @@ Have a look at the RDOC[http://rdoc.info/projects/phoet/asin] for this project, 
 
 For more information on the REST calls, have a look at the whole Amazon E-Commerce-API[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/].
 
-The code currently runs only on _Ruby-1.9_ due to encoding issues with the Amazon REST output (if *YOU* know how to backport this, you are welcome!).
+The code currently runs only on Ruby-1.9 due to encoding issues with the Amazon REST output (if *YOU* know how to backport this, you are welcome!).
 
 == Installation
 
