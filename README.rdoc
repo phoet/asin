@@ -8,11 +8,11 @@ Have a look at the RDOC[http://rdoc.info/projects/phoet/asin] for this project, 
 
 For more information on the REST calls, have a look at the whole Amazon E-Commerce-API[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/].
 
-The code currently runs only on _Ruby-1.9_ due to encoding issues with the Amazon REST output (if *YOU* know how to backport this, you are welcome!).
+The code currently runs best on Ruby-1.9 due to encoding issues with the Amazon REST output (if *YOU* know how to backport this to 1.8.7, you are welcome!).
 
 == Installation
 
-The gem is tested only against 1.9.1 (to be compatible with Heroku Bamboo Stack) and requires Ruby 1.9 or higher.
+The gem is tested against 1.9.1 (to be compatible with Heroku Bamboo Stack) and somewhat against 1.8.7.
 
   rvm use 1.9.1
   gem install asin
@@ -39,5 +39,3 @@ The gem is tested only against 1.9.1 (to be compatible with Heroku Bamboo Stack)
 == TODO
 
  * Logging
- * More Docs
- * More Tests

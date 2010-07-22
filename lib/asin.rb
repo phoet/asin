@@ -84,7 +84,7 @@ module ASIN
       :digest => OpenSSL::Digest::Digest.new('sha256'),
       :key => '', 
       :secret => '',
-    }
+    } if @options.nil?
     @options.merge! options
   end
 
@@ -112,7 +112,9 @@ module ASIN
     raise "you have to configure ASIN: 'configure :secret => 'your-secret', :key => 'your-key''" if @options.nil?
     signed = create_signed_query_string(params)
     resp = HTTPClient.new.get_content("http://#{@options[:host]}#{@options[:path]}?#{signed}")
-    resp = resp.force_encoding('UTF-8') # shady workaround cause amazon returns bad utf-8 chars
+    if(resp.respond_to? :force_encoding)
+      resp = resp.force_encoding('UTF-8') # force utf-8 chars, works only on 1.9 string
+    end
     Crack::XML.parse(resp)
   end
 
