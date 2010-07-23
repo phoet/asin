@@ -112,16 +112,17 @@ module ASIN
     raise "you have to configure ASIN: 'configure :secret => 'your-secret', :key => 'your-key''" if @options.nil?
     signed = create_signed_query_string(params)
     resp = HTTPClient.new.get_content("http://#{@options[:host]}#{@options[:path]}?#{signed}")
-    if(resp.respond_to? :force_encoding)
-      resp = resp.force_encoding('UTF-8') # force utf-8 chars, works only on 1.9 string
-    end
+    # force utf-8 chars, works only on 1.9 string
+    resp = resp.force_encoding('UTF-8') if resp.respond_to? :force_encoding
     Crack::XML.parse(resp)
   end
 
-  def create_signed_query_string(params) # http://cloudcarpenters.com/blog/amazon_products_api_request_signing/
+  def create_signed_query_string(params)
+    # nice tutorial http://cloudcarpenters.com/blog/amazon_products_api_request_signing/
     params[:Service] = :AWSECommerceService
     params[:AWSAccessKeyId] = @options[:key]
-    params[:Timestamp] = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%SZ') # utc timestamp needed for signing
+    # utc timestamp needed for signing
+    params[:Timestamp] = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%SZ') 
     
     query = params.map{|key, value| "#{key}=#{CGI.escape(value.to_s)}" }.sort.join('&')
     
