@@ -3,6 +3,7 @@ require 'httpclient'
 require 'crack/xml'
 require 'cgi'
 require 'base64'
+require 'logger'
 
 # ASIN (Amazon Simple INterface) is a gem for easy access of the Amazon E-Commerce-API.
 # It is simple to configure and use. Since it's very small and flexible, it is easy to extend it to your needs.
@@ -76,12 +77,14 @@ module ASIN
   # [secret] the API secret key
   # [key] the API access key
   # [host] the host, which defaults to 'webservices.amazon.com'
+  # [logger] a different logger than logging to STDERR
   # 
   def configure(options={})
     @options = {
       :host => 'webservices.amazon.com', 
       :path => '/onca/xml', 
       :digest => OpenSSL::Digest::Digest.new('sha256'),
+      :logger => Logger.new(STDERR),
       :key => '', 
       :secret => '',
     } if @options.nil?
@@ -110,10 +113,14 @@ module ASIN
 
   def call(params)
     raise "you have to configure ASIN: 'configure :secret => 'your-secret', :key => 'your-key''" if @options.nil?
+    log(:debug, "calling with params=#{params}")
     signed = create_signed_query_string(params)
-    resp = HTTPClient.new.get_content("http://#{@options[:host]}#{@options[:path]}?#{signed}")
+    url = "http://#{@options[:host]}#{@options[:path]}?#{signed}"
+    log(:info, "performing rest call to url='#{url}'")
+    resp = HTTPClient.new.get_content(url)
     # force utf-8 chars, works only on 1.9 string
     resp = resp.force_encoding('UTF-8') if resp.respond_to? :force_encoding
+    log(:debug, "got response='#{resp}'")
     Crack::XML.parse(resp)
   end
 
@@ -131,6 +138,10 @@ module ASIN
     
     signature = CGI.escape(Base64.encode64(hmac).chomp)
     "#{query}&Signature=#{signature}"
+  end
+  
+  def log(severity, message)
+    @options[:logger].send severity, message
   end
 
 end

@@ -35,7 +35,3 @@ The gem is tested against 1.9.1 (to be compatible with Heroku Bamboo Stack) and 
   # access the internal data representation (Hashie::Mash)
   item.raw.ItemAttributes.ListPrice.FormattedPrice
   => $39.99
-
-== TODO
-
- * Logging
