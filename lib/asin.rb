@@ -141,7 +141,7 @@ module ASIN
   end
   
   def log(severity, message)
-    @options[:logger].send severity, message
+    @options[:logger].send severity, message if @options[:logger]
   end
 
 end
