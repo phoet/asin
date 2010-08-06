@@ -25,7 +25,8 @@ require 'logger'
 # 
 #   configure :secret => 'your-secret', :key => 'your-key'
 # 
-# After configuring your environment you can call the +lookup+ method to retrieve an +Item+ via the Amazon Standard Identification Number (ASIN):
+# After configuring your environment you can call the +lookup+ method to retrieve an +Item+ via the 
+# Amazon Standard Identification Number (ASIN):
 # 
 #   item = lookup '1430218150'
 #   item.title
@@ -38,7 +39,8 @@ require 'logger'
 # 
 # ==Further Configuration
 # 
-# If you need more controll over the request that is sent to the Amazon API (http://docs.amazonwebservices.com/AWSEcommerceService/4-0/),
+# If you need more controll over the request that is sent to the 
+# Amazon API (http://docs.amazonwebservices.com/AWSEcommerceService/4-0/),
 # you can override some defaults or add additional query-parameters to the REST calls:
 # 
 #   configure :host => 'webservices.amazon.de'
@@ -130,12 +132,12 @@ module ASIN
     params[:AWSAccessKeyId] = @options[:key]
     # utc timestamp needed for signing
     params[:Timestamp] = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%SZ') 
-    
+    # signing needs to order the query alphabetically
     query = params.map{|key, value| "#{key}=#{CGI.escape(value.to_s)}" }.sort.join('&')
-    
+    # yeah, you really need to sign the get-request not the query
     request_to_sign = "GET\n#{@options[:host]}\n#{@options[:path]}\n#{query}"
     hmac = OpenSSL::HMAC.digest(@options[:digest], @options[:secret], request_to_sign)
-    
+    # don't forget to remove the newline from base64
     signature = CGI.escape(Base64.encode64(hmac).chomp)
     "#{query}&Signature=#{signature}"
   end
