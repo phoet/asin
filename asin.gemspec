@@ -2,7 +2,7 @@
 
 spec = Gem::Specification.new do |s|
   s.name = 'asin'
-  s.version = '0.0.7'
+  s.version = '0.0.8'
 
   s.author = 'Peter Schröder'
   s.description = 'Amazon Simple INterface or whatever you want to call this.'
