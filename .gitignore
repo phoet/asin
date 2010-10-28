@@ -2,3 +2,4 @@ html
 pkg
 *.gem
 .DS_Store
+.bundle
