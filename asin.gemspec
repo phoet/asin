@@ -2,7 +2,7 @@
 
 spec = Gem::Specification.new do |s|
   s.name = 'asin'
-  s.version = '0.0.7'
+  s.version = '0.0.8'
 
   s.author = 'Peter Schröder'
   s.description = 'Amazon Simple INterface or whatever you want to call this.'
@@ -16,9 +16,8 @@ spec = Gem::Specification.new do |s|
   s.files = Dir.glob('lib/*.rb') + %w(README.rdoc)
   s.test_files = Dir.glob('test/test_*.rb')
   
-  # trying not to be too restrictive...
-  s.add_dependency('crack', '>= 0.1.0')
-  s.add_dependency('hashie', '>= 0.2.0')
-  s.add_dependency('httpclient', '>= 2.1.0')
+  s.add_dependency('crack', '~> 0.1.7')
+  s.add_dependency('hashie', '~> 0.2.1')
+  s.add_dependency('httpclient', '~> 2.1.5.2')
 end
 
