@@ -1,23 +1,28 @@
-# coding: utf-8
+# -*- encoding: utf-8 -*-
+$:.push File.expand_path("../lib", __FILE__)
+require "asin/version"
 
-spec = Gem::Specification.new do |s|
-  s.name = 'asin'
-  s.version = '0.0.8'
-
-  s.author = 'Peter Schröder'
+Gem::Specification.new do |s|
+  s.name        = "asin"
+  s.version     = Asin::VERSION
+  s.platform    = Gem::Platform::RUBY
+  s.authors     = ['Peter Schröder']
+  s.email       = ['phoetmail@googlemail.com']
+  s.homepage    = 'http://github.com/phoet/asin'
+  s.summary     = 'Simple interface to Amazon Item lookup.'
   s.description = 'Amazon Simple INterface or whatever you want to call this.'
-  s.email = 'phoetmail@googlemail.com'
-  s.homepage = 'http://github.com/phoet/asin'
-  s.summary = 'Simple interface to Amazon Item lookup.'
 
-  s.has_rdoc = true
-  s.rdoc_options = ['-a', '--inline-source', '--charset=UTF-8']
+  s.rubyforge_project = "asin"
+
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
+  s.require_paths = ["lib"]
   
-  s.files = Dir.glob('lib/*.rb') + %w(README.rdoc)
-  s.test_files = Dir.glob('test/test_*.rb')
+  s.add_dependency('crack', '~> 0.1.8')
+  s.add_dependency('hashie', '~> 0.4.0')
+  s.add_dependency('httpi', '~> 0.7.6')
   
-  s.add_dependency('crack', '~> 0.1.7')
-  s.add_dependency('hashie', '~> 0.2.1')
-  s.add_dependency('httpclient', '~> 2.1.5.2')
+  s.add_development_dependency('httpclient', '~> 2.1.5.2')
+  s.add_development_dependency('mocha', '~> 0.9.10')
 end
-

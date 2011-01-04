@@ -1,0 +1,31 @@
+PATH
+  remote: .
+  specs:
+    asin (0.0.9)
+      crack (~> 0.1.8)
+      hashie (~> 0.4.0)
+      httpi (~> 0.7.6)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+    crack (0.1.8)
+    hashie (0.4.0)
+    httpclient (2.1.5.2)
+    httpi (0.7.6)
+      rack
+    mocha (0.9.10)
+      rake
+    rack (1.2.1)
+    rake (0.8.7)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  asin!
+  crack (~> 0.1.8)
+  hashie (~> 0.4.0)
+  httpclient (~> 2.1.5.2)
+  httpi (~> 0.7.6)
+  mocha (~> 0.9.10)
