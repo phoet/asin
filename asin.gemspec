@@ -18,4 +18,11 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
+  
+  s.add_dependency('crack', '~> 0.1.8')
+  s.add_dependency('hashie', '~> 0.4.0')
+  s.add_dependency('httpi', '~> 0.7.6')
+  
+  s.add_development_dependency('httpclient', '~> 2.1.5.2')
+  s.add_development_dependency('mocha', '~> 0.9.10')
 end
