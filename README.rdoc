@@ -1,8 +1,7 @@
 == Installation
 
-The gem is tested against 1.9.1 and 1.8.7 (compatibility with Heroku-Bamboo-Stack[http://docs.heroku.com/stack]) and runs smoothly with Rails 3.
+The gem is tested against 1.9.2, 1.9.1 and 1.8.7 (compatibility with Heroku-Bamboo-Stack[http://docs.heroku.com/stack]) and runs smoothly with Rails 3.
 
-  rvm use 1.9.1
   gem install asin
 
 == Usage
@@ -20,9 +19,21 @@ The gem is tested against 1.9.1 and 1.8.7 (compatibility with Heroku-Bamboo-Stac
   item.title
   => Learn Objective-C on the Mac (Learn Series)
   
+  # search for any kind of stuff on amazon
+  items = search 'Learn Objective-C'
+  items.first.title
+  => "Learn Objective-C on the Mac (Learn Series)"
+  
   # access the internal data representation (Hashie::Mash)
   item.raw.ItemAttributes.ListPrice.FormattedPrice
   => $39.99
+
+== HTTPI
+
+ASIN uses HTTPI[https://github.com/rubiii/httpi] as a HTTP-Client adapter.
+You can configure the Client you like via configure:
+
+  configure :client => :curb
 
 == Infos
 

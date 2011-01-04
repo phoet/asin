@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    asin (0.0.8)
+    asin (0.0.9)
       crack (~> 0.1.7)
       hashie (~> 0.2.1)
       httpclient (~> 2.1.5.2)
@@ -12,6 +12,9 @@ GEM
     crack (0.1.8)
     hashie (0.2.2)
     httpclient (2.1.5.2)
+    mocha (0.9.10)
+      rake
+    rake (0.8.7)
 
 PLATFORMS
   ruby
@@ -21,3 +24,4 @@ DEPENDENCIES
   crack (~> 0.1.7)
   hashie (~> 0.2.1)
   httpclient (~> 2.1.5.2)
+  mocha (~> 0.9.10)

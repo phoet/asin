@@ -1,9 +1,11 @@
-require 'hashie'
-require 'httpclient'
+require 'httpi'
 require 'crack/xml'
 require 'cgi'
 require 'base64'
 require 'logger'
+
+require 'asin/item'
+require 'asin/version'
 
 # ASIN (Amazon Simple INterface) is a gem for easy access of the Amazon E-Commerce-API.
 # It is simple to configure and use. Since it's very small and flexible, it is easy to extend it to your needs.
@@ -31,6 +33,12 @@ require 'logger'
 #   item = lookup '1430218150'
 #   item.title
 #   => "Learn Objective-C on the Mac (Learn Series)"
+#
+# OR search with fulltext/ASIN/ISBN
+# 
+#   items = search 'Learn Objective-C'
+#   items.first.title
+#   => "Learn Objective-C on the Mac (Learn Series)"
 # 
 # The +Item+ uses a Hashie::Mash as its internal data representation and you can get fetched data from it:
 # 
@@ -48,26 +56,6 @@ require 'logger'
 # 
 module ASIN
 
-  # =Item
-  # 
-  # The +Item+ class is a wrapper for the Amazon XML-REST-Response.
-  # 
-  # A Hashie::Mash is used for the internal data representation and can be accessed over the +raw+ attribute.
-  # 
-  class Item
-
-    attr_reader :raw
-
-    def initialize(hash)
-      @raw = Hashie::Mash.new(hash).ItemLookupResponse.Items.Item
-    end
-
-    def title
-      @raw.ItemAttributes.Title
-    end
-
-  end
-
   # Configures the basic request parameters for ASIN.
   # 
   # Expects at least +secret+ and +key+ for the API call:
@@ -79,6 +67,7 @@ module ASIN
   # [secret] the API secret key
   # [key] the API access key
   # [host] the host, which defaults to 'webservices.amazon.com'
+  # [client] the client library for http (:httpclient, :curb, :net_http) see HTTPI for more information
   # [logger] a different logger than logging to STDERR
   # 
   def configure(options={})
@@ -86,6 +75,7 @@ module ASIN
       :host => 'webservices.amazon.com', 
       :path => '/onca/xml', 
       :digest => OpenSSL::Digest::Digest.new('sha256'),
+      :client => :httpclient,
       :logger => Logger.new(STDERR),
       :key => '', 
       :secret => '',
@@ -108,22 +98,57 @@ module ASIN
   #   lookup(asin, :ResponseGroup => :Medium)
   # 
   def lookup(asin, params={})
-    Item.new(call(params.merge(:Operation => :ItemLookup, :ItemId => asin)))
+    response = call(params.merge(:Operation => :ItemLookup, :ItemId => asin))
+    Item.new(response['ItemLookupResponse']['Items']['Item'])
+  end
+  
+  # Performs an +ItemSearch+ REST call against the Amazon API.
+  # 
+  # Expects a search-string which can be an ASIN (Amazon Standard Identification Number) and returns a list of +Items+:
+  # 
+  #   items = search 'Learn Objective-C'
+  #   items.first.title
+  #   => "Learn Objective-C on the Mac (Learn Series)"
+  # 
+  # ==== Options:
+  # 
+  # Additional parameters for the API call like this:
+  # 
+  #   search(asin, :SearchIndex => :Music)
+  #
+  # Have a look at the different search index values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/]
+  #
+  def search(search_string, params={:SearchIndex => :Books})
+    response = call(params.merge(:Operation => :ItemSearch, :Keywords => search_string))
+    response['ItemSearchResponse']['Items']['Item'].map {|item| Item.new(item)}
   end
 
   private
 
   def call(params)
     raise "you have to configure ASIN: 'configure :secret => 'your-secret', :key => 'your-key''" if @options.nil?
+    
     log(:debug, "calling with params=#{params}")
     signed = create_signed_query_string(params)
+    
     url = "http://#{@options[:host]}#{@options[:path]}?#{signed}"
-    log(:info, "performing rest call to url='#{url}'")
-    resp = HTTPClient.new.get_content(url)
-    # force utf-8 chars, works only on 1.9 string
-    resp = resp.force_encoding('UTF-8') if resp.respond_to? :force_encoding
-    log(:debug, "got response='#{resp}'")
-    Crack::XML.parse(resp)
+    log(:info, "performing rest call to url='#{url}' with client='#{@options[:client]}'")
+    
+    HTTPI::Adapter.use = @options[:client]
+    HTTPI.logger = @options[:logger] if @options[:logger]
+    request = HTTPI::Request.new(url)
+    response = HTTPI.get(request)
+    
+    if response.code == 200
+      # force utf-8 chars, works only on 1.9 string
+      resp = response.body
+      resp = resp.force_encoding('UTF-8') if resp.respond_to? :force_encoding
+      log(:debug, "got response='#{resp}'")
+      Crack::XML.parse(resp)
+    else
+      log(:error, "got response='#{response.body}'")
+      raise "request failed with response-code='#{response.code}'"
+    end
   end
 
   def create_signed_query_string(params)
@@ -132,11 +157,14 @@ module ASIN
     params[:AWSAccessKeyId] = @options[:key]
     # utc timestamp needed for signing
     params[:Timestamp] = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%SZ') 
+  
     # signing needs to order the query alphabetically
-    query = params.map{|key, value| "#{key}=#{CGI.escape(value.to_s)}" }.sort.join('&')
+    query = params.map{|key, value| "#{key}=#{CGI.escape(value.to_s)}" }.sort.join('&').gsub('+','%20')
+  
     # yeah, you really need to sign the get-request not the query
     request_to_sign = "GET\n#{@options[:host]}\n#{@options[:path]}\n#{query}"
     hmac = OpenSSL::HMAC.digest(@options[:digest], @options[:secret], request_to_sign)
+  
     # don't forget to remove the newline from base64
     signature = CGI.escape(Base64.encode64(hmac).chomp)
     "#{query}&Signature=#{signature}"

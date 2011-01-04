@@ -1,4 +1,4 @@
-source :gemcutter
+source "http://rubygems.org"
 
-# dependencies in rails_redis_cache.gemspec
+# Specify your gem's dependencies in asin.gemspec
 gemspec
