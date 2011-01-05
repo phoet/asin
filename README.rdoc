@@ -31,9 +31,10 @@ The gem is tested against 1.9.2, 1.9.1 and 1.8.7 (compatibility with Heroku-Bamb
 == HTTPI
 
 ASIN uses HTTPI[https://github.com/rubiii/httpi] as a HTTP-Client adapter.
-You can configure the Client you like via configure:
+See the HTTPI documentation for how to configure different clients or the logger.
+As a default HTTPI uses _httpclient_ so you should add that dependency to your project:
 
-  configure :client => :curb
+  gem 'httpclient'
 
 == Infos
 

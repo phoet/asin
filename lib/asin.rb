@@ -55,6 +55,9 @@ require 'asin/version'
 #   lookup(asin, :ResponseGroup => :Medium)
 # 
 module ASIN
+  
+  DIGEST  = OpenSSL::Digest::Digest.new('sha256')
+  PATH    = '/onca/xml'
 
   # Configures the basic request parameters for ASIN.
   # 
@@ -67,18 +70,14 @@ module ASIN
   # [secret] the API secret key
   # [key] the API access key
   # [host] the host, which defaults to 'webservices.amazon.com'
-  # [client] the client library for http (:httpclient, :curb, :net_http) see HTTPI for more information
   # [logger] a different logger than logging to STDERR
   # 
   def configure(options={})
     @options = {
-      :host => 'webservices.amazon.com', 
-      :path => '/onca/xml', 
-      :digest => OpenSSL::Digest::Digest.new('sha256'),
-      :client => :httpclient,
-      :logger => Logger.new(STDERR),
-      :key => '', 
       :secret => '',
+      :key => '',
+      :host => 'webservices.amazon.com',
+      :logger => Logger.new(STDERR),
     } if @options.nil?
     @options.merge! options
   end
@@ -131,14 +130,10 @@ module ASIN
     log(:debug, "calling with params=#{params}")
     signed = create_signed_query_string(params)
     
-    url = "http://#{@options[:host]}#{@options[:path]}?#{signed}"
+    url = "http://#{@options[:host]}#{PATH}?#{signed}"
     log(:info, "performing rest call to url='#{url}' with client='#{@options[:client]}'")
-    
-    HTTPI::Adapter.use = @options[:client]
-    HTTPI.logger = @options[:logger] if @options[:logger]
-    request = HTTPI::Request.new(url)
-    response = HTTPI.get(request)
-    
+   
+    response = HTTPI.get(url)
     if response.code == 200
       # force utf-8 chars, works only on 1.9 string
       resp = response.body
@@ -162,8 +157,8 @@ module ASIN
     query = params.map{|key, value| "#{key}=#{CGI.escape(value.to_s)}" }.sort.join('&').gsub('+','%20')
   
     # yeah, you really need to sign the get-request not the query
-    request_to_sign = "GET\n#{@options[:host]}\n#{@options[:path]}\n#{query}"
-    hmac = OpenSSL::HMAC.digest(@options[:digest], @options[:secret], request_to_sign)
+    request_to_sign = "GET\n#{@options[:host]}\n#{PATH}\n#{query}"
+    hmac = OpenSSL::HMAC.digest(DIGEST, @options[:secret], request_to_sign)
   
     # don't forget to remove the newline from base64
     signature = CGI.escape(Base64.encode64(hmac).chomp)
