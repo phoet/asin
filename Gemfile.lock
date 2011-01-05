@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    asin (0.0.9)
+    asin (0.1.0)
       crack (~> 0.1.8)
       hashie (~> 0.4.0)
       httpi (~> 0.7.6)
@@ -10,14 +10,26 @@ GEM
   remote: http://rubygems.org/
   specs:
     crack (0.1.8)
+    diff-lcs (1.1.2)
+    fuubar (0.0.3)
+      rspec (~> 2.0)
+      rspec-instafail (~> 0.1.4)
+      ruby-progressbar (~> 0.0.9)
     hashie (0.4.0)
     httpclient (2.1.5.2)
     httpi (0.7.6)
       rack
-    mocha (0.9.10)
-      rake
     rack (1.2.1)
-    rake (0.8.7)
+    rspec (2.4.0)
+      rspec-core (~> 2.4.0)
+      rspec-expectations (~> 2.4.0)
+      rspec-mocks (~> 2.4.0)
+    rspec-core (2.4.0)
+    rspec-expectations (2.4.0)
+      diff-lcs (~> 1.1.2)
+    rspec-instafail (0.1.5)
+    rspec-mocks (2.4.0)
+    ruby-progressbar (0.0.9)
 
 PLATFORMS
   ruby
@@ -25,7 +37,8 @@ PLATFORMS
 DEPENDENCIES
   asin!
   crack (~> 0.1.8)
+  fuubar (~> 0.0.3)
   hashie (~> 0.4.0)
   httpclient (~> 2.1.5.2)
   httpi (~> 0.7.6)
-  mocha (~> 0.9.10)
+  rspec (~> 2.4.0)

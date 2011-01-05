@@ -24,5 +24,6 @@ Gem::Specification.new do |s|
   s.add_dependency('httpi', '~> 0.7.6')
   
   s.add_development_dependency('httpclient', '~> 2.1.5.2')
-  s.add_development_dependency('mocha', '~> 0.9.10')
+  s.add_development_dependency('rspec', '~> 2.4.0')
+  s.add_development_dependency('fuubar', '~> 0.0.3')
 end
