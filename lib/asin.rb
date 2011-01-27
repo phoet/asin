@@ -60,6 +60,16 @@ module ASIN
   DIGEST  = OpenSSL::Digest::Digest.new('sha256')
   PATH    = '/onca/xml'
 
+  # Convenience method to create an ASIN client.
+  # 
+  # A client is not necessary though, you can simply include the ASIN module otherwise.
+  # 
+  def self.client
+    client = Object.new
+    client.extend ASIN
+    client
+  end
+
   # Configures the basic request parameters for ASIN.
   # 
   # Expects at least +secret+ and +key+ for the API call:
@@ -169,3 +179,4 @@ module ASIN
   end
 
 end
+
