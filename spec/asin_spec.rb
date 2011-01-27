@@ -16,14 +16,25 @@ describe ASIN do
     it "should fail without secret and key" do
       lambda { @helper.lookup ANY_ASIN }.should raise_error(RuntimeError)
     end
+
+    it "should fail with wrong configuration key" do
+      lambda { @helper.configure :wrong => 'key' }.should raise_error(NoMethodError)
+    end
     
     it "should not override the configuration" do
-      config = @helper.configure :something => 'wont get overridden'
-      config[:something].should_not be_nil
+      config = @helper.configure :key => 'wont get overridden'
+      config.key.should_not be_nil
 
-      config = @helper.configure :different => 'is also set'
-      config[:something].should_not be_nil
-      config[:different].should_not be_nil
+      config = @helper.configure :secret => 'is also set'
+      config.key.should_not be_nil
+      config.secret.should_not be_nil
+    end
+
+    it "should work with a configuration block" do
+      config = ASIN::Configuration.configure do |config|
+        config.key = 'bla'
+      end
+      config.key.should eql('bla')
     end
   end
   

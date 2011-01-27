@@ -6,6 +6,7 @@ require 'logger'
 
 require 'asin/item'
 require 'asin/version'
+require 'asin/configuration'
 
 # ASIN (Amazon Simple INterface) is a gem for easy access of the Amazon E-Commerce-API.
 # It is simple to configure and use. Since it's very small and flexible, it is easy to extend it to your needs.
@@ -73,13 +74,7 @@ module ASIN
   # [logger] a different logger than logging to STDERR
   # 
   def configure(options={})
-    @options = {
-      :secret => '',
-      :key => '',
-      :host => 'webservices.amazon.com',
-      :logger => Logger.new(STDERR),
-    } if @options.nil?
-    @options.merge! options
+    Configuration.configure(options)
   end
 
   # Performs an +ItemLookup+ REST call against the Amazon API.
@@ -124,14 +119,18 @@ module ASIN
 
   private
 
+  def credentials_valid?
+    !Configuration.secret.nil? && !Configuration.key.nil?
+  end
+
   def call(params)
-    raise "you have to configure ASIN: 'configure :secret => 'your-secret', :key => 'your-key''" if @options.nil?
+    raise "you have to configure ASIN: 'configure :secret => 'your-secret', :key => 'your-key''" unless credentials_valid?
     
     log(:debug, "calling with params=#{params}")
     signed = create_signed_query_string(params)
     
-    url = "http://#{@options[:host]}#{PATH}?#{signed}"
-    log(:info, "performing rest call to url='#{url}' with client='#{@options[:client]}'")
+    url = "http://#{Configuration.host}#{PATH}?#{signed}"
+    log(:info, "performing rest call to url='#{url}'")
    
     response = HTTPI.get(url)
     if response.code == 200
@@ -149,7 +148,7 @@ module ASIN
   def create_signed_query_string(params)
     # nice tutorial http://cloudcarpenters.com/blog/amazon_products_api_request_signing/
     params[:Service] = :AWSECommerceService
-    params[:AWSAccessKeyId] = @options[:key]
+    params[:AWSAccessKeyId] = Configuration.key
     # utc timestamp needed for signing
     params[:Timestamp] = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%SZ') 
   
@@ -157,8 +156,8 @@ module ASIN
     query = params.map{|key, value| "#{key}=#{CGI.escape(value.to_s)}" }.sort.join('&').gsub('+','%20')
   
     # yeah, you really need to sign the get-request not the query
-    request_to_sign = "GET\n#{@options[:host]}\n#{PATH}\n#{query}"
-    hmac = OpenSSL::HMAC.digest(DIGEST, @options[:secret], request_to_sign)
+    request_to_sign = "GET\n#{Configuration.host}\n#{PATH}\n#{query}"
+    hmac = OpenSSL::HMAC.digest(DIGEST, Configuration.secret, request_to_sign)
   
     # don't forget to remove the newline from base64
     signature = CGI.escape(Base64.encode64(hmac).chomp)
@@ -166,7 +165,7 @@ module ASIN
   end
   
   def log(severity, message)
-    @options[:logger].send severity, message if @options[:logger]
+    Configuration.logger.send severity, message if Configuration.logger
   end
 
 end
