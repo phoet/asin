@@ -6,6 +6,7 @@ require 'logger'
 
 require 'asin/item'
 require 'asin/version'
+require 'asin/configuration'
 
 # ASIN (Amazon Simple INterface) is a gem for easy access of the Amazon E-Commerce-API.
 # It is simple to configure and use. Since it's very small and flexible, it is easy to extend it to your needs.
@@ -55,6 +56,19 @@ require 'asin/version'
 #   lookup(asin, :ResponseGroup => :Medium)
 # 
 module ASIN
+  
+  DIGEST  = OpenSSL::Digest::Digest.new('sha256')
+  PATH    = '/onca/xml'
+
+  # Convenience method to create an ASIN client.
+  # 
+  # A client is not necessary though, you can simply include the ASIN module otherwise.
+  # 
+  def self.client
+    client = Object.new
+    client.extend ASIN
+    client
+  end
 
   # Configures the basic request parameters for ASIN.
   # 
@@ -62,25 +76,10 @@ module ASIN
   # 
   #   configure :secret => 'your-secret', :key => 'your-key'
   # 
-  # ==== Options:
-  # 
-  # [secret] the API secret key
-  # [key] the API access key
-  # [host] the host, which defaults to 'webservices.amazon.com'
-  # [client] the client library for http (:httpclient, :curb, :net_http) see HTTPI for more information
-  # [logger] a different logger than logging to STDERR
+  # See ASIN::Configuration for more infos.
   # 
   def configure(options={})
-    @options = {
-      :host => 'webservices.amazon.com', 
-      :path => '/onca/xml', 
-      :digest => OpenSSL::Digest::Digest.new('sha256'),
-      :client => :httpclient,
-      :logger => Logger.new(STDERR),
-      :key => '', 
-      :secret => '',
-    } if @options.nil?
-    @options.merge! options
+    Configuration.configure(options)
   end
 
   # Performs an +ItemLookup+ REST call against the Amazon API.
@@ -125,20 +124,20 @@ module ASIN
 
   private
 
+  def credentials_valid?
+    !Configuration.secret.nil? && !Configuration.key.nil?
+  end
+
   def call(params)
-    raise "you have to configure ASIN: 'configure :secret => 'your-secret', :key => 'your-key''" if @options.nil?
+    raise "you have to configure ASIN: 'configure :secret => 'your-secret', :key => 'your-key''" unless credentials_valid?
     
     log(:debug, "calling with params=#{params}")
     signed = create_signed_query_string(params)
     
-    url = "http://#{@options[:host]}#{@options[:path]}?#{signed}"
-    log(:info, "performing rest call to url='#{url}' with client='#{@options[:client]}'")
-    
-    HTTPI::Adapter.use = @options[:client]
-    HTTPI.logger = @options[:logger] if @options[:logger]
-    request = HTTPI::Request.new(url)
-    response = HTTPI.get(request)
-    
+    url = "http://#{Configuration.host}#{PATH}?#{signed}"
+    log(:info, "performing rest call to url='#{url}'")
+   
+    response = HTTPI.get(url)
     if response.code == 200
       # force utf-8 chars, works only on 1.9 string
       resp = response.body
@@ -154,7 +153,7 @@ module ASIN
   def create_signed_query_string(params)
     # nice tutorial http://cloudcarpenters.com/blog/amazon_products_api_request_signing/
     params[:Service] = :AWSECommerceService
-    params[:AWSAccessKeyId] = @options[:key]
+    params[:AWSAccessKeyId] = Configuration.key
     # utc timestamp needed for signing
     params[:Timestamp] = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%SZ') 
   
@@ -162,8 +161,8 @@ module ASIN
     query = params.map{|key, value| "#{key}=#{CGI.escape(value.to_s)}" }.sort.join('&').gsub('+','%20')
   
     # yeah, you really need to sign the get-request not the query
-    request_to_sign = "GET\n#{@options[:host]}\n#{@options[:path]}\n#{query}"
-    hmac = OpenSSL::HMAC.digest(@options[:digest], @options[:secret], request_to_sign)
+    request_to_sign = "GET\n#{Configuration.host}\n#{PATH}\n#{query}"
+    hmac = OpenSSL::HMAC.digest(DIGEST, Configuration.secret, request_to_sign)
   
     # don't forget to remove the newline from base64
     signature = CGI.escape(Base64.encode64(hmac).chomp)
@@ -171,7 +170,8 @@ module ASIN
   end
   
   def log(severity, message)
-    @options[:logger].send severity, message if @options[:logger]
+    Configuration.logger.send severity, message if Configuration.logger
   end
 
 end
+

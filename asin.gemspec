@@ -4,7 +4,7 @@ require "asin/version"
 
 Gem::Specification.new do |s|
   s.name        = "asin"
-  s.version     = Asin::VERSION
+  s.version     = ASIN::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Peter Schröder']
   s.email       = ['phoetmail@googlemail.com']
@@ -20,9 +20,10 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
   
   s.add_dependency('crack', '~> 0.1.8')
-  s.add_dependency('hashie', '~> 0.4.0')
-  s.add_dependency('httpi', '~> 0.7.6')
+  s.add_dependency('hashie', '~> 1.0.0')
+  s.add_dependency('httpi', '~> 0.7.9')
   
-  s.add_development_dependency('httpclient', '~> 2.1.5.2')
-  s.add_development_dependency('mocha', '~> 0.9.10')
+  s.add_development_dependency('httpclient', '~> 2.1.6.1')
+  s.add_development_dependency('rspec', '~> 2.4.0')
+  s.add_development_dependency('fuubar', '~> 0.0.3')
 end
