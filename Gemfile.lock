@@ -3,8 +3,8 @@ PATH
   specs:
     asin (0.1.1)
       crack (~> 0.1.8)
-      hashie (~> 0.4.0)
-      httpi (~> 0.7.6)
+      hashie (~> 1.0.0)
+      httpi (~> 0.7.9)
 
 GEM
   remote: http://rubygems.org/
@@ -15,9 +15,9 @@ GEM
       rspec (~> 2.0)
       rspec-instafail (~> 0.1.4)
       ruby-progressbar (~> 0.0.9)
-    hashie (0.4.0)
-    httpclient (2.1.5.2)
-    httpi (0.7.6)
+    hashie (1.0.0)
+    httpclient (2.1.6.1)
+    httpi (0.7.9)
       rack
     rack (1.2.1)
     rspec (2.4.0)
@@ -38,7 +38,7 @@ DEPENDENCIES
   asin!
   crack (~> 0.1.8)
   fuubar (~> 0.0.3)
-  hashie (~> 0.4.0)
-  httpclient (~> 2.1.5.2)
-  httpi (~> 0.7.6)
+  hashie (~> 1.0.0)
+  httpclient (~> 2.1.6.1)
+  httpi (~> 0.7.9)
   rspec (~> 2.4.0)
