@@ -12,13 +12,17 @@ module ASIN
       #     config.secret = 'your-secret'
       #     config.key = 'your-key'
       #   end
+      #
+      # You may pass options as a hash as well:
+      #
+      #   ASIN::Configuration.configure(:secret => 'your-secret', :key => 'your-key')
       # 
       # ==== Options:
       # 
       # [secret] the API secret key
       # [key] the API access key
       # [host] the host, which defaults to 'webservices.amazon.com'
-      # [logger] a different logger than logging to STDERR
+      # [logger] a different logger than logging to STDERR (nil for no logging)
       # 
       def configure(options={})
         init_config

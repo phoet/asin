@@ -6,16 +6,32 @@ The gem is tested against 1.9.2, 1.9.1 and 1.8.7 (compatibility with Heroku-Bamb
 
   gem install asin
 
-== Usage
+== Configuration
+
+Since Version 0.2.0 ASIN provides a Rails-Style configuration.
+
+You can put this in a initializer (config/initializers/asin.rb):
+
+  ASIN::Configuration.configure do |config|
+    config.secret = 'your-secret'
+    config.key = 'your-key'
+  end
+
+The old configuration syntax is still valid:
 
   require 'asin'
   include ASIN
   
   # use the configure method to setup your api credentials
   configure :secret => 'your-secret', :key => 'your-key'
-  
+
+== Usage  
+
+  # create an ASIN client
+  client = ASIN.client
+
   # lookup an item with the amazon standard identification number (asin)
-  item = lookup '1430218150'
+  item = client.lookup '1430218150'
   
   # have a look at the title of the item
   item.title
@@ -45,3 +61,4 @@ Have a look at the RDOC[http://rdoc.info/projects/phoet/asin] for this project, 
 For more information on the REST calls, have a look at the whole Amazon E-Commerce-API[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/].
 
 The code currently runs best on Ruby-1.9 due to encoding issues with the Amazon REST output (if *YOU* know how to backport this to 1.8.7, you are welcome!).
+
