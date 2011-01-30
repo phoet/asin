@@ -76,12 +76,7 @@ module ASIN
   # 
   #   configure :secret => 'your-secret', :key => 'your-key'
   # 
-  # ==== Options:
-  # 
-  # [secret] the API secret key
-  # [key] the API access key
-  # [host] the host, which defaults to 'webservices.amazon.com'
-  # [logger] a different logger than logging to STDERR
+  # See ASIN::Configuration for more infos.
   # 
   def configure(options={})
     Configuration.configure(options)
