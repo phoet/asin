@@ -4,7 +4,7 @@ require "asin/version"
 
 Gem::Specification.new do |s|
   s.name        = "asin"
-  s.version     = Asin::VERSION
+  s.version     = ASIN::VERSION
   s.platform    = Gem::Platform::RUBY
   s.authors     = ['Peter Schröder']
   s.email       = ['phoetmail@googlemail.com']
