@@ -37,8 +37,13 @@ The old configuration syntax is still valid:
   item.title
   => Learn Objective-C on the Mac (Learn Series)
   
-  # search for any kind of stuff on amazon
-  items = search 'Learn Objective-C'
+  # search for any kind of stuff on amazon with keywords
+  items = search_keywords 'Learn', 'Objective-C'
+  items.first.title
+  => "Learn Objective-C on the Mac (Learn Series)"
+  
+  # search for any kind of stuff on amazon with custom parameters
+  search :Keywords => 'Learn Objective-C', :SearchIndex => :Books
   items.first.title
   => "Learn Objective-C on the Mac (Learn Series)"
   

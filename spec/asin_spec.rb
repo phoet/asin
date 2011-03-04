@@ -1,6 +1,3 @@
-ANY_ASIN = '1430218150'
-ANY_SEARCH = 'Learn Objective-C'
-
 describe ASIN do
   before do
     @helper = ASIN.client
@@ -13,7 +10,7 @@ describe ASIN do
 
   context "configuration" do
     it "should fail without secret and key" do
-      lambda { @helper.lookup ANY_ASIN }.should raise_error(RuntimeError)
+      lambda { @helper.lookup 'bla' }.should raise_error(RuntimeError)
     end
 
     it "should fail with wrong configuration key" do
@@ -43,15 +40,34 @@ describe ASIN do
     end
 
     it "should lookup a book" do
-      item = @helper.lookup(ANY_ASIN)
+      item = @helper.lookup('1430218150')
       item.title.should =~ /Learn Objective/
     end
 
-    it "should search a book with fulltext" do
-      items = @helper.search(ANY_SEARCH)
+    it "should search_keywords a book with fulltext" do
+      items = @helper.search_keywords 'Learn', 'Objective-C'
       items.should have(10).things
 
       items.first.title.should =~ /Learn Objective/
+    end
+
+    it "should search_keywords never mind music" do
+      items = @helper.search_keywords 'nirvana', 'never mind', :SearchIndex => :Music
+      items.should have(10).things
+
+      items.first.title.should =~ /Nevermind/
+    end
+
+    it "should search music" do
+      items = @helper.search :SearchIndex => :Music
+      items.should have(0).things
+    end
+
+    it "should search never mind music" do
+      items = @helper.search :Keywords => 'nirvana', :SearchIndex => :Music
+      items.should have(10).things
+
+      items.first.title.should =~ /Nevermind/
     end
   end
 end

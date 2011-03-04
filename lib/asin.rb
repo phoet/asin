@@ -103,9 +103,9 @@ module ASIN
   
   # Performs an +ItemSearch+ REST call against the Amazon API.
   # 
-  # Expects a search-string which can be an ASIN (Amazon Standard Identification Number) and returns a list of +Items+:
+  # Expects a search-string which can be an arbitrary array of strings (ASINs f.e.) and returns a list of +Items+:
   # 
-  #   items = search 'Learn Objective-C'
+  #   items = search_keywords 'Learn', 'Objective-C'
   #   items.first.title
   #   => "Learn Objective-C on the Mac (Learn Series)"
   # 
@@ -113,15 +113,35 @@ module ASIN
   # 
   # Additional parameters for the API call like this:
   # 
-  #   search(asin, :SearchIndex => :Music)
+  #   search_keywords('nirvana', 'never mind', :SearchIndex => :Music)
   #
   # Have a look at the different search index values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/]
   #
-  def search(search_string, params={:SearchIndex => :Books})
-    response = call(params.merge(:Operation => :ItemSearch, :Keywords => search_string))
-    response['ItemSearchResponse']['Items']['Item'].map {|item| Item.new(item)}
+  def search_keywords(*keywords)
+    params = keywords.last.is_a?(Hash) ? keywords.pop : {:SearchIndex => :Books}
+    response = call(params.merge(:Operation => :ItemSearch, :Keywords => keywords.join(' ')))
+    (response['ItemSearchResponse']['Items']['Item'] || []).map {|item| Item.new(item)}
   end
-
+  
+  # Performs an +ItemSearch+ REST call against the Amazon API.
+  # 
+  # Expects a Hash of search params where and returns a list of +Items+:
+  # 
+  #   items = search :SearchIndex => :Music
+  # 
+  # ==== Options:
+  # 
+  # Additional parameters for the API call like this:
+  # 
+  #   search(:Keywords => 'nirvana', :SearchIndex => :Music)
+  #
+  # Have a look at the different search index values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/]
+  #
+  def search(params={:SearchIndex => :Books})
+    response = call(params.merge(:Operation => :ItemSearch))
+    (response['ItemSearchResponse']['Items']['Item'] || []).map {|item| Item.new(item)}
+  end
+  
   private
 
   def credentials_valid?

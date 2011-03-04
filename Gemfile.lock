@@ -36,9 +36,6 @@ PLATFORMS
 
 DEPENDENCIES
   asin!
-  crack (~> 0.1.8)
   fuubar (~> 0.0.3)
-  hashie (~> 1.0.0)
   httpclient (~> 2.1.6.1)
-  httpi (~> 0.7.9)
   rspec (~> 2.4.0)
