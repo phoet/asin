@@ -24,7 +24,7 @@ require 'asin/configuration'
 # 
 # The registration process will give you a +secret-key+ and an +access-key+ (AWSAccessKeyId).
 # 
-# Both are needed to use ASIN:
+# Both are needed to use ASIN (see Configuration for more details):
 # 
 #   configure :secret => 'your-secret', :key => 'your-key'
 # 
