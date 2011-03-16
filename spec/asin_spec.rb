@@ -32,10 +32,19 @@ describe ASIN do
       end
       config.key.should eql('bla')
     end
+    
+    it "should read configuration from yml" do
+      config = ASIN::Configuration.configure :yaml => 'spec/asin.yml'
+      config.secret.should eql('secret')
+      config.key.should eql('key')
+      config.host.should eql('host')
+      config.logger.should eql('logger')
+    end
   end
 
   context "lookup and search" do
     before do
+      ASIN::Configuration.reset
       @helper.configure :secret => @secret, :key => @key
     end
 

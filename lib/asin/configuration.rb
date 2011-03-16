@@ -1,3 +1,5 @@
+require "yaml"
+
 module ASIN
   class Configuration
     class << self
@@ -28,12 +30,22 @@ module ASIN
         init_config
         if block_given?
           yield self
+        elsif yml_path = options[:yaml] || options[:yml]
+          File.open(yml_path) { |file| YAML.load(file) }.each do |key, value|
+            send(:"#{key}=", value)
+          end
         else
           options.each do |key, value|
             send(:"#{key}=", value)
           end
         end
         self
+      end
+      
+      # Resets configuration to defaults
+      #
+      def reset
+        init_config(true)
       end
 
       private
