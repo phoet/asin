@@ -8,7 +8,11 @@ The gem is tested against 1.9.2, 1.9.1 and 1.8.7 (compatibility with Heroku-Bamb
 
 == Configuration
 
-Since Version 0.2.0 ASIN provides a Rails-Style configuration.
+Since Version 0.4.0 ASIN provides a YAML Configuration:
+
+  ASIN::Configuration.configure :yaml => 'config/asin.yml'
+
+Since Version 0.2.0 ASIN provides a Rails-Style Configuration.
 
 You can put this in a initializer (config/initializers/asin.rb):
 

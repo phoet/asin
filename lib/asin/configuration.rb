@@ -17,7 +17,11 @@ module ASIN
       #
       # You may pass options as a hash as well:
       #
-      #   ASIN::Configuration.configure(:secret => 'your-secret', :key => 'your-key')
+      #   ASIN::Configuration.configure :secret => 'your-secret', :key => 'your-key'
+      #
+      # Or configure everything using YAML:
+      #
+      #   ASIN::Configuration.configure :yaml => 'config/asin.yml'
       # 
       # ==== Options:
       # 
