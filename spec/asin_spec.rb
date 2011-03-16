@@ -70,5 +70,45 @@ describe ASIN do
       items.first.title.should =~ /Nevermind/
     end
   end
+  
+  context "cart operations" do
+    before do
+      @helper.configure :secret => @secret, :key => @key
+      @items = [
+                {:quantity=>3, :offer_listing_id=>"321"},
+                {:quantity=>2, :asin=>"foo"},
+                {:quantity=>4, :cart_item_id=>"bar"}]
+    end
+    
+    describe "#create_cart_params" do
+      it "should filter items with a valid Item Identifier" do
+        items = @items + [{:foo => "bar"}]
+        @helper.create_cart_params(items).size.should == @items.size * 2
+      end
+      
+      it "should use the default quantity of 1" do
+        items = [{:asin => "foo"}]
+        params = @helper.create_cart_params(items)
+        params["Item.1.Quantity"].should == 1
+      end
+
+      it "should reject items without a valid item identifier" do
+        items = [{:foo => "bar"}]
+        params = @helper.create_cart_params(items)
+        params.should be_empty
+      end
+      
+      it "should return a valid hash of parameters" do
+        params = @helper.create_cart_params(@items)
+        params.keys.should be_any {|m| m =~ /Item\.\d\.ASIN/ }
+        params.keys.should be_any {|m| m =~ /Item\.\d\.OfferListingId/ }
+        params.keys.should be_any {|m| m =~ /Item\.\d\.CartItemId/ }
+        params.values.should include "321"
+        params.values.should include "foo"
+        params.values.should include "bar"
+      end      
+    end
+
+  end
 end
 
