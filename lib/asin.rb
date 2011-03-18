@@ -143,85 +143,22 @@ module ASIN
     (response['ItemSearchResponse']['Items']['Item'] || []).map {|item| Item.new(item)}
   end
 
-  def cart_create(params)
-    response = call(create_cart_item_params(params).merge(:Operation => :CartCreate))
-    response["CartCreateResponse"]["Cart"]
-  end
-
-  def cart_add(params)
-    response = call(create_cart_item_params(params).merge(create_cart_params(params)).merge({:Operation => :CartAdd}))
-    response["CartAddResponse"]["Cart"]
-  end
-
-  def cart_update(params)
-    response = call(create_cart_item_params(params).merge(create_cart_params(params)).merge({:Operation => :CartModify}))
-    response["CartModifyResponse"]["Cart"]
-  end
-
-  def cart_clear(params)
-    response = call(create_cart_params(params).merge(:Operation => :CartClear))
-    response["CartClearResponse"]["Cart"]
-  end
-
-  def cart_remove(params)
-    response = call(create_cart_item_params(params).merge(create_cart_params(params)).merge({:Operation => :CartModify}))
-    response["CartModifyResponse"]["Cart"]
-  end
-  
-  # Takes an array of item => quantity pairs and returns a hash of usable parameters
-  # 
-  # [{:asin => "foo", :quantity => 2}, 
-  #  {:offer_listing_id => "bar", :quantity => 3}
-  #  {:cart_item_id => "baz", :quantity => 4}]
-  # 
-  # #=>
-  # 
-  # {
-  #   "Item.1.ASIN" => "foo",
-  #   "Item.1.Quantity" => 2,
-  #   "Item.2.OfferListingId" => "bar",
-  #   "Item.2.Quantity" => 3,
-  #   "Item.3.CartItemId" => "baz",
-  #   "Item.3.Quantity" => 3
-  # }
-
-  def create_cart_params(params)
-    raise ":cart_id is a required parameter for remote cart operations" unless params[:cart_id]
-    raise ":hmac is a required parameter for remote cart operations" unless params[:hmac]
-    {
-      :CartId => params[:cart_id],
-      :HMAC => params[:hmac]
+  # TODO (ps) add decent documentation
+  def cart(operation, items, params={})
+    operations = {
+      :add => :CartAdd,
+      :clear => :CartClear,
+      :create => :CartCreate,
+      :get => :CartGet,
+      :modify => :CartModify
     }
-  end
-
-  def create_cart_item_params(params)
-    raise "You must specify at least one item for remote cart operations" unless params[:items]
-    
-    item_identifiers = [:asin, :offer_listing_id, :cart_item_id]
-    item_identifiers_override_map = {:asin => "ASIN"}
-
-    items = params[:items]
-
-    items.reject! do |item|
-      !item.keys.any? {|key| item_identifiers.include? key}
+    items_hash = {}
+    items.each_with_index do |item, i|
+      items_hash["Item.#{i}.ASIN"]      = item[:asin]
+      items_hash["Item.#{i}.Quantity"]  = item[:quantity]
     end
-
-    items.map! do |item|
-      item.each do |key,value|
-        item[key.to_s.downcase.to_sym] = item.delete(key)
-      end
-    end
-
-    params = {}
-    items.each_with_index do |item_hash, index|
-      item_identifiers.each do |identifier|
-        param_key = item_identifiers_override_map[identifier] || 
-          identifier.to_s.split('_').map!{|m| m.capitalize}.join # poor-mans String#camelize
-        params["Item.#{index+1}.#{param_key}"] = item_hash[identifier] if item_hash.has_key?(identifier)
-      end
-      params["Item.#{index+1}.Quantity"] = item_hash[:quantity] || 1
-    end
-    params
+    response = call(params.merge(items_hash.merge(:Operation => operations[operation])))
+    response["CartCreateResponse"]["Cart"]
   end
 
   private
