@@ -39,7 +39,6 @@ module ASIN
         if yml_path = options[:yaml] || options[:yml]
           yml = File.open(yml_path) { |file| YAML.load(file) }
           if block_given?
-            puts yml
             yield self, yml
           else
             yml.each do |key, value|

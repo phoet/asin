@@ -7,6 +7,10 @@ describe ASIN do
     @key = ENV['ASIN_KEY']
     puts "configure #{@secret} and #{@key} for this test"
   end
+  
+  after do
+    ASIN::Configuration.reset
+  end
 
   context "configuration" do
     it "should fail without secret and key" do
@@ -53,7 +57,6 @@ describe ASIN do
 
   context "lookup and search" do
     before do
-      ASIN::Configuration.reset
       @helper.configure :secret => @secret, :key => @key
     end
 
