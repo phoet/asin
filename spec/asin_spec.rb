@@ -35,10 +35,19 @@ describe ASIN do
     
     it "should read configuration from yml" do
       config = ASIN::Configuration.configure :yaml => 'spec/asin.yml'
-      config.secret.should eql('secret')
-      config.key.should eql('key')
-      config.host.should eql('host')
-      config.logger.should eql('logger')
+      config.secret.should eql('secret_yml')
+      config.key.should eql('key_yml')
+      config.host.should eql('host_yml')
+      config.logger.should eql('logger_yml')
+    end
+    
+    it "should read configuration from yml with block" do
+      config = ASIN::Configuration.configure :yaml => 'spec/asin.yml' do |config, yml|
+        config.secret = nil
+        config.key = yml['secret']
+      end
+      config.secret.should be_nil
+      config.key.should eql('secret_yml')
     end
   end
 
