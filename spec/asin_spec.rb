@@ -7,6 +7,10 @@ describe ASIN do
     @key = ENV['ASIN_KEY']
     puts "configure #{@secret} and #{@key} for this test"
   end
+  
+  after do
+    ASIN::Configuration.reset
+  end
 
   context "configuration" do
     it "should fail without secret and key" do
@@ -31,6 +35,23 @@ describe ASIN do
         config.key = 'bla'
       end
       config.key.should eql('bla')
+    end
+    
+    it "should read configuration from yml" do
+      config = ASIN::Configuration.configure :yaml => 'spec/asin.yml'
+      config.secret.should eql('secret_yml')
+      config.key.should eql('key_yml')
+      config.host.should eql('host_yml')
+      config.logger.should eql('logger_yml')
+    end
+    
+    it "should read configuration from yml with block" do
+      config = ASIN::Configuration.configure :yaml => 'spec/asin.yml' do |config, yml|
+        config.secret = nil
+        config.key = yml['secret']
+      end
+      config.secret.should be_nil
+      config.key.should eql('secret_yml')
     end
   end
 

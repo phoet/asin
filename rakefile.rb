@@ -38,5 +38,5 @@ desc "execute build on travis-ci"
 task :travis_ci do
   puts "WE LOOOOOOOOOOOOVE"
   Rake::Task['spec'].invoke
-  puts "TRAVIS CI"
+  puts "TRAVIS CI!!!!!!!!!!!!!!!oneeleven"
 end
