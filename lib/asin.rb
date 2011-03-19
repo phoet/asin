@@ -6,6 +6,7 @@ require 'base64'
 require 'logger'
 
 require 'asin/item'
+require 'asin/cart'
 require 'asin/version'
 require 'asin/configuration'
 
@@ -158,7 +159,7 @@ module ASIN
       items_hash["Item.#{i}.Quantity"]  = item[:quantity]
     end
     response = call(params.merge(items_hash.merge(:Operation => operations[operation])))
-    response["CartCreateResponse"]["Cart"]
+    Cart.new(response["Cart#{operation.capitalize}Response"]['Cart'])
   end
 
   private

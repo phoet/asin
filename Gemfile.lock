@@ -19,7 +19,7 @@ GEM
     httpclient (2.1.6.1)
     httpi (0.7.9)
       rack
-    rack (1.2.2)
+    rack (1.2.1)
     rspec (2.4.0)
       rspec-core (~> 2.4.0)
       rspec-expectations (~> 2.4.0)
