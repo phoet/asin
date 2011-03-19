@@ -3,11 +3,11 @@ require 'hashie'
 module ASIN
 
   # =Item
-  # 
+  #
   # The +Item+ class is a wrapper for the Amazon XML-REST-Response.
-  # 
+  #
   # A Hashie::Mash is used for the internal data representation and can be accessed over the +raw+ attribute.
-  # 
+  #
   class Cart
 
     attr_reader :raw
@@ -15,16 +15,36 @@ module ASIN
     def initialize(hash)
       @raw = Hashie::Mash.new(hash)
     end
-    
+
     def cart_id
       @raw.CartId
+    end
+
+    def hmac
+      @raw.HMAC
+    end
+
+    def url
+      @raw.PurchaseURL
+    end
+
+    def price
+      @raw.SubTotal.FormattedPrice
+    end
+
+    def items
+      @raw.CartItems.CartItem
     end
 
     def valid?
       @raw.Request.IsValid == 'True'
     end
+
+    def empty?
+      @raw.CartItems.nil?
+    end
   end
-  
+
 end
 
 # {"Request"=>

@@ -54,7 +54,7 @@ module ASIN
         end
         self
       end
-      
+
       # Resets configuration to defaults
       #
       def reset
@@ -63,15 +63,14 @@ module ASIN
 
       private
 
-      def init_config(force=false)
-        return if @init && !force
-        @init   = true
-        @secret = ''
-        @key    = ''
-        @host   = 'webservices.amazon.com'
-        @logger = Logger.new(STDERR)
-      end
+        def init_config(force=false)
+          return if @init && !force
+          @init   = true
+          @secret = ''
+          @key    = ''
+          @host   = 'webservices.amazon.com'
+          @logger = Logger.new(STDERR)
+        end
     end
   end
 end
-
