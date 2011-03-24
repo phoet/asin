@@ -33,7 +33,7 @@ module ASIN
     end
 
     def items
-      @raw.CartItems.CartItem
+      @raw.CartItems.reject{|item| item != 'CartItem'}.map(&:last)
     end
 
     def valid?

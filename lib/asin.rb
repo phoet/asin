@@ -156,6 +156,10 @@ module ASIN
     cart(:CartAdd, create_item_params(items).merge({:CartId => cart.cart_id, :HMAC => cart.hmac}))
   end
 
+  def update_items(cart, *items)
+    cart(:CartModify, create_item_params(items).merge({:CartId => cart.cart_id, :HMAC => cart.hmac}))
+  end
+
   def clear_cart(cart)
     cart(:CartClear, {:CartId => cart.cart_id, :HMAC => cart.hmac})
   end
@@ -163,10 +167,19 @@ module ASIN
   private
 
     def create_item_params(items)
+      keyword_mappings = {
+        :asin               => 'ASIN',
+        :quantity           => 'Quantity',
+        :cart_item_id       => 'CartItemId',
+        :offer_listing_id   => 'OfferListingId',
+        :action             => 'Action'
+      }
       params = {}
       items.each_with_index do |item, i|
-        params["Item.#{i}.ASIN"]      = item[:asin]
-        params["Item.#{i}.Quantity"]  = item[:quantity]
+        item.each do |key, value|
+          next unless keyword = keyword_mappings[key]
+          params["Item.#{i}.#{keyword}"] = value
+        end
       end
       params
     end
