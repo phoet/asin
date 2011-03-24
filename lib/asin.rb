@@ -186,7 +186,6 @@ module ASIN
 
     def cart(operation, params={})
       response = call(params.merge(:Operation => operation))
-      puts response
       Cart.new(response["#{operation}Response"]['Cart'])
     end
 
