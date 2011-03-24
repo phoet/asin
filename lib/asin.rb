@@ -191,7 +191,7 @@ module ASIN
 
 
     def credentials_valid?
-      !Configuration.secret.nil? && !Configuration.key.nil?
+      Configuration.secret && Configuration.key
     end
 
     def call(params)
