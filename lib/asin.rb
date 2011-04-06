@@ -15,7 +15,7 @@ require 'asin/configuration'
 #
 # Author::    Peter Schröder  (mailto:phoetmail@googlemail.com)
 #
-# ==Usage
+# == Usage
 #
 # The ASIN module is designed as a mixin.
 #
@@ -29,6 +29,8 @@ require 'asin/configuration'
 # Both are needed to use ASIN (see Configuration for more details):
 #
 #   configure :secret => 'your-secret', :key => 'your-key'
+#
+# == Search
 #
 # After configuring your environment you can call the +lookup+ method to retrieve an +Item+ via the
 # Amazon Standard Identification Number (ASIN):
@@ -48,7 +50,7 @@ require 'asin/configuration'
 #   item.raw.ItemAttributes.ListPrice.FormattedPrice
 #   => "$39.99"
 #
-# ==Further Configuration
+# == Further Configuration
 #
 # If you need more controll over the request that is sent to the
 # Amazon API (http://docs.amazonwebservices.com/AWSEcommerceService/4-0/),
@@ -56,6 +58,34 @@ require 'asin/configuration'
 #
 #   configure :host => 'webservices.amazon.de'
 #   lookup(asin, :ResponseGroup => :Medium)
+#
+# == Cart
+#
+# ASIN helps with AWS cart-operations.
+# It currently supports the CartCreate, CartGet, CartAdd, CartModify and CartClear operations:
+#
+#   cart = create_cart({:asin => '1430218150', :quantity => 1})
+#   cart.valid?
+#   => true
+#   cart.items
+#   => [<#Hashie::Mash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
+#
+#   cart = get_cart(cart.cart_id, cart.hmac)
+#   cart.empty?
+#   => false
+#
+#   cart = clear_cart(cart)
+#   cart.empty?
+#   => true
+#
+#   cart = add_items(ccart, {:asin => '1430216263', :quantity => 2})
+#   cart.empty?
+#   => false
+#
+#   cart = @helper.update_items(@cart, {:cart_item_id => @cart.items.first.CartItemId, :action => 'SaveForLater'}, {:cart_item_id => @cart.items.first.CartItemId, :quantity => 7})
+#   cart.valid?.should be(true)
+#   cart.saved_items
+#   => [<#Hashie::Mash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
 #
 module ASIN
 
