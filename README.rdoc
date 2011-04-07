@@ -44,7 +44,7 @@ But you can also use the +client+ method to get a client-object:
   
   # create an ASIN client
   client = ASIN.client
-
+  
   # lookup an item with the amazon standard identification number (asin)
   item = client.lookup '1430218150'
   
@@ -71,28 +71,31 @@ There is an additional set of methods to support AWS cart operations:
   #just require
   require 'asin'
   
+  # create an ASIN client
+  client = ASIN.client
+  
   # create a cart with an item
-  cart = create_cart({:asin => '1430218150', :quantity => 1})
+  cart = client.create_cart({:asin => '1430218150', :quantity => 1})
   cart.items
   => [<#Hashie::Mash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
   
   # get an already existing cart from a CartId and HMAC
-  cart = get_cart('176-9182855-2326919', 'KgeVCA0YJTbuN/7Ibakrk/KnHWA=')
+  cart = client.get_cart('176-9182855-2326919', 'KgeVCA0YJTbuN/7Ibakrk/KnHWA=')
   cart.empty?
   => false
   
   # clear everything from the cart
-  cart = clear_cart(cart)
+  cart = client.clear_cart(cart)
   cart.empty?
   => true
   
   # add items to the cart
-  cart = add_items(cart, {:asin => '1430216263', :quantity => 2})
+  cart = client.add_items(cart, {:asin => '1430216263', :quantity => 2})
   cart.empty?
   => false
   
   # update items in the cart
-  cart = update_items(cart, {:cart_item_id => cart.items.first.CartItemId, :action => :SaveForLater}, {:cart_item_id => cart.items.first.CartItemId, :quantity => 7})
+  cart = client.update_items(cart, {:cart_item_id => cart.items.first.CartItemId, :action => :SaveForLater}, {:cart_item_id => cart.items.first.CartItemId, :quantity => 7})
   cart.saved_items
   => [<#Hashie::Mash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
 
