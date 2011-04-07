@@ -21,9 +21,9 @@ Gem::Specification.new do |s|
   
   s.add_dependency('crack', '~> 0.1.8')
   s.add_dependency('hashie', '~> 1.0.0')
-  s.add_dependency('httpi', '~> 0.7.9')
+  s.add_dependency('httpi', '~> 0.9.2')
   
-  s.add_development_dependency('httpclient', '~> 2.1.6.1')
-  s.add_development_dependency('rspec', '~> 2.4.0')
+  s.add_development_dependency('httpclient', '~> 2.1.7.2')
+  s.add_development_dependency('rspec', '~> 2.5.0')
   s.add_development_dependency('fuubar', '~> 0.0.3')
 end
