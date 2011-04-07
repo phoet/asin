@@ -2,35 +2,46 @@
 
 Status: http://stillmaintained.com/phoet/asin.png
 
-The gem is tested against 1.9.2, 1.9.1 and 1.8.7 (compatibility with Heroku-Bamboo-Stack[http://docs.heroku.com/stack]) and runs smoothly with Rails 3.
+The gem is tested against 1.9.2 and 1.8.7 (compatibility with Heroku-Bamboo-Stack[http://docs.heroku.com/stack]) and runs smoothly with Rails 3.
 
   gem install asin
+  gem install httpclient # optional, see HTTPI
 
 == Configuration
 
-Since Version 0.4.0 ASIN provides a YAML Configuration:
-
-  ASIN::Configuration.configure :yaml => 'config/asin.yml'
-
-Since Version 0.2.0 ASIN provides a Rails-Style Configuration.
-
-You can put this in a initializer (config/initializers/asin.rb):
+Rails style initializer (config/initializers/asin.rb):
 
   ASIN::Configuration.configure do |config|
     config.secret = 'your-secret'
     config.key = 'your-key'
   end
 
-The old configuration syntax is still valid:
+YAML style configuration:
 
+  ASIN::Configuration.configure :yaml => 'config/asin.yml'
+
+Inline style configuration:
+
+  ASIN::Configuration.configure :secret => 'your-secret', :key => 'your-key'
+  # or
+  client.configure :secret => 'your-secret', :key => 'your-key'
+
+== Usage
+
+ASIN is designed as a module, so you can include it into any object you like:
+
+  # require and include
   require 'asin'
   include ASIN
   
-  # use the configure method to setup your api credentials
-  configure :secret => 'your-secret', :key => 'your-key'
+  # lookup an ASIN
+  lookup '1430218150'
 
-== Usage  
+But you can also use the +client+ method to get a client-object:
 
+  # just require
+  require 'asin'
+  
   # create an ASIN client
   client = ASIN.client
 
@@ -54,6 +65,36 @@ The old configuration syntax is still valid:
   # access the internal data representation (Hashie::Mash)
   item.raw.ItemAttributes.ListPrice.FormattedPrice
   => $39.99
+
+There is an additional set of methods to support AWS cart operations:
+
+  #just require
+  require 'asin'
+  
+  # create a cart with an item
+  cart = create_cart({:asin => '1430218150', :quantity => 1})
+  cart.items
+  => [<#Hashie::Mash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
+  
+  # get an already existing cart from a CartId and HMAC
+  cart = get_cart('176-9182855-2326919', 'KgeVCA0YJTbuN/7Ibakrk/KnHWA=')
+  cart.empty?
+  => false
+  
+  # clear everything from the cart
+  cart = clear_cart(cart)
+  cart.empty?
+  => true
+  
+  # add items to the cart
+  cart = add_items(cart, {:asin => '1430216263', :quantity => 2})
+  cart.empty?
+  => false
+  
+  # update items in the cart
+  cart = update_items(cart, {:cart_item_id => cart.items.first.CartItemId, :action => :SaveForLater}, {:cart_item_id => cart.items.first.CartItemId, :quantity => 7})
+  cart.saved_items
+  => [<#Hashie::Mash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
 
 == HTTPI
 

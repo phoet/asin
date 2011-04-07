@@ -66,11 +66,11 @@ require 'asin/configuration'
 #
 #   cart = create_cart({:asin => '1430218150', :quantity => 1})
 #   cart.valid?
-#   => true
 #   cart.items
+#   => true
 #   => [<#Hashie::Mash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
 #
-#   cart = get_cart(cart.cart_id, cart.hmac)
+#   cart = get_cart('176-9182855-2326919', 'KgeVCA0YJTbuN/7Ibakrk/KnHWA=')
 #   cart.empty?
 #   => false
 #
@@ -78,13 +78,14 @@ require 'asin/configuration'
 #   cart.empty?
 #   => true
 #
-#   cart = add_items(ccart, {:asin => '1430216263', :quantity => 2})
+#   cart = add_items(cart, {:asin => '1430216263', :quantity => 2})
 #   cart.empty?
 #   => false
 #
-#   cart = @helper.update_items(@cart, {:cart_item_id => @cart.items.first.CartItemId, :action => 'SaveForLater'}, {:cart_item_id => @cart.items.first.CartItemId, :quantity => 7})
-#   cart.valid?.should be(true)
+#   cart = update_items(cart, {:cart_item_id => cart.items.first.CartItemId, :action => :SaveForLater}, {:cart_item_id => cart.items.first.CartItemId, :quantity => 7})
+#   cart.valid?
 #   cart.saved_items
+#   => true
 #   => [<#Hashie::Mash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
 #
 module ASIN
@@ -174,22 +175,76 @@ module ASIN
     (response['ItemSearchResponse']['Items']['Item'] || []).map {|item| Item.new(item)}
   end
 
+  # Performs an +CartCreate+ REST call against the Amazon API.
+  #
+  # Expects one ore more Item-Hashes and returns a +Cart+:
+  #
+  #   cart = create_cart({:asin => '1430218150', :quantity => 1})
+  #
+  # ==== Options:
+  #
+  # Additional parameters for the API call like this:
+  #
+  #   create_cart({:asin => '1430218150', :quantity => 1}, {:asin => '1430216263', :quantity => 1, :action => :SaveForLater})
+  #
+  # Have a look at the different cart item operation values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/]
+  #
   def create_cart(*items)
     cart(:CartCreate, create_item_params(items))
   end
 
+  # Performs an +CartGet+ REST call against the Amazon API.
+  #
+  # Expects the CartId and the HMAC to identify the returning +Cart+:
+  #
+  #   cart = get_cart('176-9182855-2326919', 'KgeVCA0YJTbuN/7Ibakrk/KnHWA=')
+  #
   def get_cart(cart_id, hmac)
     cart(:CartGet, {:CartId => cart_id, :HMAC => hmac})
   end
 
+  # Performs an +CartAdd+ REST call against the Amazon API.
+  #
+  # Expects a +Cart+ created with +create_cart+ and one ore more Item-Hashes and returns an updated +Cart+:
+  #
+  #   cart = add_items(cart, {:asin => '1430216263', :quantity => 2})
+  #
+  # ==== Options:
+  #
+  # Additional parameters for the API call like this:
+  #
+  #   add_items(cart, {:asin => '1430218150', :quantity => 1}, {:asin => '1430216263', :quantity => 1, :action => :SaveForLater})
+  #
+  # Have a look at the different cart item operation values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/]
+  #
   def add_items(cart, *items)
     cart(:CartAdd, create_item_params(items).merge({:CartId => cart.cart_id, :HMAC => cart.hmac}))
   end
 
+  # Performs an +CartModify+ REST call against the Amazon API.
+  #
+  # Expects a +Cart+ created with +create_cart+ and one ore more Item-Hashes to modify and returns an updated +Cart+:
+  #
+  #   cart = update_items(cart, {:cart_item_id => cart.items.first.CartItemId, :quantity => 7})
+  #
+  # ==== Options:
+  #
+  # Additional parameters for the API call like this:
+  #
+  #   update_items(cart, {:cart_item_id => cart.items.first.CartItemId, :action => :SaveForLater}, {:cart_item_id => cart.items.first.CartItemId, :quantity => 7})
+  #
+  # Have a look at the different cart item operation values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/]
+  #
   def update_items(cart, *items)
     cart(:CartModify, create_item_params(items).merge({:CartId => cart.cart_id, :HMAC => cart.hmac}))
   end
 
+  # Performs an +CartClear+ REST call against the Amazon API.
+  #
+  # Expects a +Cart+ created with +create_cart+ and returns an empty +Cart+:
+  #
+  #   cart = clear_cart(cart)
+  #
   def clear_cart(cart)
     cart(:CartClear, {:CartId => cart.cart_id, :HMAC => cart.hmac})
   end
@@ -208,7 +263,7 @@ module ASIN
       items.each_with_index do |item, i|
         item.each do |key, value|
           next unless keyword = keyword_mappings[key]
-          params["Item.#{i}.#{keyword}"] = value
+          params["Item.#{i}.#{keyword}"] = value.to_s
         end
       end
       params

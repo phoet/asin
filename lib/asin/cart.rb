@@ -2,9 +2,9 @@ require 'hashie'
 
 module ASIN
 
-  # =Item
+  # = Cart
   #
-  # The +Item+ class is a wrapper for the Amazon XML-REST-Response.
+  # The +Cart+ class is a wrapper for the Amazon XML-REST-Response.
   #
   # A Hashie::Mash is used for the internal data representation and can be accessed over the +raw+ attribute.
   #
