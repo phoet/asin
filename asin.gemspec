@@ -9,10 +9,10 @@ Gem::Specification.new do |s|
   s.authors     = ['Peter Schröder']
   s.email       = ['phoetmail@googlemail.com']
   s.homepage    = 'http://github.com/phoet/asin'
-  s.summary     = 'Simple interface to Amazon Item lookup.'
-  s.description = 'Amazon Simple INterface or whatever you want to call this.'
+  s.summary     = 'Simple interface to AWS Lookup, Search and Cart operations.'
+  s.description = 'Amazon Simple INterface.'
 
-  s.rubyforge_project = "asin"
+  s.rubyforge_project = "asin" # rubyforge, WTF?!
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
