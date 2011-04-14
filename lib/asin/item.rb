@@ -19,6 +19,8 @@ module ASIN
     def asin
       @raw.ASIN
     end
+    alias :id :asin
+    alias :to_param :asin
 
     def title
       @raw.ItemAttributes.Title
