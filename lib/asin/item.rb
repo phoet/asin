@@ -16,8 +16,29 @@ module ASIN
       @raw = Hashie::Mash.new(hash)
     end
 
+    def asin
+      @raw.ASIN
+    end
+
     def title
       @raw.ItemAttributes.Title
+    end
+
+    def cents
+      price_container = @raw.ItemAttributes.ListPrice || 
+                        @raw.OfferSummary.LowestUsedPrice
+      if amount = price_container.Amount
+        amount.to_i
+      end
+    end
+
+    def url
+      @raw.DetailPageURL
+    end
+
+    def description
+      (@raw.EditorialReviews.EditorialReview.Content rescue nil) ||
+      (@raw.ItemAttributes.Feature.join('.') rescue nil)
     end
   end
 
