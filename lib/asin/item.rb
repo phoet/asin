@@ -1,5 +1,6 @@
 require 'hashie'
 
+
 module ASIN
 
   # =Item
@@ -41,6 +42,10 @@ module ASIN
     def description
       (@raw.EditorialReviews.EditorialReview.Content rescue nil) ||
       (@raw.ItemAttributes.Feature.join('.') rescue nil)
+    end
+
+    def image
+      @raw.LargeImage and @raw.LargeImage.URL
     end
   end
 
