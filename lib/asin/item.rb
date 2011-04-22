@@ -24,13 +24,12 @@ module ASIN
     alias :to_param :asin
 
     def title
-      @raw.ItemAttributes.Title
+      @raw.ItemAttributes!.Title
     end
 
     def cents
-      price_container = @raw.ItemAttributes.ListPrice || 
-                        @raw.OfferSummary.LowestUsedPrice
-      if amount = price_container.Amount
+      price_container = @raw.ItemAttributes!.ListPrice || @raw.OfferSummary!.LowestUsedPrice
+      if price_container and amount = price_container.Amount
         amount.to_i
       end
     end
@@ -40,12 +39,12 @@ module ASIN
     end
 
     def description
-      (@raw.EditorialReviews.EditorialReview.Content rescue nil) ||
-      (@raw.ItemAttributes.Feature.join('.') rescue nil)
+      @raw.EditorialReviews!.EditorialReview!.Content ||
+      (features =@raw.ItemAttributes!.Feature! and features.join('.')
     end
 
     def image
-      @raw.LargeImage and @raw.LargeImage.URL
+      @raw.LargeImage!.URL
     end
   end
 
