@@ -40,7 +40,7 @@ module ASIN
 
     def description
       @raw.EditorialReviews!.EditorialReview!.Content ||
-      (features =@raw.ItemAttributes!.Feature! and features.join('.')
+      (features = @raw.ItemAttributes!.Feature! and features.join('.'))
     end
 
     def image
