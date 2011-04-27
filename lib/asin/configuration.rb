@@ -5,6 +5,7 @@ module ASIN
     class << self
 
       attr_accessor :secret, :key, :host, :logger
+      attr_accessor :item_type
 
       # Rails initializer configuration.
       #
@@ -65,11 +66,12 @@ module ASIN
 
         def init_config(force=false)
           return if @init && !force
-          @init   = true
-          @secret = ''
-          @key    = ''
-          @host   = 'webservices.amazon.com'
-          @logger = Logger.new(STDERR)
+          @init       = true
+          @secret     = ''
+          @key        = ''
+          @host       = 'webservices.amazon.com'
+          @logger     = Logger.new(STDERR)
+          @item_type  = SimpleItem
         end
     end
   end

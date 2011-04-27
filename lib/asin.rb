@@ -131,7 +131,7 @@ module ASIN
   #
   def lookup(asin, params={})
     response = call(params.merge(:Operation => :ItemLookup, :ItemId => asin))
-    Item.new(response['ItemLookupResponse']['Items']['Item'])
+    handle_item(response['ItemLookupResponse']['Items']['Item'])
   end
 
   # Performs an +ItemSearch+ REST call against the Amazon API.
@@ -153,7 +153,7 @@ module ASIN
   def search_keywords(*keywords)
     params = keywords.last.is_a?(Hash) ? keywords.pop : {:SearchIndex => :Books}
     response = call(params.merge(:Operation => :ItemSearch, :Keywords => keywords.join(' ')))
-    (response['ItemSearchResponse']['Items']['Item'] || []).map {|item| Item.new(item)}
+    (response['ItemSearchResponse']['Items']['Item'] || []).map {|item| handle_item(item)}
   end
 
   # Performs an +ItemSearch+ REST call against the Amazon API.
@@ -172,7 +172,7 @@ module ASIN
   #
   def search(params={:SearchIndex => :Books})
     response = call(params.merge(:Operation => :ItemSearch))
-    (response['ItemSearchResponse']['Items']['Item'] || []).map {|item| Item.new(item)}
+    (response['ItemSearchResponse']['Items']['Item'] || []).map {|item| handle_item(item)}
   end
 
   # Performs an +CartCreate+ REST call against the Amazon API.
@@ -250,6 +250,10 @@ module ASIN
   end
 
   private
+  
+    def handle_item(item)
+      Configuration.item_type.is_a?(Class) ? Configuration.item_type.new(item) : item
+    end
 
     def create_item_params(items)
       keyword_mappings = {

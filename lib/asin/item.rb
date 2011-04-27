@@ -2,13 +2,13 @@ require 'hashie'
 
 module ASIN
 
-  # =Item
+  # =SimpleItem
   #
-  # The +Item+ class is a wrapper for the Amazon XML-REST-Response.
+  # The +SimpleItem+ class is a wrapper for the Amazon XML-REST-Response.
   #
   # A Hashie::Mash is used for the internal data representation and can be accessed over the +raw+ attribute.
   #
-  class Item
+  class SimpleItem
 
     attr_reader :raw
 

@@ -64,6 +64,24 @@ module ASIN
         item = @helper.lookup(ANY_ASIN)
         item.title.should =~ /Learn Objective/
       end
+      
+      it "should return a custom item class" do
+        module TEST
+          class TestItem
+            attr_accessor :testo
+            def initialize(hash)
+              @testo = hash
+            end
+          end
+        end
+        @helper.configure :item_type => TEST::TestItem
+        @helper.lookup(ANY_ASIN).testo.should_not be_nil
+      end
+      
+      it "should return a raw value" do
+        @helper.configure :item_type => :raw
+        @helper.lookup(ANY_ASIN)['ItemAttributes']['Title'].should_not be_nil
+      end
 
       it "should search_keywords a book with fulltext" do
         items = @helper.search_keywords 'Learn', 'Objective-C'
