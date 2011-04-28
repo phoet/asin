@@ -39,8 +39,18 @@ module ASIN
     end
 
     def description
-      @raw.EditorialReviews!.EditorialReview!.Content ||
-      (features = @raw.ItemAttributes!.Feature! and features.join('.'))
+      desc = ''
+      review = @raw.EditorialReviews!.EditorialReview!
+      if review
+        if review.respond_to?(:Content)
+          desc
+        else
+          review.map{|item| item.Content}.join('.')
+        end
+      else
+        desc = (features = @raw.ItemAttributes!.Feature! and features.join('.'))
+      end
+      desc
     end
 
     def image
