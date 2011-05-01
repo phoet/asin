@@ -32,7 +32,7 @@ require 'asin/configuration'
 #
 # == Search
 #
-# After configuring your environment you can call the +lookup+ method to retrieve an +Item+ via the
+# After configuring your environment you can call the +lookup+ method to retrieve an +SimpleItem+ via the
 # Amazon Standard Identification Number (ASIN):
 #
 #   item = lookup '1430218150'
@@ -45,7 +45,7 @@ require 'asin/configuration'
 #   items.first.title
 #   => "Learn Objective-C on the Mac (Learn Series)"
 #
-# The +Item+ uses a Hashie::Mash as its internal data representation and you can get fetched data from it:
+# The +SimpleItem+ uses a Hashie::Mash as its internal data representation and you can get fetched data from it:
 #
 #   item.raw.ItemAttributes.ListPrice.FormattedPrice
 #   => "$39.99"
@@ -117,7 +117,7 @@ module ASIN
 
   # Performs an +ItemLookup+ REST call against the Amazon API.
   #
-  # Expects an ASIN (Amazon Standard Identification Number) and returns an +Item+:
+  # Expects an ASIN (Amazon Standard Identification Number) and returns an +SimpleItem+:
   #
   #   item = lookup '1430218150'
   #   item.title
@@ -129,14 +129,14 @@ module ASIN
   #
   #   lookup(asin, :ResponseGroup => :Medium)
   #
-  def lookup(asin, params={})
+  def lookup(asin, params={:ResponseGroup => :Medium})
     response = call(params.merge(:Operation => :ItemLookup, :ItemId => asin))
     handle_item(response['ItemLookupResponse']['Items']['Item'])
   end
 
   # Performs an +ItemSearch+ REST call against the Amazon API.
   #
-  # Expects a search-string which can be an arbitrary array of strings (ASINs f.e.) and returns a list of +Items+:
+  # Expects a search-string which can be an arbitrary array of strings (ASINs f.e.) and returns a list of +SimpleItem+s:
   #
   #   items = search_keywords 'Learn', 'Objective-C'
   #   items.first.title
@@ -151,14 +151,14 @@ module ASIN
   # Have a look at the different search index values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/]
   #
   def search_keywords(*keywords)
-    params = keywords.last.is_a?(Hash) ? keywords.pop : {:SearchIndex => :Books}
+    params = keywords.last.is_a?(Hash) ? keywords.pop : {:SearchIndex => :Books, :ResponseGroup => :Medium}
     response = call(params.merge(:Operation => :ItemSearch, :Keywords => keywords.join(' ')))
     (response['ItemSearchResponse']['Items']['Item'] || []).map {|item| handle_item(item)}
   end
 
   # Performs an +ItemSearch+ REST call against the Amazon API.
   #
-  # Expects a Hash of search params where and returns a list of +Items+:
+  # Expects a Hash of search params where and returns a list of +SimpleItem+s:
   #
   #   items = search :SearchIndex => :Music
   #
@@ -170,14 +170,14 @@ module ASIN
   #
   # Have a look at the different search index values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/]
   #
-  def search(params={:SearchIndex => :Books})
+  def search(params={:SearchIndex => :Books, :ResponseGroup => :Medium})
     response = call(params.merge(:Operation => :ItemSearch))
     (response['ItemSearchResponse']['Items']['Item'] || []).map {|item| handle_item(item)}
   end
 
   # Performs an +CartCreate+ REST call against the Amazon API.
   #
-  # Expects one ore more Item-Hashes and returns a +Cart+:
+  # Expects one ore more item-hashes and returns a +SimpleCart+:
   #
   #   cart = create_cart({:asin => '1430218150', :quantity => 1})
   #
@@ -195,7 +195,7 @@ module ASIN
 
   # Performs an +CartGet+ REST call against the Amazon API.
   #
-  # Expects the CartId and the HMAC to identify the returning +Cart+:
+  # Expects the CartId and the HMAC to identify the returning +SimpleCart+:
   #
   #   cart = get_cart('176-9182855-2326919', 'KgeVCA0YJTbuN/7Ibakrk/KnHWA=')
   #
@@ -205,7 +205,7 @@ module ASIN
 
   # Performs an +CartAdd+ REST call against the Amazon API.
   #
-  # Expects a +Cart+ created with +create_cart+ and one ore more Item-Hashes and returns an updated +Cart+:
+  # Expects a +SimpleCart+ created with +create_cart+ and one ore more Item-Hashes and returns an updated +SimpleCart+:
   #
   #   cart = add_items(cart, {:asin => '1430216263', :quantity => 2})
   #
@@ -223,7 +223,7 @@ module ASIN
 
   # Performs an +CartModify+ REST call against the Amazon API.
   #
-  # Expects a +Cart+ created with +create_cart+ and one ore more Item-Hashes to modify and returns an updated +Cart+:
+  # Expects a +SimpleCart+ created with +create_cart+ and one ore more Item-Hashes to modify and returns an updated +SimpleCart+:
   #
   #   cart = update_items(cart, {:cart_item_id => cart.items.first.CartItemId, :quantity => 7})
   #
@@ -241,7 +241,7 @@ module ASIN
 
   # Performs an +CartClear+ REST call against the Amazon API.
   #
-  # Expects a +Cart+ created with +create_cart+ and returns an empty +Cart+:
+  # Expects a +SimpleCart+ created with +create_cart+ and returns an empty +SimpleCart+:
   #
   #   cart = clear_cart(cart)
   #
@@ -275,7 +275,8 @@ module ASIN
 
     def cart(operation, params={})
       response = call(params.merge(:Operation => operation))
-      Cart.new(response["#{operation}Response"]['Cart'])
+      cart = response["#{operation}Response"]['Cart']
+      Configuration.cart_type.is_a?(Class) ? Configuration.cart_type.new(cart) : cart
     end
 
 

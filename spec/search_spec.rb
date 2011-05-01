@@ -64,7 +64,17 @@ module ASIN
         item = @helper.lookup(ANY_ASIN)
         item.title.should =~ /Learn Objective/
       end
-      
+
+      it "should have metadata" do
+        item = @helper.lookup(ANY_ASIN, :ResponseGroup => :Medium)
+        item.asin.should eql(ANY_ASIN)
+        item.title.should =~ /Learn Objective/
+        item.amount.should eql(3999)
+        item.details_url.should eql('http://www.amazon.com/Learn-Objective-C-Mac-Scott-Knaster/dp/1430218150%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1430218150')
+        item.image_url.should eql('http://ecx.images-amazon.com/images/I/41kq5bDvnUL.jpg')
+        item.review.should =~ /Take your coding skills to the next level/
+      end
+
       it "should return a custom item class" do
         module TEST
           class TestItem
@@ -77,7 +87,7 @@ module ASIN
         @helper.configure :item_type => TEST::TestItem
         @helper.lookup(ANY_ASIN).testo.should_not be_nil
       end
-      
+
       it "should return a raw value" do
         @helper.configure :item_type => :raw
         @helper.lookup(ANY_ASIN)['ItemAttributes']['Title'].should_not be_nil

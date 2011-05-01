@@ -1,6 +1,5 @@
 require 'hashie'
 
-
 module ASIN
 
   # =SimpleItem
@@ -20,40 +19,24 @@ module ASIN
     def asin
       @raw.ASIN
     end
-    alias :id :asin
-    alias :to_param :asin
 
     def title
       @raw.ItemAttributes!.Title
     end
 
-    def cents
-      price_container = @raw.ItemAttributes!.ListPrice || @raw.OfferSummary!.LowestUsedPrice
-      if price_container and amount = price_container.Amount
-        amount.to_i
-      end
+    def amount
+      @raw.ItemAttributes!.ListPrice!.Amount.to_i
     end
 
-    def url
+    def details_url
       @raw.DetailPageURL
     end
 
-    def description
-      desc = ''
-      review = @raw.EditorialReviews!.EditorialReview!
-      if review
-        if review.respond_to?(:Content)
-          desc
-        else
-          review.map{|item| item.Content}.join('.')
-        end
-      else
-        desc = (features = @raw.ItemAttributes!.Feature! and features.join('.'))
-      end
-      desc
+    def review
+       @raw.EditorialReviews!.EditorialReview!.Content
     end
 
-    def image
+    def image_url
       @raw.LargeImage!.URL
     end
   end

@@ -5,7 +5,7 @@ module ASIN
     class << self
 
       attr_accessor :secret, :key, :host, :logger
-      attr_accessor :item_type
+      attr_accessor :item_type, :cart_type
 
       # Rails initializer configuration.
       #
@@ -34,6 +34,8 @@ module ASIN
       # [key] the API access key
       # [host] the host, which defaults to 'webservices.amazon.com'
       # [logger] a different logger than logging to STDERR (nil for no logging)
+      # [item_type] a different class for SimpleItem, use :raw for a plain mash
+      # [cart_type] a different class for SimpleCart, use :raw for a plain mash
       #
       def configure(options={})
         init_config
@@ -72,6 +74,7 @@ module ASIN
           @host       = 'webservices.amazon.com'
           @logger     = Logger.new(STDERR)
           @item_type  = SimpleItem
+          @cart_type  = SimpleCart
         end
     end
   end

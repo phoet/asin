@@ -26,6 +26,8 @@ Inline style configuration:
   # or
   client.configure :secret => 'your-secret', :key => 'your-key'
 
+Have a look at ASIN::Configuration class for all the details.
+
 == Usage
 
 ASIN is designed as a module, so you can include it into any object you like:

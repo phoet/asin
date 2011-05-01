@@ -62,7 +62,7 @@ module ASIN
 
       end
 
-      context Cart do
+      context SimpleCart do
 
         before do
           @helper.configure :secret => @secret, :key => @key
@@ -139,7 +139,7 @@ module ASIN
         end
 
         it "should handle response data" do
-          cart = Cart.new(@two_items)
+          cart = SimpleCart.new(@two_items)
           cart.valid?.should be(true)
           cart.cart_id.should eql('186-8702292-9782208')
           cart.hmac.should eql('Ck5MXUE+OQiC/Jh8u6NhBf5FbV8=')
@@ -149,7 +149,7 @@ module ASIN
         end
 
         it "should handle one item" do
-          cart = Cart.new(@two_items)
+          cart = SimpleCart.new(@two_items)
           cart.items.first.CartItemId eql('U3G241HVLLB8N6')
         end
 

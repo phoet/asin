@@ -2,13 +2,13 @@ require 'hashie'
 
 module ASIN
 
-  # = Cart
+  # = SimpleCart
   #
-  # The +Cart+ class is a wrapper for the Amazon XML-REST-Response.
+  # The +SimpleCart+ class is a wrapper for the Amazon XML-REST-Response.
   #
   # A Hashie::Mash is used for the internal data representation and can be accessed over the +raw+ attribute.
   #
-  class Cart
+  class SimpleCart
 
     attr_reader :raw
 
