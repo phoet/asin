@@ -10,7 +10,7 @@ RSpec::Core::RakeTask.new do |t|
 end
 
 Rake::RDocTask.new(:rdoc_dev) do |rd|
-  rd.rdoc_files.include("lib/**/*.rb", "README.rdoc")
+  rd.rdoc_files.include(File.readlines('.document').map(&:strip))
   rd.options + ['-a', '--inline-source', '--charset=UTF-8']
 end
 
