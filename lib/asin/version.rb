@@ -1,3 +1,3 @@
 module ASIN
-  VERSION = "0.4.0.beta1"
+  VERSION = "0.4.0"
 end
