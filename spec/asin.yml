@@ -1,0 +1,4 @@
+secret: 'secret_yml'
+key: 'key_yml'
+host: 'host_yml'
+logger: 'logger_yml'

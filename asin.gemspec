@@ -9,10 +9,10 @@ Gem::Specification.new do |s|
   s.authors     = ['Peter Schröder']
   s.email       = ['phoetmail@googlemail.com']
   s.homepage    = 'http://github.com/phoet/asin'
-  s.summary     = 'Simple interface to Amazon Item lookup.'
-  s.description = 'Amazon Simple INterface or whatever you want to call this.'
+  s.summary     = 'Simple interface to AWS Lookup, Search and Cart operations.'
+  s.description = 'Amazon Simple INterface.'
 
-  s.rubyforge_project = "asin"
+  s.rubyforge_project = "asin" # rubyforge, WTF?!
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
@@ -21,9 +21,9 @@ Gem::Specification.new do |s|
   
   s.add_dependency('crack', '~> 0.1.8')
   s.add_dependency('hashie', '~> 1.0.0')
-  s.add_dependency('httpi', '~> 0.7.9')
+  s.add_dependency('httpi', '~> 0.9.2')
   
-  s.add_development_dependency('httpclient', '~> 2.1.6.1')
-  s.add_development_dependency('rspec', '~> 2.4.0')
-  s.add_development_dependency('fuubar', '~> 0.0.3')
+  s.add_development_dependency('httpclient', '~> 2.2.0.2')
+  s.add_development_dependency('rspec', '~> 2.6.0')
+  s.add_development_dependency('fuubar', '~> 0.0.4')
 end

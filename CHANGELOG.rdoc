@@ -1,0 +1,25 @@
+== 0.4.0.beta2
+
+* add configuration option for item/cart class
+* add more functionality to item class
+
+== 0.4.0.beta1
+
+* added cart operations
+* added yml configuration
+
+== 0.3.0
+
+* add search_keywords method
+* open up search method to be more flexible
+
+== 0.2.0
+
+* rails initializer configuration
+* rpsec for tests
+
+== 0.1.0
+
+* add logger
+* use HTTPI as HTTP-adapter
+* use bundler for dependencies
