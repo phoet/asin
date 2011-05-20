@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency('hashie', '~> 1.0.0')
   s.add_dependency('httpi', '~> 0.9.2')
   
-  s.add_development_dependency('httpclient', '~> 2.1.7.2')
-  s.add_development_dependency('rspec', '~> 2.5.0')
-  s.add_development_dependency('fuubar', '~> 0.0.3')
+  s.add_development_dependency('httpclient', '~> 2.2.0.2')
+  s.add_development_dependency('rspec', '~> 2.6.0')
+  s.add_development_dependency('fuubar', '~> 0.0.4')
 end
