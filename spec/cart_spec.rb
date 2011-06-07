@@ -5,7 +5,7 @@ module ASIN
 
     before do
       ASIN::Configuration.reset
-      @helper = ASIN.client
+      @helper = ASIN::Client.instance
       @helper.configure :logger => nil
 
       @secret = ENV['ASIN_SECRET']

@@ -1,4 +1,5 @@
 require "yaml"
+require 'logger'
 
 module ASIN
   class Configuration
@@ -34,8 +35,8 @@ module ASIN
       # [key] the API access key
       # [host] the host, which defaults to 'webservices.amazon.com'
       # [logger] a different logger than logging to STDERR (nil for no logging)
-      # [item_type] a different class for SimpleItem, use :raw for a plain mash
-      # [cart_type] a different class for SimpleCart, use :raw for a plain mash
+      # [item_type] a different class for SimpleItem, use :mash / :rash for Hashie::Mash / Hashie::Rash or :raw for a plain hash
+      # [cart_type] a different class for SimpleCart, use :mash / :rash for Hashie::Mash / Hashie::Rash or :raw for a plain hash
       #
       def configure(options={})
         init_config
