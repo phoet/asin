@@ -6,7 +6,8 @@ module ASIN
     class << self
 
       attr_accessor :secret, :key, :host, :logger
-      attr_accessor :item_type, :cart_type
+      attr_accessor :item_type, :cart_type, :node_type
+      attr_accessor :version, :associate_tag
 
       # Rails initializer configuration.
       #
@@ -37,6 +38,9 @@ module ASIN
       # [logger] a different logger than logging to STDERR (nil for no logging)
       # [item_type] a different class for SimpleItem, use :mash / :rash for Hashie::Mash / Hashie::Rash or :raw for a plain hash
       # [cart_type] a different class for SimpleCart, use :mash / :rash for Hashie::Mash / Hashie::Rash or :raw for a plain hash
+      # [node_type] a different class for SimpleNode, use :mash / :rash for Hashie::Mash / Hashie::Rash or :raw for a plain hash
+      # [version] a custom version of the API calls. Default is 2010-11-01
+      # [associate_tag] your Amazon associate tag. Default is blank.
       #
       def configure(options={})
         init_config
@@ -69,13 +73,16 @@ module ASIN
 
         def init_config(force=false)
           return if @init && !force
-          @init       = true
-          @secret     = ''
-          @key        = ''
-          @host       = 'webservices.amazon.com'
-          @logger     = Logger.new(STDERR)
-          @item_type  = SimpleItem
-          @cart_type  = SimpleCart
+          @init          = true
+          @secret        = ''
+          @key           = ''
+          @host          = 'webservices.amazon.com'
+          @logger        = Logger.new(STDERR)
+          @item_type     = SimpleItem
+          @cart_type     = SimpleCart
+          @node_type     = SimpleNode
+          @version       = '2010-11-01'
+          @associate_tag = ''
         end
     end
   end
