@@ -82,6 +82,21 @@ require 'base64'
 #   => true
 #   => [<#Hashie::Mash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
 #
+# == Browse nodes
+#
+#   In order to browse Amazon nodes, you can use +browse_node+ method:
+#
+#   node = browse_node({ :BrowseNodeId => 130 })
+#   node.node_id
+#   node.name
+#   node.children
+#   node.ancestors
+#
+#   node = browse_node({ :BrowseNodeId => 130, :ResponseGroup => :TopSellers })
+#   node.node_id
+#   node.name
+#   node.top_item_set
+#
 module ASIN
   module Client
 
@@ -168,6 +183,11 @@ module ASIN
     def search(params={:SearchIndex => :Books, :ResponseGroup => :Medium})
       response = call(params.merge(:Operation => :ItemSearch))
       (response['ItemSearchResponse']['Items']['Item'] || []).map {|item| handle_item(item)}
+    end
+
+    def browse_node( node_id, params={})
+      response = call(params.merge(:Operation => :BrowseNodeLookup, :BrowseNodeId => node_id))
+      handle_type( response['BrowseNodeLookupResponse']['BrowseNodes']['BrowseNode'], Configuration.node_type )
     end
 
     # Performs an +CartCreate+ REST call against the Amazon API.
@@ -319,6 +339,10 @@ module ASIN
       # nice tutorial http://cloudcarpenters.com/blog/amazon_products_api_request_signing/
       params[:Service] = :AWSECommerceService
       params[:AWSAccessKeyId] = Configuration.key
+
+      params[:Version] = Configuration.version unless Configuration.version.empty?
+      params[:AssociateTag] = Configuration.associate_tag unless Configuration.associate_tag.empty?
+
       # utc timestamp needed for signing
       params[:Timestamp] = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%SZ')
 
