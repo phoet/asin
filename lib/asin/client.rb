@@ -319,6 +319,10 @@ module ASIN
       # nice tutorial http://cloudcarpenters.com/blog/amazon_products_api_request_signing/
       params[:Service] = :AWSECommerceService
       params[:AWSAccessKeyId] = Configuration.key
+
+      params[:Version] = Configuration.version unless Configuration.version.empty?
+      params[:AssociateTag] = Configuration.associate_tag unless Configuration.associate_tag.empty?
+
       # utc timestamp needed for signing
       params[:Timestamp] = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%SZ')
 
