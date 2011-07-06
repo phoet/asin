@@ -2,7 +2,6 @@ require 'spec_helper'
 
 module ASIN
   describe ASIN do
-
     before do
       ASIN::Configuration.reset
       @helper = ASIN::Client.instance
@@ -17,7 +16,7 @@ module ASIN
     context "cart" do
 
       it "should create a cart" do
-        cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1}, {:asin => OTHER_ASIN, :quantity => 2})
+        cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1}, {:asin => ANY_OTHER_ASIN, :quantity => 2})
         cart.valid?.should be(true)
         cart.empty?.should be(false)
       end
@@ -47,7 +46,7 @@ module ASIN
         end
 
         it "should add items to a cart" do
-          cart = @helper.add_items(@cart, {:asin => OTHER_ASIN, :quantity => 2})
+          cart = @helper.add_items(@cart, {:asin => ANY_OTHER_ASIN, :quantity => 2})
           cart.valid?.should be(true)
           cart.empty?.should be(false)
           cart.items.should have(2).things

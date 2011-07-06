@@ -3,8 +3,9 @@ require 'rspec'
 require 'asin'
 require 'pp'
 
-ANY_ASIN    = '1430218150'
-OTHER_ASIN  = '1430216263'
+ANY_ASIN            = '1430218150'
+ANY_OTHER_ASIN      = '1430216263'
+ANY_BROWSE_NODE_ID  = '163357'
 
 RSpec.configure do |c|
   c.mock_with :rspec

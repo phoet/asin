@@ -47,7 +47,7 @@ require 'base64'
 # == Further Configuration
 #
 # If you need more controll over the request that is sent to the
-# Amazon API (http://docs.amazonwebservices.com/AWSEcommerceService/4-0/),
+# Amazon API (http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/),
 # you can override some defaults or add additional query-parameters to the REST calls:
 #
 #   configure :host => 'webservices.amazon.de'
@@ -82,20 +82,21 @@ require 'base64'
 #   => true
 #   => [<#Hashie::Mash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
 #
-# == Browse nodes
+# == Nodes
 #
-#   In order to browse Amazon nodes, you can use +browse_node+ method:
+# In order to browse Amazon nodes, you can use +browse_node+ method:
 #
-#   node = browse_node({ :BrowseNodeId => 130 })
+#   node = browse_node('163357')
 #   node.node_id
+#   => '163357'
 #   node.name
+#   => 'Comedy'
 #   node.children
 #   node.ancestors
 #
-#   node = browse_node({ :BrowseNodeId => 130, :ResponseGroup => :TopSellers })
-#   node.node_id
-#   node.name
-#   node.top_item_set
+# you can configure the +:ResponseGroup+ option to your needs:
+#
+#   node = browse_node('163357', :ResponseGroup => :TopSellers)
 #
 module ASIN
   module Client
@@ -158,7 +159,7 @@ module ASIN
     #
     #   search_keywords('nirvana', 'never mind', :SearchIndex => :Music)
     #
-    # Have a look at the different search index values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/]
+    # Have a look at the different search index values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/]
     #
     def search_keywords(*keywords)
       params = keywords.last.is_a?(Hash) ? keywords.pop : {:SearchIndex => :Books, :ResponseGroup => :Medium}
@@ -178,16 +179,30 @@ module ASIN
     #
     #   search(:Keywords => 'nirvana', :SearchIndex => :Music)
     #
-    # Have a look at the different search index values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/]
+    # Have a look at the different search index values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/]
     #
     def search(params={:SearchIndex => :Books, :ResponseGroup => :Medium})
       response = call(params.merge(:Operation => :ItemSearch))
       (response['ItemSearchResponse']['Items']['Item'] || []).map {|item| handle_item(item)}
     end
 
-    def browse_node( node_id, params={})
+    # Performs an +BrowseNodeLookup+ REST call against the Amazon API.
+    #
+    # Expects a Hash of search params where and returns a +SimpleNode+:
+    #
+    #   node = browse_node '163357'
+    #
+    # ==== Options:
+    #
+    # Additional parameters for the API call like this:
+    #
+    #   browse_node('163357', :ResponseGroup => :TopSellers)
+    #
+    # Have a look at the different browse node values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/]
+    #
+    def browse_node(node_id, params={:ResponseGroup => :BrowseNodeInfo})
       response = call(params.merge(:Operation => :BrowseNodeLookup, :BrowseNodeId => node_id))
-      handle_type( response['BrowseNodeLookupResponse']['BrowseNodes']['BrowseNode'], Configuration.node_type )
+      handle_type(response['BrowseNodeLookupResponse']['BrowseNodes']['BrowseNode'], Configuration.node_type)
     end
 
     # Performs an +CartCreate+ REST call against the Amazon API.
@@ -202,7 +217,7 @@ module ASIN
     #
     #   create_cart({:asin => '1430218150', :quantity => 1}, {:asin => '1430216263', :quantity => 1, :action => :SaveForLater})
     #
-    # Have a look at the different cart item operation values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/]
+    # Have a look at the different cart item operation values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/]
     #
     def create_cart(*items)
       cart(:CartCreate, create_item_params(items))
@@ -230,7 +245,7 @@ module ASIN
     #
     #   add_items(cart, {:asin => '1430218150', :quantity => 1}, {:asin => '1430216263', :quantity => 1, :action => :SaveForLater})
     #
-    # Have a look at the different cart item operation values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/]
+    # Have a look at the different cart item operation values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/]
     #
     def add_items(cart, *items)
       cart(:CartAdd, create_item_params(items).merge({:CartId => cart.cart_id, :HMAC => cart.hmac}))
@@ -248,7 +263,7 @@ module ASIN
     #
     #   update_items(cart, {:cart_item_id => cart.items.first.CartItemId, :action => :SaveForLater}, {:cart_item_id => cart.items.first.CartItemId, :quantity => 7})
     #
-    # Have a look at the different cart item operation values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/]
+    # Have a look at the different cart item operation values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/]
     #
     def update_items(cart, *items)
       cart(:CartModify, create_item_params(items).merge({:CartId => cart.cart_id, :HMAC => cart.hmac}))

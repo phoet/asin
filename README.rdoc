@@ -70,10 +70,6 @@ But you can also use the +instance+ method to get a proxy-object:
 
 There is an additional set of methods to support AWS cart operations:
 
-  #just require
-  require 'asin'
-  
-  # create an ASIN client
   client = ASIN::Client.instance
   
   # create a cart with an item
@@ -101,14 +97,26 @@ There is an additional set of methods to support AWS cart operations:
   cart.saved_items
   => [<#Hashie::Mash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
 
-== Item / Cart Response
+It's also possible to access browse nodes:
+
+  client = ASIN::Client.instance
+  
+  # create a cart with an item
+  node = client.browse_node('163357', :ResponseGroup => :TopSellers)
+  node.node_id
+  => '163357'
+  node.name
+  => 'Comedy'
+
+== Response Configuration
 
 ASIN is customizable in the way it returns Responses from Amazon. 
-By default it will return +SimpleItem+ or +SimpleCart+ instances,
+By default it will return +SimpleItem+, +SimpleCart+ or +SimpleNode+ instances,
 but you can override this behavior for using your custom Classes:
 
   client.configure :item_type => YourItemClass
   client.configure :cart_type => YourCartClass
+  client.configure :node_type => YourNodeClass
 
 You can also use built-in +:raw+, +:mash+ or +:rash+ types.
 Since +rash+ is an additional library, you need to add it to your gemfile if you want to use it:

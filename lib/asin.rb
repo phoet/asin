@@ -1,8 +1,8 @@
 module ASIN
+  autoload :Client,         'asin/client'
+  autoload :SimpleItem,     'asin/simple_item'
+  autoload :SimpleCart,     'asin/simple_cart'
+  autoload :SimpleNode,     'asin/simple_node'
+  autoload :Version,        'asin/version'
+  autoload :Configuration,  'asin/configuration'
 end
-ASIN.autoload :Client,         'asin/client'
-ASIN.autoload :SimpleItem,     'asin/simple_item'
-ASIN.autoload :SimpleCart,     'asin/simple_cart'
-ASIN.autoload :SimpleNode,     'asin/simple_node'
-ASIN.autoload :Version,        'asin/version'
-ASIN.autoload :Configuration,  'asin/configuration'
