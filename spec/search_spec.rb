@@ -112,7 +112,7 @@ module ASIN
 
       it "should search_keywords never mind music" do
         items = @helper.search_keywords 'nirvana', 'never mind', :SearchIndex => :Music
-        items.should have(8).things
+        items.should have(9).things
 
         items.first.title.should =~ /Nevermind/
       end

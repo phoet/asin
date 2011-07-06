@@ -127,4 +127,4 @@ As a default HTTPI uses _httpclient_ so you should add that dependency to your p
 
 Have a look at the RDOC[http://rdoc.info/projects/phoet/asin] for this project, if you want further information.
 
-For more information on the REST calls, have a look at the whole Amazon E-Commerce-API[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/].
+For more information on the REST calls, have a look at the whole Amazon E-Commerce-API[http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/].
