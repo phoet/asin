@@ -39,13 +39,13 @@ ASIN is designed as a module, so you can include it into any object you like:
   # lookup an ASIN
   lookup '1430218150'
 
-But you can also use the +client+ method to get a client-object:
+But you can also use the +instance+ method to get a proxy-object:
 
   # just require
   require 'asin'
   
   # create an ASIN client
-  client = ASIN.client
+  client = ASIN::Client.instance
   
   # lookup an item with the amazon standard identification number (asin)
   item = client.lookup '1430218150'
@@ -70,11 +70,7 @@ But you can also use the +client+ method to get a client-object:
 
 There is an additional set of methods to support AWS cart operations:
 
-  #just require
-  require 'asin'
-  
-  # create an ASIN client
-  client = ASIN.client
+  client = ASIN::Client.instance
   
   # create a cart with an item
   cart = client.create_cart({:asin => '1430218150', :quantity => 1})
@@ -101,6 +97,32 @@ There is an additional set of methods to support AWS cart operations:
   cart.saved_items
   => [<#Hashie::Mash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
 
+It's also possible to access browse nodes:
+
+  client = ASIN::Client.instance
+  
+  # create a cart with an item
+  node = client.browse_node('163357', :ResponseGroup => :TopSellers)
+  node.node_id
+  => '163357'
+  node.name
+  => 'Comedy'
+
+== Response Configuration
+
+ASIN is customizable in the way it returns Responses from Amazon. 
+By default it will return +SimpleItem+, +SimpleCart+ or +SimpleNode+ instances,
+but you can override this behavior for using your custom Classes:
+
+  client.configure :item_type => YourItemClass
+  client.configure :cart_type => YourCartClass
+  client.configure :node_type => YourNodeClass
+
+You can also use built-in +:raw+, +:mash+ or +:rash+ types.
+Since +rash+ is an additional library, you need to add it to your gemfile if you want to use it:
+
+  gem 'rash'
+
 == HTTPI
 
 ASIN uses HTTPI[https://github.com/rubiii/httpi] as a HTTP-Client adapter.
@@ -113,4 +135,4 @@ As a default HTTPI uses _httpclient_ so you should add that dependency to your p
 
 Have a look at the RDOC[http://rdoc.info/projects/phoet/asin] for this project, if you want further information.
 
-For more information on the REST calls, have a look at the whole Amazon E-Commerce-API[http://docs.amazonwebservices.com/AWSEcommerceService/4-0/].
+For more information on the REST calls, have a look at the whole Amazon E-Commerce-API[http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/].

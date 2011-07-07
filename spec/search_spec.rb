@@ -4,7 +4,7 @@ module ASIN
   describe ASIN do
     before do
       ASIN::Configuration.reset
-      @helper = ASIN.client
+      @helper = ASIN::Client.instance
       @helper.configure :logger => nil
 
       @secret = ENV['ASIN_SECRET']
@@ -93,6 +93,16 @@ module ASIN
         @helper.lookup(ANY_ASIN)['ItemAttributes']['Title'].should_not be_nil
       end
 
+      it "should return a mash value" do
+        @helper.configure :item_type => :mash
+        @helper.lookup(ANY_ASIN).ItemAttributes.Title.should_not be_nil
+      end
+
+      it "should return a rash value" do
+        @helper.configure :item_type => :rash
+        @helper.lookup(ANY_ASIN).item_attributes.title.should_not be_nil
+      end
+
       it "should search_keywords a book with fulltext" do
         items = @helper.search_keywords 'Learn', 'Objective-C'
         items.should have(10).things
@@ -102,7 +112,7 @@ module ASIN
 
       it "should search_keywords never mind music" do
         items = @helper.search_keywords 'nirvana', 'never mind', :SearchIndex => :Music
-        items.should have(8).things
+        items.should have(9).things
 
         items.first.title.should =~ /Nevermind/
       end

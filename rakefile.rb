@@ -11,7 +11,7 @@ end
 
 Rake::RDocTask.new(:rdoc_dev) do |rd|
   rd.rdoc_files.include(File.readlines('.document').map(&:strip))
-  rd.options + ['-a', '--inline-source', '--charset=UTF-8']
+  rd.options + ['-a', '--line-numbers', '--charset=UTF-8']
 end
 
 task :default=>:spec
