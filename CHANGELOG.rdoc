@@ -3,6 +3,7 @@
 * move client to own file
 * use autoload
 * support for Hashie::Rash
+* new method browse_node
 
 == 0.4.0
 
