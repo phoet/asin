@@ -1,11 +1,26 @@
-== Installation
+== Infos
 
 Status: http://stillmaintained.com/phoet/asin.png
 
-The gem is tested against 1.9.2 and 1.8.7 (compatibility with Heroku-Bamboo-Stack[http://docs.heroku.com/stack]) and runs smoothly with Rails 3.
+ASIN is a simple, extensible wrapper for parts of the REST-API of Amazon Product Advertising API (aka Associates Web Service aka Amazon E-Commerce Service).
+
+For more information on the REST calls, have a look at the whole Amazon E-Commerce-API[http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/].
+
+Have a look at the RDOC[http://rdoc.info/projects/phoet/asin] for this project, if you like browsing some docs.
+
+== Installation
+
+The gem is tested against Ruby 1.9.2 / 1.8.7 and runs smoothly with Rails 3.
 
   gem install asin
   gem install httpclient # optional, see HTTPI
+  gem install rash # optional, see Response Configuration
+
+or in your Gemfile:
+
+  gem 'asin'
+  gem 'httpclient' # optional, see HTTPI
+  gem 'rash' # optional, see Response Configuration
 
 == Configuration
 
@@ -13,7 +28,7 @@ Rails style initializer (config/initializers/asin.rb):
 
   ASIN::Configuration.configure do |config|
     config.secret = 'your-secret'
-    config.key = 'your-key'
+    config.key    = 'your-key'
   end
 
 YAML style configuration:
@@ -27,6 +42,17 @@ Inline style configuration:
   client.configure :secret => 'your-secret', :key => 'your-key'
 
 Have a look at ASIN::Configuration class for all the details.
+
+===API Changes
+
+With the latest version of the Product Advertising API you need to include your associate_tag[https://affiliate-program.amazon.com/gp/advertising/api/detail/api-changes.html].
+
+  ASIN::Configuration.configure do |config|
+    config.secret        = 'your-secret'
+    config.key           = 'your-key'
+    config.associate_tag = 'your-tag'
+  end
+
 
 == Usage
 
@@ -131,8 +157,3 @@ As a default HTTPI uses _httpclient_ so you should add that dependency to your p
 
   gem 'httpclient'
 
-== Infos
-
-Have a look at the RDOC[http://rdoc.info/projects/phoet/asin] for this project, if you want further information.
-
-For more information on the REST calls, have a look at the whole Amazon E-Commerce-API[http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/].

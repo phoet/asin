@@ -323,13 +323,8 @@ module ASIN
       handle_type(cart, Configuration.cart_type)
     end
 
-
-    def credentials_valid?
-      Configuration.secret && Configuration.key
-    end
-
     def call(params)
-      raise "you have to configure ASIN: 'configure :secret => 'your-secret', :key => 'your-key''" unless credentials_valid?
+      Configuration.validate_credentials!
 
       log(:debug, "calling with params=#{params}")
       signed = create_signed_query_string(params)
