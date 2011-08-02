@@ -16,9 +16,11 @@ module ASIN
     context "cart" do
 
       it "should create a cart" do
-        cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1}, {:asin => ANY_OTHER_ASIN, :quantity => 2})
-        cart.valid?.should be(true)
-        cart.empty?.should be(false)
+        VCR.use_cassette("create_cart_with_asin_#{ANY_ASIN}_and_other_asin_#{ANY_OTHER_ASIN}", :match_requests_on => [:host, :path]) do
+          cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1}, {:asin => ANY_OTHER_ASIN, :quantity => 2})
+          cart.valid?.should be(true)
+          cart.empty?.should be(false)
+        end
       end
 
       it "should handle item paramters" do
@@ -28,35 +30,42 @@ module ASIN
 
       context "with an existing cart" do
 
-        before do
-          @cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1})
-          @cart.valid?.should be(true)
-        end
-
         it "should clear a cart" do
-          cart = @helper.clear_cart(@cart)
-          cart.valid?.should be(true)
-          cart.empty?.should be(true)
+          VCR.use_cassette("clear_cart", :match_requests_on => [:host, :path]) do
+            @cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1})
+            cart = @helper.clear_cart(@cart)
+            cart.valid?.should be(true)
+            cart.empty?.should be(true)
+          end
         end
 
         it "should get a cart" do
-          cart = @helper.get_cart(@cart.cart_id, @cart.hmac)
-          cart.valid?.should be(true)
-          cart.empty?.should be(false)
+          VCR.use_cassette("get_cart", :match_requests_on => [:host, :path]) do
+            @cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1})
+            cart = @helper.get_cart(@cart.cart_id, @cart.hmac)
+            cart.valid?.should be(true)
+            cart.empty?.should be(false)
+          end
         end
 
         it "should add items to a cart" do
-          cart = @helper.add_items(@cart, {:asin => ANY_OTHER_ASIN, :quantity => 2})
-          cart.valid?.should be(true)
-          cart.empty?.should be(false)
-          cart.items.should have(2).things
+          VCR.use_cassette("add_items#{ANY_OTHER_ASIN}", :match_requests_on => [:host, :path]) do
+            @cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1})
+            cart = @helper.add_items(@cart, {:asin => ANY_OTHER_ASIN, :quantity => 2})
+            cart.valid?.should be(true)
+            cart.empty?.should be(false)
+            cart.items.should have(2).things
+          end
         end
 
         it "should update a cart" do
-          item_id = @cart.items.first.CartItemId
-          cart = @helper.update_items(@cart, {:cart_item_id => item_id, :action => 'SaveForLater'}, {:cart_item_id => item_id, :quantity => 7})
-          cart.saved_items.should have(1).things
-          cart.valid?.should be(true)
+          VCR.use_cassette("update_items", :match_requests_on => [:host, :path]) do
+            @cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1})
+            item_id = @cart.items.first.CartItemId
+            cart = @helper.update_items(@cart, {:cart_item_id => item_id, :action => 'SaveForLater'}, {:cart_item_id => item_id, :quantity => 7})
+            cart.saved_items.should have(1).things
+            cart.valid?.should be(true)
+          end
         end
 
       end

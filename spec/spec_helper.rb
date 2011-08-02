@@ -3,12 +3,13 @@ $:.unshift File.join(File.dirname(__FILE__),'..','..','lib')
 require 'rspec'
 require 'asin'
 require 'pp'
+require 'httpclient'
 require 'vcr'
 
 VCR.config do |c|
-  c.cassette_library_dir = 'spec/cassettes'
+  c.cassette_library_dir = 'cassettes'
   c.stub_with :webmock
-  c.default_cassette_options = { :record => :new_episodes }
+  # c.default_cassette_options = { :record => :new_episodes }
 end
 
 ANY_ASIN            = '1430218150'

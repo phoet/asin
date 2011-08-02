@@ -1,0 +1,196 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&Item.0.ASIN=1430218150&Item.0.Quantity=1&Operation=CartCreate&Service=AWSECommerceService&Signature=60FIHegEQ1yDFysiNp+pUxXh/HL+azObnKByGS6zf0I=&Timestamp=2011-08-02T14:48:00Z&Version=2010-11-01
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 02 Aug 2011 14:49:22 GMT
+      server:
+      - Server
+      content-type:
+      - text/xml;charset=UTF-8
+      vary:
+      - Accept-Encoding,User-Agent
+      nncoection:
+      - close
+      transfer-encoding:
+      - chunked
+    body: <?xml version="1.0" encoding="UTF-8"?><CartCreateResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01"><OperationRequest><HTTPHeaders><Header
+      Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>1S027X3S6Q7N62BXCN7F</RequestId><Arguments><Argument
+      Name="Service" Value="AWSECommerceService"></Argument><Argument Name="Item.0.Quantity"
+      Value="1"></Argument><Argument Name="Operation" Value="CartCreate"></Argument><Argument
+      Name="Version" Value="2010-11-01"></Argument><Argument Name="Timestamp" Value="2011-08-02T14:48:00Z"></Argument><Argument
+      Name="Item.0.ASIN" Value="1430218150"></Argument><Argument Name="Signature"
+      Value="60FIHegEQ1yDFysiNp+pUxXh/HL+azObnKByGS6zf0I="></Argument><Argument Name="AWSAccessKeyId"
+      Value="AKIAJFA5X7RTOKFNPVZQ"></Argument></Arguments><RequestProcessingTime>0.128875017166138</RequestProcessingTime></OperationRequest><Cart><Request><IsValid>True</IsValid><CartCreateRequest><Items><Item><ASIN>1430218150</ASIN><Quantity>1</Quantity></Item></Items></CartCreateRequest></Request><CartId>189-5571387-8422838</CartId><HMAC>YlxkqjTKaDn1L/JRzMLumKNgL9s=</HMAC><URLEncodedHMAC>YlxkqjTKaDn1L%2FJRzMLumKNgL9s%3D</URLEncodedHMAC><PurchaseURL>https://www.amazon.com/gp/cart/aws-merge.html?cart-id=189-5571387-8422838%26associate-id=ws%26hmac=YlxkqjTKaDn1L/JRzMLumKNgL9s=%26SubscriptionId=AKIAJFA5X7RTOKFNPVZQ%26MergeCart=False</PurchaseURL><SubTotal><Amount>2289</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$22.89</FormattedPrice></SubTotal><CartItems><SubTotal><Amount>2289</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$22.89</FormattedPrice></SubTotal><CartItem><CartItemId>U3G241HVLLB8N6</CartItemId><ASIN>1430218150</ASIN><MerchantId>ATVPDKIKX0DER</MerchantId><SellerId>A2R2RITDJNW1Q6</SellerId><SellerNickname>Amazon.com</SellerNickname><Quantity>1</Quantity><Title>Learn
+      Objective-C on the Mac (Learn Series)</Title><ProductGroup>Book</ProductGroup><Price><Amount>2289</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$22.89</FormattedPrice></Price><ItemTotal><Amount>2289</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$22.89</FormattedPrice></ItemTotal></CartItem></CartItems></Cart></CartCreateResponse>
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&CartId=189-5571387-8422838&HMAC=YlxkqjTKaDn1L/JRzMLumKNgL9s=&Operation=CartClear&Service=AWSECommerceService&Signature=10CGsfwpdUV/buZTC65gvQ2yqzdB54Cl4FyzaU44TdU=&Timestamp=2011-08-02T14:48:00Z&Version=2010-11-01
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 02 Aug 2011 14:49:22 GMT
+      server:
+      - Server
+      content-type:
+      - text/xml;charset=UTF-8
+      vary:
+      - Accept-Encoding,User-Agent
+      nncoection:
+      - close
+      transfer-encoding:
+      - chunked
+    body: <?xml version="1.0" encoding="UTF-8"?><CartClearResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01"><OperationRequest><HTTPHeaders><Header
+      Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>0X6GWF2JHYTZB8XYGP50</RequestId><Arguments><Argument
+      Name="Service" Value="AWSECommerceService"></Argument><Argument Name="Operation"
+      Value="CartClear"></Argument><Argument Name="Version" Value="2010-11-01"></Argument><Argument
+      Name="Timestamp" Value="2011-08-02T14:48:00Z"></Argument><Argument Name="Signature"
+      Value="10CGsfwpdUV/buZTC65gvQ2yqzdB54Cl4FyzaU44TdU="></Argument><Argument Name="HMAC"
+      Value="YlxkqjTKaDn1L/JRzMLumKNgL9s="></Argument><Argument Name="CartId" Value="189-5571387-8422838"></Argument><Argument
+      Name="AWSAccessKeyId" Value="AKIAJFA5X7RTOKFNPVZQ"></Argument></Arguments><RequestProcessingTime>0.0375380516052246</RequestProcessingTime></OperationRequest><Cart><Request><IsValid>True</IsValid><CartClearRequest><CartId>189-5571387-8422838</CartId><HMAC>YlxkqjTKaDn1L/JRzMLumKNgL9s=</HMAC></CartClearRequest></Request><CartId>189-5571387-8422838</CartId><HMAC>YlxkqjTKaDn1L/JRzMLumKNgL9s=</HMAC><URLEncodedHMAC>YlxkqjTKaDn1L%2FJRzMLumKNgL9s%3D</URLEncodedHMAC></Cart></CartClearResponse>
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&Item.0.ASIN=1430218150&Item.0.Quantity=1&Operation=CartCreate&Service=AWSECommerceService&Signature=60FIHegEQ1yDFysiNp+pUxXh/HL+azObnKByGS6zf0I=&Timestamp=2011-08-02T14:48:00Z&Version=2010-11-01
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 02 Aug 2011 14:49:35 GMT
+      server:
+      - Server
+      content-type:
+      - text/xml;charset=UTF-8
+      vary:
+      - Accept-Encoding,User-Agent
+      nncoection:
+      - close
+      transfer-encoding:
+      - chunked
+    body: <?xml version="1.0" encoding="UTF-8"?><CartCreateResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01"><OperationRequest><HTTPHeaders><Header
+      Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>14HRZKPHAW3W62KKD45S</RequestId><Arguments><Argument
+      Name="Service" Value="AWSECommerceService"></Argument><Argument Name="Item.0.Quantity"
+      Value="1"></Argument><Argument Name="Operation" Value="CartCreate"></Argument><Argument
+      Name="Version" Value="2010-11-01"></Argument><Argument Name="Timestamp" Value="2011-08-02T14:48:00Z"></Argument><Argument
+      Name="Item.0.ASIN" Value="1430218150"></Argument><Argument Name="Signature"
+      Value="60FIHegEQ1yDFysiNp+pUxXh/HL+azObnKByGS6zf0I="></Argument><Argument Name="AWSAccessKeyId"
+      Value="AKIAJFA5X7RTOKFNPVZQ"></Argument></Arguments><RequestProcessingTime>0.130835056304932</RequestProcessingTime></OperationRequest><Cart><Request><IsValid>True</IsValid><CartCreateRequest><Items><Item><ASIN>1430218150</ASIN><Quantity>1</Quantity></Item></Items></CartCreateRequest></Request><CartId>186-8848070-8057945</CartId><HMAC>TdhC0ZnZuSEwhITdGWrM9Q+yi54=</HMAC><URLEncodedHMAC>TdhC0ZnZuSEwhITdGWrM9Q%2Byi54%3D</URLEncodedHMAC><PurchaseURL>https://www.amazon.com/gp/cart/aws-merge.html?cart-id=186-8848070-8057945%26associate-id=ws%26hmac=TdhC0ZnZuSEwhITdGWrM9Q%2Byi54=%26SubscriptionId=AKIAJFA5X7RTOKFNPVZQ%26MergeCart=False</PurchaseURL><SubTotal><Amount>2289</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$22.89</FormattedPrice></SubTotal><CartItems><SubTotal><Amount>2289</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$22.89</FormattedPrice></SubTotal><CartItem><CartItemId>U3G241HVLLB8N6</CartItemId><ASIN>1430218150</ASIN><MerchantId>ATVPDKIKX0DER</MerchantId><SellerId>A2R2RITDJNW1Q6</SellerId><SellerNickname>Amazon.com</SellerNickname><Quantity>1</Quantity><Title>Learn
+      Objective-C on the Mac (Learn Series)</Title><ProductGroup>Book</ProductGroup><Price><Amount>2289</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$22.89</FormattedPrice></Price><ItemTotal><Amount>2289</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$22.89</FormattedPrice></ItemTotal></CartItem></CartItems></Cart></CartCreateResponse>
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&CartId=186-8848070-8057945&HMAC=TdhC0ZnZuSEwhITdGWrM9Q+yi54=&Operation=CartClear&Service=AWSECommerceService&Signature=wZmO8j3A1vgNpCnfF7T9HwfWkl0LL/UCGY2XgpMZmPo=&Timestamp=2011-08-02T14:48:00Z&Version=2010-11-01
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 02 Aug 2011 14:49:36 GMT
+      server:
+      - Server
+      content-type:
+      - text/xml;charset=UTF-8
+      vary:
+      - Accept-Encoding,User-Agent
+      nncoection:
+      - close
+      transfer-encoding:
+      - chunked
+    body: <?xml version="1.0" encoding="UTF-8"?><CartClearResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01"><OperationRequest><HTTPHeaders><Header
+      Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>1JCRYCQ7G8XBTWK5M14A</RequestId><Arguments><Argument
+      Name="Service" Value="AWSECommerceService"></Argument><Argument Name="Operation"
+      Value="CartClear"></Argument><Argument Name="Version" Value="2010-11-01"></Argument><Argument
+      Name="Timestamp" Value="2011-08-02T14:48:00Z"></Argument><Argument Name="Signature"
+      Value="wZmO8j3A1vgNpCnfF7T9HwfWkl0LL/UCGY2XgpMZmPo="></Argument><Argument Name="HMAC"
+      Value="TdhC0ZnZuSEwhITdGWrM9Q+yi54="></Argument><Argument Name="CartId" Value="186-8848070-8057945"></Argument><Argument
+      Name="AWSAccessKeyId" Value="AKIAJFA5X7RTOKFNPVZQ"></Argument></Arguments><RequestProcessingTime>0.0357871055603027</RequestProcessingTime></OperationRequest><Cart><Request><IsValid>True</IsValid><CartClearRequest><CartId>186-8848070-8057945</CartId><HMAC>TdhC0ZnZuSEwhITdGWrM9Q+yi54=</HMAC></CartClearRequest></Request><CartId>186-8848070-8057945</CartId><HMAC>TdhC0ZnZuSEwhITdGWrM9Q+yi54=</HMAC><URLEncodedHMAC>TdhC0ZnZuSEwhITdGWrM9Q%2Byi54%3D</URLEncodedHMAC></Cart></CartClearResponse>
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&Item.0.ASIN=1430218150&Item.0.Quantity=1&Operation=CartCreate&Service=AWSECommerceService&Signature=60FIHegEQ1yDFysiNp+pUxXh/HL+azObnKByGS6zf0I=&Timestamp=2011-08-02T14:48:00Z&Version=2010-11-01
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 02 Aug 2011 14:53:58 GMT
+      server:
+      - Server
+      content-type:
+      - text/xml;charset=UTF-8
+      vary:
+      - Accept-Encoding,User-Agent
+      nncoection:
+      - close
+      transfer-encoding:
+      - chunked
+    body: <?xml version="1.0" encoding="UTF-8"?><CartCreateResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01"><OperationRequest><HTTPHeaders><Header
+      Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>1PJQX66DM1NWVXVVY0EJ</RequestId><Arguments><Argument
+      Name="Service" Value="AWSECommerceService"></Argument><Argument Name="Item.0.Quantity"
+      Value="1"></Argument><Argument Name="Operation" Value="CartCreate"></Argument><Argument
+      Name="Version" Value="2010-11-01"></Argument><Argument Name="Timestamp" Value="2011-08-02T14:48:00Z"></Argument><Argument
+      Name="Item.0.ASIN" Value="1430218150"></Argument><Argument Name="Signature"
+      Value="60FIHegEQ1yDFysiNp+pUxXh/HL+azObnKByGS6zf0I="></Argument><Argument Name="AWSAccessKeyId"
+      Value="AKIAJFA5X7RTOKFNPVZQ"></Argument></Arguments><RequestProcessingTime>0.118145942687988</RequestProcessingTime></OperationRequest><Cart><Request><IsValid>True</IsValid><CartCreateRequest><Items><Item><ASIN>1430218150</ASIN><Quantity>1</Quantity></Item></Items></CartCreateRequest></Request><CartId>190-4750114-8336920</CartId><HMAC>oyqlhAFtBpzDQz87x1HhTRzuapw=</HMAC><URLEncodedHMAC>oyqlhAFtBpzDQz87x1HhTRzuapw%3D</URLEncodedHMAC><PurchaseURL>https://www.amazon.com/gp/cart/aws-merge.html?cart-id=190-4750114-8336920%26associate-id=ws%26hmac=oyqlhAFtBpzDQz87x1HhTRzuapw=%26SubscriptionId=AKIAJFA5X7RTOKFNPVZQ%26MergeCart=False</PurchaseURL><SubTotal><Amount>2289</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$22.89</FormattedPrice></SubTotal><CartItems><SubTotal><Amount>2289</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$22.89</FormattedPrice></SubTotal><CartItem><CartItemId>U3G241HVLLB8N6</CartItemId><ASIN>1430218150</ASIN><MerchantId>ATVPDKIKX0DER</MerchantId><SellerId>A2R2RITDJNW1Q6</SellerId><SellerNickname>Amazon.com</SellerNickname><Quantity>1</Quantity><Title>Learn
+      Objective-C on the Mac (Learn Series)</Title><ProductGroup>Book</ProductGroup><Price><Amount>2289</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$22.89</FormattedPrice></Price><ItemTotal><Amount>2289</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$22.89</FormattedPrice></ItemTotal></CartItem></CartItems></Cart></CartCreateResponse>
+    http_version: '1.1'
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&CartId=190-4750114-8336920&HMAC=oyqlhAFtBpzDQz87x1HhTRzuapw=&Operation=CartClear&Service=AWSECommerceService&Signature=5YMWfVVHwzM6xAYEp1sjawW0tNSaKTAA2quzdpHPKOw=&Timestamp=2011-08-02T14:48:00Z&Version=2010-11-01
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Tue, 02 Aug 2011 14:53:59 GMT
+      server:
+      - Server
+      content-type:
+      - text/xml;charset=UTF-8
+      vary:
+      - Accept-Encoding,User-Agent
+      nncoection:
+      - close
+      transfer-encoding:
+      - chunked
+    body: <?xml version="1.0" encoding="UTF-8"?><CartClearResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01"><OperationRequest><HTTPHeaders><Header
+      Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>03HQP7TWAR97XRY6EGYD</RequestId><Arguments><Argument
+      Name="Service" Value="AWSECommerceService"></Argument><Argument Name="Signature"
+      Value="5YMWfVVHwzM6xAYEp1sjawW0tNSaKTAA2quzdpHPKOw="></Argument><Argument Name="HMAC"
+      Value="oyqlhAFtBpzDQz87x1HhTRzuapw="></Argument><Argument Name="Operation" Value="CartClear"></Argument><Argument
+      Name="CartId" Value="190-4750114-8336920"></Argument><Argument Name="AWSAccessKeyId"
+      Value="AKIAJFA5X7RTOKFNPVZQ"></Argument><Argument Name="Version" Value="2010-11-01"></Argument><Argument
+      Name="Timestamp" Value="2011-08-02T14:48:00Z"></Argument></Arguments><RequestProcessingTime>0.0330929756164551</RequestProcessingTime></OperationRequest><Cart><Request><IsValid>True</IsValid><CartClearRequest><CartId>190-4750114-8336920</CartId><HMAC>oyqlhAFtBpzDQz87x1HhTRzuapw=</HMAC></CartClearRequest></Request><CartId>190-4750114-8336920</CartId><HMAC>oyqlhAFtBpzDQz87x1HhTRzuapw=</HMAC><URLEncodedHMAC>oyqlhAFtBpzDQz87x1HhTRzuapw%3D</URLEncodedHMAC></Cart></CartClearResponse>
+    http_version: '1.1'

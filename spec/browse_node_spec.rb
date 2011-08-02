@@ -13,17 +13,16 @@ module ASIN
     end
 
     context "browse_node" do
-
-      use_vcr_cassette
-
       before do
         @helper.configure :secret => @secret, :key => @key
       end
 
       it "should lookup a browse_node" do
-        item = @helper.browse_node(ANY_BROWSE_NODE_ID)
-        item.node_id.should eql(ANY_BROWSE_NODE_ID)
-        item.name.should eql('Comedy')
+        VCR.use_cassette("browse_node_#{ANY_BROWSE_NODE_ID}", :match_requests_on => [:host, :path]) do
+          item = @helper.browse_node(ANY_BROWSE_NODE_ID)
+          item.node_id.should eql(ANY_BROWSE_NODE_ID)
+          item.name.should eql('Comedy')
+        end
       end
     end
   end
