@@ -21,3 +21,6 @@ RSpec.configure do |config|
   config.extend VCR::RSpec::Macros
 end
 
+# setup for travis-ci
+ENV['ASIN_SECRET'] ||= 'any_secret'
+ENV['ASIN_KEY']    ||= 'any_key'
