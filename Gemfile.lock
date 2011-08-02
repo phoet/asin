@@ -11,6 +11,7 @@ GEM
   specs:
     crack (0.1.8)
     diff-lcs (1.1.2)
+    fakeweb (1.3.0)
     fuubar (0.0.5)
       rspec (~> 2.0)
       rspec-instafail (~> 0.1.4)
@@ -32,13 +33,16 @@ GEM
     rspec-instafail (0.1.8)
     rspec-mocks (2.6.0)
     ruby-progressbar (0.0.10)
+    vcr (1.10.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   asin!
+  fakeweb (~> 1.3.0)
   fuubar (~> 0.0.5)
   httpclient (~> 2.2.1)
   rash (~> 0.3.0)
   rspec (~> 2.6.0)
+  vcr (~> 1.10.3)

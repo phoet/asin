@@ -12,12 +12,15 @@ module ASIN
       puts "configure #{@secret} and #{@key} for this test"
     end
 
-    context "lookup and search" do
+    context "browse_node" do
+
+      use_vcr_cassette
+
       before do
         @helper.configure :secret => @secret, :key => @key
       end
 
-      it "should lookup a book" do
+      it "should lookup a browse_node" do
         item = @helper.browse_node(ANY_BROWSE_NODE_ID)
         item.node_id.should eql(ANY_BROWSE_NODE_ID)
         item.name.should eql('Comedy')
