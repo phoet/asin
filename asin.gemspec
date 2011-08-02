@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Simple interface to AWS Lookup, Search and Cart operations.'
   s.description = 'Amazon Simple INterface.'
 
-  s.rubyforge_project = "asin" # rubyforge, WTF?!
+  s.rubyforge_project = "asin"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
