@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency('httpclient', '~> 2.2.1')
   s.add_development_dependency('vcr',        '~> 1.10.3')
-  s.add_development_dependency('fakeweb',    '~> 1.3.0')
+  s.add_development_dependency('webmock',    '~> 1.6.4')
   s.add_development_dependency('rash',       '~> 0.3.0')
   s.add_development_dependency('rspec',      '~> 2.6.0')
   s.add_development_dependency('fuubar',     '~> 0.0.5')
