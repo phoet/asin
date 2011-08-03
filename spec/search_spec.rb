@@ -103,7 +103,12 @@ module ASIN
         @helper.lookup(ANY_ASIN).item_attributes.title.should_not be_nil
       end
 
-      it "should search_keywords a book with fulltext" do
+      it "should search_keywords and handle a single result" do
+        items = @helper.search_keywords('0471317519')
+        items.first.title.should =~ /A Self-Teaching Guide/
+      end
+
+      it "should search_keywords book with fulltext" do
         items = @helper.search_keywords 'Learn', 'Objective-C'
         items.should have(10).things
 
@@ -112,7 +117,7 @@ module ASIN
 
       it "should search_keywords never mind music" do
         items = @helper.search_keywords 'nirvana', 'never mind', :SearchIndex => :Music
-        items.should have(9).things
+        items.should have(10).things
 
         items.first.title.should =~ /Nevermind/
       end

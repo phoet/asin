@@ -164,7 +164,7 @@ module ASIN
     def search_keywords(*keywords)
       params = keywords.last.is_a?(Hash) ? keywords.pop : {:SearchIndex => :Books, :ResponseGroup => :Medium}
       response = call(params.merge(:Operation => :ItemSearch, :Keywords => keywords.join(' ')))
-      (response['ItemSearchResponse']['Items']['Item'] || []).map {|item| handle_item(item)}
+      arrayfy(response['ItemSearchResponse']['Items']['Item']).map {|item| handle_item(item)}
     end
 
     # Performs an +ItemSearch+ REST call against the Amazon API.
@@ -183,7 +183,7 @@ module ASIN
     #
     def search(params={:SearchIndex => :Books, :ResponseGroup => :Medium})
       response = call(params.merge(:Operation => :ItemSearch))
-      (response['ItemSearchResponse']['Items']['Item'] || []).map {|item| handle_item(item)}
+      arrayfy(response['ItemSearchResponse']['Items']['Item']).map {|item| handle_item(item)}
     end
 
     # Performs an +BrowseNodeLookup+ REST call against the Amazon API.
@@ -280,6 +280,11 @@ module ASIN
     end
 
     private()
+    
+    def arrayfy(item)
+      return [] unless item
+      item.is_a?(Array) ? item : [item]
+    end
 
     def handle_item(item)
       handle_type(item, Configuration.item_type)
