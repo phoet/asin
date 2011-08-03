@@ -116,12 +116,18 @@ module ASIN
           @helper.lookup(ANY_ASIN).item_attributes.title.should_not be_nil
         end
       end
+      
+      it "should search_keywords and handle a single result" do
+        VCR.use_cassette("search_keywords_single_result", :match_requests_on => [:host, :path]) do
+          items = @helper.search_keywords('0471317519')
+          items.first.title.should =~ /A Self-Teaching Guide/
+        end
+      end
 
       it "should search_keywords a book with fulltext" do
         VCR.use_cassette("search_keywords", :match_requests_on => [:host, :path]) do
           items = @helper.search_keywords 'Learn', 'Objective-C'
           items.should have(10).things
-
           items.first.title.should =~ /Learn Objective/
         end
       end
@@ -130,7 +136,6 @@ module ASIN
         VCR.use_cassette("search_keywords_index_music", :match_requests_on => [:host, :path]) do
           items = @helper.search_keywords 'nirvana', 'never mind', :SearchIndex => :Music
           items.should have(10).things
-
           items.first.title.should =~ /Nevermind/
         end
       end
