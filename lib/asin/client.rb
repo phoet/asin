@@ -142,7 +142,14 @@ module ASIN
     #
     def lookup(asin, params={:ResponseGroup => :Medium})
       response = call(params.merge(:Operation => :ItemLookup, :ItemId => asin))
-      handle_item(response['ItemLookupResponse']['Items']['Item'])
+
+      if response['ItemLookupResponse']['Items']['Item'].is_a?(Array)
+        response['ItemLookupResponse']['Items']['Item'].map do |i|
+          handle_item(i)
+        end
+      else
+        handle_item(response['ItemLookupResponse']['Items']['Item'])
+      end
     end
 
     # Performs an +ItemSearch+ REST call against the Amazon API.

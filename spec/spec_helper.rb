@@ -15,6 +15,7 @@ end
 ANY_ASIN            = '1430218150'
 ANY_OTHER_ASIN      = '1430216263'
 ANY_BROWSE_NODE_ID  = '599826'
+MULTIPLE_ASINS      = '1430218150,0439023521'
 
 RSpec.configure do |config|
   config.mock_with :rspec
