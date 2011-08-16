@@ -1,0 +1,29 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=&ItemId=bla&Operation=ItemLookup&ResponseGroup=Medium&Service=AWSECommerceService&Signature=MXy86F4AyavpzBqeo2e4LHZRzhlBxe/3XS7zXcp0wTQ=&Timestamp=2011-08-02T14:48:00Z&Version=2010-11-01
+    body: !!null 
+    headers: !!null 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 403
+      message: Forbidden
+    headers:
+      date:
+      - Tue, 02 Aug 2011 14:49:25 GMT
+      server:
+      - Server
+      vary:
+      - Accept-Encoding,User-Agent
+      cneonction:
+      - close
+      transfer-encoding:
+      - chunked
+      content-type:
+      - text/plain
+    body: ! '<?xml version="1.0"?>
+
+      <ItemLookupErrorResponse xmlns="http://ecs.amazonaws.com/doc/2010-11-01/"><Error><Code>MissingClientTokenId</Code><Message>Request
+      must contain AWSAccessKeyId or X.509 certificate.</Message></Error><RequestID>a0fca4f4-04b1-489c-a021-0737753cfcab</RequestID></ItemLookupErrorResponse>'
+    http_version: '1.1'

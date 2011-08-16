@@ -30,7 +30,7 @@ require 'base64'
 # Amazon Standard Identification Number (ASIN):
 #
 #   item = lookup '1430218150'
-#   item.title
+#   item.first.title
 #   => "Learn Objective-C on the Mac (Learn Series)"
 #
 # OR search with fulltext/ASIN/ISBN
@@ -128,11 +128,16 @@ module ASIN
 
     # Performs an +ItemLookup+ REST call against the Amazon API.
     #
-    # Expects an ASIN (Amazon Standard Identification Number) and returns an +SimpleItem+:
+    # Expects an arbitrary number of ASIN (Amazon Standard Identification Number) and returns an array of +SimpleItem+:
     #
     #   item = lookup '1430218150'
     #   item.title
     #   => "Learn Objective-C on the Mac (Learn Series)"
+    #   items = lookup ['1430218150', '0439023521']
+    #   items[0].title
+    #   => "Learn Objective-C on the Mac (Learn Series)"
+    #   items[1].title
+    #   => "The Hunger Games"
     #
     # ==== Options:
     #
@@ -140,9 +145,10 @@ module ASIN
     #
     #   lookup(asin, :ResponseGroup => :Medium)
     #
-    def lookup(asin, params={:ResponseGroup => :Medium})
-      response = call(params.merge(:Operation => :ItemLookup, :ItemId => asin))
-      handle_item(response['ItemLookupResponse']['Items']['Item'])
+    def lookup(*asins)
+      params = asins.last.is_a?(Hash) ? asins.pop : {:ResponseGroup => :Medium}
+      response = call(params.merge(:Operation => :ItemLookup, :ItemId => asins.join(',')))
+      arrayfy(response['ItemLookupResponse']['Items']['Item']).map {|item| handle_item(item)}
     end
 
     # Performs an +ItemSearch+ REST call against the Amazon API.
@@ -328,13 +334,8 @@ module ASIN
       handle_type(cart, Configuration.cart_type)
     end
 
-
-    def credentials_valid?
-      Configuration.secret && Configuration.key
-    end
-
     def call(params)
-      raise "you have to configure ASIN: 'configure :secret => 'your-secret', :key => 'your-key''" unless credentials_valid?
+      Configuration.validate_credentials!
 
       log(:debug, "calling with params=#{params}")
       signed = create_signed_query_string(params)
