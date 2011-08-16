@@ -30,7 +30,7 @@ require 'base64'
 # Amazon Standard Identification Number (ASIN):
 #
 #   item = lookup '1430218150'
-#   item.title
+#   item.first.title
 #   => "Learn Objective-C on the Mac (Learn Series)"
 #
 # OR search with fulltext/ASIN/ISBN
@@ -128,7 +128,7 @@ module ASIN
 
     # Performs an +ItemLookup+ REST call against the Amazon API.
     #
-    # Expects an ASIN (Amazon Standard Identification Number) or an array of ASINs and returns a +SimpleItem+:
+    # Expects an arbitrary number of ASIN (Amazon Standard Identification Number) and returns an array of +SimpleItem+:
     #
     #   item = lookup '1430218150'
     #   item.title
@@ -145,20 +145,10 @@ module ASIN
     #
     #   lookup(asin, :ResponseGroup => :Medium)
     #
-    def lookup(asin, params={:ResponseGroup => :Medium})
-      if asin.is_a?(Array)
-        asin = asin.dup.join(',')
-      end
-
-      response = call(params.merge(:Operation => :ItemLookup, :ItemId => asin))
-
-      if response['ItemLookupResponse']['Items']['Item'].is_a?(Array)
-        response['ItemLookupResponse']['Items']['Item'].map do |i|
-          handle_item(i)
-        end
-      else
-        handle_item(response['ItemLookupResponse']['Items']['Item'])
-      end
+    def lookup(*asins)
+      params = asins.last.is_a?(Hash) ? asins.pop : {:ResponseGroup => :Medium}
+      response = call(params.merge(:Operation => :ItemLookup, :ItemId => asins.join(',')))
+      arrayfy(response['ItemLookupResponse']['Items']['Item']).map {|item| handle_item(item)}
     end
 
     # Performs an +ItemSearch+ REST call against the Amazon API.

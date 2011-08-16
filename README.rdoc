@@ -75,10 +75,10 @@ But you can also use the +instance+ method to get a proxy-object:
   client = ASIN::Client.instance
   
   # lookup an item with the amazon standard identification number (asin)
-  item = client.lookup '1430218150'
+  items = client.lookup '1430218150'
   
   # have a look at the title of the item
-  item.title
+  items.first.title
   => Learn Objective-C on the Mac (Learn Series)
   
   # search for any kind of stuff on amazon with keywords

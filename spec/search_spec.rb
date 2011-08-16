@@ -64,14 +64,15 @@ module ASIN
 
       it "should lookup a book" do
         VCR.use_cassette("lookup_#{ANY_ASIN}", :match_requests_on => [:host, :path]) do
-          item = @helper.lookup(ANY_ASIN)
-          item.title.should =~ /Learn Objective/
+          items = @helper.lookup(ANY_ASIN)
+          items.first.title.should =~ /Learn Objective/
         end
       end
 
       it "should have metadata" do
         VCR.use_cassette("lookup_#{ANY_ASIN}_medium", :match_requests_on => [:host, :path]) do
-          item = @helper.lookup(ANY_ASIN, :ResponseGroup => :Medium)
+          items = @helper.lookup(ANY_ASIN, :ResponseGroup => :Medium)
+          item = items.first
           item.asin.should eql(ANY_ASIN)
           item.title.should =~ /Learn Objective/
           item.amount.should eql(3999)
@@ -82,11 +83,11 @@ module ASIN
       end
 
       it "should lookup multiple books" do
-        VCR.use_cassette("lookup_#{MULTIPLE_ASINS.join('-')}_multiple", :match_requests_on => [:host, :path]) do
-          items = @helper.lookup(MULTIPLE_ASINS)
+        VCR.use_cassette("lookup_multiple_asins", :match_requests_on => [:host, :path]) do
+          items = @helper.lookup(ANY_ASIN, ANY_OTHER_ASIN)
 
-          items[0].title.should =~ /Learn Objective/
-          items[1].title.should =~ /Hunger Games/
+          items.first.title.should =~ /Learn Objective/
+          items.last.title.should =~ /Beginning iPhone Development/
         end
       end
 
@@ -101,28 +102,28 @@ module ASIN
             end
           end
           @helper.configure :item_type => TEST::TestItem
-          @helper.lookup(ANY_ASIN).testo.should_not be_nil
+          @helper.lookup(ANY_ASIN).first.testo.should_not be_nil
         end
       end
 
       it "should return a raw value" do
         VCR.use_cassette("lookup_#{ANY_ASIN}_raw", :match_requests_on => [:host, :path]) do
           @helper.configure :item_type => :raw
-          @helper.lookup(ANY_ASIN)['ItemAttributes']['Title'].should_not be_nil
+          @helper.lookup(ANY_ASIN).first['ItemAttributes']['Title'].should_not be_nil
         end
       end
 
       it "should return a mash value" do
         VCR.use_cassette("lookup_#{ANY_ASIN}_mash", :match_requests_on => [:host, :path]) do
           @helper.configure :item_type => :mash
-          @helper.lookup(ANY_ASIN).ItemAttributes.Title.should_not be_nil
+          @helper.lookup(ANY_ASIN).first.ItemAttributes.Title.should_not be_nil
         end
       end
 
       it "should return a rash value" do
         VCR.use_cassette("lookup_#{ANY_ASIN}_rash", :match_requests_on => [:host, :path]) do
           @helper.configure :item_type => :rash
-          @helper.lookup(ANY_ASIN).item_attributes.title.should_not be_nil
+          @helper.lookup(ANY_ASIN).first.item_attributes.title.should_not be_nil
         end
       end
       
