@@ -128,11 +128,16 @@ module ASIN
 
     # Performs an +ItemLookup+ REST call against the Amazon API.
     #
-    # Expects an ASIN (Amazon Standard Identification Number) and returns an +SimpleItem+:
+    # Expects an ASIN (Amazon Standard Identification Number) or an array of ASINs and returns a +SimpleItem+:
     #
     #   item = lookup '1430218150'
     #   item.title
     #   => "Learn Objective-C on the Mac (Learn Series)"
+    #   items = lookup ['1430218150', '0439023521']
+    #   items[0].title
+    #   => "Learn Objective-C on the Mac (Learn Series)"
+    #   items[1].title
+    #   => "The Hunger Games"
     #
     # ==== Options:
     #
@@ -141,6 +146,10 @@ module ASIN
     #   lookup(asin, :ResponseGroup => :Medium)
     #
     def lookup(asin, params={:ResponseGroup => :Medium})
+      if asin.is_a?(Array)
+        asin = asin.dup.join(',')
+      end
+
       response = call(params.merge(:Operation => :ItemLookup, :ItemId => asin))
 
       if response['ItemLookupResponse']['Items']['Item'].is_a?(Array)

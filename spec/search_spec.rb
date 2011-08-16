@@ -82,7 +82,7 @@ module ASIN
       end
 
       it "should lookup multiple books" do
-        VCR.use_cassette("lookup_#{MULTIPLE_ASINS.sub(',', '-')}_multiple", :match_requests_on => [:host, :path]) do
+        VCR.use_cassette("lookup_#{MULTIPLE_ASINS.join('-')}_multiple", :match_requests_on => [:host, :path]) do
           items = @helper.lookup(MULTIPLE_ASINS)
 
           items[0].title.should =~ /Learn Objective/
