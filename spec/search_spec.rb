@@ -81,6 +81,15 @@ module ASIN
         end
       end
 
+      it "should lookup multiple books" do
+        VCR.use_cassette("lookup_#{MULTIPLE_ASINS.join('-')}_multiple", :match_requests_on => [:host, :path]) do
+          items = @helper.lookup(MULTIPLE_ASINS)
+
+          items[0].title.should =~ /Learn Objective/
+          items[1].title.should =~ /Hunger Games/
+        end
+      end
+
       it "should return a custom item class" do
         VCR.use_cassette("lookup_#{ANY_ASIN}_item_class", :match_requests_on => [:host, :path]) do
           module TEST
