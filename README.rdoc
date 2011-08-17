@@ -61,7 +61,7 @@ ASIN is designed as a module, so you can include it into any object you like:
 
   # require and include
   require 'asin'
-  include ASIN
+  include ASIN::Client
   
   # lookup an ASIN
   lookup '1430218150'
