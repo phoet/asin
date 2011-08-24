@@ -1,3 +1,7 @@
+== 0.6.1
+
+* fix error when passing nil to config values
+
 == 0.6.0
 
 * change lookup method - pull request https://github.com/phoet/asin/pull/8
