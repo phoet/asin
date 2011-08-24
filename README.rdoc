@@ -5,7 +5,7 @@ Build: http://travis-ci.org/phoet/asin.png
 
 ASIN is a simple, extensible wrapper for parts of the REST-API of Amazon Product Advertising API (aka Associates Web Service aka Amazon E-Commerce Service).
 
-For more information on the REST calls, have a look at the whole Amazon E-Commerce-API[http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/].
+For more information on the REST calls, have a look at the whole Amazon E-Commerce-API[http://docs.amazonwebservices.com/AWSECommerceService/latest/DG/index.html].
 
 Have a look at the RDOC[http://rdoc.info/projects/phoet/asin] for this project, if you like browsing some docs.
 
@@ -53,7 +53,6 @@ With the latest version of the Product Advertising API you need to include your 
     config.key           = 'your-key'
     config.associate_tag = 'your-tag'
   end
-
 
 == Usage
 

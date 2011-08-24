@@ -68,13 +68,21 @@ module ASIN
       # Checks if given credentials are valid and raises an error if not.
       #
       def validate_credentials!
-        raise "you have to configure ASIN: 'configure :secret => 'your-secret', :key => 'your-key''" unless @secret && @key
+        raise "you have to configure ASIN: 'configure :secret => 'your-secret', :key => 'your-key'" if blank?(:secret) || blank?(:key)
+        [:host, :item_type, :cart_type, :node_type, :version, :associate_tag].each { |item| raise "nil is not a valid value for #{item}" unless self.send item }
       end
 
       # Resets configuration to defaults
       #
       def reset
         init_config(true)
+      end
+
+      # Check if a key is set
+      #
+      def blank?(key)
+        val = self.send :key
+        val.nil? || val.empty?
       end
 
       private()

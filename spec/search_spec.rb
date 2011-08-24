@@ -14,9 +14,12 @@ module ASIN
 
     context "configuration" do
       it "should fail without secret and key" do
-        VCR.use_cassette("bad_configuration", :match_requests_on => [:host, :path]) do
-          lambda { @helper.lookup 'bla' }.should raise_error(RuntimeError)
-        end
+        lambda { @helper.lookup 'bla' }.should raise_error(RuntimeError, "you have to configure ASIN: 'configure :secret => 'your-secret', :key => 'your-key'")
+      end
+
+      it "should fail with configuration key set to nil" do
+        @helper.configure :secret => @secret, :key => @key, :associate_tag => nil
+        lambda { @helper.lookup 'bla' }.should raise_error(RuntimeError, "nil is not a valid value for associate_tag")
       end
 
       it "should fail with wrong configuration key" do

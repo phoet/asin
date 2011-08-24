@@ -47,7 +47,7 @@ require 'base64'
 # == Further Configuration
 #
 # If you need more controll over the request that is sent to the
-# Amazon API (http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/),
+# Amazon API (http://docs.amazonwebservices.com/AWSECommerceService/latest/DG/index.html),
 # you can override some defaults or add additional query-parameters to the REST calls:
 #
 #   configure :host => 'webservices.amazon.de'
@@ -165,7 +165,7 @@ module ASIN
     #
     #   search_keywords('nirvana', 'never mind', :SearchIndex => :Music)
     #
-    # Have a look at the different search index values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/]
+    # Have a look at the different search index values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/latest/DG/index.html]
     #
     def search_keywords(*keywords)
       params = keywords.last.is_a?(Hash) ? keywords.pop : {:SearchIndex => :Books, :ResponseGroup => :Medium}
@@ -185,7 +185,7 @@ module ASIN
     #
     #   search(:Keywords => 'nirvana', :SearchIndex => :Music)
     #
-    # Have a look at the different search index values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/]
+    # Have a look at the different search index values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/latest/DG/index.html]
     #
     def search(params={:SearchIndex => :Books, :ResponseGroup => :Medium})
       response = call(params.merge(:Operation => :ItemSearch))
@@ -204,7 +204,7 @@ module ASIN
     #
     #   browse_node('163357', :ResponseGroup => :TopSellers)
     #
-    # Have a look at the different browse node values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/]
+    # Have a look at the different browse node values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/latest/DG/index.html]
     #
     def browse_node(node_id, params={:ResponseGroup => :BrowseNodeInfo})
       response = call(params.merge(:Operation => :BrowseNodeLookup, :BrowseNodeId => node_id))
@@ -223,7 +223,7 @@ module ASIN
     #
     #   create_cart({:asin => '1430218150', :quantity => 1}, {:asin => '1430216263', :quantity => 1, :action => :SaveForLater})
     #
-    # Have a look at the different cart item operation values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/]
+    # Have a look at the different cart item operation values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/latest/DG/index.html]
     #
     def create_cart(*items)
       cart(:CartCreate, create_item_params(items))
@@ -251,7 +251,7 @@ module ASIN
     #
     #   add_items(cart, {:asin => '1430218150', :quantity => 1}, {:asin => '1430216263', :quantity => 1, :action => :SaveForLater})
     #
-    # Have a look at the different cart item operation values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/]
+    # Have a look at the different cart item operation values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/latest/DG/index.html]
     #
     def add_items(cart, *items)
       cart(:CartAdd, create_item_params(items).merge({:CartId => cart.cart_id, :HMAC => cart.hmac}))
@@ -269,7 +269,7 @@ module ASIN
     #
     #   update_items(cart, {:cart_item_id => cart.items.first.CartItemId, :action => :SaveForLater}, {:cart_item_id => cart.items.first.CartItemId, :quantity => 7})
     #
-    # Have a look at the different cart item operation values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/2010-11-01/DG/]
+    # Have a look at the different cart item operation values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/latest/DG/index.html]
     #
     def update_items(cart, *items)
       cart(:CartModify, create_item_params(items).merge({:CartId => cart.cart_id, :HMAC => cart.hmac}))
@@ -361,8 +361,8 @@ module ASIN
       params[:Service] = :AWSECommerceService
       params[:AWSAccessKeyId] = Configuration.key
 
-      params[:Version] = Configuration.version unless Configuration.version.empty?
-      params[:AssociateTag] = Configuration.associate_tag unless Configuration.associate_tag.empty?
+      params[:Version] = Configuration.version unless Configuration.blank? :version
+      params[:AssociateTag] = Configuration.associate_tag unless Configuration.blank? :associate_tag
 
       # utc timestamp needed for signing
       params[:Timestamp] = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%SZ')
