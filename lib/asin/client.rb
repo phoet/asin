@@ -337,6 +337,8 @@ module ASIN
     def call(params)
       Configuration.validate_credentials!
 
+      params[:ResponseGroup] = params[:ResponseGroup].collect{|g| g.to_s.strip}.join(',') if !params[:ResponseGroup].nil? && params[:ResponseGroup].is_a?(Array)
+
       log(:debug, "calling with params=#{params}")
       signed = create_signed_query_string(params)
 
