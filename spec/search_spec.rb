@@ -85,6 +85,19 @@ module ASIN
         end
       end
 
+      it "should lookup multiple response groups" do
+        VCR.use_cassette("lookup_#{ANY_ASIN}_small_and_alternateversions", :match_requests_on => [:host, :path]) do
+          items = @helper.lookup(ANY_ASIN, :ResponseGroup => [:Small, :AlternateVersions])
+
+          item = items.first
+          item.asin.should eql(ANY_ASIN)
+          item.title.should =~ /Learn Objective/
+          item.raw.include?("AlternateVersions").should eql(true)
+          item.raw["AlternateVersions"].length.should eql(1)
+          item.raw["AlternateVersions"]["AlternateVersion"]["Binding"].should eql("Kindle Edition")
+        end
+      end
+
       it "should lookup multiple books" do
         VCR.use_cassette("lookup_multiple_asins", :match_requests_on => [:host, :path]) do
           items = @helper.lookup(ANY_ASIN, ANY_OTHER_ASIN)
