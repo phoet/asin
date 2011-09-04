@@ -145,6 +145,10 @@ module ASIN
     #
     #   lookup(asin, :ResponseGroup => :Medium)
     #
+    # Or with multiple parameters:
+    #
+    #   lookup(asin, :ResponseGroup => [:Small, :AlternateVersions])
+    #
     def lookup(*asins)
       params = asins.last.is_a?(Hash) ? asins.pop : {:ResponseGroup => :Medium}
       response = call(params.merge(:Operation => :ItemLookup, :ItemId => asins.join(',')))
@@ -337,8 +341,6 @@ module ASIN
     def call(params)
       Configuration.validate_credentials!
 
-      params[:ResponseGroup] = params[:ResponseGroup].collect{|g| g.to_s.strip}.join(',') if !params[:ResponseGroup].nil? && params[:ResponseGroup].is_a?(Array)
-
       log(:debug, "calling with params=#{params}")
       signed = create_signed_query_string(params)
 
@@ -369,8 +371,8 @@ module ASIN
       # utc timestamp needed for signing
       params[:Timestamp] = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%SZ')
 
-      # signing needs to order the query alphabetically
-      query = params.map{|key, value| "#{key}=#{CGI.escape(value.to_s)}" }.sort.join('&').gsub('+','%20')
+      
+      query = create_query(params)
 
       # yeah, you really need to sign the get-request not the query
       request_to_sign = "GET\n#{Configuration.host}\n#{PATH}\n#{query}"
@@ -379,6 +381,13 @@ module ASIN
       # don't forget to remove the newline from base64
       signature = CGI.escape(Base64.encode64(hmac).chomp)
       "#{query}&Signature=#{signature}"
+    end
+    
+    def create_query(params)
+      params.map do |key, value|
+        value = value.collect{|v| v.to_s.strip}.join(',') if value.is_a?(Array)
+        "#{key}=#{CGI.escape(value.to_s)}"
+      end.sort.join('&').gsub('+','%20') # signing needs to order the query alphabetically
     end
 
     def log(severity, message)

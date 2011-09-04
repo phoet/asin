@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    asin (0.6.0)
+    asin (0.6.1)
       crack (~> 0.1.8)
       hashie (~> 1.0.0)
       httpi (~> 0.9.5)
