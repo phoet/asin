@@ -2,16 +2,6 @@ require 'spec_helper'
 
 module ASIN
   describe ASIN do
-    before do
-      ASIN::Configuration.reset
-      @helper = ASIN::Client.instance
-      @helper.configure :logger => nil
-
-      @secret = ENV['ASIN_SECRET']
-      @key = ENV['ASIN_KEY']
-      puts "configure #{@secret} and #{@key} for this test"
-    end
-
     context "configuration" do
       it "should fail without secret and key" do
         lambda { @helper.lookup 'bla' }.should raise_error(RuntimeError, "you have to configure ASIN: 'configure :secret => 'your-secret', :key => 'your-key'")
