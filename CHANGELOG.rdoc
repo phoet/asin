@@ -1,3 +1,15 @@
+== 0.6.1
+
+* fix error when passing nil to config values
+
+== 0.6.0
+
+* change lookup method - pull request https://github.com/phoet/asin/pull/8
+
+== 0.5.1
+
+* fix for https://github.com/phoet/asin/issues/7
+
 == 0.5.0
 
 * move client to own file
