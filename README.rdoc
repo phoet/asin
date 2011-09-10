@@ -11,13 +11,13 @@ Have a look at the RDOC[http://rdoc.info/projects/phoet/asin] for this project, 
 
 The gem runs smoothly with Rails 3 and is tested against these rubies:
 
-* 1.8.7
-* 1.9.2
-* rbx
-* rbx-2.0
-* ree
-* ruby-head
-* jruby
+- 1.8.7
+- 1.9.2
+- rbx
+- rbx-2.0
+- ree
+- ruby-head
+- jruby
 
 == Installation
 
