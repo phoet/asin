@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency('crack',  '~> 0.1.8')
-  s.add_dependency('hashie', '~> 1.0.0')
+  s.add_dependency('hashie', '~> 1.0')
   s.add_dependency('httpi',  '~> 0.9.5')
 
   s.add_development_dependency('httpclient', '~> 2.2.1')
