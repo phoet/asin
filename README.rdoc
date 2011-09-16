@@ -9,9 +9,17 @@ For more information on the REST calls, have a look at the whole Amazon E-Commer
 
 Have a look at the RDOC[http://rdoc.info/projects/phoet/asin] for this project, if you like browsing some docs.
 
-== Installation
+The gem runs smoothly with Rails 3 and is tested against these rubies:
 
-The gem is tested against Ruby 1.9.2 / 1.8.7 and runs smoothly with Rails 3.
+- 1.8.7
+- 1.9.2
+- rbx
+- rbx-2.0
+- ree
+- ruby-head
+- jruby
+
+== Installation
 
   gem install asin
   gem install httpclient # optional, see HTTPI

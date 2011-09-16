@@ -6,6 +6,7 @@ rvm:
   - rbx-2.0
   - ree
   - ruby-head
+  - jruby
 branches:
   only:
     - develop

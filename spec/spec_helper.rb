@@ -2,6 +2,7 @@ $:.unshift File.join(File.dirname(__FILE__),'..','..','lib')
 
 require 'rspec'
 require 'asin'
+require 'asin/client' # is somehow needed for jruby
 require 'pp'
 require 'httpclient'
 require 'vcr'
