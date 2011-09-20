@@ -20,11 +20,19 @@ ANY_BROWSE_NODE_ID  = '599826'
 
 RSpec.configure do |config|
   config.mock_with :rspec
-  config.extend VCR::RSpec::Macros
-  
+
+  # https://gist.github.com/1212530
+  config.treat_symbols_as_metadata_keys_with_true_values = true
+  config.around(:each, :vcr => true) do |example|
+    name = example.metadata[:full_description].downcase.gsub(/\W+/, "_").split("_", 2).join("/")
+    VCR.use_cassette(name, :record => :new_episodes, :match_requests_on => [:host, :path]) do
+      example.call
+    end
+  end
+
   config.before :each do
     HTTPI.log = false
-    
+
     ASIN::Configuration.reset
     @helper = ASIN::Client.instance
     @helper.configure :logger => nil

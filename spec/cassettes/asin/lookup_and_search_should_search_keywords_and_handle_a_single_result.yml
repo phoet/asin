@@ -2,7 +2,7 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&AssociateTag=&Keywords=0471317519&Operation=ItemSearch&ResponseGroup=Medium&SearchIndex=Books&Service=AWSECommerceService&Signature=IxDQd82sSc8SumlyxbKCF73NUuDOjDq1R+1aBJ4+QWY=&Timestamp=2011-09-04T15:14:38Z&Version=2010-11-01
+    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&AssociateTag=&Keywords=0471317519&Operation=ItemSearch&ResponseGroup=Medium&SearchIndex=Books&Service=AWSECommerceService&Signature=yzeipxskFDyAvn06qK32cONrMTD/FzM1JDFX6WVBr4w=&Timestamp=2011-09-20T16:33:23Z&Version=2010-11-01
     body: !!null 
     headers: !!null 
   response: !ruby/struct:VCR::Response
@@ -11,7 +11,7 @@
       message: OK
     headers:
       date:
-      - Sun, 04 Sep 2011 15:14:39 GMT
+      - Tue, 20 Sep 2011 16:33:23 GMT
       server:
       - Server
       content-type:
@@ -22,20 +22,20 @@
       - close
       transfer-encoding:
       - chunked
-    body: ! '<?xml version="1.0" ?><ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01"><OperationRequest><RequestId>4496c837-4a22-43c0-aa08-61c9c57961b2</RequestId><Arguments><Argument
+    body: ! '<?xml version="1.0" ?><ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01"><OperationRequest><RequestId>3a288492-0a72-4783-8b12-b83b5c424321</RequestId><Arguments><Argument
       Name="Operation" Value="ItemSearch"></Argument><Argument Name="Service" Value="AWSECommerceService"></Argument><Argument
       Name="AWSAccessKeyId" Value="AKIAJFA5X7RTOKFNPVZQ"></Argument><Argument Name="Timestamp"
-      Value="2011-09-04T15:14:38Z"></Argument><Argument Name="Signature" Value="IxDQd82sSc8SumlyxbKCF73NUuDOjDq1R+1aBJ4+QWY="></Argument><Argument
+      Value="2011-09-20T16:33:23Z"></Argument><Argument Name="Signature" Value="yzeipxskFDyAvn06qK32cONrMTD/FzM1JDFX6WVBr4w="></Argument><Argument
       Name="ResponseGroup" Value="Medium"></Argument><Argument Name="AssociateTag"></Argument><Argument
       Name="SearchIndex" Value="Books"></Argument><Argument Name="Version" Value="2010-11-01"></Argument><Argument
-      Name="Keywords" Value="0471317519"></Argument></Arguments><RequestProcessingTime>0.0427660000000000</RequestProcessingTime></OperationRequest><Items><Request><IsValid>True</IsValid><ItemSearchRequest><Condition>New</Condition><DeliveryMethod>Ship</DeliveryMethod><Keywords>0471317519</Keywords><MerchantId>Amazon</MerchantId><ResponseGroup>Medium</ResponseGroup><ReviewSort>-SubmissionDate</ReviewSort><SearchIndex>Books</SearchIndex></ItemSearchRequest></Request><TotalResults>1</TotalResults><TotalPages>1</TotalPages><Item><ASIN>0471317519</ASIN><DetailPageURL>http://www.amazon.com/Math-Youll-Ever-Need-Self-Teaching/dp/0471317519%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0471317519</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+      Name="Keywords" Value="0471317519"></Argument></Arguments><RequestProcessingTime>0.0320930000000000</RequestProcessingTime></OperationRequest><Items><Request><IsValid>True</IsValid><ItemSearchRequest><Condition>New</Condition><DeliveryMethod>Ship</DeliveryMethod><Keywords>0471317519</Keywords><MerchantId>Amazon</MerchantId><ResponseGroup>Medium</ResponseGroup><ReviewSort>-SubmissionDate</ReviewSort><SearchIndex>Books</SearchIndex></ItemSearchRequest></Request><TotalResults>1</TotalResults><TotalPages>1</TotalPages><Item><ASIN>0471317519</ASIN><DetailPageURL>http://www.amazon.com/Math-Youll-Ever-Need-Self-Teaching/dp/0471317519%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0471317519</DetailPageURL><ItemLinks><ItemLink><Description>Technical
       Details</Description><URL>http://www.amazon.com/Math-Youll-Ever-Need-Self-Teaching/dp/tech-data/0471317519%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0471317519</URL></ItemLink><ItemLink><Description>Add
       To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0471317519%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0471317519</URL></ItemLink><ItemLink><Description>Add
       To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0471317519%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0471317519</URL></ItemLink><ItemLink><Description>Add
       To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0471317519%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0471317519</URL></ItemLink><ItemLink><Description>Tell
       A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0471317519%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0471317519</URL></ItemLink><ItemLink><Description>All
       Customer Reviews</Description><URL>http://www.amazon.com/review/product/0471317519%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0471317519</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0471317519%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0471317519</URL></ItemLink></ItemLinks><SalesRank>24913</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/51lkQJgTFrL._SL75_.jpg</URL><Height
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0471317519%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0471317519</URL></ItemLink></ItemLinks><SalesRank>23200</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/51lkQJgTFrL._SL75_.jpg</URL><Height
       Units="pixels">75</Height><Width Units="pixels">61</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51lkQJgTFrL._SL160_.jpg</URL><Height
       Units="pixels">160</Height><Width Units="pixels">131</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51lkQJgTFrL.jpg</URL><Height
       Units="pixels">500</Height><Width Units="pixels">408</Width></LargeImage><ImageSets><ImageSet
@@ -47,13 +47,13 @@
       Units="pixels">160</Height><Width Units="pixels">131</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51lkQJgTFrL.jpg</URL><Height
       Units="pixels">500</Height><Width Units="pixels">408</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Steve
       Slavin</Author><Binding>Paperback</Binding><DeweyDecimalNumber>510</DeweyDecimalNumber><EAN>9780471317517</EAN><EANList><EANListElement>9780471317517</EANListElement></EANList><Edition>Revised
-      Edition</Edition><ISBN>0471317519</ISBN><IsEligibleForTradeIn>1</IsEligibleForTradeIn><ItemDimensions><Height
-      Units="hundredths-inches">56</Height><Length Units="hundredths-inches">918</Length><Weight
-      Units="hundredths-pounds">93</Weight><Width Units="hundredths-inches">794</Width></ItemDimensions><Label>Wiley</Label><Languages><Language><Name>English</Name><Type>Unknown</Type></Language><Language><Name>English</Name><Type>Original
+      Edition</Edition><ISBN>0471317519</ISBN><ItemDimensions><Height Units="hundredths-inches">56</Height><Length
+      Units="hundredths-inches">918</Length><Weight Units="hundredths-pounds">93</Weight><Width
+      Units="hundredths-inches">794</Width></ItemDimensions><Label>Wiley</Label><Languages><Language><Name>English</Name><Type>Unknown</Type></Language><Language><Name>English</Name><Type>Original
       Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>1695</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$16.95</FormattedPrice></ListPrice><Manufacturer>Wiley</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>240</NumberOfPages><PackageDimensions><Height
       Units="hundredths-inches">60</Height><Length Units="hundredths-inches">910</Length><Weight
-      Units="hundredths-pounds">80</Weight><Width Units="hundredths-inches">740</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>1999-04-12</PublicationDate><Publisher>Wiley</Publisher><SKU>q1-yan-d4qzrindxzzwtggsrwoth</SKU><Studio>Wiley</Studio><Title>All
-      the Math You''ll Ever Need: A Self-Teaching Guide (Wiley Self-Teaching Guides)</Title><TradeInValue><Amount>125</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$1.25</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>800</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$8.00</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>402</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$4.02</FormattedPrice></LowestUsedPrice><TotalNew>42</TotalNew><TotalUsed>44</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Units="hundredths-pounds">80</Weight><Width Units="hundredths-inches">740</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>1999-04-12</PublicationDate><Publisher>Wiley</Publisher><SKU>WU0471317519</SKU><Studio>Wiley</Studio><Title>All
+      the Math You''ll Ever Need: A Self-Teaching Guide (Wiley Self-Teaching Guides)</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>902</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$9.02</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>349</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$3.49</FormattedPrice></LowestUsedPrice><TotalNew>47</TotalNew><TotalUsed>47</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
       Description</Source><Content>&lt;b&gt;A sharp mind, like a healthy body, is
       subject to the same rule of nature: Use it or lose it&lt;/b&gt;&lt;p&gt;Need
       a calculator just to work out a 15 percent service charge? Not exactly sure

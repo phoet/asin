@@ -2,7 +2,7 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&AssociateTag=&Keywords=Learn%20Objective-C&Operation=ItemSearch&ResponseGroup=Medium&SearchIndex=Books&Service=AWSECommerceService&Signature=rl1Fh+3lBkRX1Tte/34HGYS+zrjO8lDX98EfNlC5Lw4=&Timestamp=2011-09-04T15:14:39Z&Version=2010-11-01
+    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&AssociateTag=&Keywords=Learn%20Objective-C&Operation=ItemSearch&ResponseGroup=Medium&SearchIndex=Books&Service=AWSECommerceService&Signature=hTMVgKHLxSwb7az/x8CsgwRqllvMQJppJ4uAfL7picM=&Timestamp=2011-09-20T16:33:23Z&Version=2010-11-01
     body: !!null 
     headers: !!null 
   response: !ruby/struct:VCR::Response
@@ -11,7 +11,7 @@
       message: OK
     headers:
       date:
-      - Sun, 04 Sep 2011 15:14:39 GMT
+      - Tue, 20 Sep 2011 16:33:23 GMT
       server:
       - Server
       content-type:
@@ -22,21 +22,22 @@
       - close
       transfer-encoding:
       - chunked
-    body: ! '<?xml version="1.0" ?><ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01"><OperationRequest><RequestId>a80b5a91-d083-49be-8c18-564b51051134</RequestId><Arguments><Argument
+    body: ! '<?xml version="1.0" ?><ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01"><OperationRequest><RequestId>6dff711f-f39e-4ca2-a2ad-5be6133866c8</RequestId><Arguments><Argument
       Name="Operation" Value="ItemSearch"></Argument><Argument Name="Service" Value="AWSECommerceService"></Argument><Argument
-      Name="AWSAccessKeyId" Value="AKIAJFA5X7RTOKFNPVZQ"></Argument><Argument Name="Timestamp"
-      Value="2011-09-04T15:14:39Z"></Argument><Argument Name="Signature" Value="rl1Fh+3lBkRX1Tte/34HGYS+zrjO8lDX98EfNlC5Lw4="></Argument><Argument
-      Name="ResponseGroup" Value="Medium"></Argument><Argument Name="AssociateTag"></Argument><Argument
-      Name="SearchIndex" Value="Books"></Argument><Argument Name="Version" Value="2010-11-01"></Argument><Argument
-      Name="Keywords" Value="Learn Objective-C"></Argument></Arguments><RequestProcessingTime>0.3027340000000000</RequestProcessingTime></OperationRequest><Items><Request><IsValid>True</IsValid><ItemSearchRequest><Condition>New</Condition><DeliveryMethod>Ship</DeliveryMethod><Keywords>Learn
-      Objective-C</Keywords><MerchantId>Amazon</MerchantId><ResponseGroup>Medium</ResponseGroup><ReviewSort>-SubmissionDate</ReviewSort><SearchIndex>Books</SearchIndex></ItemSearchRequest></Request><TotalResults>80</TotalResults><TotalPages>8</TotalPages><Item><ASIN>1430218150</ASIN><DetailPageURL>http://www.amazon.com/Learn-Objective-C-Mac-Mark-Dalrymple/dp/1430218150%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1430218150</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+      Name="Signature" Value="hTMVgKHLxSwb7az/x8CsgwRqllvMQJppJ4uAfL7picM="></Argument><Argument
+      Name="AssociateTag"></Argument><Argument Name="Version" Value="2010-11-01"></Argument><Argument
+      Name="Keywords" Value="Learn Objective-C"></Argument><Argument Name="AWSAccessKeyId"
+      Value="AKIAJFA5X7RTOKFNPVZQ"></Argument><Argument Name="Timestamp" Value="2011-09-20T16:33:23Z"></Argument><Argument
+      Name="ResponseGroup" Value="Medium"></Argument><Argument Name="SearchIndex"
+      Value="Books"></Argument></Arguments><RequestProcessingTime>0.0681790000000000</RequestProcessingTime></OperationRequest><Items><Request><IsValid>True</IsValid><ItemSearchRequest><Condition>New</Condition><DeliveryMethod>Ship</DeliveryMethod><Keywords>Learn
+      Objective-C</Keywords><MerchantId>Amazon</MerchantId><ResponseGroup>Medium</ResponseGroup><ReviewSort>-SubmissionDate</ReviewSort><SearchIndex>Books</SearchIndex></ItemSearchRequest></Request><TotalResults>82</TotalResults><TotalPages>9</TotalPages><Item><ASIN>1430218150</ASIN><DetailPageURL>http://www.amazon.com/Learn-Objective-C-Mac-Mark-Dalrymple/dp/1430218150%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1430218150</DetailPageURL><ItemLinks><ItemLink><Description>Technical
       Details</Description><URL>http://www.amazon.com/Learn-Objective-C-Mac-Mark-Dalrymple/dp/tech-data/1430218150%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>Add
       To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D1430218150%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>Add
       To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D1430218150%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>Add
       To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D1430218150%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>Tell
       A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/1430218150%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>All
       Customer Reviews</Description><URL>http://www.amazon.com/review/product/1430218150%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1430218150%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink></ItemLinks><SalesRank>92255</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL75_.jpg</URL><Height
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1430218150%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink></ItemLinks><SalesRank>28054</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL75_.jpg</URL><Height
       Units="pixels">75</Height><Width Units="pixels">57</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL160_.jpg</URL><Height
       Units="pixels">160</Height><Width Units="pixels">121</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL.jpg</URL><Height
       Units="pixels">500</Height><Width Units="pixels">379</Width></LargeImage><ImageSets><ImageSet
@@ -57,7 +58,7 @@
       Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>3999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$39.99</FormattedPrice></ListPrice><Manufacturer>Apress</Manufacturer><MPN>978-1-4302-1815-9</MPN><NumberOfItems>1</NumberOfItems><NumberOfPages>360</NumberOfPages><PackageDimensions><Height
       Units="hundredths-inches">102</Height><Length Units="hundredths-inches">921</Length><Weight
       Units="hundredths-pounds">123</Weight><Width Units="hundredths-inches">701</Width></PackageDimensions><PartNumber>978-1-4302-1815-9</PartNumber><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2008-12-25</PublicationDate><Publisher>Apress</Publisher><SKU>mon0000005185</SKU><Studio>Apress</Studio><Title>Learn
-      Objective-C on the Mac (Learn Series)</Title><TradeInValue><Amount>432</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$4.32</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1394</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$13.94</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1499</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$14.99</FormattedPrice></LowestUsedPrice><TotalNew>48</TotalNew><TotalUsed>26</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Objective-C on the Mac (Learn Series)</Title><TradeInValue><Amount>409</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$4.09</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2199</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$21.99</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1320</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$13.20</FormattedPrice></LowestUsedPrice><TotalNew>47</TotalNew><TotalUsed>31</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
       Description</Source><Content>&lt;P&gt;Learn Objective-C on the Macintosh is
       a classic programming primer for Mac OS X developers. And it’s hard to believe,
       but this will be the only guide to Objective-C specifically aimed at new developers!&lt;/P&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>1430228326</ASIN><DetailPageURL>http://www.amazon.com/Objective-C-Absolute-Beginners-iPhone-Programming/dp/1430228326%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1430228326</DetailPageURL><ItemLinks><ItemLink><Description>Technical
@@ -67,7 +68,7 @@
       To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D1430228326%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430228326</URL></ItemLink><ItemLink><Description>Tell
       A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/1430228326%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430228326</URL></ItemLink><ItemLink><Description>All
       Customer Reviews</Description><URL>http://www.amazon.com/review/product/1430228326%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430228326</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1430228326%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430228326</URL></ItemLink></ItemLinks><SalesRank>108316</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41P3boPLx4L._SL75_.jpg</URL><Height
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1430228326%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430228326</URL></ItemLink></ItemLinks><SalesRank>280534</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41P3boPLx4L._SL75_.jpg</URL><Height
       Units="pixels">75</Height><Width Units="pixels">61</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41P3boPLx4L._SL160_.jpg</URL><Height
       Units="pixels">160</Height><Width Units="pixels">130</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41P3boPLx4L.jpg</URL><Height
       Units="pixels">500</Height><Width Units="pixels">406</Width></LargeImage><ImageSets><ImageSet
@@ -83,8 +84,8 @@
       Units="hundredths-pounds">132</Weight><Width Units="hundredths-inches">758</Width></ItemDimensions><Label>Apress</Label><Languages><Language><Name>English</Name><Type>Unknown</Type></Language><Language><Name>English</Name><Type>Original
       Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>3999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$39.99</FormattedPrice></ListPrice><Manufacturer>Apress</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>350</NumberOfPages><PackageDimensions><Height
       Units="hundredths-inches">100</Height><Length Units="hundredths-inches">920</Length><Weight
-      Units="hundredths-pounds">135</Weight><Width Units="hundredths-inches">750</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2010-04-01</PublicationDate><Publisher>Apress</Publisher><SKU>894663</SKU><Studio>Apress</Studio><Title>Objective-C
-      for Absolute Beginners: iPhone and Mac Programming Made Easy</Title><TradeInValue><Amount>406</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$4.06</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2199</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$21.99</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1299</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$12.99</FormattedPrice></LowestUsedPrice><TotalNew>25</TotalNew><TotalUsed>17</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Units="hundredths-pounds">135</Weight><Width Units="hundredths-inches">750</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2010-04-01</PublicationDate><Publisher>Apress</Publisher><SKU>ACOMMP2_book_usedverygood_1430228326</SKU><Studio>Apress</Studio><Title>Objective-C
+      for Absolute Beginners: iPhone and Mac Programming Made Easy</Title><TradeInValue><Amount>700</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$7.00</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2097</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$20.97</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>2199</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$21.99</FormattedPrice></LowestUsedPrice><TotalNew>29</TotalNew><TotalUsed>15</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
       Description</Source><Content>&lt;P&gt;The success of Learn to Program Objective-C,
       from Apress, allowed many people to migrate their existing programming skills
       to Objective-C. This book allows even people who have never programmed before,
@@ -101,7 +102,7 @@
       To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D1934356514%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1934356514</URL></ItemLink><ItemLink><Description>Tell
       A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/1934356514%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1934356514</URL></ItemLink><ItemLink><Description>All
       Customer Reviews</Description><URL>http://www.amazon.com/review/product/1934356514%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1934356514</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1934356514%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1934356514</URL></ItemLink></ItemLinks><SalesRank>29107</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/414Skg0O6yL._SL75_.jpg</URL><Height
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1934356514%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1934356514</URL></ItemLink></ItemLinks><SalesRank>73740</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/414Skg0O6yL._SL75_.jpg</URL><Height
       Units="pixels">75</Height><Width Units="pixels">61</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/414Skg0O6yL._SL160_.jpg</URL><Height
       Units="pixels">160</Height><Width Units="pixels">131</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/414Skg0O6yL.jpg</URL><Height
       Units="pixels">416</Height><Width Units="pixels">340</Width></LargeImage><ImageSets><ImageSet
@@ -124,7 +125,7 @@
       Units="hundredths-inches">87</Height><Length Units="hundredths-inches">906</Length><Weight
       Units="hundredths-pounds">146</Weight><Width Units="hundredths-inches">772</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2010-04-02</PublicationDate><Publisher>Pragmatic
       Bookshelf</Publisher><SKU>9781934356517</SKU><Studio>Pragmatic Bookshelf</Studio><Title>Beginning
-      Mac Programming: Develop with Objective-C and Cocoa (Pragmatic Programmers)</Title><TradeInValue><Amount>634</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$6.34</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1985</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$19.85</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1792</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$17.92</FormattedPrice></LowestUsedPrice><TotalNew>41</TotalNew><TotalUsed>27</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Mac Programming: Develop with Objective-C and Cocoa (Pragmatic Programmers)</Title><TradeInValue><Amount>550</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$5.50</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1985</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$19.85</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1646</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$16.46</FormattedPrice></LowestUsedPrice><TotalNew>43</TotalNew><TotalUsed>29</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
       Description</Source><Content>&lt;DIV&gt;&lt;p&gt;&lt;i&gt;Beginning Mac Programming&lt;/i&gt;
       takes you through concrete, working examples, giving you the core concepts and
       principles of development in context so you will be ready to build the applications
@@ -141,7 +142,7 @@
       To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0321711394%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321711394</URL></ItemLink><ItemLink><Description>Tell
       A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0321711394%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321711394</URL></ItemLink><ItemLink><Description>All
       Customer Reviews</Description><URL>http://www.amazon.com/review/product/0321711394%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321711394</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0321711394%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321711394</URL></ItemLink></ItemLinks><SalesRank>1393</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/414UsmkTQvL._SL75_.jpg</URL><Height
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0321711394%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321711394</URL></ItemLink></ItemLinks><SalesRank>1157</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/414UsmkTQvL._SL75_.jpg</URL><Height
       Units="pixels">75</Height><Width Units="pixels">56</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/414UsmkTQvL._SL160_.jpg</URL><Height
       Units="pixels">160</Height><Width Units="pixels">120</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/414UsmkTQvL.jpg</URL><Height
       Units="pixels">500</Height><Width Units="pixels">374</Width></LargeImage><ImageSets><ImageSet
@@ -158,8 +159,8 @@
       Professional</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>552</NumberOfPages><PackageDimensions><Height
       Units="hundredths-inches">110</Height><Length Units="hundredths-inches">906</Length><Weight
       Units="hundredths-pounds">185</Weight><Width Units="hundredths-inches">709</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2011-06-20</PublicationDate><Publisher>Addison-Wesley
-      Professional</Publisher><SKU>A9183504</SKU><Studio>Addison-Wesley Professional</Studio><Title>Programming
-      in Objective-C (3rd Edition) (Developer''s Library)</Title><TradeInValue><Amount>540</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$5.40</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2726</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$27.26</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>2525</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$25.25</FormattedPrice></LowestUsedPrice><TotalNew>35</TotalNew><TotalUsed>17</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Professional</Publisher><SKU>4624400</SKU><Studio>Addison-Wesley Professional</Studio><Title>Programming
+      in Objective-C (3rd Edition) (Developer''s Library)</Title><TradeInValue><Amount>1000</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$10.00</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2500</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$25.00</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1900</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$19.00</FormattedPrice></LowestUsedPrice><TotalNew>43</TotalNew><TotalUsed>17</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
       Description</Source><Content>&lt;i&gt;Programming in Objective-C&lt;/i&gt; is
       a concise, carefully written tutorial on the basics of Objective-C and object-oriented
       programming for the iOS and Mac platforms.&lt;br&gt;&lt;br&gt;The book makes
@@ -189,7 +190,7 @@
       To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D1430223693%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430223693</URL></ItemLink><ItemLink><Description>Tell
       A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/1430223693%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430223693</URL></ItemLink><ItemLink><Description>All
       Customer Reviews</Description><URL>http://www.amazon.com/review/product/1430223693%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430223693</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1430223693%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430223693</URL></ItemLink></ItemLinks><SalesRank>288531</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41SkwjUoowL._SL75_.jpg</URL><Height
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1430223693%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430223693</URL></ItemLink></ItemLinks><SalesRank>525024</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41SkwjUoowL._SL75_.jpg</URL><Height
       Units="pixels">75</Height><Width Units="pixels">61</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41SkwjUoowL._SL160_.jpg</URL><Height
       Units="pixels">160</Height><Width Units="pixels">131</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41SkwjUoowL.jpg</URL><Height
       Units="pixels">500</Height><Width Units="pixels">409</Width></LargeImage><ImageSets><ImageSet
@@ -209,7 +210,7 @@
       Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>3999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$39.99</FormattedPrice></ListPrice><Manufacturer>Apress</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>493</NumberOfPages><PackageDimensions><Height
       Units="hundredths-inches">120</Height><Length Units="hundredths-inches">900</Length><Weight
       Units="hundredths-pounds">165</Weight><Width Units="hundredths-inches">750</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2009-09-25</PublicationDate><Publisher>Apress</Publisher><SKU>Z1430223693Z2</SKU><Studio>Apress</Studio><Title>Learn
-      Objective-C for Java Developers (Learn Series)</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$0.01</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$0.01</FormattedPrice></LowestUsedPrice><TotalNew>35</TotalNew><TotalUsed>34</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Objective-C for Java Developers (Learn Series)</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$0.01</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$0.01</FormattedPrice></LowestUsedPrice><TotalNew>39</TotalNew><TotalUsed>31</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
       Description</Source><Content>&lt;P&gt;Objective-C is Apple’s language for developing
       native Mac OS X and iPhone applications, and it’s become incredibly popular
       with experienced developers, especially Java developers.&lt;/P&gt;  &lt;P&gt;MacBooks,
@@ -217,14 +218,64 @@
       conferences, and now that the iTunes App Store is such a huge success, it seems
       that all of these Mac-owning Java developers want to learn Objective-C and join
       the rush to create the next “cool” app. Learn Objective-C for Java Developers
-      is the book for them.&lt;/P&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>0321566157</ASIN><DetailPageURL>http://www.amazon.com/Programming-Objective-C-2-0-Stephen-Kochan/dp/0321566157%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0321566157</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+      is the book for them.&lt;/P&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>0596804792</ASIN><DetailPageURL>http://www.amazon.com/Cocoa-Objective-C-Running-Foundations-programming/dp/0596804792%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0596804792</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+      Details</Description><URL>http://www.amazon.com/Cocoa-Objective-C-Running-Foundations-programming/dp/tech-data/0596804792%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>Add
+      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0596804792%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>Add
+      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0596804792%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>Add
+      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0596804792%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>Tell
+      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0596804792%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>All
+      Customer Reviews</Description><URL>http://www.amazon.com/review/product/0596804792%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>All
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0596804792%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink></ItemLinks><SalesRank>44980</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">57</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">122</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL.jpg</URL><Height
+      Units="pixels">420</Height><Width Units="pixels">320</Width></LargeImage><ImageSets><ImageSet
+      Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL._SL30_.jpg</URL><Height
+      Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">57</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">57</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL._SL110_.jpg</URL><Height
+      Units="pixels">110</Height><Width Units="pixels">84</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">122</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL.jpg</URL><Height
+      Units="pixels">420</Height><Width Units="pixels">320</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Scott
+      Stevenson</Author><Binding>Paperback</Binding><DeweyDecimalNumber>005.268</DeweyDecimalNumber><EAN>9780596804794</EAN><EANList><EANListElement>9780596804794</EANListElement></EANList><Edition>1</Edition><Feature>ISBN13:
+      9780596804794</Feature><Feature>Condition: New</Feature><Feature>Notes: BRAND
+      NEW FROM PUBLISHER! 100% Satisfaction Guarantee. Tracking provided on most orders.
+      Buy with Confidence! Millions of books sold!</Feature><ISBN>0596804792</ISBN><IsEligibleForTradeIn>1</IsEligibleForTradeIn><ItemDimensions><Height
+      Units="hundredths-inches">84</Height><Length Units="hundredths-inches">922</Length><Weight
+      Units="hundredths-pounds">143</Weight><Width Units="hundredths-inches">712</Width></ItemDimensions><Label>O''Reilly
+      Media</Label><Languages><Language><Name>English</Name><Type>Unknown</Type></Language><Language><Name>English</Name><Type>Original
+      Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>3499</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$34.99</FormattedPrice></ListPrice><Manufacturer>O''Reilly
+      Media</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>416</NumberOfPages><PackageDimensions><Height
+      Units="hundredths-inches">90</Height><Length Units="hundredths-inches">900</Length><Weight
+      Units="hundredths-pounds">135</Weight><Width Units="hundredths-inches">680</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2010-04-30</PublicationDate><Publisher>O''Reilly
+      Media</Publisher><SKU>E9780596804794</SKU><Studio>O''Reilly Media</Studio><Title>Cocoa
+      and Objective-C: Up and Running: Foundations of Mac, iPhone, and iPod touch
+      programming</Title><TradeInValue><Amount>120</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$1.20</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1600</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$16.00</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1100</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$11.00</FormattedPrice></LowestUsedPrice><TotalNew>43</TotalNew><TotalUsed>24</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Description</Source><Content>&lt;DIV&gt;&lt;p&gt;Build solid applications for
+      Mac OS X, iPhone, and iPod Touch, regardless of whether you have basic programming
+      skills or years of programming experience. With this book, you''ll learn how
+      to use Apple''s Cocoa framework and the Objective-C language through step-by-step
+      tutorials, hands-on exercises, clear examples, and sound advice from a Cocoa
+      expert.&lt;/p&gt;&lt;p&gt; &lt;i&gt;Cocoa and Objective-C: Up and Running&lt;/i&gt;
+      offers just enough theory to ground you, then shows you how to use Apple''s
+      rapid development tools -- Xcode and Interface Builder -- to develop Cocoa applications,
+      manage user interaction, create great UIs, and more. You''ll quickly gain the
+      experience you need to develop sophisticated Apple software, whether you''re
+      somewhat new to programming or just new to this platform.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Get
+      a quick hands-on tour of basic programming skills with the C language &lt;/li&gt;&lt;li&gt;Learn
+      how to use Interface Builder to quickly design and prototype your application''s
+      user interface &lt;/li&gt;&lt;li&gt;Start using Objective-C by creating objects
+      and learning memory management &lt;/li&gt;&lt;li&gt;Learn about the Model-View-Controller
+      (MVC) method of sharing data between objects &lt;/li&gt;&lt;li&gt;Understand
+      the Foundation value classes, Cocoa''s robust API for storing common data types
+      &lt;/li&gt;&lt;li&gt;Become familiar with Apple''s graphics frameworks, and
+      learn how to make custom views with AppKit &lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>0321566157</ASIN><DetailPageURL>http://www.amazon.com/Programming-Objective-C-2-0-Stephen-Kochan/dp/0321566157%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0321566157</DetailPageURL><ItemLinks><ItemLink><Description>Technical
       Details</Description><URL>http://www.amazon.com/Programming-Objective-C-2-0-Stephen-Kochan/dp/tech-data/0321566157%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>Add
       To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0321566157%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>Add
       To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0321566157%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>Add
       To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0321566157%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>Tell
       A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0321566157%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>All
       Customer Reviews</Description><URL>http://www.amazon.com/review/product/0321566157%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0321566157%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink></ItemLinks><SalesRank>23900</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41M2GuGl44L._SL75_.jpg</URL><Height
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0321566157%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink></ItemLinks><SalesRank>33839</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41M2GuGl44L._SL75_.jpg</URL><Height
       Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41M2GuGl44L._SL160_.jpg</URL><Height
       Units="pixels">160</Height><Width Units="pixels">125</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41M2GuGl44L.jpg</URL><Height
       Units="pixels">500</Height><Width Units="pixels">390</Width></LargeImage><ImageSets><ImageSet
@@ -241,8 +292,8 @@
       Professional</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>624</NumberOfPages><PackageDimensions><Height
       Units="hundredths-inches">140</Height><Length Units="hundredths-inches">890</Length><Weight
       Units="hundredths-pounds">210</Weight><Width Units="hundredths-inches">690</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2009-01-08</PublicationDate><Publisher>Addison-Wesley
-      Professional</Publisher><SKU>0321566157</SKU><Studio>Addison-Wesley Professional</Studio><Title>Programming
-      in Objective-C 2.0 (2nd Edition)</Title><TradeInValue><Amount>315</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$3.15</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2099</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$20.99</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1530</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$15.30</FormattedPrice></LowestUsedPrice><TotalNew>18</TotalNew><TotalUsed>43</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Professional</Publisher><SKU>mon0000090509</SKU><Studio>Addison-Wesley Professional</Studio><Title>Programming
+      in Objective-C 2.0 (2nd Edition)</Title><TradeInValue><Amount>310</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$3.10</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2095</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$20.95</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1523</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$15.23</FormattedPrice></LowestUsedPrice><TotalNew>17</TotalNew><TotalUsed>42</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
       Description</Source><Content>&lt;P style="MARGIN: 0px"&gt;&lt;/P&gt;  &lt;P
       style="MARGIN: 0px"&gt;&lt;B&gt;THE #1 BESTSELLING BOOK ON OBJECTIVE-C 2.0&lt;BR&gt;&lt;/B&gt;&lt;/P&gt;  &lt;P
       style="MARGIN: 0px"&gt;&lt;B&gt;&lt;BR&gt;&lt;/B&gt;&lt;/P&gt;  &lt;P style="MARGIN:
@@ -291,64 +342,14 @@
       0px"&gt;&lt;B&gt;Part IV: Appendixes&lt;/B&gt;&lt;/P&gt;  &lt;P style="MARGIN:
       0px"&gt;  A    Glossary &lt;BR&gt;&lt;/P&gt;  &lt;P style="MARGIN: 0px"&gt; 
       B    Objective-C 2.0 Language Summary &lt;BR&gt;&lt;/P&gt;  &lt;P style="MARGIN:
-      0px"&gt;  C    Address Book Source Code&lt;BR&gt;&lt;/P&gt;  D    Resources&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>0596804792</ASIN><DetailPageURL>http://www.amazon.com/Cocoa-Objective-C-Running-Foundations-programming/dp/0596804792%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0596804792</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-      Details</Description><URL>http://www.amazon.com/Cocoa-Objective-C-Running-Foundations-programming/dp/tech-data/0596804792%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>Add
-      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0596804792%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>Add
-      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0596804792%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>Add
-      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0596804792%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>Tell
-      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0596804792%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>All
-      Customer Reviews</Description><URL>http://www.amazon.com/review/product/0596804792%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0596804792%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink></ItemLinks><SalesRank>217433</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL._SL75_.jpg</URL><Height
-      Units="pixels">75</Height><Width Units="pixels">57</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL._SL160_.jpg</URL><Height
-      Units="pixels">160</Height><Width Units="pixels">122</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL.jpg</URL><Height
-      Units="pixels">420</Height><Width Units="pixels">320</Width></LargeImage><ImageSets><ImageSet
-      Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL._SL30_.jpg</URL><Height
-      Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL._SL75_.jpg</URL><Height
-      Units="pixels">75</Height><Width Units="pixels">57</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL._SL75_.jpg</URL><Height
-      Units="pixels">75</Height><Width Units="pixels">57</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL._SL110_.jpg</URL><Height
-      Units="pixels">110</Height><Width Units="pixels">84</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL._SL160_.jpg</URL><Height
-      Units="pixels">160</Height><Width Units="pixels">122</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41AQuM9%2B9vL.jpg</URL><Height
-      Units="pixels">420</Height><Width Units="pixels">320</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Scott
-      Stevenson</Author><Binding>Paperback</Binding><DeweyDecimalNumber>005.268</DeweyDecimalNumber><EAN>9780596804794</EAN><EANList><EANListElement>9780596804794</EANListElement></EANList><Edition>1</Edition><Feature>ISBN13:
-      9780596804794</Feature><Feature>Condition: New</Feature><Feature>Notes: BRAND
-      NEW FROM PUBLISHER! 100% Satisfaction Guarantee. Tracking provided on most orders.
-      Buy with Confidence! Millions of books sold!</Feature><ISBN>0596804792</ISBN><IsEligibleForTradeIn>1</IsEligibleForTradeIn><ItemDimensions><Height
-      Units="hundredths-inches">84</Height><Length Units="hundredths-inches">922</Length><Weight
-      Units="hundredths-pounds">143</Weight><Width Units="hundredths-inches">712</Width></ItemDimensions><Label>O''Reilly
-      Media</Label><Languages><Language><Name>English</Name><Type>Unknown</Type></Language><Language><Name>English</Name><Type>Original
-      Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>3499</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$34.99</FormattedPrice></ListPrice><Manufacturer>O''Reilly
-      Media</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>416</NumberOfPages><PackageDimensions><Height
-      Units="hundredths-inches">90</Height><Length Units="hundredths-inches">900</Length><Weight
-      Units="hundredths-pounds">135</Weight><Width Units="hundredths-inches">680</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2010-04-30</PublicationDate><Publisher>O''Reilly
-      Media</Publisher><SKU>E9780596804794</SKU><Studio>O''Reilly Media</Studio><Title>Cocoa
-      and Objective-C: Up and Running: Foundations of Mac, iPhone, and iPod touch
-      programming</Title><TradeInValue><Amount>432</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$4.32</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1599</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$15.99</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1699</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$16.99</FormattedPrice></LowestUsedPrice><TotalNew>42</TotalNew><TotalUsed>21</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
-      Description</Source><Content>&lt;DIV&gt;&lt;p&gt;Build solid applications for
-      Mac OS X, iPhone, and iPod Touch, regardless of whether you have basic programming
-      skills or years of programming experience. With this book, you''ll learn how
-      to use Apple''s Cocoa framework and the Objective-C language through step-by-step
-      tutorials, hands-on exercises, clear examples, and sound advice from a Cocoa
-      expert.&lt;/p&gt;&lt;p&gt; &lt;i&gt;Cocoa and Objective-C: Up and Running&lt;/i&gt;
-      offers just enough theory to ground you, then shows you how to use Apple''s
-      rapid development tools -- Xcode and Interface Builder -- to develop Cocoa applications,
-      manage user interaction, create great UIs, and more. You''ll quickly gain the
-      experience you need to develop sophisticated Apple software, whether you''re
-      somewhat new to programming or just new to this platform.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Get
-      a quick hands-on tour of basic programming skills with the C language &lt;/li&gt;&lt;li&gt;Learn
-      how to use Interface Builder to quickly design and prototype your application''s
-      user interface &lt;/li&gt;&lt;li&gt;Start using Objective-C by creating objects
-      and learning memory management &lt;/li&gt;&lt;li&gt;Learn about the Model-View-Controller
-      (MVC) method of sharing data between objects &lt;/li&gt;&lt;li&gt;Understand
-      the Foundation value classes, Cocoa''s robust API for storing common data types
-      &lt;/li&gt;&lt;li&gt;Become familiar with Apple''s graphics frameworks, and
-      learn how to make custom views with AppKit &lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>0470522755</ASIN><DetailPageURL>http://www.amazon.com/Objective-C-Dummies-Neal-Goldstein/dp/0470522755%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0470522755</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+      0px"&gt;  C    Address Book Source Code&lt;BR&gt;&lt;/P&gt;  D    Resources&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>0470522755</ASIN><DetailPageURL>http://www.amazon.com/Objective-C-Dummies-Neal-Goldstein/dp/0470522755%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0470522755</DetailPageURL><ItemLinks><ItemLink><Description>Technical
       Details</Description><URL>http://www.amazon.com/Objective-C-Dummies-Neal-Goldstein/dp/tech-data/0470522755%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0470522755</URL></ItemLink><ItemLink><Description>Add
       To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0470522755%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0470522755</URL></ItemLink><ItemLink><Description>Add
       To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0470522755%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0470522755</URL></ItemLink><ItemLink><Description>Add
       To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0470522755%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0470522755</URL></ItemLink><ItemLink><Description>Tell
       A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0470522755%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0470522755</URL></ItemLink><ItemLink><Description>All
       Customer Reviews</Description><URL>http://www.amazon.com/review/product/0470522755%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0470522755</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0470522755%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0470522755</URL></ItemLink></ItemLinks><SalesRank>360019</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/51n1iAK3RjL._SL75_.jpg</URL><Height
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0470522755%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0470522755</URL></ItemLink></ItemLinks><SalesRank>176082</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/51n1iAK3RjL._SL75_.jpg</URL><Height
       Units="pixels">75</Height><Width Units="pixels">59</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51n1iAK3RjL._SL160_.jpg</URL><Height
       Units="pixels">160</Height><Width Units="pixels">127</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51n1iAK3RjL.jpg</URL><Height
       Units="pixels">500</Height><Width Units="pixels">396</Width></LargeImage><ImageSets><ImageSet
@@ -368,7 +369,7 @@
       Units="hundredths-inches">110</Height><Length Units="hundredths-inches">900</Length><Weight
       Units="hundredths-pounds">150</Weight><Width Units="hundredths-inches">730</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2009-10-05</PublicationDate><Publisher>For
       Dummies</Publisher><SKU>G9780470522752</SKU><Studio>For Dummies</Studio><Title>Objective-C
-      For Dummies</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1489</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$14.89</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1035</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$10.35</FormattedPrice></LowestUsedPrice><TotalNew>39</TotalNew><TotalUsed>15</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      For Dummies</Title><TradeInValue><Amount>387</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$3.87</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1634</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$16.34</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1086</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$10.86</FormattedPrice></LowestUsedPrice><TotalNew>33</TotalNew><TotalUsed>14</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
       Description</Source><Content>&lt;b&gt;Learn the primary programming language
       for creating iPhone and Mac apps&lt;/b&gt;&lt;p&gt;The only thing hotter than
       the iPhone right now is new apps for the iPhone. Objective-C is the primary
@@ -394,7 +395,7 @@
       To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D1430218096%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218096</URL></ItemLink><ItemLink><Description>Tell
       A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/1430218096%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218096</URL></ItemLink><ItemLink><Description>All
       Customer Reviews</Description><URL>http://www.amazon.com/review/product/1430218096%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218096</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1430218096%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218096</URL></ItemLink></ItemLinks><SalesRank>113443</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41JbIvZnXjL._SL75_.jpg</URL><Height
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1430218096%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218096</URL></ItemLink></ItemLinks><SalesRank>63993</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41JbIvZnXjL._SL75_.jpg</URL><Height
       Units="pixels">75</Height><Width Units="pixels">57</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41JbIvZnXjL._SL160_.jpg</URL><Height
       Units="pixels">160</Height><Width Units="pixels">121</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41JbIvZnXjL.jpg</URL><Height
       Units="pixels">500</Height><Width Units="pixels">378</Width></LargeImage><ImageSets><ImageSet
@@ -413,8 +414,8 @@
       Units="hundredths-pounds">147</Weight><Width Units="hundredths-inches">770</Width></ItemDimensions><Label>Apress</Label><Languages><Language><Name>English</Name><Type>Unknown</Type></Language><Language><Name>English</Name><Type>Original
       Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>3999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$39.99</FormattedPrice></ListPrice><Manufacturer>Apress</Manufacturer><MPN>978-1-4302-1809-8</MPN><NumberOfItems>1</NumberOfItems><NumberOfPages>376</NumberOfPages><PackageDimensions><Height
       Units="hundredths-inches">100</Height><Length Units="hundredths-inches">920</Length><Weight
-      Units="hundredths-pounds">120</Weight><Width Units="hundredths-inches">710</Width></PackageDimensions><PartNumber>978-1-4302-1809-8</PartNumber><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2008-12-12</PublicationDate><Publisher>Apress</Publisher><SKU>1430218096</SKU><Studio>Apress</Studio><Title>Learn
-      C on the Mac (Learn Series)</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1498</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$14.98</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>340</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$3.40</FormattedPrice></LowestUsedPrice><TotalNew>38</TotalNew><TotalUsed>38</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Units="hundredths-pounds">120</Weight><Width Units="hundredths-inches">710</Width></PackageDimensions><PartNumber>978-1-4302-1809-8</PartNumber><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2008-12-12</PublicationDate><Publisher>Apress</Publisher><SKU>PNU1139567</SKU><Studio>Apress</Studio><Title>Learn
+      C on the Mac (Learn Series)</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1499</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$14.99</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>649</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$6.49</FormattedPrice></LowestUsedPrice><TotalNew>40</TotalNew><TotalUsed>34</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
       Description</Source><Content>&lt;P&gt;Learn C on the Macintosh is the classic
       programming primer for Mac OS X developers. An original best-seller, Dave Mark
       has kept the book completely updated and available for nearly twenty years.&lt;/P&gt;  &lt;P&gt;This
@@ -427,7 +428,7 @@
       To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0321711386%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321711386</URL></ItemLink><ItemLink><Description>Tell
       A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0321711386%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321711386</URL></ItemLink><ItemLink><Description>All
       Customer Reviews</Description><URL>http://www.amazon.com/review/product/0321711386%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321711386</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0321711386%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321711386</URL></ItemLink></ItemLinks><SalesRank>338477</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41LgE5wnlUL._SL75_.jpg</URL><Height
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0321711386%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321711386</URL></ItemLink></ItemLinks><SalesRank>528663</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41LgE5wnlUL._SL75_.jpg</URL><Height
       Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41LgE5wnlUL._SL160_.jpg</URL><Height
       Units="pixels">160</Height><Width Units="pixels">124</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41LgE5wnlUL.jpg</URL><Height
       Units="pixels">500</Height><Width Units="pixels">389</Width></LargeImage><ImageSets><ImageSet
@@ -445,7 +446,7 @@
       Units="hundredths-inches">94</Height><Length Units="hundredths-inches">898</Length><Weight
       Units="hundredths-pounds">146</Weight><Width Units="hundredths-inches">701</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2010-08-02</PublicationDate><Publisher>Addison-Wesley
       Professional</Publisher><SKU>ST0321711386</SKU><Studio>Addison-Wesley Professional</Studio><Title>Learning
-      Objective-C 2.0: A Hands-On Guide to Objective-C for Mac and iOS Developers</Title><TradeInValue><Amount>280</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$2.80</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2148</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$21.48</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>2000</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$20.00</FormattedPrice></LowestUsedPrice><TotalNew>40</TotalNew><TotalUsed>14</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Objective-C 2.0: A Hands-On Guide to Objective-C for Mac and iOS Developers</Title><TradeInValue><Amount>550</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$5.50</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2381</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$23.81</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1895</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$18.95</FormattedPrice></LowestUsedPrice><TotalNew>48</TotalNew><TotalUsed>18</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
       Description</Source><Content>&lt;b&gt;Get Started Fast with Objective-C 2.0
       Programming for OS X, iPhone, iPod touch, and iPad&lt;/b&gt; &lt;p style="margin:
       0px;"&gt; &lt;/p&gt; &lt;p style="margin: 0px;"&gt;If you want to learn Objective-C
