@@ -1,3 +1,8 @@
+== 0.7.0
+
+* jruby compatible
+* loosen gem dependencies
+
 == 0.6.1
 
 * fix error when passing nil to config values
