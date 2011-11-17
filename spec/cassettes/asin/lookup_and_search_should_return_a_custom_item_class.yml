@@ -2,16 +2,16 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&AssociateTag=&ItemId=1430218150&Operation=ItemLookup&ResponseGroup=Medium&Service=AWSECommerceService&Signature=CRjYApkvGujrs+rI1+rkkRs6CK8sz5z5BBDiQetRYv0=&Timestamp=2011-09-20T16:33:22Z&Version=2010-11-01
-    body: !!null 
-    headers: !!null 
+    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&AssociateTag=&ItemId=1430218150&Operation=ItemLookup&ResponseGroup=Medium&Service=AWSECommerceService&Signature=eV3pBIgMLzqiApO43Fsdjm3HcmJN6R05IfsbSAwitvg=&Timestamp=2011-11-17T12:26:37Z&Version=2010-11-01
+    body: 
+    headers: 
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
     headers:
       date:
-      - Tue, 20 Sep 2011 16:33:22 GMT
+      - Thu, 17 Nov 2011 12:26:37 GMT
       server:
       - Server
       content-type:
@@ -22,42 +22,60 @@
       - close
       transfer-encoding:
       - chunked
-    body: <?xml version="1.0" ?><ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01"><OperationRequest><RequestId>ea1c6a72-bee7-4915-99d0-a6dd493b42e6</RequestId><Arguments><Argument
-      Name="Operation" Value="ItemLookup"></Argument><Argument Name="Service" Value="AWSECommerceService"></Argument><Argument
-      Name="Signature" Value="CRjYApkvGujrs+rI1+rkkRs6CK8sz5z5BBDiQetRYv0="></Argument><Argument
-      Name="AssociateTag"></Argument><Argument Name="Version" Value="2010-11-01"></Argument><Argument
-      Name="ItemId" Value="1430218150"></Argument><Argument Name="AWSAccessKeyId"
-      Value="AKIAJFA5X7RTOKFNPVZQ"></Argument><Argument Name="Timestamp" Value="2011-09-20T16:33:22Z"></Argument><Argument
-      Name="ResponseGroup" Value="Medium"></Argument></Arguments><RequestProcessingTime>0.0208930000000000</RequestProcessingTime></OperationRequest><Items><Request><IsValid>True</IsValid><ItemLookupRequest><Condition>New</Condition><DeliveryMethod>Ship</DeliveryMethod><IdType>ASIN</IdType><MerchantId>Amazon</MerchantId><OfferPage>1</OfferPage><ItemId>1430218150</ItemId><ResponseGroup>Medium</ResponseGroup><ReviewPage>1</ReviewPage><ReviewSort>-SubmissionDate</ReviewSort><VariationPage>All</VariationPage></ItemLookupRequest></Request><Item><ASIN>1430218150</ASIN><DetailPageURL>http://www.amazon.com/Learn-Objective-C-Mac-Mark-Dalrymple/dp/1430218150%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1430218150</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+    body: <?xml version="1.0" encoding="UTF-8"?><ItemLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01"><OperationRequest><HTTPHeaders><Header
+      Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>059TNKCCD2EE651Q0C4C</RequestId><Arguments><Argument
+      Name="AssociateTag"></Argument><Argument Name="ItemId" Value="1430218150"></Argument><Argument
+      Name="Service" Value="AWSECommerceService"></Argument><Argument Name="Signature"
+      Value="eV3pBIgMLzqiApO43Fsdjm3HcmJN6R05IfsbSAwitvg="></Argument><Argument Name="ResponseGroup"
+      Value="Medium"></Argument><Argument Name="Operation" Value="ItemLookup"></Argument><Argument
+      Name="AWSAccessKeyId" Value="AKIAJFA5X7RTOKFNPVZQ"></Argument><Argument Name="Timestamp"
+      Value="2011-11-17T12:26:37Z"></Argument><Argument Name="Version" Value="2010-11-01"></Argument></Arguments><RequestProcessingTime>0.038128137588501</RequestProcessingTime></OperationRequest><Items><Request><IsValid>True</IsValid><ItemLookupRequest><ItemId>1430218150</ItemId><ResponseGroup>Medium</ResponseGroup></ItemLookupRequest></Request><Item><ASIN>1430218150</ASIN><DetailPageURL>http://www.amazon.com/Learn-Objective-C-Mac-Mark-Dalrymple/dp/1430218150%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1430218150</DetailPageURL><ItemLinks><ItemLink><Description>Technical
       Details</Description><URL>http://www.amazon.com/Learn-Objective-C-Mac-Mark-Dalrymple/dp/tech-data/1430218150%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>Add
       To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D1430218150%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>Add
       To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D1430218150%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>Add
       To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D1430218150%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>Tell
       A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/1430218150%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>All
       Customer Reviews</Description><URL>http://www.amazon.com/review/product/1430218150%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1430218150%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink></ItemLinks><SalesRank>28054</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL75_.jpg</URL><Height
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1430218150%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink></ItemLinks><SalesRank>25537</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL75_.jpg</URL><Height
       Units="pixels">75</Height><Width Units="pixels">57</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL160_.jpg</URL><Height
-      Units="pixels">160</Height><Width Units="pixels">121</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">121</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL500_.jpg</URL><Height
       Units="pixels">500</Height><Width Units="pixels">379</Width></LargeImage><ImageSets><ImageSet
       Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL30_.jpg</URL><Height
       Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL75_.jpg</URL><Height
       Units="pixels">75</Height><Width Units="pixels">57</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL75_.jpg</URL><Height
       Units="pixels">75</Height><Width Units="pixels">57</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL110_.jpg</URL><Height
       Units="pixels">110</Height><Width Units="pixels">83</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL160_.jpg</URL><Height
-      Units="pixels">160</Height><Width Units="pixels">121</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">121</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL500_.jpg</URL><Height
       Units="pixels">500</Height><Width Units="pixels">379</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Mark
       Dalrymple</Author><Author>Scott Knaster</Author><Binding>Paperback</Binding><Brand>Apress</Brand><CatalogNumberList><CatalogNumberListElement>9781430218159</CatalogNumberListElement></CatalogNumberList><DeweyDecimalNumber>005.117</DeweyDecimalNumber><EAN>9781430218159</EAN><EANList><EANListElement>9781430218159</EANListElement></EANList><Edition>1st
       ed. 2009. Corr. 3rd printing</Edition><Feature>Apress Learn ObjectiveC on the
       Mac</Feature><Feature>Take your coding skills to the next level with this extensive
       guide to ObjectiveC, the native programming language for developing sophisticated
-      software applications for Mac OS X.</Feature><ISBN>1430218150</ISBN><IsEligibleForTradeIn>1</IsEligibleForTradeIn><ItemDimensions><Height
+      software applications for Mac OS X.</Feature><ISBN>1430218150</ISBN><ItemDimensions><Height
       Units="hundredths-inches">90</Height><Length Units="hundredths-inches">925</Length><Weight
-      Units="hundredths-pounds">122</Weight><Width Units="hundredths-inches">697</Width></ItemDimensions><Label>Apress</Label><Languages><Language><Name>English</Name><Type>Unknown</Type></Language><Language><Name>English</Name><Type>Original
-      Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>3999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$39.99</FormattedPrice></ListPrice><Manufacturer>Apress</Manufacturer><MPN>978-1-4302-1815-9</MPN><NumberOfItems>1</NumberOfItems><NumberOfPages>360</NumberOfPages><PackageDimensions><Height
+      Units="hundredths-pounds">122</Weight><Width Units="hundredths-inches">697</Width></ItemDimensions><Label>Apress</Label><ListPrice><Amount>3999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$39.99</FormattedPrice></ListPrice><Manufacturer>Apress</Manufacturer><MPN>978-1-4302-1815-9</MPN><NumberOfItems>1</NumberOfItems><NumberOfPages>360</NumberOfPages><PackageDimensions><Height
       Units="hundredths-inches">102</Height><Length Units="hundredths-inches">921</Length><Weight
       Units="hundredths-pounds">123</Weight><Width Units="hundredths-inches">701</Width></PackageDimensions><PartNumber>978-1-4302-1815-9</PartNumber><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2008-12-25</PublicationDate><Publisher>Apress</Publisher><SKU>mon0000005185</SKU><Studio>Apress</Studio><Title>Learn
-      Objective-C on the Mac (Learn Series)</Title><TradeInValue><Amount>409</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$4.09</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2199</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$21.99</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1320</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$13.20</FormattedPrice></LowestUsedPrice><TotalNew>47</TotalNew><TotalUsed>31</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
-      Description</Source><Content>&lt;P&gt;Learn Objective-C on the Macintosh is
-      a classic programming primer for Mac OS X developers. And it’s hard to believe,
-      but this will be the only guide to Objective-C specifically aimed at new developers!&lt;/P&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item></Items></ItemLookupResponse>
+      Objective-C on the Mac (Learn Series)</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1404</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$14.04</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>898</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$8.98</FormattedPrice></LowestUsedPrice><TotalNew>57</TotalNew><TotalUsed>45</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Description</Source><Content>&lt;p&gt;Take your coding skills to the next level
+      with this extensive guide to Objective—C, the native programming language for
+      developing sophisticated software applications for Mac OS X. Objective—C is
+      a powerful, object—oriented extension of C, making this book the perfect follow—up
+      to Dave MarkÕs best—selling Learn C on the Mac, Mac OS X Edition. Whether youÕre
+      an experienced C programmer or youÕre coming from a different language such
+      as C++ or Java, leading Mac experts Mark Dalrymple and Scott Knaster show you
+      how to harness the powers of Objective—C in your applications!&lt;/p&gt;&lt;ul&gt;&lt;li&gt;A
+      complete course on the basics of Objective—C using AppleÕs free Xcode tools&lt;li&gt;An
+      introduction to object—oriented programming&lt;li&gt;Comprehensive coverage
+      of inheritance, composition, object initialization, categories, protocols, memory
+      management, and organizing source files&lt;li&gt;A brief tour of CocoaÕs Foundation
+      framework and AppKit&lt;li&gt;A helpful Òlearning curveÓ guide for non—C developers&lt;/ul&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;What
+      youÕll learn&lt;/b&gt;&lt;ul&gt;&lt;li&gt;Learn Objective—C programming, the
+      gateway to programming your Mac or iPhone.&lt;li&gt;Write applications for the
+      Mac OS X interface, the cleanest user—interface around.&lt;li&gt;Understand
+      variables and how to design your own data structures.&lt;li&gt;Work with the
+      file system.&lt;li&gt;Connect to data sources and the Internet.&lt;/ul&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;Who
+      is this book for?&lt;/b&gt;&lt;/p&gt;&lt;p&gt;For anyone wanting to learn to
+      program native applications in Mac OS X, including developers new to the Mac,
+      developers new to Objective—C, or students entirely new to programming.</Content></EditorialReview></EditorialReviews></Item></Items></ItemLookupResponse>
     http_version: '1.1'

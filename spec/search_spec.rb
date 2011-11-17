@@ -19,8 +19,8 @@ module ASIN
         item.title.should =~ /Learn Objective/
         item.amount.should eql(3999)
         item.details_url.should eql('http://www.amazon.com/Learn-Objective-C-Mac-Mark-Dalrymple/dp/1430218150%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1430218150')
-        item.image_url.should eql('http://ecx.images-amazon.com/images/I/41kq5bDvnUL.jpg')
-        item.review.should =~ /Learn Objective-C on the Macintosh/
+        item.image_url.should eql('http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL500_.jpg')
+        item.review.should =~ /Take your coding skills to the next level/
       end
 
       it "should lookup multiple response groups", :vcr do
@@ -37,8 +37,8 @@ module ASIN
       it "should lookup multiple books", :vcr do
         items = @helper.lookup(ANY_ASIN, ANY_OTHER_ASIN)
 
-        items.first.title.should =~ /Learn Objective/
-        items.last.title.should =~ /Beginning iPhone Development/
+        items.last.title.should =~ /Learn Objective/
+        items.first.title.should =~ /Beginning iPhone Development/
       end
 
       it "should return a custom item class", :vcr do
@@ -77,13 +77,13 @@ module ASIN
       it "should search_keywords a book with fulltext", :vcr do
         items = @helper.search_keywords 'Learn', 'Objective-C'
         items.should have(10).things
-        items.first.title.should =~ /Learn Objective/
+        items.first.title.should =~ /Programming in Objective-C/
       end
 
       it "should search_keywords never mind music", :vcr do
         items = @helper.search_keywords 'nirvana', 'never mind', :SearchIndex => :Music
         items.should have(10).things
-        items.first.title.should =~ /Nevermind/
+        items.map(&:title).join.should =~ /Nevermind/
       end
 
       it "should search music", :vcr do
@@ -94,8 +94,7 @@ module ASIN
       it "should search never mind music", :vcr do
         items = @helper.search :Keywords => 'nirvana', :SearchIndex => :Music
         items.should have(10).things
-
-        items.first.title.should =~ /Nevermind/
+        items.map(&:title).join.should =~ /Nevermind/
       end
     end
   end
