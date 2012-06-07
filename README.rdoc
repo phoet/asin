@@ -81,17 +81,17 @@ But you can also use the +instance+ method to get a proxy-object:
   => Learn Objective-C on the Mac (Learn Series)
   
   # search for any kind of stuff on amazon with keywords
-  items = search_keywords 'Learn', 'Objective-C'
+  items = client.search_keywords 'Learn', 'Objective-C'
   items.first.title
   => "Learn Objective-C on the Mac (Learn Series)"
   
   # search for any kind of stuff on amazon with custom parameters
-  search :Keywords => 'Learn Objective-C', :SearchIndex => :Books
+  items = client.search :Keywords => 'Learn Objective-C', :SearchIndex => :Books
   items.first.title
   => "Learn Objective-C on the Mac (Learn Series)"
   
   # access the internal data representation (Hashie::Mash)
-  item.raw.ItemAttributes.ListPrice.FormattedPrice
+  items.first.raw.ItemAttributes.ListPrice.FormattedPrice
   => $39.99
 
 There is an additional set of methods to support AWS cart operations:
