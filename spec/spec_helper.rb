@@ -1,9 +1,7 @@
-$:.unshift File.join(File.dirname(__FILE__),'..','..','lib')
-
 require 'rspec'
 require 'asin'
 require 'asin/client' # is somehow needed for jruby
-require 'pp'
+require 'pry'
 require 'httpclient'
 require 'vcr'
 require 'httpi'
@@ -33,7 +31,7 @@ RSpec.configure do |config|
   config.before :each do
     HTTPI.log = false
 
-    ASIN::Configuration.reset
+    ASIN::Configuration.reset!
     @helper = ASIN::Client.instance
     @helper.configure :logger => nil
 

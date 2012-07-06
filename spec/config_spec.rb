@@ -13,7 +13,7 @@ module ASIN
       end
 
       it "should fail with wrong configuration key" do
-        lambda { @helper.configure :wrong => 'key' }.should raise_error(NoMethodError)
+        lambda { @helper.configure :wrong => 'key' }.should raise_error(ArgumentError)
       end
 
       it "should not override the configuration" do
