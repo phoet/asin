@@ -339,7 +339,7 @@ module ASIN
     end
 
     def call(params)
-      Configuration.validate_credentials!
+      Configuration.validate!
 
       log(:debug, "calling with params=#{params}")
       signed = create_signed_query_string(params)
