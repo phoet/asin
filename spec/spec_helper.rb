@@ -1,3 +1,10 @@
+# WORKAROUND (ps) for http://travis-ci.org/#!/phoet/asin/jobs/1794039
+require "net/http"
+unless Net.const_defined? :HTTPSession
+  puts "monkeypatching Net::HTTPSession"
+  class Net::HTTPSession < Net::HTTP::HTTPSession; end
+end
+
 require 'rspec'
 require 'asin'
 require 'asin/client' # is somehow needed for jruby
