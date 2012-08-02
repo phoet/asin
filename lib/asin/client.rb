@@ -179,7 +179,7 @@ module ASIN
 
     # Performs an +ItemSearch+ REST call against the Amazon API.
     #
-    # Expects a Hash of search params where and returns a list of +SimpleItem+s:
+    # Expects a Hash of search params and returns a list of +SimpleItem+s:
     #
     #   items = search :SearchIndex => :Music
     #
@@ -198,7 +198,7 @@ module ASIN
 
     # Performs an +BrowseNodeLookup+ REST call against the Amazon API.
     #
-    # Expects a Hash of search params where and returns a +SimpleNode+:
+    # Expects a node-id and returns a +SimpleNode+:
     #
     #   node = browse_node '163357'
     #
@@ -213,6 +213,26 @@ module ASIN
     def browse_node(node_id, params={:ResponseGroup => :BrowseNodeInfo})
       response = call(params.merge(:Operation => :BrowseNodeLookup, :BrowseNodeId => node_id))
       handle_type(response['BrowseNodeLookupResponse']['BrowseNodes']['BrowseNode'], Configuration.node_type)
+    end
+
+    # Performs an +SimilarityLookup+ REST call against the Amazon API.
+    #
+    # Expects one ore more asins and returns a list of +SimpleNode+s:
+    #
+    #   node = browse_node '163357'
+    #
+    # ==== Options:
+    #
+    # Additional parameters for the API call like this:
+    #
+    #   similar('1430218150', :SimilarityType => :Intersection, :ResponseGroup => :Small)
+    #
+    # Have a look at the optional config values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/latest/DG/SimilarityLookup.html]
+    #
+    def similar(*asins)
+      params = asins.last.is_a?(Hash) ? asins.pop : {:SimilarityType => :Random, :ResponseGroup => :Medium}
+      response = call(params.merge(:Operation => :SimilarityLookup, :ItemId => asins.join(',')))
+      arrayfy(response['SimilarityLookupResponse']['Items']['Item']).map {|item| handle_item(item)}
     end
 
     # Performs an +CartCreate+ REST call against the Amazon API.
@@ -289,8 +309,8 @@ module ASIN
       cart(:CartClear, {:CartId => cart.cart_id, :HMAC => cart.hmac})
     end
 
-    private()
-    
+    private
+
     def arrayfy(item)
       return [] unless item
       item.is_a?(Array) ? item : [item]
@@ -339,7 +359,7 @@ module ASIN
     end
 
     def call(params)
-      Configuration.validate_credentials!
+      Configuration.validate!
 
       log(:debug, "calling with params=#{params}")
       signed = create_signed_query_string(params)
@@ -371,7 +391,7 @@ module ASIN
       # utc timestamp needed for signing
       params[:Timestamp] = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%SZ')
 
-      
+
       query = create_query(params)
 
       # yeah, you really need to sign the get-request not the query
@@ -382,7 +402,7 @@ module ASIN
       signature = CGI.escape(Base64.encode64(hmac).chomp)
       "#{query}&Signature=#{signature}"
     end
-    
+
     def create_query(params)
       params.map do |key, value|
         value = value.collect{|v| v.to_s.strip}.join(',') if value.is_a?(Array)

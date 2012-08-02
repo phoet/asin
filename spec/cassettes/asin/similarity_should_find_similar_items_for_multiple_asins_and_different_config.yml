@@ -1,0 +1,58 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&ItemId=1430218150,1430216263&Operation=SimilarityLookup&ResponseGroup=Small&Service=AWSECommerceService&Signature=Fcwu+ECO5oM2r2I8ij7wsh0Pi0BLF63kc5RRWJzkrDE=&SimilarityType=Intersection&Timestamp=2012-08-02T20:43:19Z&Version=2010-11-01
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        VGh1LCAwMiBBdWcgMjAxMiAyMDo0MzoxNSBHTVQ=
+      !binary "c2VydmVy":
+      - !binary |-
+        U2VydmVy
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "dmFyeQ==":
+      - !binary |-
+        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
+      !binary "bm5jb2VjdGlvbg==":
+      - !binary |-
+        Y2xvc2U=
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+    body: ! '<?xml version="1.0" encoding="UTF-8"?><SimilarityLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01"><OperationRequest><HTTPHeaders><Header
+      Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>1ZPH5E08C1BYC3PRFQC3</RequestId><Arguments><Argument
+      Name="ItemId" Value="1430218150,1430216263"></Argument><Argument Name="Service"
+      Value="AWSECommerceService"></Argument><Argument Name="Signature" Value="Fcwu+ECO5oM2r2I8ij7wsh0Pi0BLF63kc5RRWJzkrDE="></Argument><Argument
+      Name="ResponseGroup" Value="Small"></Argument><Argument Name="SimilarityType"
+      Value="Intersection"></Argument><Argument Name="Operation" Value="SimilarityLookup"></Argument><Argument
+      Name="AWSAccessKeyId" Value="AKIAJFA5X7RTOKFNPVZQ"></Argument><Argument Name="Timestamp"
+      Value="2012-08-02T20:43:19Z"></Argument><Argument Name="Version" Value="2010-11-01"></Argument></Arguments><RequestProcessingTime>0.0326471328735352</RequestProcessingTime></OperationRequest><Items><Request><IsValid>True</IsValid><SimilarityLookupRequest><ItemId>1430216263</ItemId><ItemId>1430218150</ItemId><ResponseGroup>Small</ResponseGroup><SimilarityType>Intersection</SimilarityType></SimilarityLookupRequest></Request><Item><ASIN>143023024X</ASIN><DetailPageURL>http://www.amazon.com/Beginning-iPhone-Development-Exploring-iOS/dp/143023024X%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D143023024X</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+      Details</Description><URL>http://www.amazon.com/Beginning-iPhone-Development-Exploring-iOS/dp/tech-data/143023024X%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D143023024X</URL></ItemLink><ItemLink><Description>Add
+      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D143023024X%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D143023024X</URL></ItemLink><ItemLink><Description>Add
+      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D143023024X%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D143023024X</URL></ItemLink><ItemLink><Description>Add
+      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D143023024X%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D143023024X</URL></ItemLink><ItemLink><Description>Tell
+      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/143023024X%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D143023024X</URL></ItemLink><ItemLink><Description>All
+      Customer Reviews</Description><URL>http://www.amazon.com/review/product/143023024X%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D143023024X</URL></ItemLink><ItemLink><Description>All
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/143023024X%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D143023024X</URL></ItemLink></ItemLinks><ItemAttributes><Author>David
+      Mark</Author><Author>Jack Nutting</Author><Author>Jeff LaMarche</Author><Manufacturer>Apress</Manufacturer><ProductGroup>Book</ProductGroup><Title>Beginning
+      iPhone 4 Development: Exploring the iOS SDK</Title></ItemAttributes></Item><Item><ASIN>0321566157</ASIN><DetailPageURL>http://www.amazon.com/Programming-Objective-C-2-0-Stephen-Kochan/dp/0321566157%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0321566157</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+      Details</Description><URL>http://www.amazon.com/Programming-Objective-C-2-0-Stephen-Kochan/dp/tech-data/0321566157%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>Add
+      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0321566157%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>Add
+      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0321566157%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>Add
+      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0321566157%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>Tell
+      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0321566157%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>All
+      Customer Reviews</Description><URL>http://www.amazon.com/review/product/0321566157%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>All
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0321566157%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink></ItemLinks><ItemAttributes><Author>Stephen
+      G. Kochan</Author><Manufacturer>Addison-Wesley Professional</Manufacturer><ProductGroup>Book</ProductGroup><Title>Programming
+      in Objective-C 2.0 (2nd Edition)</Title></ItemAttributes></Item></Items></SimilarityLookupResponse>'
+    http_version: '1.1'

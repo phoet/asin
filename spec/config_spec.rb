@@ -4,16 +4,11 @@ module ASIN
   describe ASIN do
     context "configuration" do
       it "should fail without secret and key" do
-        lambda { @helper.lookup 'bla' }.should raise_error(RuntimeError, "you have to configure ASIN: 'configure :secret => 'your-secret', :key => 'your-key'")
-      end
-
-      it "should fail with configuration key set to nil" do
-        @helper.configure :secret => @secret, :key => @key, :associate_tag => nil
-        lambda { @helper.lookup 'bla' }.should raise_error(RuntimeError, "nil is not a valid value for associate_tag")
+        expect { @helper.lookup 'bla' }.should raise_error(ArgumentError, "you are missing mandatory configuration options. please set [:secret, :key]")
       end
 
       it "should fail with wrong configuration key" do
-        lambda { @helper.configure :wrong => 'key' }.should raise_error(NoMethodError)
+        lambda { @helper.configure :wrong => 'key' }.should raise_error(ArgumentError)
       end
 
       it "should not override the configuration" do

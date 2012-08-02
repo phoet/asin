@@ -2,16 +2,16 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&AssociateTag=&BrowseNodeId=599826&Operation=BrowseNodeLookup&ResponseGroup=BrowseNodeInfo&Service=AWSECommerceService&Signature=in3sb43Mf0bUomPefvenStLtUHDLZ70uabaNFTJEhIE=&Timestamp=2011-09-04T15:14:31Z&Version=2010-11-01
-    body: !!null 
-    headers: !!null 
+    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&AssociateTag=&BrowseNodeId=599826&Operation=BrowseNodeLookup&ResponseGroup=BrowseNodeInfo&Service=AWSECommerceService&Signature=X4LyyNaakwi097ag5RVYkNCYnPz6h/cPKH2d1T9e0JY=&Timestamp=2011-11-17T12:26:31Z&Version=2010-11-01
+    body: 
+    headers: 
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
       message: OK
     headers:
       date:
-      - Sun, 04 Sep 2011 15:14:31 GMT
+      - Thu, 17 Nov 2011 12:26:31 GMT
       server:
       - Server
       content-type:
@@ -23,13 +23,13 @@
       transfer-encoding:
       - chunked
     body: <?xml version="1.0" encoding="UTF-8"?><BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01"><OperationRequest><HTTPHeaders><Header
-      Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>0VQQ8N4DGR07DYVX434N</RequestId><Arguments><Argument
+      Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>0WY3QFSNV26A8T5XKN46</RequestId><Arguments><Argument
       Name="AssociateTag"></Argument><Argument Name="Service" Value="AWSECommerceService"></Argument><Argument
-      Name="Signature" Value="in3sb43Mf0bUomPefvenStLtUHDLZ70uabaNFTJEhIE="></Argument><Argument
+      Name="Signature" Value="X4LyyNaakwi097ag5RVYkNCYnPz6h/cPKH2d1T9e0JY="></Argument><Argument
       Name="ResponseGroup" Value="BrowseNodeInfo"></Argument><Argument Name="Operation"
       Value="BrowseNodeLookup"></Argument><Argument Name="BrowseNodeId" Value="599826"></Argument><Argument
-      Name="AWSAccessKeyId" Value="AKIAJFA5X7RTOKFNPVZQ"></Argument><Argument Name="Version"
-      Value="2010-11-01"></Argument><Argument Name="Timestamp" Value="2011-09-04T15:14:31Z"></Argument></Arguments><RequestProcessingTime>0.01361083984375</RequestProcessingTime></OperationRequest><BrowseNodes><Request><IsValid>True</IsValid><BrowseNodeLookupRequest><BrowseNodeId>599826</BrowseNodeId><ResponseGroup>BrowseNodeInfo</ResponseGroup></BrowseNodeLookupRequest></Request><BrowseNode><BrowseNodeId>599826</BrowseNodeId><Name>Comedy</Name><Ancestors><BrowseNode><BrowseNodeId>501230</BrowseNodeId><Name>Boxed
+      Name="AWSAccessKeyId" Value="AKIAJFA5X7RTOKFNPVZQ"></Argument><Argument Name="Timestamp"
+      Value="2011-11-17T12:26:31Z"></Argument><Argument Name="Version" Value="2010-11-01"></Argument></Arguments><RequestProcessingTime>0.0136559009552002</RequestProcessingTime></OperationRequest><BrowseNodes><Request><IsValid>True</IsValid><BrowseNodeLookupRequest><BrowseNodeId>599826</BrowseNodeId><ResponseGroup>BrowseNodeInfo</ResponseGroup></BrowseNodeLookupRequest></Request><BrowseNode><BrowseNodeId>599826</BrowseNodeId><Name>Comedy</Name><Ancestors><BrowseNode><BrowseNodeId>501230</BrowseNodeId><Name>Boxed
       Sets</Name><Ancestors><BrowseNode><BrowseNodeId>2998369011</BrowseNodeId><Name>DVD
       Custom Stores</Name><Ancestors><BrowseNode><BrowseNodeId>2644982011</BrowseNodeId><Name>Custom
       Stores</Name><Ancestors><BrowseNode><BrowseNodeId>2644981011</BrowseNodeId><Name>Specialty

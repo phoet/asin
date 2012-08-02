@@ -1,0 +1,37 @@
+---
+- !ruby/struct:VCR::HTTPInteraction
+  request: !ruby/struct:VCR::Request
+    method: :get
+    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&AssociateTag=&Operation=ItemSearch&SearchIndex=Music&Service=AWSECommerceService&Signature=Dt2nx3fSuW5VRVd4pgCbeXANIu0HbjgjUeF5XqbqJKY=&Timestamp=2011-11-17T12:26:40Z&Version=2010-11-01
+    body: 
+    headers: 
+  response: !ruby/struct:VCR::Response
+    status: !ruby/struct:VCR::ResponseStatus
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Thu, 17 Nov 2011 12:26:40 GMT
+      server:
+      - Server
+      content-type:
+      - text/xml;charset=UTF-8
+      vary:
+      - Accept-Encoding,User-Agent
+      nncoection:
+      - close
+      transfer-encoding:
+      - chunked
+    body: ! '<?xml version="1.0" encoding="UTF-8"?><ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01"><OperationRequest><HTTPHeaders><Header
+      Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>113M9JJ773CV8GD4PCXW</RequestId><Arguments><Argument
+      Name="SearchIndex" Value="Music"></Argument><Argument Name="AssociateTag"></Argument><Argument
+      Name="Service" Value="AWSECommerceService"></Argument><Argument Name="Signature"
+      Value="Dt2nx3fSuW5VRVd4pgCbeXANIu0HbjgjUeF5XqbqJKY="></Argument><Argument Name="Operation"
+      Value="ItemSearch"></Argument><Argument Name="AWSAccessKeyId" Value="AKIAJFA5X7RTOKFNPVZQ"></Argument><Argument
+      Name="Timestamp" Value="2011-11-17T12:26:40Z"></Argument><Argument Name="Version"
+      Value="2010-11-01"></Argument></Arguments><RequestProcessingTime>0.0243828296661377</RequestProcessingTime></OperationRequest><Items><Request><IsValid>False</IsValid><ItemSearchRequest><SearchIndex>Music</SearchIndex></ItemSearchRequest><Errors><Error><Code>AWS.MinimumParameterRequirement</Code><Message>Your
+      request should have atleast 1 of the following parameters: Keywords, Title,
+      Power, BrowseNode, Artist, Author, Actor, Director, AudienceRating, Manufacturer,
+      MusicLabel, Composer, Publisher, Brand, Conductor, Orchestra, TextStream, Cuisine,
+      City, Neighborhood.</Message></Error></Errors></Request></Items></ItemSearchResponse>'
+    http_version: '1.1'

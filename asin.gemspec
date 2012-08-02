@@ -19,18 +19,20 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency('crack',  '~> 0.1')
-  s.add_dependency('hashie', '~> 1.0')
-  s.add_dependency('httpi',  '~> 0.9')
+  s.add_dependency('crack',     '~> 0.3')
+  s.add_dependency('hashie',    '~> 1.1')
+  s.add_dependency('httpi',     '~> 0.9')
+  s.add_dependency('confiture', '~> 0.1')
 
   s.add_runtime_dependency('jruby-openssl') if RUBY_PLATFORM == 'java'
 
-  s.add_development_dependency('httpclient', '~> 2.2')
-  s.add_development_dependency('rash',       '~> 0.3')
-  
-  s.add_development_dependency('rake',       '~> 0.9')
-  s.add_development_dependency('vcr',        '~> 1.10')
-  s.add_development_dependency('webmock',    '~> 1.6')
-  s.add_development_dependency('rspec',      '~> 2.6')
-  s.add_development_dependency('fuubar',     '~> 0.0')
+  s.add_development_dependency('httpclient', '~> 2.2.3')
+  s.add_development_dependency('rash',       '~> 0.3.1')
+
+  s.add_development_dependency('rake',       '~> 0.9.2.2')
+  s.add_development_dependency('vcr',        '~> 1.11.3')
+  s.add_development_dependency('webmock',    '~> 1.8.7')
+  s.add_development_dependency('rspec',      '~> 2.7.0')
+  s.add_development_dependency('fuubar',     '~> 0.0.5')
+  s.add_development_dependency('pry',        '~> 0.9.9')
 end

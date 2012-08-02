@@ -1,2 +1,1 @@
-rvm use 1.9.2@asin --create
-rvm wrapper 1.9.2@asin textmate
+rvm use 1.9.3@asin --create
