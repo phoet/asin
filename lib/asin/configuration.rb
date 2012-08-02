@@ -14,17 +14,7 @@ module ASIN
   #
   # With the latest version of the Product Advertising API you need to include your associate_tag[https://affiliate-program.amazon.com/gp/advertising/api/detail/api-changes.html].
   #
-  # You may pass options as a hash as well:
-  #
-  #   ASIN::Configuration.configure :secret => 'your-secret', :key => 'your-key'
-  #
-  # Or configure everything using YAML:
-  #
-  #   ASIN::Configuration.configure :yaml => 'config/asin.yml'
-  #
-  #   ASIN::Configuration.configure :yaml => 'config/asin.yml' do |config, yml|
-  #     config.key = yml[Rails.env]['aws_access_key']
-  #   end
+  # Confiture is used as a basis for configuration. Have a look at the documentation[https://github.com/phoet/confiture] for more configuration styles.
   #
   # ==== Options:
   #

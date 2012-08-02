@@ -31,16 +31,6 @@ Rails style initializer (config/initializers/asin.rb):
     config.key    = 'your-key'
   end
 
-YAML style configuration:
-
-  ASIN::Configuration.configure :yaml => 'config/asin.yml'
-
-Inline style configuration:
-
-  ASIN::Configuration.configure :secret => 'your-secret', :key => 'your-key'
-  # or
-  client.configure :secret => 'your-secret', :key => 'your-key'
-
 Have a look at ASIN::Configuration class for all the details.
 
 ===API Changes
@@ -159,6 +149,10 @@ As a default HTTPI uses _httpclient_ so you should add that dependency to your p
 
   gem 'httpclient'
 
+== Confiture
+
+ASIN uses Confiture[https://github.com/phoet/confiture] as a Configuration gem.
+See the Confiture documentation for different configuration styles.
 
 == License
 
