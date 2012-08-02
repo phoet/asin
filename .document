@@ -1,3 +1,2 @@
 lib/**/*.rb
-README.rdoc
-CHANGELOG.rdoc
+*.md
