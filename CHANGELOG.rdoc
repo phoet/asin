@@ -1,3 +1,8 @@
+== 0.8.0
+
+* use confiture for configuration
+* implement SimilarityLookup
+
 == 0.7.0
 
 * jruby compatible

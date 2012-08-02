@@ -93,6 +93,9 @@ But you can also use the +instance+ method to get a proxy-object:
   # access the internal data representation (Hashie::Mash)
   item.raw.ItemAttributes.ListPrice.FormattedPrice
   => $39.99
+  
+  # search for similar items like the one you already have
+  items = client.similar '1430218150'
 
 There is an additional set of methods to support AWS cart operations:
 
