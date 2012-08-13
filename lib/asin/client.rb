@@ -219,7 +219,7 @@ module ASIN
     #
     # Expects one ore more asins and returns a list of +SimpleNode+s:
     #
-    #   node = browse_node '163357'
+    #   items = similar '1430218150'
     #
     # ==== Options:
     #
