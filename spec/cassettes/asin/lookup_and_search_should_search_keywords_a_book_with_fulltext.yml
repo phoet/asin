@@ -2,537 +2,586 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&AssociateTag=&Keywords=Learn%20Objective-C&Operation=ItemSearch&ResponseGroup=Medium&SearchIndex=Books&Service=AWSECommerceService&Signature=tIPgLr6DaExYEyDgLe7mE/rYJIExGzHFMJkmws5vPiU=&Timestamp=2011-11-17T12:26:38Z&Version=2010-11-01
+    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAIBNLWSCV5OXMPD6A&AssociateTag=phoet-20&Keywords=Learn%20Objective-C&Operation=ItemSearch&ResponseGroup=Medium&SearchIndex=Books&Service=AWSECommerceService&Signature=M3ZeHyCLppN9onX4IVNa8gmTHbFTxREZs26ug88nBuE=&Timestamp=2012-09-22T13:35:25Z&Version=2011-08-01
     body: 
     headers: 
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: OK
+      message: !binary |-
+        T0s=
     headers:
-      date:
-      - Thu, 17 Nov 2011 12:26:38 GMT
-      server:
-      - Server
-      content-type:
-      - text/xml;charset=UTF-8
-      vary:
-      - Accept-Encoding,User-Agent
-      nncoection:
-      - close
-      transfer-encoding:
-      - chunked
-    body: ! "<?xml version=\"1.0\" encoding=\"UTF-8\"?><ItemSearchResponse xmlns=\"http://webservices.amazon.com/AWSECommerceService/2010-11-01\"><OperationRequest><HTTPHeaders><Header
-      Name=\"UserAgent\" Value=\"Jakarta Commons-HttpClient/3.0.1\"></Header></HTTPHeaders><RequestId>0N05F6RQAJVGYCBKNV7C</RequestId><Arguments><Argument
-      Name=\"SearchIndex\" Value=\"Books\"></Argument><Argument Name=\"AssociateTag\"></Argument><Argument
-      Name=\"Service\" Value=\"AWSECommerceService\"></Argument><Argument Name=\"Keywords\"
-      Value=\"Learn Objective-C\"></Argument><Argument Name=\"Signature\" Value=\"tIPgLr6DaExYEyDgLe7mE/rYJIExGzHFMJkmws5vPiU=\"></Argument><Argument
-      Name=\"ResponseGroup\" Value=\"Medium\"></Argument><Argument Name=\"Operation\"
-      Value=\"ItemSearch\"></Argument><Argument Name=\"AWSAccessKeyId\" Value=\"AKIAJFA5X7RTOKFNPVZQ\"></Argument><Argument
-      Name=\"Timestamp\" Value=\"2011-11-17T12:26:38Z\"></Argument><Argument Name=\"Version\"
-      Value=\"2010-11-01\"></Argument></Arguments><RequestProcessingTime>0.232908964157104</RequestProcessingTime></OperationRequest><Items><Request><IsValid>True</IsValid><ItemSearchRequest><Keywords>Learn
-      Objective-C</Keywords><ResponseGroup>Medium</ResponseGroup><SearchIndex>Books</SearchIndex></ItemSearchRequest></Request><TotalResults>89</TotalResults><TotalPages>9</TotalPages><Item><ASIN>0321711394</ASIN><DetailPageURL>http://www.amazon.com/Programming-Objective-C-Third-Developers-Library/dp/0321711394%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0321711394</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-      Details</Description><URL>http://www.amazon.com/Programming-Objective-C-Third-Developers-Library/dp/tech-data/0321711394%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321711394</URL></ItemLink><ItemLink><Description>Add
-      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0321711394%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321711394</URL></ItemLink><ItemLink><Description>Add
-      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0321711394%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321711394</URL></ItemLink><ItemLink><Description>Add
-      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0321711394%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321711394</URL></ItemLink><ItemLink><Description>Tell
-      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0321711394%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321711394</URL></ItemLink><ItemLink><Description>All
-      Customer Reviews</Description><URL>http://www.amazon.com/review/product/0321711394%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321711394</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0321711394%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321711394</URL></ItemLink></ItemLinks><SalesRank>2752</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/514GKabDXcL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">56</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/514GKabDXcL._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">120</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/514GKabDXcL._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">376</Width></LargeImage><ImageSets><ImageSet
-      Category=\"primary\"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/514GKabDXcL._SL30_.jpg</URL><Height
-      Units=\"pixels\">30</Height><Width Units=\"pixels\">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/514GKabDXcL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">56</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/514GKabDXcL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">56</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/514GKabDXcL._SL110_.jpg</URL><Height
-      Units=\"pixels\">110</Height><Width Units=\"pixels\">83</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/514GKabDXcL._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">120</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/514GKabDXcL._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">376</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Stephen
-      G. Kochan</Author><Binding>Paperback</Binding><DeweyDecimalNumber>005.117</DeweyDecimalNumber><EAN>9780321711397</EAN><EANList><EANListElement>9780321711397</EANListElement></EANList><Edition>3</Edition><ISBN>0321711394</ISBN><IsEligibleForTradeIn>1</IsEligibleForTradeIn><Label>Addison-Wesley
-      Professional</Label><ListPrice><Amount>4999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$49.99</FormattedPrice></ListPrice><Manufacturer>Addison-Wesley
-      Professional</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>552</NumberOfPages><PackageDimensions><Height
-      Units=\"hundredths-inches\">110</Height><Length Units=\"hundredths-inches\">906</Length><Weight
-      Units=\"hundredths-pounds\">185</Weight><Width Units=\"hundredths-inches\">709</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2011-06-20</PublicationDate><Publisher>Addison-Wesley
-      Professional</Publisher><SKU>4624400</SKU><Studio>Addison-Wesley Professional</Studio><Title>Programming
-      in Objective-C, Third Edition (Developer's Library)</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2640</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.40</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>2640</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.40</FormattedPrice></LowestUsedPrice><TotalNew>45</TotalNew><TotalUsed>22</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
-      Description</Source><Content>&lt;i&gt;Programming in Objective-C&lt;/i&gt; is
-      a concise, carefully written tutorial on the basics of Objective-C and object-oriented
-      programming for the iOS and Mac platforms.&lt;br&gt;&lt;br&gt;The book makes
-      no assumptions about prior experience with object-oriented programming languages
-      or with the C language (which Objective-C is based upon). Because of this, both
-      beginners and experienced programmers alike can use this book to quickly and
-      effectively learn the fundamentals of Objective-C. Readers can also learn the
-      concepts of object-oriented programming without having to first learn all of
-      the intricacies of the underlying procedural language (C).&lt;br&gt;&lt;br&gt;This
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        U2F0LCAyMiBTZXAgMjAxMiAxMzozNToyMSBHTVQ=
+      !binary "c2VydmVy":
+      - !binary |-
+        U2VydmVy
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "dmFyeQ==":
+      - !binary |-
+        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
+      !binary "bm5jb2VjdGlvbg==":
+      - !binary |-
+        Y2xvc2U=
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+    body: ! '<?xml version="1.0" ?><ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><RequestId>749249b0-3199-4e10-9e29-18f445c69092</RequestId><Arguments><Argument
+      Name="Operation" Value="ItemSearch"></Argument><Argument Name="Service" Value="AWSECommerceService"></Argument><Argument
+      Name="Signature" Value="M3ZeHyCLppN9onX4IVNa8gmTHbFTxREZs26ug88nBuE="></Argument><Argument
+      Name="AssociateTag" Value="phoet-20"></Argument><Argument Name="Version" Value="2011-08-01"></Argument><Argument
+      Name="Keywords" Value="Learn Objective-C"></Argument><Argument Name="AWSAccessKeyId"
+      Value="AKIAIBNLWSCV5OXMPD6A"></Argument><Argument Name="Timestamp" Value="2012-09-22T13:35:25Z"></Argument><Argument
+      Name="ResponseGroup" Value="Medium"></Argument><Argument Name="SearchIndex"
+      Value="Books"></Argument></Arguments><RequestProcessingTime>0.0839400000000000</RequestProcessingTime></OperationRequest><Items><Request><IsValid>True</IsValid><ItemSearchRequest><Keywords>Learn
+      Objective-C</Keywords><ResponseGroup>Medium</ResponseGroup><SearchIndex>Books</SearchIndex></ItemSearchRequest></Request><TotalResults>211</TotalResults><TotalPages>22</TotalPages><MoreSearchResultsUrl>http://www.amazon.com/gp/redirect.html?camp=2025&amp;creative=386001&amp;location=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fsearch%3Fkeywords%3DLearn%2BObjective-C%26url%3Dsearch-alias%253Dstripbooks&amp;linkCode=xm2&amp;tag=phoet-20&amp;SubscriptionId=AKIAIBNLWSCV5OXMPD6A</MoreSearchResultsUrl><Item><ASIN>1430218150</ASIN><DetailPageURL>http://www.amazon.com/Learn-Objective-C-Mac-Series/dp/1430218150%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1430218150</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+      Details</Description><URL>http://www.amazon.com/Learn-Objective-C-Mac-Series/dp/tech-data/1430218150%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>Add
+      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D1430218150%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>Add
+      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D1430218150%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>Add
+      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D1430218150%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>Tell
+      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/1430218150%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>All
+      Customer Reviews</Description><URL>http://www.amazon.com/review/product/1430218150%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink><ItemLink><Description>All
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1430218150%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218150</URL></ItemLink></ItemLinks><SalesRank>147373</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">57</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">121</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">379</Width></LargeImage><ImageSets><ImageSet
+      Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL30_.jpg</URL><Height
+      Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">57</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">57</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL110_.jpg</URL><Height
+      Units="pixels">110</Height><Width Units="pixels">83</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">121</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41kq5bDvnUL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">379</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Scott
+      Knaster</Author><Author>Mark Dalrymple</Author><Binding>Paperback</Binding><Brand>Apress</Brand><CatalogNumberList><CatalogNumberListElement>9781430218159</CatalogNumberListElement></CatalogNumberList><EAN>9781430218159</EAN><EANList><EANListElement>9781430218159</EANListElement></EANList><Edition>1</Edition><Feature>Apress
+      Learn ObjectiveC on the Mac</Feature><Feature>Take your coding skills to the
+      next level with this extensive guide to ObjectiveC, the native programming language
+      for developing sophisticated software applications for Mac OS X.</Feature><ISBN>1430218150</ISBN><ItemDimensions><Height
+      Units="hundredths-inches">925</Height><Length Units="hundredths-inches">752</Length><Weight
+      Units="hundredths-pounds">137</Weight><Width Units="hundredths-inches">71</Width></ItemDimensions><Label>Apress</Label><Languages><Language><Name>English</Name><Type>Unknown</Type></Language><Language><Name>English</Name><Type>Original
+      Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>3999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$39.99</FormattedPrice></ListPrice><Manufacturer>Apress</Manufacturer><MPN>978-1-4302-1815-9</MPN><NumberOfItems>1</NumberOfItems><NumberOfPages>360</NumberOfPages><PackageDimensions><Height
+      Units="hundredths-inches">102</Height><Length Units="hundredths-inches">921</Length><Weight
+      Units="hundredths-pounds">123</Weight><Width Units="hundredths-inches">701</Width></PackageDimensions><PartNumber>978-1-4302-1815-9</PartNumber><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2009-01-07</PublicationDate><Publisher>Apress</Publisher><SKU>mon0001920250</SKU><Studio>Apress</Studio><Title>Learn
+      Objective-C on the Mac (Learn Series)</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1599</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$15.99</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>277</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$2.77</FormattedPrice></LowestUsedPrice><TotalNew>56</TotalNew><TotalUsed>62</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Description</Source><Content>&lt;p&gt;Take your coding skills to the next level
+      with this extensive guide to Objective–C, the native programming language for
+      developing sophisticated software applications for Mac OS X. Objective–C is
+      a powerful, object–oriented extension of C, making this book the perfect follow–up
+      to Dave Mark’s bestselling &lt;em&gt;Learn C on the Mac, Mac OS X Edition&lt;/em&gt;.
+      Whether you’re an experienced C programmer or you’re coming from a different
+      language such as C++ or Java, leading Mac experts &lt;strong&gt;Mark Dalrymple&lt;/strong&gt;
+      and &lt;strong&gt;Scott Knaster&lt;/strong&gt; show you how to harness the powers
+      of Objective–C in your applications!&lt;/p&gt; &lt;ul&gt;     &lt;li&gt;A complete
+      course on the basics of Objective–C using Apple’s free Xcode tools &lt;/li&gt;     &lt;li&gt;An
+      introduction to object–oriented programming &lt;/li&gt;     &lt;li&gt;Comprehensive
+      coverage of inheritance, composition, object initialization, categories, protocols,
+      memory management, and organizing source files &lt;/li&gt;     &lt;li&gt;A brief
+      tour of Cocoa’s foundation framework and AppKit &lt;/li&gt;     &lt;li&gt;A
+      helpful “learning curve” guide for non–C developers &lt;/li&gt; &lt;/ul&gt;
+      &lt;h3&gt;What you’ll learn&lt;/h3&gt;&lt;ul&gt;     &lt;li&gt;Learn Objective–C
+      programming, the gateway to programming your Mac or iPhone&lt;/li&gt;     &lt;li&gt;Write
+      applications for the Mac OS X interface, the cleanest user–interface around&lt;/li&gt;     &lt;li&gt;Understand
+      variables and how to design your own data structures&lt;/li&gt;     &lt;li&gt;Work
+      with the file system&lt;/li&gt;     &lt;li&gt;Connect to data sources and the
+      Internet&lt;/li&gt; &lt;/ul&gt; &lt;h3&gt;Who this book is for&lt;/h3&gt;      &lt;p&gt;     For
+      anyone wanting to learn to program native applications in Mac OS X, including
+      developers new to the Mac, developers new to Objective–C, or students entirely
+      new to programming.       &lt;/p&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>1430241888</ASIN><DetailPageURL>http://www.amazon.com/Learn-Objective-C-Mac-For-Apress/dp/1430241888%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1430241888</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+      Details</Description><URL>http://www.amazon.com/Learn-Objective-C-Mac-For-Apress/dp/tech-data/1430241888%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430241888</URL></ItemLink><ItemLink><Description>Add
+      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D1430241888%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430241888</URL></ItemLink><ItemLink><Description>Add
+      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D1430241888%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430241888</URL></ItemLink><ItemLink><Description>Add
+      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D1430241888%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430241888</URL></ItemLink><ItemLink><Description>Tell
+      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/1430241888%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430241888</URL></ItemLink><ItemLink><Description>All
+      Customer Reviews</Description><URL>http://www.amazon.com/review/product/1430241888%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430241888</URL></ItemLink><ItemLink><Description>All
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1430241888%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430241888</URL></ItemLink></ItemLinks><SalesRank>327152</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41emD53brxL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">56</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41emD53brxL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">120</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41emD53brxL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">375</Width></LargeImage><ImageSets><ImageSet
+      Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41emD53brxL._SL30_.jpg</URL><Height
+      Units="pixels">30</Height><Width Units="pixels">22</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41emD53brxL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">56</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41emD53brxL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">56</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41emD53brxL._SL110_.jpg</URL><Height
+      Units="pixels">110</Height><Width Units="pixels">82</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41emD53brxL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">120</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41emD53brxL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">375</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Scott
+      Knaster</Author><Author>Waqar Malik</Author><Author>Mark Dalrymple</Author><Binding>Paperback</Binding><EAN>9781430241881</EAN><EANList><EANListElement>9781430241881</EANListElement></EANList><Edition>2</Edition><ISBN>1430241888</ISBN><IsEligibleForTradeIn>1</IsEligibleForTradeIn><ItemDimensions><Height
+      Units="hundredths-inches">925</Height><Length Units="hundredths-inches">752</Length><Weight
+      Units="hundredths-pounds">146</Weight><Width Units="hundredths-inches">79</Width></ItemDimensions><Label>Apress</Label><Languages><Language><Name>English</Name><Type>Unknown</Type></Language><Language><Name>English</Name><Type>Original
+      Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>3999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$39.99</FormattedPrice></ListPrice><Manufacturer>Apress</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>384</NumberOfPages><PackageDimensions><Height
+      Units="hundredths-inches">80</Height><Length Units="hundredths-inches">920</Length><Weight
+      Units="hundredths-pounds">130</Weight><Width Units="hundredths-inches">750</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2012-06-27</PublicationDate><Publisher>Apress</Publisher><SKU>708639</SKU><Studio>Apress</Studio><Title>Learn
+      Objective-C on the Mac: For OS X and iOS (Learn Apress)</Title><TradeInValue><Amount>420</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$4.20</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2248</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$22.48</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>2101</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$21.01</FormattedPrice></LowestUsedPrice><TotalNew>35</TotalNew><TotalUsed>16</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Description</Source><Content>&lt;p&gt;Learn to write apps for some of today''s
+      hottest technologies, including the iPhone and iPad (using iOS), as well as
+      the Mac (using OS X). It starts with Objective-C, the base language on which
+      the native iOS software development kit (SDK) and the OS X are based. &lt;strong&gt;&lt;em&gt;Learn
+      Objective-C on the Mac: For OS X and iOS&lt;/em&gt;,&lt;/strong&gt; &lt;strong&gt;&lt;em&gt;Second
+      Edition&lt;/em&gt;&lt;/strong&gt; updates a best selling book and&lt;strong&gt;&lt;em&gt; &lt;/em&gt;&lt;/strong&gt;is
+      an extensive, newly updated guide to Objective-C.&lt;br /&gt; &lt;br /&gt; Objective-C
+      is a powerful, object-oriented extension of C, making this update the perfect
+      follow-up to Dave Mark’s bestselling &lt;em&gt;Learn C on the Mac&lt;/em&gt;.
+      Whether you’re an experienced C programmer or you’re coming from a different
+      language such as C++ or Java, leading Mac experts &lt;strong&gt;Scott Knaster&lt;/strong&gt;
+      and &lt;strong&gt;Waqar Malik&lt;/strong&gt; show how to harness the power of
+      Objective-C in your apps!&lt;/p&gt; &lt;ul&gt;     &lt;li&gt;A complete course
+      on the basics of Objective-C using Apple’s newest Xcode tools &lt;/li&gt;     &lt;li&gt;An
+      introduction to object-oriented programming &lt;/li&gt;     &lt;li&gt;Comprehensive
+      coverage of new topics like blocks, GCD, ARC, class extensions, as well as inheritance,
+      composition, object initialization, categories, protocols, memory management,
+      and organizing source files &lt;/li&gt;     &lt;li&gt;An introduction to building
+      user interfaces using what is called the UIKit &lt;/li&gt;     &lt;li&gt;A primer
+      for non-C programmers to get off the ground even faster &lt;/li&gt; &lt;/ul&gt;
+      &lt;h3&gt;What you’ll learn&lt;/h3&gt;&lt;ul&gt;     &lt;li&gt;Learn Objective-C
+      programming, the gateway to programming your iPhone, iPad or Mac &lt;/li&gt;     &lt;li&gt;Write
+      apps for the iOS and/or OS X interfaces, the cleanest user-interfaces around
+      &lt;/li&gt;     &lt;li&gt;Understand variables and how to design your own data
+      structures &lt;/li&gt;     &lt;li&gt;Work with the new Objective-C features
+      now available in this update like blocks, automated reference counting (ARC)
+      and class extensions &lt;/li&gt;     &lt;li&gt;Work with new tools available
+      like Clang static analyzer and Grand Central Dispatch (GCD) &lt;/li&gt;     &lt;li&gt;Undertand
+      UIKit and how to build simple user interfaces easily and effectively &lt;/li&gt;     &lt;li&gt;Explore
+      using the latest Xcode &lt;/li&gt; &lt;/ul&gt; &lt;h3&gt;Who this book is for&lt;/h3&gt;      &lt;p&gt;     For
+      anyone wanting to learn to program native apps in iOS and/or OS X, including
+      developers new to the iOS-based iPhone and iPad as well as OS X-based Mac computers.
+      This book is for developers new to Objective-C, but who have some programming
+      experience.        &lt;/p&gt;     &lt;h3&gt;Table of Contents&lt;/h3&gt;&lt;ol&gt;     &lt;li&gt;Hello 
+      &lt;/li&gt;     &lt;li&gt;Extensions to C &lt;/li&gt;     &lt;li&gt;Introduction
+      to Object-Oriented Programming &lt;/li&gt;     &lt;li&gt;Inheritance &lt;/li&gt;     &lt;li&gt;Composition
+      &lt;/li&gt;     &lt;li&gt;Source File Organization and Using Xcode 4 &lt;/li&gt;     &lt;li&gt;More
+      About Xcode &lt;/li&gt;     &lt;li&gt;A Quick Tour of the Foundation Kit &lt;/li&gt;     &lt;li&gt;Memory
+      Management and ARC &lt;/li&gt;     &lt;li&gt;Object Initialization &lt;/li&gt;     &lt;li&gt;Properties
+      &lt;/li&gt;     &lt;li&gt;Categories &lt;/li&gt;     &lt;li&gt;Protocols &lt;/li&gt;     &lt;li&gt;Blocks
+      and Concurrency &lt;/li&gt;     &lt;li&gt;Introduction to UIKit &lt;/li&gt;     &lt;li&gt;Introduction
+      to the Application Kit &lt;/li&gt;     &lt;li&gt;File Loading and Saving &lt;/li&gt;     &lt;li&gt;Key-Value
+      Coding &lt;/li&gt;     &lt;li&gt;Using the Static Analyzer &lt;/li&gt;     &lt;li&gt;NSPredicate
+      &lt;/li&gt; &lt;/ol&gt; Appendix: Coming from Other Languages</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>0321706285</ASIN><DetailPageURL>http://www.amazon.com/Objective-C-Programming-Ranch-Guide-Guides/dp/0321706285%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0321706285</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+      Details</Description><URL>http://www.amazon.com/Objective-C-Programming-Ranch-Guide-Guides/dp/tech-data/0321706285%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321706285</URL></ItemLink><ItemLink><Description>Add
+      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0321706285%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321706285</URL></ItemLink><ItemLink><Description>Add
+      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0321706285%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321706285</URL></ItemLink><ItemLink><Description>Add
+      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0321706285%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321706285</URL></ItemLink><ItemLink><Description>Tell
+      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0321706285%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321706285</URL></ItemLink><ItemLink><Description>All
+      Customer Reviews</Description><URL>http://www.amazon.com/review/product/0321706285%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321706285</URL></ItemLink><ItemLink><Description>All
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0321706285%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321706285</URL></ItemLink></ItemLinks><SalesRank>2734</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41KYuQqMSZL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">52</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41KYuQqMSZL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">112</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41KYuQqMSZL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">350</Width></LargeImage><ImageSets><ImageSet
+      Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41KYuQqMSZL._SL30_.jpg</URL><Height
+      Units="pixels">30</Height><Width Units="pixels">21</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41KYuQqMSZL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">52</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41KYuQqMSZL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">52</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41KYuQqMSZL._SL110_.jpg</URL><Height
+      Units="pixels">110</Height><Width Units="pixels">77</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41KYuQqMSZL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">112</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41KYuQqMSZL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">350</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Aaron
+      Hillegass</Author><Binding>Paperback</Binding><EAN>9780321706287</EAN><EANList><EANListElement>9780321706287</EANListElement></EANList><Edition>1</Edition><ISBN>0321706285</ISBN><ItemDimensions><Height
+      Units="hundredths-inches">902</Height><Length Units="hundredths-inches">701</Length><Weight
+      Units="hundredths-pounds">130</Weight><Width Units="hundredths-inches">75</Width></ItemDimensions><Label>Big
+      Nerd Ranch Guides</Label><Languages><Language><Name>English</Name><Type>Unknown</Type></Language><Language><Name>English</Name><Type>Original
+      Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>3999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$39.99</FormattedPrice></ListPrice><Manufacturer>Big
+      Nerd Ranch Guides</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>288</NumberOfPages><PackageDimensions><Height
+      Units="hundredths-inches">80</Height><Length Units="hundredths-inches">990</Length><Weight
+      Units="hundredths-pounds">150</Weight><Width Units="hundredths-inches">690</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2011-10-18</PublicationDate><Publisher>Big
+      Nerd Ranch Guides</Publisher><SKU>APX7687332861141582</SKU><Studio>Big Nerd
+      Ranch Guides</Studio><Title>Objective-C Programming: The Big Nerd Ranch Guide
+      (Big Nerd Ranch Guides)</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1864</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$18.64</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1995</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$19.95</FormattedPrice></LowestUsedPrice><TotalNew>44</TotalNew><TotalUsed>25</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Description</Source><Content>&lt;p&gt;  Want to write applications for iOS or
+      the Mac? This introduction to programming and the Objective-C language is the
+      first step on your journey from someone who uses apps to someone who writes
+      them.  &lt;/p&gt;  &lt;p&gt;  Based on Big Nerd Ranch''s legendary &lt;em&gt;Objective-C
+      Bootcamp&lt;/em&gt;,¿this book covers C, Objective-C, and the common programming
+      idioms that enable developers to make the most of Apple technologies.  &lt;/p&gt;  &lt;p&gt;  This
+      is the only introductory-level book written by Aaron Hillegass, one of the most
+      experienced and authoritative voices in the iOS and Cocoa community.  &lt;/p&gt;  &lt;p&gt;  Compatible
+      with Xcode 4.2, iOS 5, and Mac OS X 10.7 (Lion), this guide features short chapters
+      and engaging style to keep you motivated and moving forward. At the same time,
+      Aaron’s determination that you understand what you’re doing—or at least why
+      you’re doing it—encourages you to think critically as a programmer.  &lt;/p&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>0321811909</ASIN><DetailPageURL>http://www.amazon.com/Programming-Objective-C-Edition-Developers-Library/dp/0321811909%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0321811909</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+      Details</Description><URL>http://www.amazon.com/Programming-Objective-C-Edition-Developers-Library/dp/tech-data/0321811909%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321811909</URL></ItemLink><ItemLink><Description>Add
+      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0321811909%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321811909</URL></ItemLink><ItemLink><Description>Add
+      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0321811909%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321811909</URL></ItemLink><ItemLink><Description>Add
+      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0321811909%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321811909</URL></ItemLink><ItemLink><Description>Tell
+      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0321811909%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321811909</URL></ItemLink><ItemLink><Description>All
+      Customer Reviews</Description><URL>http://www.amazon.com/review/product/0321811909%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321811909</URL></ItemLink><ItemLink><Description>All
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0321811909%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321811909</URL></ItemLink></ItemLinks><SalesRank>7118</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41xSLtnXeSL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41xSLtnXeSL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">124</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41xSLtnXeSL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">389</Width></LargeImage><ImageSets><ImageSet
+      Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41xSLtnXeSL._SL30_.jpg</URL><Height
+      Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41xSLtnXeSL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41xSLtnXeSL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">58</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41xSLtnXeSL._SL110_.jpg</URL><Height
+      Units="pixels">110</Height><Width Units="pixels">86</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41xSLtnXeSL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">124</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41xSLtnXeSL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">389</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Stephen
+      G. Kochan</Author><Binding>Paperback</Binding><EAN>9780321811905</EAN><EANList><EANListElement>9780321811905</EANListElement></EANList><Edition>4</Edition><ISBN>0321811909</ISBN><IsEligibleForTradeIn>1</IsEligibleForTradeIn><ItemDimensions><Height
+      Units="hundredths-inches">902</Height><Length Units="hundredths-inches">701</Length><Weight
+      Units="hundredths-pounds">193</Weight><Width Units="hundredths-inches">130</Width></ItemDimensions><Label>Addison-Wesley
+      Professional</Label><Languages><Language><Name>English</Name><Type>Unknown</Type></Language><Language><Name>English</Name><Type>Original
+      Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>4999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$49.99</FormattedPrice></ListPrice><Manufacturer>Addison-Wesley
+      Professional</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>600</NumberOfPages><PackageDimensions><Height
+      Units="hundredths-inches">130</Height><Length Units="hundredths-inches">900</Length><Weight
+      Units="hundredths-pounds">190</Weight><Width Units="hundredths-inches">700</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2011-12-16</PublicationDate><Publisher>Addison-Wesley
+      Professional</Publisher><SKU>7347028</SKU><Studio>Addison-Wesley Professional</Studio><Title>Programming
+      in Objective-C (4th Edition) (Developer''s Library)</Title><TradeInValue><Amount>1727</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$17.27</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2304</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$23.04</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>2091</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$20.91</FormattedPrice></LowestUsedPrice><TotalNew>54</TotalNew><TotalUsed>27</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Description</Source><Content>&lt;div&gt;&lt;b&gt;This is the 4th edition of
+      the world''s bestselling book on Objective-C programming, fully updated to cover
+      Xcode 4.2 and Automatic Reference Counting (ARC).&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt; 
+       &lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;i&gt;                  Programming
+      in Objective-C &lt;/i&gt;is a concise, carefully written tutorial on the basics
+      of Objective-C and object-oriented programming for Apple''s iOS and Mac platforms.
+      The book makes no assumptions about prior experience with object-oriented programming
+      languages or with the C language (which Objective-C is based upon). Because
+      of this, both beginners and experienced programmers alike can use this book
+      to quickly and effectively learn the fundamentals of Objective-C. Readers can
+      also learn the concepts of object-oriented programming without having to first
+      learn all of the intricacies of the underlying C programming language. &lt;div&gt;&lt;/div&gt;&lt;div&gt; &lt;br&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;This
       unique approach to learning, combined with many small program examples and exercises
       at the end of each chapter, makes &lt;i&gt;Programming in Objective-C&lt;/i&gt;
-      ideally suited for either classroom use or self-study. While the Objective-C
-      language itself has gone through relatively minor changes since the introduction
-      of Objective-C 2.0, the Apple development tools that programmers use for Objective-C
-      development on the Mac and on iOS have changed significantly in a very short
-      period of time. &lt;br&gt;&lt;br&gt;The third edition of &lt;i&gt;Programming
-      in Objective-C&lt;/i&gt; includes numerous updates and improvements throughout
-      the book:&lt;br&gt;&lt;br&gt; &lt;li&gt;Improved organization for some chapters&lt;/li&gt;
-      &lt;li&gt;Incorporation of feedback and suggestions from members of the author's
-      forum for readers, including more detailed descriptions for some of the examples&lt;/li&gt;
-      &lt;li&gt;A new introduction to blocks with examples&lt;/li&gt; &lt;li&gt;Replacement
-      of deprecated methods with newer methods&lt;/li&gt; &lt;li&gt;Updated diagrams
-      and steps for using Xcode 4&lt;/li&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>1449387829</ASIN><DetailPageURL>http://www.amazon.com/Head-First-iPhone-iPad-Development/dp/1449387829%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1449387829</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-      Details</Description><URL>http://www.amazon.com/Head-First-iPhone-iPad-Development/dp/tech-data/1449387829%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1449387829</URL></ItemLink><ItemLink><Description>Add
-      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D1449387829%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1449387829</URL></ItemLink><ItemLink><Description>Add
-      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D1449387829%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1449387829</URL></ItemLink><ItemLink><Description>Add
-      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D1449387829%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1449387829</URL></ItemLink><ItemLink><Description>Tell
-      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/1449387829%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1449387829</URL></ItemLink><ItemLink><Description>All
-      Customer Reviews</Description><URL>http://www.amazon.com/review/product/1449387829%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1449387829</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1449387829%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1449387829</URL></ItemLink></ItemLinks><SalesRank>18544</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/513eBSPJlEL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">65</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/513eBSPJlEL._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">139</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/513eBSPJlEL._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">433</Width></LargeImage><ImageSets><ImageSet
-      Category=\"primary\"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/513eBSPJlEL._SL30_.jpg</URL><Height
-      Units=\"pixels\">30</Height><Width Units=\"pixels\">26</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/513eBSPJlEL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">65</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/513eBSPJlEL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">65</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/513eBSPJlEL._SL110_.jpg</URL><Height
-      Units=\"pixels\">110</Height><Width Units=\"pixels\">95</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/513eBSPJlEL._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">139</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/513eBSPJlEL._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">433</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Dan
-      Pilone</Author><Author>Tracey Pilone</Author><Binding>Paperback</Binding><DeweyDecimalNumber>005.1</DeweyDecimalNumber><EAN>9781449387822</EAN><EANList><EANListElement>9781449387822</EANListElement></EANList><Edition>Second
-      Edition</Edition><ISBN>1449387829</ISBN><IsEligibleForTradeIn>1</IsEligibleForTradeIn><Label>O'Reilly
-      Media</Label><ListPrice><Amount>4999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$49.99</FormattedPrice></ListPrice><Manufacturer>O'Reilly
-      Media</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>672</NumberOfPages><PackageDimensions><Height
-      Units=\"hundredths-inches\">180</Height><Length Units=\"hundredths-inches\">920</Length><Weight
-      Units=\"hundredths-pounds\">265</Weight><Width Units=\"hundredths-inches\">800</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2011-06-30</PublicationDate><Publisher>O'Reilly
-      Media</Publisher><SKU>1449387829</SKU><Studio>O'Reilly Media</Studio><Title>Head
-      First iPhone and iPad Development: A Learner's Guide to Creating Objective-C
-      Applications for the iPhone and iPad</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2985</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$29.85</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>2500</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$25.00</FormattedPrice></LowestUsedPrice><TotalNew>28</TotalNew><TotalUsed>16</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
-      Description</Source><Content>&lt;DIV&gt;&lt;p&gt;Let's say you have a killer
-      app idea for iPhone and iPad. Where do you begin? &lt;i&gt;Head First iPhone
-      and iPad Development&lt;/i&gt; will help you get your first application up and
-      running in no time. You'll not only learn how to design for Apple's devices,
-      you'll also master the iPhone SDK tools -- including Interface Builder, Xcode,
-      and Objective-C programming principles -- to make your app stand out.&lt;/p&gt;&lt;p&gt;Whether
-      you're a seasoned Mac developer who wants to jump into the App store, or someone
-      with strong object-oriented programming skills but no Mac experience, this book
-      is a complete learning experience for creating eye-catching, top-selling iPhone
-      and iPad applications.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Install the iPhone OS SDK
-      and get started using Interface Builder and XCode &lt;/li&gt;&lt;li&gt;Put Objective-C
-      core concepts to work, including message passing, protocols, properties, and
-      memory management &lt;/li&gt;&lt;li&gt;Take advantage of iPhone OS patterns
-      such as datasources and delegates &lt;/li&gt;&lt;li&gt;Preview your applications
-      in the Simulator &lt;/li&gt;&lt;li&gt;Build more complicated interactions that
-      utilize multiple views, data entry/editing, and rotation &lt;/li&gt;&lt;li&gt;Work
-      with the iPhone's camera, GPS, and accelerometer &lt;/li&gt;&lt;li&gt;Optimize,
-      test, and distribute your application&lt;p&gt; We think your time is too valuable
-      to waste struggling with new concepts. Using the latest research in cognitive
-      science and learning theory to craft a multi-sensory learning experience, &lt;i&gt;Head
-      First iPhone and iPad Development&lt;/i&gt; has a visually rich format designed
-      for the way your brain works, not a text-heavy approach that puts you to sleep.&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>1591398398</ASIN><DetailPageURL>http://www.amazon.com/Enterprise-Architecture-Strategy-Foundation-Execution/dp/1591398398%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1591398398</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-      Details</Description><URL>http://www.amazon.com/Enterprise-Architecture-Strategy-Foundation-Execution/dp/tech-data/1591398398%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1591398398</URL></ItemLink><ItemLink><Description>Add
-      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D1591398398%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1591398398</URL></ItemLink><ItemLink><Description>Add
-      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D1591398398%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1591398398</URL></ItemLink><ItemLink><Description>Add
-      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D1591398398%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1591398398</URL></ItemLink><ItemLink><Description>Tell
-      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/1591398398%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1591398398</URL></ItemLink><ItemLink><Description>All
-      Customer Reviews</Description><URL>http://www.amazon.com/review/product/1591398398%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1591398398</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1591398398%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1591398398</URL></ItemLink></ItemLinks><SalesRank>7753</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41DWW3lpblL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">50</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41DWW3lpblL._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">107</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41DWW3lpblL._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">335</Width></LargeImage><ImageSets><ImageSet
-      Category=\"primary\"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41DWW3lpblL._SL30_.jpg</URL><Height
-      Units=\"pixels\">30</Height><Width Units=\"pixels\">20</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41DWW3lpblL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">50</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41DWW3lpblL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">50</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41DWW3lpblL._SL110_.jpg</URL><Height
-      Units=\"pixels\">110</Height><Width Units=\"pixels\">74</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41DWW3lpblL._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">107</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41DWW3lpblL._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">335</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Jeanne
-      W. Ross</Author><Author>Peter Weill</Author><Author>David Robertson</Author><Binding>Hardcover</Binding><DeweyDecimalNumber>658.4038</DeweyDecimalNumber><EAN>9781591398394</EAN><EANList><EANListElement>9781591398394</EANListElement></EANList><ISBN>1591398398</ISBN><IsEligibleForTradeIn>1</IsEligibleForTradeIn><ItemDimensions><Height
-      Units=\"hundredths-inches\">95</Height><Length Units=\"hundredths-inches\">956</Length><Weight
-      Units=\"hundredths-pounds\">124</Weight><Width Units=\"hundredths-inches\">638</Width></ItemDimensions><Label>Harvard
-      Business Press</Label><ListPrice><Amount>3995</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$39.95</FormattedPrice></ListPrice><Manufacturer>Harvard
-      Business Press</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>256</NumberOfPages><PackageDimensions><Height
-      Units=\"hundredths-inches\">102</Height><Length Units=\"hundredths-inches\">921</Length><Weight
-      Units=\"hundredths-pounds\">123</Weight><Width Units=\"hundredths-inches\">654</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2006-08-01</PublicationDate><Publisher>Harvard
-      Business Press</Publisher><SKU>mon0000078991</SKU><Studio>Harvard Business Press</Studio><Title>Enterprise
-      Architecture As Strategy: Creating a Foundation for Business Execution</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1497</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$14.97</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1500</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$15.00</FormattedPrice></LowestUsedPrice><TotalNew>46</TotalNew><TotalUsed>52</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
-      Description</Source><Content>Enterprise architecture defines a firm's needs
-      for standardized tasks, job roles, systems, infrastructure, and data in core
-      business processes. Thus, it helps a company to articulate how it will compete
-      in a digital economy and it guides managers' daily decisions to realize their
-      vision of success. This book clearly explains enterprise architecture's vital
-      role in enabling--or constraining--the execution of business strategy. The book
-      provides clear frameworks, thoughtful case examples, and a proven-effective
-      structured process for designing and implementing effective enterprise architectures.</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>143023024X</ASIN><DetailPageURL>http://www.amazon.com/Beginning-iPhone-Development-Exploring-iOS/dp/143023024X%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D143023024X</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-      Details</Description><URL>http://www.amazon.com/Beginning-iPhone-Development-Exploring-iOS/dp/tech-data/143023024X%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D143023024X</URL></ItemLink><ItemLink><Description>Add
-      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D143023024X%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D143023024X</URL></ItemLink><ItemLink><Description>Add
-      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D143023024X%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D143023024X</URL></ItemLink><ItemLink><Description>Add
-      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D143023024X%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D143023024X</URL></ItemLink><ItemLink><Description>Tell
-      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/143023024X%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D143023024X</URL></ItemLink><ItemLink><Description>All
-      Customer Reviews</Description><URL>http://www.amazon.com/review/product/143023024X%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D143023024X</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/143023024X%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D143023024X</URL></ItemLink></ItemLinks><SalesRank>25755</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/4111A463xZL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">61</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/4111A463xZL._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">131</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/4111A463xZL._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">408</Width></LargeImage><ImageSets><ImageSet
-      Category=\"primary\"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/4111A463xZL._SL30_.jpg</URL><Height
-      Units=\"pixels\">30</Height><Width Units=\"pixels\">24</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/4111A463xZL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">61</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/4111A463xZL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">61</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/4111A463xZL._SL110_.jpg</URL><Height
-      Units=\"pixels\">110</Height><Width Units=\"pixels\">90</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/4111A463xZL._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">131</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/4111A463xZL._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">408</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>David
-      Mark</Author><Author>Jack Nutting</Author><Author>Jeff LaMarche</Author><Binding>Paperback</Binding><DeweyDecimalNumber>005.26</DeweyDecimalNumber><EAN>9781430230243</EAN><EANList><EANListElement>9781430230243</EANListElement></EANList><Edition>1</Edition><ISBN>143023024X</ISBN><IsEligibleForTradeIn>1</IsEligibleForTradeIn><Label>Apress</Label><ListPrice><Amount>3999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$39.99</FormattedPrice></ListPrice><Manufacturer>Apress</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>676</NumberOfPages><PackageDimensions><Height
-      Units=\"hundredths-inches\">150</Height><Length Units=\"hundredths-inches\">937</Length><Weight
-      Units=\"hundredths-pounds\">210</Weight><Width Units=\"hundredths-inches\">764</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2011-01-28</PublicationDate><Publisher>Apress</Publisher><SKU>22434737</SKU><Studio>Apress</Studio><Title>Beginning
-      iPhone 4 Development: Exploring the iOS SDK</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2299</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$22.99</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>2400</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$24.00</FormattedPrice></LowestUsedPrice><TotalNew>40</TotalNew><TotalUsed>16</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
-      Description</Source><Content>&lt;p&gt;The authors of the bestselling &lt;em&gt;Beginning
-      iPhone 3 Development&lt;/em&gt; are back, with the same excellent material completely
-      updated for iOS 4 and written from the ground up using the latest version of
-      Apple's Xcode 3. All source code has been updated to use the latest Xcode templates
-      and current APIs, and all-new screenshots show Xcode 3 in action.&lt;br /&gt;&lt;br
-      /&gt;&lt;em&gt;Beginning iPhone 4 Development&lt;/em&gt; is a complete course
-      in iOS development. You'll master techniques that work on iPhone, iPad, and
-      iPod touch. We start with the basics, showing you how to download and install
-      the tools you'll need, and how to create your first simple application. Next
-      you'll learn to integrate all the interface elements iOS users have come to
-      know and love, such as buttons, switches, pickers, toolbars, and sliders. You'll
-      master a variety of design patterns, from the simplest single view to complex
-      hierarchical drill-downs. The confusing art of table building will be demystified,
-      and you'll learn techniques to save and retrieve your data using SQLite, iPhone's
-      built-in database management system and Core Data, the standard for persistence
-      that Apple brought to iOS with the release of SDK 3.   &lt;br /&gt;&lt;br /&gt;And
-      there's much more! You'll learn to draw using Quartz 2D and OpenGL ES, add multitouch
-      gestural support (pinches and swipes) to your applications, and work with the
-      camera, photo library, accelerometer, and built-in GPS. You'll discover the
-      fine points of application preferences and learn how to localize your apps for
-      multiple languages. You'll also learn how to use the new concurrency APIs included
-      in iOS 4, and make robust multithreaded applications using Grand Central Dispatch.  
-      &lt;/p&gt;&lt;ul&gt;    &lt;li&gt;The iPhone 4 update to the best-selling and
-      most recommended book for Cocoa touch developers   &lt;/li&gt;    &lt;li&gt;Written
-      in an accessible, easy-to-follow style   &lt;/li&gt;    &lt;li&gt;Full of useful
-      tips and techniques to help you become an iOS pro &lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;What
-      you'll learn&lt;/h3&gt;&lt;ul&gt;    &lt;li&gt;Everything you need to know to
-      develop your own best-selling iPhone and iPad apps &lt;/li&gt;    &lt;li&gt;Best
-      practices for optimizing your code and delivering great user experiences &lt;/li&gt;
-      \   &lt;li&gt;How to create &amp;#147;universal&amp;#148; apps for both iPhone
-      and iPad &lt;/li&gt;&lt;/ul&gt;&lt;h3&gt;Who this book is for&lt;/h3&gt;       &lt;p&gt;
-      \     Anyone who wants to start developing for iPhone, iPad, and iPod touch.&lt;br
-      /&gt;&lt;br /&gt;You can discover more about this book, download source code,
-      and find support forums at the book's companion site, at www.iphonedevbook.com.
-      \      &lt;/p&gt;      &lt;h3&gt;Table of Contents&lt;/h3&gt;&lt;ol&gt;    &lt;li&gt;Welcome
-      to the Jungle &lt;/li&gt;    &lt;li&gt;Appeasing the Tiki Gods &lt;/li&gt;    &lt;li&gt;Handling
-      Basic Interaction &lt;/li&gt;    &lt;li&gt;More User Interface Fun &lt;/li&gt;
-      \   &lt;li&gt;Autorotation and Autosizing &lt;/li&gt;    &lt;li&gt;Multiview
-      Applications &lt;/li&gt;    &lt;li&gt;Tab Bars and Pickers &lt;/li&gt;    &lt;li&gt;Introduction
-      to Table Views &lt;/li&gt;    &lt;li&gt;Navigation Controllers and Table Views
-      &lt;/li&gt;    &lt;li&gt;iPad Considerations &lt;/li&gt;    &lt;li&gt;Application
-      Settings and User Defaults &lt;/li&gt;    &lt;li&gt;Basic Data Persistence &lt;/li&gt;
-      \   &lt;li&gt;Grand Central Dispatch, Background Processing, and You &lt;/li&gt;
-      \   &lt;li&gt;Drawing with Quartz and OpenGL &lt;/li&gt;    &lt;li&gt;Taps,
-      Touches, and Gestures &lt;/li&gt;    &lt;li&gt;Where Am I? Finding Your Way
-      with Core Location &lt;/li&gt;    &lt;li&gt;Whee! Gyro and Accelerometer! &lt;/li&gt;
-      \   &lt;li&gt;iPhone Camera and Photo Library &lt;/li&gt;    &lt;li&gt;Application
-      Localization &lt;/li&gt;    &lt;li&gt;Where to Next? &lt;/li&gt;&lt;/ol&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>0470475382</ASIN><DetailPageURL>http://www.amazon.com/21st-Century-Skills-Learning-Times/dp/0470475382%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0470475382</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-      Details</Description><URL>http://www.amazon.com/21st-Century-Skills-Learning-Times/dp/tech-data/0470475382%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0470475382</URL></ItemLink><ItemLink><Description>Add
-      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0470475382%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0470475382</URL></ItemLink><ItemLink><Description>Add
-      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0470475382%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0470475382</URL></ItemLink><ItemLink><Description>Add
-      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0470475382%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0470475382</URL></ItemLink><ItemLink><Description>Tell
-      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0470475382%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0470475382</URL></ItemLink><ItemLink><Description>All
-      Customer Reviews</Description><URL>http://www.amazon.com/review/product/0470475382%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0470475382</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0470475382%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0470475382</URL></ItemLink></ItemLinks><SalesRank>47702</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/51LmIGTWdgL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">50</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51LmIGTWdgL._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">106</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51LmIGTWdgL._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">332</Width></LargeImage><ImageSets><ImageSet
-      Category=\"primary\"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/51LmIGTWdgL._SL30_.jpg</URL><Height
-      Units=\"pixels\">30</Height><Width Units=\"pixels\">20</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/51LmIGTWdgL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">50</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/51LmIGTWdgL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">50</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/51LmIGTWdgL._SL110_.jpg</URL><Height
-      Units=\"pixels\">110</Height><Width Units=\"pixels\">73</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51LmIGTWdgL._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">106</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51LmIGTWdgL._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">332</Width></LargeImage></ImageSet><ImageSet
-      Category=\"variant\"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/51DyP2iI9FL._SL30_.jpg</URL><Height
-      Units=\"pixels\">30</Height><Width Units=\"pixels\">20</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/51DyP2iI9FL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">49</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/51DyP2iI9FL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">49</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/51DyP2iI9FL._SL110_.jpg</URL><Height
-      Units=\"pixels\">110</Height><Width Units=\"pixels\">72</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51DyP2iI9FL._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">105</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51DyP2iI9FL._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">328</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Bernie
-      Trilling</Author><Author>Charles Fadel</Author><Binding>Hardcover</Binding><DeweyDecimalNumber>370.73</DeweyDecimalNumber><EAN>9780470475386</EAN><EANList><EANListElement>9780470475386</EANListElement></EANList><Edition>1</Edition><ISBN>0470475382</ISBN><IsEligibleForTradeIn>1</IsEligibleForTradeIn><ItemDimensions><Height
-      Units=\"centimeters\">2.37</Height><Weight Units=\"hundredths-pounds\">1</Weight><Width
-      Units=\"centimeters\">1.56</Width></ItemDimensions><Label>Jossey-Bass</Label><ListPrice><Amount>2795</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$27.95</FormattedPrice></ListPrice><Manufacturer>Jossey-Bass</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>240</NumberOfPages><PackageDimensions><Height
-      Units=\"hundredths-inches\">110</Height><Length Units=\"hundredths-inches\">900</Length><Weight
-      Units=\"hundredths-pounds\">95</Weight><Width Units=\"hundredths-inches\">610</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2009-10-05</PublicationDate><Publisher>Jossey-Bass</Publisher><SKU>WILY9780470475386</SKU><Studio>Jossey-Bass</Studio><Title>21st
-      Century Skills: Learning for Life in Our Times</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1340</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$13.40</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1398</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$13.98</FormattedPrice></LowestUsedPrice><LowestCollectiblePrice><Amount>1599</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$15.99</FormattedPrice></LowestCollectiblePrice><TotalNew>51</TotalNew><TotalUsed>19</TotalUsed><TotalCollectible>1</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
-      Description</Source><Content>&lt;b&gt;The new building blocks for learning in
-      a complex world&lt;/b&gt;&lt;p&gt;This important resource introduces a framework
-      for 21st Century learning that maps out the skills needed to survive and thrive
-      in a complex and connected world. 21st Century content includes the basic core
-      subjects of reading, writing, and arithmetic-but also emphasizes global awareness,
-      financial/economic literacy, and health issues. The skills fall into three categories:
-      learning and innovations skills; digital literacy skills; and life and career
-      skills. This book is filled with vignettes, international examples, and classroom
-      samples that help illustrate the framework and provide an exciting view of twenty-first
-      century teaching and learning.&lt;ul&gt;&lt;li&gt;Explores the three main categories
-      of 21st Century Skills: learning and innovations skills; digital literacy skills;
-      and life and career skills &lt;/li&gt;&lt;li&gt;Addresses timely issues such
-      as the rapid advance of technology and increased economic competition&lt;/li&gt;&lt;li&gt;Based
-      on a framework developed by the Partnership for 21st Century Skills (P21)&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The
-      book contains a  DVD with video clips of classroom teaching. For more information
-      on the book visit www.21stcenturyskillsbook.com.</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>0596805780</ASIN><DetailPageURL>http://www.amazon.com/Building-iPhone-Apps-HTML-JavaScript/dp/0596805780%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0596805780</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-      Details</Description><URL>http://www.amazon.com/Building-iPhone-Apps-HTML-JavaScript/dp/tech-data/0596805780%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596805780</URL></ItemLink><ItemLink><Description>Add
-      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0596805780%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596805780</URL></ItemLink><ItemLink><Description>Add
-      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0596805780%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596805780</URL></ItemLink><ItemLink><Description>Add
-      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0596805780%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596805780</URL></ItemLink><ItemLink><Description>Tell
-      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0596805780%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596805780</URL></ItemLink><ItemLink><Description>All
-      Customer Reviews</Description><URL>http://www.amazon.com/review/product/0596805780%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596805780</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0596805780%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596805780</URL></ItemLink></ItemLinks><SalesRank>26836</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/51GBnqfHl1L._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">57</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51GBnqfHl1L._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">122</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51GBnqfHl1L._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">381</Width></LargeImage><ImageSets><ImageSet
-      Category=\"primary\"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/51GBnqfHl1L._SL30_.jpg</URL><Height
-      Units=\"pixels\">30</Height><Width Units=\"pixels\">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/51GBnqfHl1L._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">57</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/51GBnqfHl1L._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">57</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/51GBnqfHl1L._SL110_.jpg</URL><Height
-      Units=\"pixels\">110</Height><Width Units=\"pixels\">84</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51GBnqfHl1L._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">122</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51GBnqfHl1L._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">381</Width></LargeImage></ImageSet><ImageSet
-      Category=\"swatch\"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/51CEgBU-6TL._SL30_.jpg</URL><Height
-      Units=\"pixels\">30</Height><Width Units=\"pixels\">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/51CEgBU-6TL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">57</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/51CEgBU-6TL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">57</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/51CEgBU-6TL._SL110_.jpg</URL><Height
-      Units=\"pixels\">110</Height><Width Units=\"pixels\">84</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51CEgBU-6TL._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">122</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51CEgBU-6TL._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">380</Width></LargeImage></ImageSet><ImageSet
-      Category=\"variant\"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/51JhPZaz0FL._SL30_.jpg</URL><Height
-      Units=\"pixels\">30</Height><Width Units=\"pixels\">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/51JhPZaz0FL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">57</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/51JhPZaz0FL._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">57</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/51JhPZaz0FL._SL110_.jpg</URL><Height
-      Units=\"pixels\">110</Height><Width Units=\"pixels\">84</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51JhPZaz0FL._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">122</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51JhPZaz0FL._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">380</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Jonathan
-      Stark</Author><Binding>Paperback</Binding><DeweyDecimalNumber>005.1</DeweyDecimalNumber><EAN>9780596805784</EAN><EANList><EANListElement>9780596805784</EANListElement></EANList><Edition>1</Edition><Feature>ISBN13:
-      9780596805784</Feature><Feature>Condition: New</Feature><Feature>Notes: BRAND
+      ideally suited for either classroom use or self-study.   &lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt; &lt;/div&gt;&lt;div&gt;This
+      edition has been fully updated for the significant changes in iOS 5 and Xcode
+      4.2. One of the biggest changes is &lt;i&gt;Automatic Reference Counting (ARC)&lt;/i&gt;.
+      This edition gives detailed coverage of how to use ARC to improve and simplify
+      memory management in Objective-C programs.              &lt;/div&gt;&lt;/div&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>1430228326</ASIN><DetailPageURL>http://www.amazon.com/Objective-C-Absolute-Beginners-iPhone-Programming/dp/1430228326%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1430228326</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+      Details</Description><URL>http://www.amazon.com/Objective-C-Absolute-Beginners-iPhone-Programming/dp/tech-data/1430228326%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430228326</URL></ItemLink><ItemLink><Description>Add
+      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D1430228326%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430228326</URL></ItemLink><ItemLink><Description>Add
+      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D1430228326%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430228326</URL></ItemLink><ItemLink><Description>Add
+      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D1430228326%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430228326</URL></ItemLink><ItemLink><Description>Tell
+      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/1430228326%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430228326</URL></ItemLink><ItemLink><Description>All
+      Customer Reviews</Description><URL>http://www.amazon.com/review/product/1430228326%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430228326</URL></ItemLink><ItemLink><Description>All
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1430228326%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430228326</URL></ItemLink></ItemLinks><SalesRank>136640</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41c7ciAA%2BCL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">61</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41c7ciAA%2BCL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">130</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41c7ciAA%2BCL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">406</Width></LargeImage><ImageSets><ImageSet
+      Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41c7ciAA%2BCL._SL30_.jpg</URL><Height
+      Units="pixels">30</Height><Width Units="pixels">24</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41c7ciAA%2BCL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">61</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41c7ciAA%2BCL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">61</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41c7ciAA%2BCL._SL110_.jpg</URL><Height
+      Units="pixels">110</Height><Width Units="pixels">89</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41c7ciAA%2BCL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">130</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41c7ciAA%2BCL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">406</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Gary
+      Bennett</Author><Author>Mitchell Fisher</Author><Author>Brad Lees</Author><Binding>Paperback</Binding><EAN>9781430228325</EAN><EANList><EANListElement>9781430228325</EANListElement></EANList><Edition>1</Edition><IsAdultProduct>0</IsAdultProduct><ISBN>1430228326</ISBN><ItemDimensions><Height
+      Units="hundredths-inches">953</Height><Length Units="hundredths-inches">760</Length><Weight
+      Units="hundredths-pounds">132</Weight><Width Units="hundredths-inches">91</Width></ItemDimensions><Label>Apress</Label><Languages><Language><Name>English</Name><Type>Unknown</Type></Language><Language><Name>English</Name><Type>Original
+      Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>3999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$39.99</FormattedPrice></ListPrice><Manufacturer>Apress</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>292</NumberOfPages><PackageDimensions><Height
+      Units="hundredths-inches">100</Height><Length Units="hundredths-inches">920</Length><Weight
+      Units="hundredths-pounds">135</Weight><Width Units="hundredths-inches">750</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2010-08-25</PublicationDate><Publisher>Apress</Publisher><ReleaseDate>2010-08-25</ReleaseDate><SKU>ACOMMP2_book_usedverygood_1430228326</SKU><Studio>Apress</Studio><Title>Objective-C
+      for Absolute Beginners: iPhone, iPad and Mac Programming Made Easy</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1628</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$16.28</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>505</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$5.05</FormattedPrice></LowestUsedPrice><TotalNew>43</TotalNew><TotalUsed>27</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Description</Source><Content>&lt;p&gt;It seems as if everyone is writing applications
+      for Apple’s iPhone and iPad, but how do they all do it? It’s best to learn Objective-C,
+      the native language of both the iOS and Mac OS X, but where to begin? Right
+      here, even if you’ve never programmed before!&lt;/p&gt; &lt;p&gt;&lt;em&gt;Objective-C
+      for Absolute Beginners&lt;/em&gt; will teach you how to write software for your
+      Mac, iPhone, or iPad using Objective-C, an elegant and powerful language with
+      a rich set of developer tools. Using a hands-on approach, you’ll learn to think
+      in programming terms, how to use Objective-C to build program logic, and how
+      to write your own applications and apps.&lt;/p&gt; &lt;p&gt;With over 50 collective
+      years in software development and based on an approach pioneered at Carnegie
+      Mellon University, the authors have developed a remarkably effective approach
+      to learning Objective-C. Since the introduction of Apple’s iPhone, the authors
+      have taught hundreds of absolute beginners how to develop Mac, iPhone,and iPad
+      apps, including many that became popular apps in the iTunes App Store.&lt;/p&gt;
+      &lt;h3&gt;What you’ll learn&lt;/h3&gt;&lt;ul&gt;     &lt;li&gt;The fundamentals
+      of computer programming: how to understand variables,design data structures,
+      and work with file systems &lt;/li&gt;     &lt;li&gt;The logic of object-oriented
+      programming: how to use Classes, Objects, and Methods &lt;/li&gt;     &lt;li&gt;The
+      flexibility of Apple''s developer tools: how to install Xcode and write programs
+      in Objective-C &lt;/li&gt;     &lt;li&gt;The power of Cocoa and Cocoa touch:
+      how to make Mac OS X applications or iOS apps that do cool stuff &lt;/li&gt;
+      &lt;/ul&gt; &lt;h3&gt;Who this book is for&lt;/h3&gt;      &lt;p&gt;     Everyone!
+      This book is for anyone who wants to learn to develop applications for the Mac
+      or apps for the iPhone and iPad using the Objective-C programming language.
+      No previous programming experience is necessary.        &lt;/p&gt;     &lt;h3&gt;Table
+      of Contents&lt;/h3&gt;&lt;ol&gt;     &lt;li&gt; Becoming a Great iPhone/iPad
+      or Mac Programmer  &lt;/li&gt;     &lt;li&gt; Programming Basics   &lt;/li&gt;     &lt;li&gt; It’s
+      All About the Data   &lt;/li&gt;     &lt;li&gt; Making Decisions About...and
+      Planning Program Flow   &lt;/li&gt;     &lt;li&gt; Object Oriented Programming
+      with Objective-C   &lt;/li&gt;     &lt;li&gt; Introducing Objective-C and Xcode 
+      &lt;/li&gt;     &lt;li&gt; Objective-C Classes, Objects, and Methods  &lt;/li&gt;     &lt;li&gt; Programming
+      Basics in Objective-C   &lt;/li&gt;     &lt;li&gt; Comparing Data   &lt;/li&gt;     &lt;li&gt; Creating
+      User Interfaces with Interface Builder   &lt;/li&gt;     &lt;li&gt; Memory,
+      Addresses, and Pointers   &lt;/li&gt;     &lt;li&gt; Debugging Programs with
+      Xcode   &lt;/li&gt;     &lt;li&gt; Storing Information &lt;/li&gt;     &lt;li&gt; Protocols
+      and Delegates   &lt;/li&gt; &lt;/ol&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>0321566157</ASIN><DetailPageURL>http://www.amazon.com/Programming-Objective-C-2-0-2nd-Edition/dp/0321566157%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0321566157</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+      Details</Description><URL>http://www.amazon.com/Programming-Objective-C-2-0-2nd-Edition/dp/tech-data/0321566157%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>Add
+      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0321566157%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>Add
+      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0321566157%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>Add
+      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0321566157%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>Tell
+      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0321566157%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>All
+      Customer Reviews</Description><URL>http://www.amazon.com/review/product/0321566157%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink><ItemLink><Description>All
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0321566157%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321566157</URL></ItemLink></ItemLinks><SalesRank>70332</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41M2GuGl44L._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41M2GuGl44L._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">125</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41M2GuGl44L.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">390</Width></LargeImage><ImageSets><ImageSet
+      Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41M2GuGl44L._SL30_.jpg</URL><Height
+      Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41M2GuGl44L._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">58</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41M2GuGl44L._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">58</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41M2GuGl44L._SL110_.jpg</URL><Height
+      Units="pixels">110</Height><Width Units="pixels">86</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41M2GuGl44L._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">125</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41M2GuGl44L.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">390</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Stephen
+      G. Kochan</Author><Binding>Paperback</Binding><EAN>9780321566157</EAN><EANList><EANListElement>9780321566157</EANListElement></EANList><Edition>2</Edition><ISBN>0321566157</ISBN><IsEligibleForTradeIn>1</IsEligibleForTradeIn><ItemDimensions><Height
+      Units="hundredths-inches">902</Height><Length Units="hundredths-inches">701</Length><Weight
+      Units="hundredths-pounds">211</Weight><Width Units="hundredths-inches">142</Width></ItemDimensions><Label>Addison-Wesley
+      Professional</Label><Languages><Language><Name>English</Name><Type>Unknown</Type></Language><Language><Name>English</Name><Type>Original
+      Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>4499</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$44.99</FormattedPrice></ListPrice><Manufacturer>Addison-Wesley
+      Professional</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>624</NumberOfPages><PackageDimensions><Height
+      Units="hundredths-inches">140</Height><Length Units="hundredths-inches">890</Length><Weight
+      Units="hundredths-pounds">210</Weight><Width Units="hundredths-inches">690</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2009-01-08</PublicationDate><Publisher>Addison-Wesley
+      Professional</Publisher><SKU>ACOUK_book_usedlikenew_0321566157</SKU><Studio>Addison-Wesley
+      Professional</Studio><Title>Programming in Objective-C 2.0 (2nd Edition)</Title><TradeInValue><Amount>121</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$1.21</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2798</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$27.98</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>964</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$9.64</FormattedPrice></LowestUsedPrice><TotalNew>14</TotalNew><TotalUsed>58</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Description</Source><Content>&lt;P style="MARGIN: 0px"&gt;&lt;/P&gt;  &lt;P
+      style="MARGIN: 0px"&gt;&lt;B&gt;THE #1 BESTSELLING BOOK ON OBJECTIVE-C 2.0&lt;BR&gt;&lt;/B&gt;&lt;/P&gt;  &lt;P
+      style="MARGIN: 0px"&gt;&lt;B&gt;&lt;BR&gt;&lt;/B&gt;&lt;/P&gt;  &lt;P style="MARGIN:
+      0px"&gt;&lt;I&gt;Programming in Objective-C 2.0&lt;/I&gt; provides the new programmer
+      a complete, step-by-step introduction to Objective-C, the primary language used
+      to develop applications for the iPhone, iPad, and Mac OS X platforms.&lt;/P&gt;  &lt;P
+      style="MARGIN: 0px"&gt; &lt;/P&gt;  &lt;P style="MARGIN: 0px"&gt;The book does
+      not assume previous experience with either C or object-oriented programming
+      languages, and it includes many detailed, practical examples of how to put Objective-C
+      to use in your everyday iPhone/iPad or Mac OS X programming tasks.&lt;/P&gt;  &lt;P
+      style="MARGIN: 0px"&gt;&lt;BR&gt;&lt;/P&gt;  &lt;P style="MARGIN: 0px"&gt;A
+      powerful yet simple object-oriented programming language that’s based on the
+      C programming language, Objective-C is widely available not only on OS X and
+      the iPhone/iPad platform but across many operating systems that support the
+      gcc compiler, including Linux, Unix, and Windows systems.&lt;/P&gt;  &lt;P style="MARGIN:
+      0px"&gt; &lt;/P&gt;  &lt;P style="MARGIN: 0px"&gt;The second edition of this
+      book thoroughly covers the latest version of the language, Objective-C 2.0.
+      And it shows not only how to take advantage of the Foundation framework’s rich
+      built-in library of classes but also how to use the iPhone SDK to develop programs
+      designed for the iPhone/iPad platform.&lt;/P&gt;  &lt;P style="MARGIN: 0px"&gt; &lt;/P&gt;  &lt;P
+      style="MARGIN: 0px"&gt;&lt;B&gt;&lt;U&gt;Table of Contents&lt;/U&gt;&lt;/B&gt;&lt;/P&gt;  &lt;P
+      style="MARGIN: 0px"&gt;&lt;B&gt;&lt;BR&gt;&lt;/B&gt;&lt;/P&gt;  &lt;P style="MARGIN:
+      0px"&gt;   1    Introduction &lt;BR&gt;&lt;/P&gt;  &lt;P style="MARGIN: 0px"&gt;&lt;B&gt;Part
+      I: The Objective-C 2.0 Language&lt;/B&gt;&lt;/P&gt;  &lt;P style="MARGIN: 0px"&gt;   
+      2    Programming in Objective-C &lt;/P&gt;  &lt;P style="MARGIN: 0px"&gt;   
+      3    Classes, Objects, and Methods &lt;BR&gt;&lt;/P&gt;  &lt;P style="MARGIN:
+      0px"&gt;    4    Data Types and Expressions&lt;BR&gt;&lt;/P&gt;  &lt;P style="MARGIN:
+      0px"&gt;    5    Program Looping&lt;BR&gt;&lt;/P&gt;  &lt;P style="MARGIN: 0px"&gt;   
+      6    Making Decisions&lt;BR&gt;&lt;/P&gt;  &lt;P style="MARGIN: 0px"&gt;   
+      7    More on Classes&lt;/P&gt;  &lt;P style="MARGIN: 0px"&gt;    8    Inheritance&lt;BR&gt;&lt;/P&gt;  &lt;P
+      style="MARGIN: 0px"&gt;    9    Polymorphism, Dynamic Typing, and Dynamic Binding&lt;BR&gt;&lt;/P&gt;  &lt;P
+      style="MARGIN: 0px"&gt;  10    More on Variables and Data Types&lt;BR&gt;&lt;/P&gt;  &lt;P
+      style="MARGIN: 0px"&gt;  11    Categories and Protocols&lt;BR&gt;&lt;/P&gt;  &lt;P
+      style="MARGIN: 0px"&gt;  12    The Preprocessor&lt;BR&gt;&lt;/P&gt;  &lt;P style="MARGIN:
+      0px"&gt;  13    Underlying C Language Features&lt;BR&gt;&lt;/P&gt;  &lt;P style="MARGIN:
+      0px"&gt;&lt;B&gt;Part II: The Foundation Framework&lt;/B&gt;&lt;/P&gt;  &lt;P
+      style="MARGIN: 0px"&gt;  14    Introduction to the Foundation Framework &lt;BR&gt;&lt;/P&gt;  &lt;P
+      style="MARGIN: 0px"&gt;  15    Numbers, Strings, and Collections &lt;BR&gt;&lt;/P&gt;  &lt;P
+      style="MARGIN: 0px"&gt;  16    Working with Files &lt;BR&gt;&lt;/P&gt;  &lt;P
+      style="MARGIN: 0px"&gt;  17    Memory Management &lt;BR&gt;&lt;/P&gt;  &lt;P
+      style="MARGIN: 0px"&gt;  18    Copying Objects &lt;BR&gt;&lt;/P&gt;  &lt;P style="MARGIN:
+      0px"&gt;  19    Archiving &lt;BR&gt;&lt;/P&gt;  &lt;P style="MARGIN: 0px"&gt;&lt;B&gt;Part
+      &lt;B&gt;III: Cocoa and the iPhone SDK&lt;/B&gt;&lt;/B&gt;&lt;/P&gt;  &lt;P
+      style="MARGIN: 0px"&gt;  20    Introduction to Cocoa &lt;/P&gt;  &lt;P style="MARGIN:
+      0px"&gt;  21    Writing iPhone Applications &lt;BR&gt;&lt;/P&gt;  &lt;P style="MARGIN:
+      0px"&gt;&lt;B&gt;Part IV: Appendixes&lt;/B&gt;&lt;/P&gt;  &lt;P style="MARGIN:
+      0px"&gt;  A    Glossary &lt;BR&gt;&lt;/P&gt;  &lt;P style="MARGIN: 0px"&gt; 
+      B    Objective-C 2.0 Language Summary &lt;BR&gt;&lt;/P&gt;  &lt;P style="MARGIN:
+      0px"&gt;  C    Address Book Source Code&lt;BR&gt;&lt;/P&gt;  D    Resources&lt;BR&gt;&lt;BR&gt;&lt;BR&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>1430218096</ASIN><DetailPageURL>http://www.amazon.com/Learn-C-Mac-Series/dp/1430218096%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1430218096</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+      Details</Description><URL>http://www.amazon.com/Learn-C-Mac-Series/dp/tech-data/1430218096%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218096</URL></ItemLink><ItemLink><Description>Add
+      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D1430218096%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218096</URL></ItemLink><ItemLink><Description>Add
+      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D1430218096%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218096</URL></ItemLink><ItemLink><Description>Add
+      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D1430218096%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218096</URL></ItemLink><ItemLink><Description>Tell
+      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/1430218096%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218096</URL></ItemLink><ItemLink><Description>All
+      Customer Reviews</Description><URL>http://www.amazon.com/review/product/1430218096%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218096</URL></ItemLink><ItemLink><Description>All
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1430218096%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430218096</URL></ItemLink></ItemLinks><SalesRank>326745</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/41JbIvZnXjL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">57</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41JbIvZnXjL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">121</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41JbIvZnXjL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">378</Width></LargeImage><ImageSets><ImageSet
+      Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/41JbIvZnXjL._SL30_.jpg</URL><Height
+      Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/41JbIvZnXjL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">57</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/41JbIvZnXjL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">57</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/41JbIvZnXjL._SL110_.jpg</URL><Height
+      Units="pixels">110</Height><Width Units="pixels">83</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/41JbIvZnXjL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">121</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/41JbIvZnXjL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">378</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Dave
+      Mark</Author><Binding>Paperback</Binding><Brand>Apress</Brand><CatalogNumberList><CatalogNumberListElement>9781430218098</CatalogNumberListElement></CatalogNumberList><EAN>9781430218098</EAN><EANList><EANListElement>9781430218098</EANListElement></EANList><Edition>1</Edition><Feature>Apress
+      Learn C on the Mac</Feature><Feature>Considered a classic by an entire generation
+      of Mac programmers, this popular guide has been completely updated for Mac OS
+      X.</Feature><ISBN>1430218096</ISBN><ItemDimensions><Height Units="hundredths-inches">925</Height><Length
+      Units="hundredths-inches">752</Length><Weight Units="hundredths-pounds">144</Weight><Width
+      Units="hundredths-inches">75</Width></ItemDimensions><Label>Apress</Label><Languages><Language><Name>English</Name><Type>Unknown</Type></Language><Language><Name>English</Name><Type>Original
+      Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>3999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$39.99</FormattedPrice></ListPrice><Manufacturer>Apress</Manufacturer><MPN>978-1-4302-1809-8</MPN><NumberOfItems>1</NumberOfItems><NumberOfPages>376</NumberOfPages><PackageDimensions><Height
+      Units="hundredths-inches">100</Height><Length Units="hundredths-inches">920</Length><Weight
+      Units="hundredths-pounds">120</Weight><Width Units="hundredths-inches">710</Width></PackageDimensions><PartNumber>978-1-4302-1809-8</PartNumber><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2008-12-12</PublicationDate><Publisher>Apress</Publisher><SKU>1430218096BAKM</SKU><Studio>Apress</Studio><Title>Learn
+      C on the Mac (Learn Series)</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1729</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$17.29</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1558</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$15.58</FormattedPrice></LowestUsedPrice><TotalNew>53</TotalNew><TotalUsed>38</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Description</Source><Content>&lt;p&gt;Considered a classic by an entire generation
+      of Mac programmers, this popular guide has been updated for Mac OS X. Don’t
+      know anything about programming? No problem! Acclaimed author &lt;strong&gt;Dave
+      Mark&lt;/strong&gt; starts out with the basics and takes you through a complete
+      course in programming C using Apple’s free Xcode tools. This book is perfect
+      for beginners learning to program. It includes Mac OS X examples!&lt;/p&gt;
+      &lt;ul&gt;     &lt;li&gt;Provides best practices for programming newbies &lt;/li&gt;     &lt;li&gt;Written
+      by the expert on C–programming for the Mac &lt;/li&gt;     &lt;li&gt;Presents
+      all the basics with a pragmatic, Mac OS X-flavored approach&lt;/li&gt;     &lt;li&gt;&lt;strong&gt;Includes
+      updated source code which is fully compatible with Xcode 4&lt;/strong&gt; &lt;/li&gt;
+      &lt;/ul&gt; &lt;h3&gt;What you’ll learn&lt;/h3&gt;&lt;ul&gt;     &lt;li&gt;Master
+      C programming, the gateway to programming your Mac or iPhone&lt;/li&gt;     &lt;li&gt;Write
+      applications for the Mac OS X interface, the cleanest user interface around&lt;/li&gt;     &lt;li&gt;Understand
+      variables and how to design your own data structures&lt;/li&gt;     &lt;li&gt;Work
+      with the file system&lt;/li&gt;     &lt;li&gt;Connect to data sources and the
+      Internet&lt;/li&gt; &lt;/ul&gt; &lt;h3&gt;Who this book is for&lt;/h3&gt;      &lt;p&gt;     For
+      anyone wanting to learn to program in Mac OS X, including developers new to
+      the Mac, developers new to C, or students entirely new to programming. For anyone
+      who wants to learn how to program their iPhone, this is also the core language
+      primer.       &lt;/p&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>1475256353</ASIN><DetailPageURL>http://www.amazon.com/Objective-C-2-0-Essentials-Second-Edition/dp/1475256353%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1475256353</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+      Details</Description><URL>http://www.amazon.com/Objective-C-2-0-Essentials-Second-Edition/dp/tech-data/1475256353%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1475256353</URL></ItemLink><ItemLink><Description>Add
+      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D1475256353%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1475256353</URL></ItemLink><ItemLink><Description>Add
+      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D1475256353%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1475256353</URL></ItemLink><ItemLink><Description>Add
+      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D1475256353%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1475256353</URL></ItemLink><ItemLink><Description>Tell
+      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/1475256353%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1475256353</URL></ItemLink><ItemLink><Description>All
+      Customer Reviews</Description><URL>http://www.amazon.com/review/product/1475256353%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1475256353</URL></ItemLink><ItemLink><Description>All
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1475256353%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1475256353</URL></ItemLink></ItemLinks><SalesRank>439592</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/51wW6cVuWPL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">61</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51wW6cVuWPL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">130</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51wW6cVuWPL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">405</Width></LargeImage><ImageSets><ImageSet
+      Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/51wW6cVuWPL._SL30_.jpg</URL><Height
+      Units="pixels">30</Height><Width Units="pixels">24</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/51wW6cVuWPL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">61</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/51wW6cVuWPL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">61</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/51wW6cVuWPL._SL110_.jpg</URL><Height
+      Units="pixels">110</Height><Width Units="pixels">89</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51wW6cVuWPL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">130</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51wW6cVuWPL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">405</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Neil
+      Smyth</Author><Binding>Paperback</Binding><EAN>9781475256352</EAN><EANList><EANListElement>9781475256352</EANListElement></EANList><ISBN>1475256353</ISBN><IsEligibleForTradeIn>1</IsEligibleForTradeIn><Label>CreateSpace
+      Independent Publishing Platform</Label><Languages><Language><Name>English</Name><Type>Original
+      Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>1599</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$15.99</FormattedPrice></ListPrice><Manufacturer>CreateSpace
+      Independent Publishing Platform</Manufacturer><NumberOfPages>198</NumberOfPages><PackageDimensions><Height
+      Units="hundredths-inches">63</Height><Length Units="hundredths-inches">929</Length><Weight
+      Units="hundredths-pounds">84</Weight><Width Units="hundredths-inches">748</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2012-05-08</PublicationDate><Publisher>CreateSpace
+      Independent Publishing Platform</Publisher><Studio>CreateSpace Independent Publishing
+      Platform</Studio><Title>Objective-C 2.0 Essentials - Second Edition</Title><TradeInValue><Amount>320</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$3.20</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1599</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$15.99</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>2160</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$21.60</FormattedPrice></LowestUsedPrice><TotalNew>2</TotalNew><TotalUsed>1</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Description</Source><Content>&lt;p&gt; The objective of this book is to teach
+      the skills necessary to program in Objective-C using a style that is easy to
+      follow, rich in examples and accessible to those who have never used Objective-C
+      before.  &lt;/p&gt; &lt;p&gt; Topics covered include the fundamentals of Objective-C
+      such as variables, looping and flow control. Also included are details of object
+      oriented programming, working with files and memory and the Objective-C Foundation
+      framework. &lt;/p&gt; &lt;p&gt; Regardless of whether you are developing for
+      Mac OS X or the iPhone, this book covers everything you need to know about the
+      Objective-C language. &lt;/p&gt; &lt;p&gt; Topics covered include: &lt;/p&gt;
+      &lt;ul&gt; &lt;li&gt;The History of Objective-C &lt;li&gt;Installing Xcode and
+      Compiling Objective-C on Mac OS X &lt;li&gt;Objective-C 2.0 Data Types &lt;li&gt;Working
+      with Variables and Constants in Objective-C &lt;li&gt;Objective-C Operators
+      and Expressions &lt;li&gt;Objective-C 2.0 Operator Precedence &lt;li&gt;Commenting
+      Objective-C Code &lt;li&gt;Objective-C Flow Control with if and else &lt;li&gt;The
+      Objective-C switch Statement &lt;li&gt;Objective-C Looping - The for Statement
+      &lt;li&gt;Objective-C Looping with do and while Statements &lt;li&gt;An Overview
+      of Objective-C Object Oriented Programming &lt;li&gt;Writing Objective-C Class
+      Methods &lt;li&gt;Objective-C - Data Encapsulation, Synthesized Accessors and
+      Dot Notation &lt;li&gt;Objective-C Inheritance &lt;li&gt;Pointers and Indirection
+      in Objective-C &lt;li&gt;Objective-C Dynamic Binding and Typing with the id
+      Type &lt;li&gt;Objective-C Variable Scope and Storage Class &lt;li&gt;An Overview
+      of Objective-C Functions &lt;li&gt;Objective-C Enumerators &lt;li&gt;An Overview
+      of the Objective-C Foundation Framework &lt;li&gt;Working with String Objects
+      in Objective-C &lt;li&gt;Understanding Objective-C Number Objects &lt;li&gt;Working
+      with Objective-C Array Objects &lt;li&gt;Objective-C Dictionary Objects &lt;li&gt;Working
+      with Directories in Objective-C &lt;li&gt;Working with Files in Objective-C
+      &lt;li&gt;Constructing and Manipulating Paths with NSPathUtilities &lt;li&gt;Copying
+      Objects in Objective-C &lt;li&gt;Using Objective-C Preprocessor Directives</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>0596804792</ASIN><DetailPageURL>http://www.amazon.com/Cocoa-Objective-C-Running-Foundations-programming/dp/0596804792%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0596804792</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+      Details</Description><URL>http://www.amazon.com/Cocoa-Objective-C-Running-Foundations-programming/dp/tech-data/0596804792%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>Add
+      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0596804792%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>Add
+      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0596804792%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>Add
+      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0596804792%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>Tell
+      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0596804792%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>All
+      Customer Reviews</Description><URL>http://www.amazon.com/review/product/0596804792%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink><ItemLink><Description>All
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0596804792%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0596804792</URL></ItemLink></ItemLinks><SalesRank>136255</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/514HsIXoiCL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">57</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/514HsIXoiCL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">122</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/514HsIXoiCL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">381</Width></LargeImage><ImageSets><ImageSet
+      Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/514HsIXoiCL._SL30_.jpg</URL><Height
+      Units="pixels">30</Height><Width Units="pixels">23</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/514HsIXoiCL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">57</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/514HsIXoiCL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">57</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/514HsIXoiCL._SL110_.jpg</URL><Height
+      Units="pixels">110</Height><Width Units="pixels">84</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/514HsIXoiCL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">122</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/514HsIXoiCL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">381</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Scott
+      Stevenson</Author><Binding>Paperback</Binding><EAN>9780596804794</EAN><EANList><EANListElement>9780596804794</EANListElement></EANList><Edition>1</Edition><Feature>ISBN13:
+      9780596804794</Feature><Feature>Condition: New</Feature><Feature>Notes: BRAND
       NEW FROM PUBLISHER! 100% Satisfaction Guarantee. Tracking provided on most orders.
-      Buy with Confidence! Millions of books sold!</Feature><ISBN>0596805780</ISBN><ItemDimensions><Height
-      Units=\"hundredths-inches\">39</Height><Length Units=\"hundredths-inches\">924</Length><Weight
-      Units=\"hundredths-pounds\">69</Weight><Width Units=\"hundredths-inches\">702</Width></ItemDimensions><Label>O'Reilly
-      Media</Label><ListPrice><Amount>2999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$29.99</FormattedPrice></ListPrice><Manufacturer>O'Reilly
-      Media</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>192</NumberOfPages><PackageDimensions><Height
-      Units=\"hundredths-inches\">50</Height><Length Units=\"hundredths-inches\">910</Length><Weight
-      Units=\"hundredths-pounds\">45</Weight><Width Units=\"hundredths-inches\">690</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2010-01-26</PublicationDate><Publisher>O'Reilly
-      Media</Publisher><SKU>2019714076</SKU><Studio>O'Reilly Media</Studio><Title>Building
-      iPhone Apps with HTML, CSS, and JavaScript: Making App Store Apps Without Objective-C
-      or Cocoa</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1308</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$13.08</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>984</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$9.84</FormattedPrice></LowestUsedPrice><TotalNew>50</TotalNew><TotalUsed>39</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
-      Description</Source><Content>&lt;DIV&gt;&lt;p&gt;&lt;b&gt;What people are saying
-      about &lt;i&gt;Building iPhone Apps w/ HTML, CSS, and JavaScript&lt;/i&gt;&lt;/b&gt;&lt;/p&gt;&lt;p&gt;\"The
-      future of mobile development is clearly web technologies like CSS, HTML and
-      JavaScript. Jonathan Stark shows you how to leverage your existing web development
-      skills to build native iPhone applications using these technologies.\"&lt;br&gt;&lt;br&gt;
-      --John Allsopp, author and founder of Web Directions&lt;/p&gt;&lt;p&gt;\"Jonathan's
-      book is the most comprehensive documentation available for developing web applications
-      for mobile Safari. Not just great tech coverage, this book is an easy read of
-      purely fascinating mobile tidbits in a fun colloquial style. Must have for all
-      PhoneGap developers.\"&lt;br&gt;&lt;br&gt; -- Brian LeRoux, Nitobi Software&lt;br&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;It's
-      a fact: if you know HTML, CSS, and JavaScript, you already have the tools you
-      need to develop your own iPhone apps. With this book, you'll learn how to use
-      these open source web technologies to design and build apps for the iPhone and
-      iPod Touch on the platform of your choice-without using Objective-C or Cocoa.&lt;/p&gt;&lt;p&gt;Device-agnostic
-      mobile apps are the wave of the future, and this book shows you how to create
-      one product for several platforms. You'll find guidelines for converting your
-      product into a native iPhone app using the free PhoneGap framework. And you'll
-      learn why releasing your product as a web app first helps you find, fix, and
-      test bugs much faster than if you went straight to the App Store with a product
-      built with Apple's tools.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Build iPhone apps with
-      tools you already know how to use &lt;/li&gt;&lt;li&gt;Learn how to make an
-      existing website look and behave like an iPhone app &lt;/li&gt;&lt;li&gt;Add
-      native-looking animations to your web app using jQTouch &lt;/li&gt;&lt;li&gt;Take
-      advantage of client-side data storage with apps that run even when the iPhone
-      is offline &lt;/li&gt;&lt;li&gt;Hook into advanced iPhone features -- including
-      the accelerometer, geolocation, and vibration -- with JavaScript &lt;/li&gt;&lt;li&gt;Submit
-      your applications to the App Store with Xcode&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;
-      This book received valuable community input through O'Reilly's Open Feedback
-      Publishing System (OFPS). Learn more at &lt;i&gt;http://labs.oreilly.com/ofps.html&lt;/i&gt;.&lt;/p&gt;&lt;/div&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>0672305100</ASIN><DetailPageURL>http://www.amazon.com/Absolute-Beginners-Guide-C-2nd/dp/0672305100%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0672305100</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-      Details</Description><URL>http://www.amazon.com/Absolute-Beginners-Guide-C-2nd/dp/tech-data/0672305100%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0672305100</URL></ItemLink><ItemLink><Description>Add
-      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0672305100%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0672305100</URL></ItemLink><ItemLink><Description>Add
-      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0672305100%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0672305100</URL></ItemLink><ItemLink><Description>Add
-      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0672305100%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0672305100</URL></ItemLink><ItemLink><Description>Tell
-      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0672305100%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0672305100</URL></ItemLink><ItemLink><Description>All
-      Customer Reviews</Description><URL>http://www.amazon.com/review/product/0672305100%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0672305100</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0672305100%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0672305100</URL></ItemLink></ItemLinks><SalesRank>48482</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/51lg5JNal3L._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">61</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51lg5JNal3L._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">130</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51lg5JNal3L._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">407</Width></LargeImage><ImageSets><ImageSet
-      Category=\"primary\"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/51lg5JNal3L._SL30_.jpg</URL><Height
-      Units=\"pixels\">30</Height><Width Units=\"pixels\">24</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/51lg5JNal3L._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">61</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/51lg5JNal3L._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">61</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/51lg5JNal3L._SL110_.jpg</URL><Height
-      Units=\"pixels\">110</Height><Width Units=\"pixels\">90</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51lg5JNal3L._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">130</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51lg5JNal3L._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">407</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Greg
-      Perry</Author><Binding>Paperback</Binding><CatalogNumberList><CatalogNumberListElement>AL10608353</CatalogNumberListElement></CatalogNumberList><DeweyDecimalNumber>005.133</DeweyDecimalNumber><EAN>9780672305108</EAN><EANList><EANListElement>0752063051009</EANListElement><EANListElement>9780672305108</EANListElement></EANList><Edition>2</Edition><ISBN>0672305100</ISBN><IsEligibleForTradeIn>1</IsEligibleForTradeIn><ItemDimensions><Height
-      Units=\"centimeters\">227.25</Height><Weight Units=\"hundredths-pounds\">151</Weight><Width
-      Units=\"centimeters\">182.75</Width></ItemDimensions><Label>Sams</Label><ListPrice><Amount>3999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$39.99</FormattedPrice></ListPrice><Manufacturer>Sams</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>432</NumberOfPages><PackageDimensions><Height
-      Units=\"hundredths-inches\">94</Height><Length Units=\"hundredths-inches\">906</Length><Weight
-      Units=\"hundredths-pounds\">159</Weight><Width Units=\"hundredths-inches\">717</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>1994-04-18</PublicationDate><Publisher>Sams</Publisher><SKU>22173032</SKU><Studio>Sams</Studio><Title>Absolute
-      Beginner's Guide to C (2nd Edition)</Title><UPC>752063051009</UPC><UPCList><UPCListElement>752063051009</UPCListElement></UPCList></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2100</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$21.00</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>815</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$8.15</FormattedPrice></LowestUsedPrice><TotalNew>42</TotalNew><TotalUsed>42</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
-      Description</Source><Content>&lt;P&gt;For beginning programmers, this updated
-      edition answers all C programming questions. This bestseller talks to readers
-      at their level, explaining every aspect of how to get started and learn the
-      C language quickly. Readers also find out where to learn more about C.    This
-      book includes tear-out reference card of C functions and statements, a hierarchy
-      chart, and other valuable information. It uses special icons, notes, clues,
-      warnings, and rewards to make understanding easier. And the clear and friendly
-      style presumes no programming knowledge.    &lt;/P&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>0807750026</ASIN><DetailPageURL>http://www.amazon.com/Rethinking-Education-Technology-Education-Connections-Education-Connections/dp/0807750026%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0807750026</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-      Details</Description><URL>http://www.amazon.com/Rethinking-Education-Technology-Education-Connections-Education-Connections/dp/tech-data/0807750026%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807750026</URL></ItemLink><ItemLink><Description>Add
-      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0807750026%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807750026</URL></ItemLink><ItemLink><Description>Add
-      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0807750026%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807750026</URL></ItemLink><ItemLink><Description>Add
-      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0807750026%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807750026</URL></ItemLink><ItemLink><Description>Tell
-      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0807750026%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807750026</URL></ItemLink><ItemLink><Description>All
-      Customer Reviews</Description><URL>http://www.amazon.com/review/product/0807750026%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807750026</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0807750026%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0807750026</URL></ItemLink></ItemLinks><SalesRank>20043</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/51afxMiuv6L._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">51</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51afxMiuv6L._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">109</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51afxMiuv6L._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">342</Width></LargeImage><ImageSets><ImageSet
-      Category=\"primary\"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/51afxMiuv6L._SL30_.jpg</URL><Height
-      Units=\"pixels\">30</Height><Width Units=\"pixels\">21</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/51afxMiuv6L._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">51</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/51afxMiuv6L._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">51</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/51afxMiuv6L._SL110_.jpg</URL><Height
-      Units=\"pixels\">110</Height><Width Units=\"pixels\">75</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51afxMiuv6L._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">109</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51afxMiuv6L._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">342</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Allan
-      Collins</Author><Author>Richard Halverson</Author><Binding>Paperback</Binding><DeweyDecimalNumber>370.2854</DeweyDecimalNumber><EAN>9780807750025</EAN><EANList><EANListElement>9780807750025</EANListElement></EANList><Edition>1</Edition><Feature>ISBN13:
-      9780807750025</Feature><Feature>Condition: New</Feature><Feature>Notes: BRAND
-      NEW FROM PUBLISHER! 100% Satisfaction Guarantee. Tracking provided on most orders.
-      Buy with Confidence! Millions of books sold!</Feature><ISBN>0807750026</ISBN><IsEligibleForTradeIn>1</IsEligibleForTradeIn><ItemDimensions><Height
-      Units=\"centimeters\">222.5</Height><Weight Units=\"hundredths-pounds\">61</Weight><Width
-      Units=\"centimeters\">152.5</Width></ItemDimensions><Label>Teachers College
-      Press</Label><ListPrice><Amount>2195</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$21.95</FormattedPrice></ListPrice><Manufacturer>Teachers
-      College Press</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>192</NumberOfPages><PackageDimensions><Height
-      Units=\"hundredths-inches\">60</Height><Length Units=\"hundredths-inches\">880</Length><Weight
-      Units=\"hundredths-pounds\">70</Weight><Width Units=\"hundredths-inches\">610</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2009-09</PublicationDate><Publisher>Teachers
-      College Press</Publisher><SKU>870719</SKU><Studio>Teachers College Press</Studio><Title>Rethinking
-      Education in the Age of Technology: The Digital Revolution and Schooling in
-      America (Technology, Education--Connections (Tec)) (Technology, Education-Connections,
-      the Tec Series)</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1360</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$13.60</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1001</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$10.01</FormattedPrice></LowestUsedPrice><TotalNew>32</TotalNew><TotalUsed>27</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
-      Description</Source><Content>The digital revolution has hit education, with
-      more and more classrooms plugged into the whole wired world. But are schools
-      making the most of new technologies? Are they tapping into the learning potential
-      of today's Firefox/Facebook/cell phone generation? Have schools fallen through
-      the crack of the digital divide? In Rethinking Education in the Age of Technology,
-      Allan Collins and Richard Halverson argue that the knowledge revolution has
-      transformed our jobs, our homes, our lives, and therefore must also transform
-      our schools. Much like after the school-reform movement of the industrial revolution,
-      our society is again poised at the edge of radical change. To keep pace with
-      a globalized technological culture, we must rethink how we educate the next
-      generation or America will be left behind. This groundbreaking book offers a
-      vision for the future of American education that goes well beyond the walls
-      of the classroom to include online social networks, distance learning with anytime,
-      anywhere access, digital home schooling models, video-game learning environments,
-      and more.</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>0385493231</ASIN><DetailPageURL>http://www.amazon.com/Schools-That-Learn-Discipline-Fieldbook/dp/0385493231%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0385493231</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-      Details</Description><URL>http://www.amazon.com/Schools-That-Learn-Discipline-Fieldbook/dp/tech-data/0385493231%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0385493231</URL></ItemLink><ItemLink><Description>Add
-      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0385493231%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0385493231</URL></ItemLink><ItemLink><Description>Add
-      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0385493231%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0385493231</URL></ItemLink><ItemLink><Description>Add
-      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0385493231%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0385493231</URL></ItemLink><ItemLink><Description>Tell
-      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0385493231%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0385493231</URL></ItemLink><ItemLink><Description>All
-      Customer Reviews</Description><URL>http://www.amazon.com/review/product/0385493231%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0385493231</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0385493231%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0385493231</URL></ItemLink></ItemLinks><SalesRank>79418</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/51Ya0Ki9P-L._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">62</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51Ya0Ki9P-L._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">132</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51Ya0Ki9P-L._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">412</Width></LargeImage><ImageSets><ImageSet
-      Category=\"primary\"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/51Ya0Ki9P-L._SL30_.jpg</URL><Height
-      Units=\"pixels\">30</Height><Width Units=\"pixels\">25</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/51Ya0Ki9P-L._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">62</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/51Ya0Ki9P-L._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">62</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/51Ya0Ki9P-L._SL110_.jpg</URL><Height
-      Units=\"pixels\">110</Height><Width Units=\"pixels\">91</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/51Ya0Ki9P-L._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">132</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/51Ya0Ki9P-L._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">412</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Peter
-      M. Senge</Author><Author>Nelda H. Cambron McCabe</Author><Author>Timothy Lucas</Author><Author>Art
-      Kleiner</Author><Author>Janis Dutton</Author><Author>Bryan Smith</Author><Binding>Paperback</Binding><DeweyDecimalNumber>371.207</DeweyDecimalNumber><EAN>9780385493239</EAN><EANList><EANListElement>9780385493239</EANListElement></EANList><Edition>1</Edition><ISBN>0385493231</ISBN><ItemDimensions><Height
-      Units=\"centimeters\">223.5</Height><Weight Units=\"hundredths-pounds\">253</Weight><Width
-      Units=\"centimeters\">185.5</Width></ItemDimensions><Label>Crown Business</Label><ListPrice><Amount>3750</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$37.50</FormattedPrice></ListPrice><Manufacturer>Crown
-      Business</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>608</NumberOfPages><PackageDimensions><Height
-      Units=\"hundredths-inches\">180</Height><Length Units=\"hundredths-inches\">890</Length><Weight
-      Units=\"hundredths-pounds\">255</Weight><Width Units=\"hundredths-inches\">740</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2000-09-12</PublicationDate><Publisher>Crown
-      Business</Publisher><ReleaseDate>2000-09-12</ReleaseDate><SKU>3415346U2</SKU><Studio>Crown
-      Business</Studio><Title>Schools That Learn: A Fifth Discipline Fieldbook for
-      Educators, Parents, and Everyone Who Cares About Education</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1287</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$12.87</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$0.01</FormattedPrice></LowestUsedPrice><LowestCollectiblePrice><Amount>3750</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$37.50</FormattedPrice></LowestCollectiblePrice><TotalNew>47</TotalNew><TotalUsed>122</TotalUsed><TotalCollectible>2</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
-      Description</Source><Content>Created by bestselling author and MIT senior lecturer
-      Peter Senge and a team of educators and organizational change leaders, this
-      new addition to the &lt;b&gt;Fifth Discipline Resource Book&lt;/b&gt; series
-      offers practical advice for educators, administrators, and parents on how to
-      strengthen and rebuild our schools.&lt;br&gt;&lt;br&gt;Few would argue that
-      schools today are in trouble. The problems are sparking  a national debate as
-      educators, school boards, administrators, and parents search for ways to strengthen
-      our school system at all levels, more effectively respond to the rapidly changing
-      world around us, and better educate our children.&lt;br&gt;&lt;br&gt;Bestselling
-      author Peter Senge and his Fifth Discipline team have written &lt;b&gt;Schools
-      That Learn&lt;/b&gt; because educatorsâ\x80\x94who have made up a sizable percentage
-      of the audience for the popular Fifth Discipline booksâ\x80\x94have asked for
-      a book that focuses specifically on schools and education, to help reclaim schools
-      even in economically depressed or turbulent districts. One of the great strengths
-      of &lt;b&gt;Schools That Learn&lt;/b&gt; is its description of practices that
-      are meeting success across the country and around the world, as schools attempt
-      to learn, grow, and reinvent themselves using the principles of organizational
-      learning. Featuring articles, case studies, and anecdotes from prominent educators
-      such as Howard Gardner, Jay Forrester, and 1999 U.S. Superintendent of the Year
-      Gerry House, as well as from impassioned teachers, administrators, parents,
-      and students, the book offers a wealth of practical tools, anecdotes, and advice
-      that people can use to help schools (and the classrooms in them and communities
-      around them) learn to learn.&lt;br&gt;&lt;br&gt;You'll read about schools, for
-      instance, where principals introduce themselves to parents new to the school
-      as \"entering a nine-year conversation\" about their children's education; where
-      teachers use computer modeling to galvanize student insight into everything
-      from Romeo and Juliet to the extinction of the mammoths; and where teachers'
-      training is not just bureaucratic ritual but an opportunity to recharge and
-      rethink the classroom.&lt;br&gt;&lt;br&gt;In a fast-changing world where school
-      violence is a growing concern, where standardized tests are applied as simplistic
-      \"quick fixes,\" where rapid advances in science and technology threaten to
-      outpace schools' effectiveness, where the average tenure of a school district
-      superintendent is less than three years, and where students, parents, and teachers
-      feel weighed down by increasing pressures, &lt;b&gt;Schools That Learn&lt;/b&gt;
-      offers much-needed material for the dialogue about the educating of children
-      in the twenty-first century.</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>0321706242</ASIN><DetailPageURL>http://www.amazon.com/iPhone-Programming-Ranch-Guide-Guides/dp/0321706242%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D0321706242</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-      Details</Description><URL>http://www.amazon.com/iPhone-Programming-Ranch-Guide-Guides/dp/tech-data/0321706242%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321706242</URL></ItemLink><ItemLink><Description>Add
-      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D0321706242%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321706242</URL></ItemLink><ItemLink><Description>Add
-      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D0321706242%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321706242</URL></ItemLink><ItemLink><Description>Add
-      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D0321706242%26SubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321706242</URL></ItemLink><ItemLink><Description>Tell
-      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/0321706242%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321706242</URL></ItemLink><ItemLink><Description>All
-      Customer Reviews</Description><URL>http://www.amazon.com/review/product/0321706242%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321706242</URL></ItemLink><ItemLink><Description>All
-      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/0321706242%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D0321706242</URL></ItemLink></ItemLinks><SalesRank>42208</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/410HItEwUML._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">48</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/410HItEwUML._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">103</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/410HItEwUML._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">321</Width></LargeImage><ImageSets><ImageSet
-      Category=\"primary\"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/410HItEwUML._SL30_.jpg</URL><Height
-      Units=\"pixels\">30</Height><Width Units=\"pixels\">19</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/410HItEwUML._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">48</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/410HItEwUML._SL75_.jpg</URL><Height
-      Units=\"pixels\">75</Height><Width Units=\"pixels\">48</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/410HItEwUML._SL110_.jpg</URL><Height
-      Units=\"pixels\">110</Height><Width Units=\"pixels\">71</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/410HItEwUML._SL160_.jpg</URL><Height
-      Units=\"pixels\">160</Height><Width Units=\"pixels\">103</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/410HItEwUML._SL500_.jpg</URL><Height
-      Units=\"pixels\">500</Height><Width Units=\"pixels\">321</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Joe
-      Conway</Author><Author>Aaron Hillegass</Author><Binding>Paperback</Binding><DeweyDecimalNumber>005.1</DeweyDecimalNumber><EAN>9780321706249</EAN><EANList><EANListElement>9780321706249</EANListElement></EANList><Edition>1</Edition><ISBN>0321706242</ISBN><IsEligibleForTradeIn>1</IsEligibleForTradeIn><ItemDimensions><Height
-      Units=\"centimeters\">2.5</Height><Weight Units=\"hundredths-pounds\">2</Weight><Width
-      Units=\"centimeters\">1.75</Width></ItemDimensions><Label>Addison-Wesley Professional</Label><ListPrice><Amount>4999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$49.99</FormattedPrice></ListPrice><Manufacturer>Addison-Wesley
-      Professional</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>432</NumberOfPages><PackageDimensions><Height
-      Units=\"hundredths-inches\">110</Height><Length Units=\"hundredths-inches\">1040</Length><Weight
-      Units=\"hundredths-pounds\">185</Weight><Width Units=\"hundredths-inches\">710</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2010-04-23</PublicationDate><Publisher>Addison-Wesley
-      Professional</Publisher><SKU>ACOMMP2_book_usedgood_0321706242</SKU><Studio>Addison-Wesley
-      Professional</Studio><Title>iPhone Programming: The Big Nerd Ranch Guide (Big
-      Nerd Ranch Guides)</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>2449</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$24.49</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1861</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$18.61</FormattedPrice></LowestUsedPrice><TotalNew>26</TotalNew><TotalUsed>38</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
-      Description</Source><Content>Based on Big Nerd Ranch&amp;rsquo;s popular iPhone
-      Bootcamp class, iPhone Programming: The Big Nerd Ranch Guide leads you through
-      the essential tools and techniques for developing applications for the iPhone,
-      iPad, and iPod Touch. In each chapter, you will learn programming concepts and
-      apply them immediately as you build an application or enhance one from a previous
-      chapter. These applications have been carefully designed and tested to teach
-      the associated concepts and to provide practice working with the standard development
-      tools Xcode, Interface Builder, and Instruments. The guide&amp;rsquo;s learn-while-doing
-      approach delivers the practical knowledge and experience you need to design
-      and build real-world applications. Here are some of the topics covered:&lt;br&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;Dynamic
-      interfaces with animation&lt;/li&gt;&lt;li&gt;Using the camera and photo library&lt;/li&gt;&lt;li&gt;User
-      location and mapping services&lt;/li&gt;&lt;li&gt;Accessing accelerometer data&lt;/li&gt;&lt;li&gt;Handling
-      multi-touch gestures&lt;/li&gt;&lt;li&gt;Navigation and tabbed applications&lt;/li&gt;&lt;li&gt;Tables
-      and creating custom rows&lt;/li&gt;&lt;li&gt;Multiple ways of storing and loading
-      data: archiving, Core Data, SQLite&lt;/li&gt;&lt;li&gt;Communicating with web
-      services&lt;/li&gt;&lt;li&gt;ALocalization/Internationalization&lt;/li&gt;&lt;/ul&gt;
-      \ \"After many 'false starts' with other iPhone development books, these clear
-      and concise tutorials made the concepts gel for me. This book is a definite
-      must have for any budding iPhone developer.\"   &amp;ndash;Peter Watling, New
-      Zealand, Developer of BubbleWrap</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item></Items></ItemSearchResponse>"
+      Buy with Confidence! Millions of books sold!</Feature><ISBN>0596804792</ISBN><IsEligibleForTradeIn>1</IsEligibleForTradeIn><ItemDimensions><Height
+      Units="hundredths-inches">917</Height><Length Units="hundredths-inches">705</Length><Weight
+      Units="hundredths-pounds">147</Weight><Width Units="hundredths-inches">83</Width></ItemDimensions><Label>O''Reilly
+      Media</Label><Languages><Language><Name>English</Name><Type>Unknown</Type></Language><Language><Name>English</Name><Type>Original
+      Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>3499</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$34.99</FormattedPrice></ListPrice><Manufacturer>O''Reilly
+      Media</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>416</NumberOfPages><PackageDimensions><Height
+      Units="hundredths-inches">90</Height><Length Units="hundredths-inches">900</Length><Weight
+      Units="hundredths-pounds">135</Weight><Width Units="hundredths-inches">680</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2010-04-30</PublicationDate><Publisher>O''Reilly
+      Media</Publisher><SKU>2667422749</SKU><Studio>O''Reilly Media</Studio><Title>Cocoa
+      and Objective-C: Up and Running: Foundations of Mac, iPhone, and iPod touch
+      programming</Title><TradeInValue><Amount>450</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$4.50</FormattedPrice></TradeInValue></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1994</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$19.94</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1410</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$14.10</FormattedPrice></LowestUsedPrice><TotalNew>45</TotalNew><TotalUsed>29</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Description</Source><Content>&lt;DIV&gt;&lt;p&gt;Build solid applications for
+      Mac OS X, iPhone, and iPod Touch, regardless of whether you have basic programming
+      skills or years of programming experience. With this book, you''ll learn how
+      to use Apple''s Cocoa framework and the Objective-C language through step-by-step
+      tutorials, hands-on exercises, clear examples, and sound advice from a Cocoa
+      expert.&lt;/p&gt;&lt;p&gt;&lt;i&gt;Cocoa and Objective-C: Up and Running&lt;/i&gt;
+      offers just enough theory to ground you, then shows you how to use Apple''s
+      rapid development tools -- Xcode and Interface Builder -- to develop Cocoa applications,
+      manage user interaction, create great UIs, and more. You''ll quickly gain the
+      experience you need to develop sophisticated Apple software, whether you''re
+      somewhat new to programming or just new to this platform.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Get
+      a quick hands-on tour of basic programming skills with the C language &lt;/li&gt;&lt;li&gt;Learn
+      how to use Interface Builder to quickly design and prototype your application''s
+      user interface &lt;/li&gt;&lt;li&gt;Start using Objective-C by creating objects
+      and learning memory management &lt;/li&gt;&lt;li&gt;Learn about the Model-View-Controller
+      (MVC) method of sharing data between objects &lt;/li&gt;&lt;li&gt;Understand
+      the Foundation value classes, Cocoa''s robust API for storing common data types
+      &lt;/li&gt;&lt;li&gt;Become familiar with Apple''s graphics frameworks, and
+      learn how to make custom views with AppKit &lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item><Item><ASIN>1430236531</ASIN><DetailPageURL>http://www.amazon.com/Objective-C-Absolute-Beginners-iPhone-Programming/dp/1430236531%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1430236531</DetailPageURL><ItemLinks><ItemLink><Description>Technical
+      Details</Description><URL>http://www.amazon.com/Objective-C-Absolute-Beginners-iPhone-Programming/dp/tech-data/1430236531%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430236531</URL></ItemLink><ItemLink><Description>Add
+      To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3D1430236531%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430236531</URL></ItemLink><ItemLink><Description>Add
+      To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3D1430236531%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430236531</URL></ItemLink><ItemLink><Description>Add
+      To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3D1430236531%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430236531</URL></ItemLink><ItemLink><Description>Tell
+      A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/1430236531%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430236531</URL></ItemLink><ItemLink><Description>All
+      Customer Reviews</Description><URL>http://www.amazon.com/review/product/1430236531%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430236531</URL></ItemLink><ItemLink><Description>All
+      Offers</Description><URL>http://www.amazon.com/gp/offer-listing/1430236531%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3D1430236531</URL></ItemLink></ItemLinks><SalesRank>160040</SalesRank><SmallImage><URL>http://ecx.images-amazon.com/images/I/513odG1rjqL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">61</Width></SmallImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/513odG1rjqL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">130</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/513odG1rjqL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">406</Width></LargeImage><ImageSets><ImageSet
+      Category="primary"><SwatchImage><URL>http://ecx.images-amazon.com/images/I/513odG1rjqL._SL30_.jpg</URL><Height
+      Units="pixels">30</Height><Width Units="pixels">24</Width></SwatchImage><SmallImage><URL>http://ecx.images-amazon.com/images/I/513odG1rjqL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">61</Width></SmallImage><ThumbnailImage><URL>http://ecx.images-amazon.com/images/I/513odG1rjqL._SL75_.jpg</URL><Height
+      Units="pixels">75</Height><Width Units="pixels">61</Width></ThumbnailImage><TinyImage><URL>http://ecx.images-amazon.com/images/I/513odG1rjqL._SL110_.jpg</URL><Height
+      Units="pixels">110</Height><Width Units="pixels">89</Width></TinyImage><MediumImage><URL>http://ecx.images-amazon.com/images/I/513odG1rjqL._SL160_.jpg</URL><Height
+      Units="pixels">160</Height><Width Units="pixels">130</Width></MediumImage><LargeImage><URL>http://ecx.images-amazon.com/images/I/513odG1rjqL.jpg</URL><Height
+      Units="pixels">500</Height><Width Units="pixels">406</Width></LargeImage></ImageSet></ImageSets><ItemAttributes><Author>Gary
+      Bennett</Author><Author>Mitchell Fisher</Author><Author>Brad Lees</Author><Binding>Paperback</Binding><EAN>9781430236535</EAN><EANList><EANListElement>9781430236535</EANListElement></EANList><Edition>2</Edition><ISBN>1430236531</ISBN><ItemDimensions><Height
+      Units="hundredths-inches">925</Height><Length Units="hundredths-inches">752</Length><Weight
+      Units="hundredths-pounds">129</Weight><Width Units="hundredths-inches">71</Width></ItemDimensions><Label>Apress</Label><Languages><Language><Name>English</Name><Type>Unknown</Type></Language><Language><Name>English</Name><Type>Original
+      Language</Type></Language><Language><Name>English</Name><Type>Published</Type></Language></Languages><ListPrice><Amount>3999</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$39.99</FormattedPrice></ListPrice><Manufacturer>Apress</Manufacturer><NumberOfItems>1</NumberOfItems><NumberOfPages>340</NumberOfPages><PackageDimensions><Height
+      Units="hundredths-inches">87</Height><Length Units="hundredths-inches">921</Length><Weight
+      Units="hundredths-pounds">132</Weight><Width Units="hundredths-inches">756</Width></PackageDimensions><ProductGroup>Book</ProductGroup><ProductTypeName>ABIS_BOOK</ProductTypeName><PublicationDate>2011-11-30</PublicationDate><Publisher>Apress</Publisher><SKU>ACOUK_book_usedlikenew_1430236531</SKU><Studio>Apress</Studio><Title>Objective-C
+      for Absolute Beginners: iPhone, iPad and Mac Programming Made Easy</Title></ItemAttributes><OfferSummary><LowestNewPrice><Amount>1984</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$19.84</FormattedPrice></LowestNewPrice><LowestUsedPrice><Amount>1890</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$18.90</FormattedPrice></LowestUsedPrice><TotalNew>47</TotalNew><TotalUsed>19</TotalUsed><TotalCollectible>0</TotalCollectible><TotalRefurbished>0</TotalRefurbished></OfferSummary><EditorialReviews><EditorialReview><Source>Product
+      Description</Source><Content>&lt;p&gt;    You have a great idea for an app,
+      but where do you begin? Objective-C is the universal language of iPhone, iPad,
+      and Mac apps, and &lt;em&gt;Objective-C for Absolute Beginners, Second Edition&lt;/em&gt;
+      starts&lt;em&gt; &lt;/em&gt;you on the path to mastering this language and its
+      latest release.&lt;br /&gt; &lt;br /&gt; Using a hands-on approach, you''ll
+      learn how to think in programming terms, how to use Objective-C to construct
+      program logic, and how to synthesize it all into working apps.&lt;strong&gt;
+      Gary Bennett&lt;/strong&gt;, an experienced app developer and trainer, will
+      guide you on your journey to becoming a successful app developer.&lt;br /&gt;
+      &lt;br /&gt; If you''re looking to take the first step towards App Store success,
+      &lt;em&gt;Objective-C for Absolute Beginners&lt;/em&gt; is the place to start.       &lt;/p&gt;    &lt;h3&gt;What
+      you’ll learn&lt;/h3&gt;&lt;ul&gt;     &lt;li&gt;The fundamentals of computer
+      programming: how to understand variables, design data structures, and work with
+      file systems &lt;/li&gt;     &lt;li&gt;The logic of object-oriented programming:
+      how to use Classes, Objects, and Methods &lt;/li&gt;     &lt;li&gt;The flexibility
+      of Apple’s developer tools: how to install Xcode and write programs in Objective-C
+      &lt;/li&gt;     &lt;li&gt;The power of Cocoa and Cocoa touch: how to make Mac
+      OS X applications or iOS apps that do cool stuff &lt;/li&gt; &lt;/ul&gt; &lt;h3&gt;Who
+      this book is for&lt;/h3&gt;      &lt;p&gt;     Everyone! This book is for anyone
+      who wants to learn to develop apps for the Mac, iPhone, and iPad using the Objective-C
+      programming language. No previous programming experience is necessary!        &lt;/p&gt;     &lt;h3&gt;Table
+      of Contents&lt;/h3&gt;&lt;ol&gt;     &lt;li&gt;Becoming a Great iPhone/iPad
+      or Mac Programmer &lt;/li&gt;     &lt;li&gt;Programming Basics &lt;/li&gt;     &lt;li&gt;It’s
+      All About the Data &lt;/li&gt;     &lt;li&gt;Making Decisions About...and Planning
+      Program Flow &lt;/li&gt;     &lt;li&gt;Object Oriented Programming with Objective-C
+      &lt;/li&gt;     &lt;li&gt;Learning Objective-C and Xcode &lt;/li&gt;     &lt;li&gt;Objective-C
+      Classes, Objects, and Methods &lt;/li&gt;     &lt;li&gt;Diving into Objective-C
+      &lt;/li&gt;     &lt;li&gt;More Data Comparison &lt;/li&gt;     &lt;li&gt;Creating
+      User Interfaces &lt;/li&gt;     &lt;li&gt;Storing Information &lt;/li&gt;     &lt;li&gt;Protocols
+      and Delegates &lt;/li&gt;     &lt;li&gt;Memory, Addresses, and Pointers &lt;/li&gt;     &lt;li&gt;Debugging
+      Programs with Xcode &lt;/li&gt; &lt;/ol&gt;</Content><IsLinkSuppressed>0</IsLinkSuppressed></EditorialReview></EditorialReviews></Item></Items></ItemSearchResponse>'
     http_version: '1.1'

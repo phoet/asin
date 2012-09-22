@@ -4,7 +4,8 @@ module ASIN
   describe ASIN do
     context "lookup and search" do
       before do
-        @helper.configure :secret => @secret, :key => @key
+        options = {:secret => @secret, :key => @key, :associate_tag => @tag}
+        @helper.configure options
       end
 
       it "should lookup a book", :vcr do
@@ -18,8 +19,8 @@ module ASIN
         item.asin.should eql(ANY_ASIN)
         item.title.should =~ /Learn Objective/
         item.amount.should eql(3999)
-        item.details_url.should eql('http://www.amazon.com/Learn-Objective-C-Mac-Mark-Dalrymple/dp/1430218150%3FSubscriptionId%3DAKIAJFA5X7RTOKFNPVZQ%26tag%3Dws%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1430218150')
-        item.image_url.should eql('http://ecx.images-amazon.com/images/I/41kq5bDvnUL._SL500_.jpg')
+        item.details_url.should eql("http://www.amazon.com/Learn-Objective-C-Mac-Series/dp/1430218150%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3D1430218150")
+        item.image_url.should eql("http://ecx.images-amazon.com/images/I/41kq5bDvnUL.jpg")
         item.review.should =~ /Take your coding skills to the next level/
       end
 
@@ -29,16 +30,13 @@ module ASIN
         item = items.first
         item.asin.should eql(ANY_ASIN)
         item.title.should =~ /Learn Objective/
-        item.raw.include?("AlternateVersions").should eql(true)
-        item.raw["AlternateVersions"].length.should eql(1)
-        item.raw["AlternateVersions"]["AlternateVersion"]["Binding"].should eql("Kindle Edition")
       end
 
       it "should lookup multiple books", :vcr do
         items = @helper.lookup(ANY_ASIN, ANY_OTHER_ASIN)
 
-        items.last.title.should =~ /Learn Objective/
-        items.first.title.should =~ /Beginning iPhone Development/
+        items.last.title.should =~ /Beginning iPhone Development/
+        items.first.title.should =~ /Learn Objective-C/
       end
 
       it "should return a custom item class", :vcr do
@@ -77,7 +75,7 @@ module ASIN
       it "should search_keywords a book with fulltext", :vcr do
         items = @helper.search_keywords 'Learn', 'Objective-C'
         items.should have(10).things
-        items.first.title.should =~ /Programming in Objective-C/
+        items.first.title.should =~ /Learn Objective-C /
       end
 
       it "should search_keywords never mind music", :vcr do

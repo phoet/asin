@@ -4,7 +4,8 @@ module ASIN
   describe ASIN do
     context "browse_node" do
       before do
-        @helper.configure :secret => @secret, :key => @key
+        options = {:secret => @secret, :key => @key, :associate_tag => @tag}
+        @helper.configure options
       end
 
       it "should lookup a browse_node", :vcr do

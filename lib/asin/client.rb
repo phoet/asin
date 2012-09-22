@@ -19,10 +19,11 @@ require 'base64'
 # In order to use the Amazon API properly, you need to be a registered user (http://aws.amazon.com).
 #
 # The registration process will give you a +secret-key+ and an +access-key+ (AWSAccessKeyId).
+# Since the latest updates to the service you will need an +associate-tag+.
 #
 # Both are needed to use ASIN (see Configuration for more details):
 #
-#   configure :secret => 'your-secret', :key => 'your-key'
+#   configure :secret => 'your-secret', :key => 'your-key', :associate_tag => 'your-associate_tag'
 #
 # == Search
 #
@@ -116,9 +117,9 @@ module ASIN
 
     # Configures the basic request parameters for ASIN.
     #
-    # Expects at least +secret+ and +key+ for the API call:
+    # Expects at least +secret+, +key+ and +associate_tag+ for the API call:
     #
-    #   configure :secret => 'your-secret', :key => 'your-key'
+    #   configure :secret => 'your-secret', :key => 'your-key', :associate_tag => 'your-associate_tag'
     #
     # See ASIN::Configuration for more infos.
     #
@@ -384,9 +385,9 @@ module ASIN
       # nice tutorial http://cloudcarpenters.com/blog/amazon_products_api_request_signing/
       params[:Service] = :AWSECommerceService
       params[:AWSAccessKeyId] = Configuration.key
+      params[:AssociateTag] = Configuration.associate_tag
 
       params[:Version] = Configuration.version unless Configuration.blank? :version
-      params[:AssociateTag] = Configuration.associate_tag unless Configuration.blank? :associate_tag
 
       # utc timestamp needed for signing
       params[:Timestamp] = Time.now.utc.strftime('%Y-%m-%dT%H:%M:%SZ')

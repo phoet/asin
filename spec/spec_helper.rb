@@ -43,10 +43,12 @@ RSpec.configure do |config|
     @helper.configure :logger => nil
 
     @secret = ENV['ASIN_SECRET']
-    @key = ENV['ASIN_KEY']
+    @key    = ENV['ASIN_KEY']
+    @tag    = ENV['ASIN_TAG']
   end
 end
 
 # setup for travis-ci
 ENV['ASIN_SECRET'] ||= 'any_secret'
 ENV['ASIN_KEY']    ||= 'any_key'
+ENV['ASIN_TAG']    ||= 'any_tag'

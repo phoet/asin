@@ -4,7 +4,7 @@ module ASIN
   describe ASIN do
     context "configuration" do
       it "should fail without secret and key" do
-        expect { @helper.lookup 'bla' }.should raise_error(ArgumentError, "you are missing mandatory configuration options. please set [:secret, :key]")
+        expect { @helper.lookup 'bla' }.should raise_error(ArgumentError, "you are missing mandatory configuration options. please set [:secret, :key, :associate_tag]")
       end
 
       it "should fail with wrong configuration key" do

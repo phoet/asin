@@ -2,34 +2,40 @@
 - !ruby/struct:VCR::HTTPInteraction
   request: !ruby/struct:VCR::Request
     method: :get
-    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAJFA5X7RTOKFNPVZQ&AssociateTag=&BrowseNodeId=599826&Operation=BrowseNodeLookup&ResponseGroup=BrowseNodeInfo&Service=AWSECommerceService&Signature=X4LyyNaakwi097ag5RVYkNCYnPz6h/cPKH2d1T9e0JY=&Timestamp=2011-11-17T12:26:31Z&Version=2010-11-01
+    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAIBNLWSCV5OXMPD6A&AssociateTag=phoet-20&BrowseNodeId=599826&Operation=BrowseNodeLookup&ResponseGroup=BrowseNodeInfo&Service=AWSECommerceService&Signature=JR37iX+Dg2nrP56PRM3y844/H0wESfuTcaUUHaAS4SY=&Timestamp=2012-09-22T13:41:46Z&Version=2011-08-01
     body: 
     headers: 
   response: !ruby/struct:VCR::Response
     status: !ruby/struct:VCR::ResponseStatus
       code: 200
-      message: OK
+      message: !binary |-
+        T0s=
     headers:
-      date:
-      - Thu, 17 Nov 2011 12:26:31 GMT
-      server:
-      - Server
-      content-type:
-      - text/xml;charset=UTF-8
-      vary:
-      - Accept-Encoding,User-Agent
-      nncoection:
-      - close
-      transfer-encoding:
-      - chunked
-    body: <?xml version="1.0" encoding="UTF-8"?><BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2010-11-01"><OperationRequest><HTTPHeaders><Header
-      Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>0WY3QFSNV26A8T5XKN46</RequestId><Arguments><Argument
-      Name="AssociateTag"></Argument><Argument Name="Service" Value="AWSECommerceService"></Argument><Argument
-      Name="Signature" Value="X4LyyNaakwi097ag5RVYkNCYnPz6h/cPKH2d1T9e0JY="></Argument><Argument
-      Name="ResponseGroup" Value="BrowseNodeInfo"></Argument><Argument Name="Operation"
-      Value="BrowseNodeLookup"></Argument><Argument Name="BrowseNodeId" Value="599826"></Argument><Argument
-      Name="AWSAccessKeyId" Value="AKIAJFA5X7RTOKFNPVZQ"></Argument><Argument Name="Timestamp"
-      Value="2011-11-17T12:26:31Z"></Argument><Argument Name="Version" Value="2010-11-01"></Argument></Arguments><RequestProcessingTime>0.0136559009552002</RequestProcessingTime></OperationRequest><BrowseNodes><Request><IsValid>True</IsValid><BrowseNodeLookupRequest><BrowseNodeId>599826</BrowseNodeId><ResponseGroup>BrowseNodeInfo</ResponseGroup></BrowseNodeLookupRequest></Request><BrowseNode><BrowseNodeId>599826</BrowseNodeId><Name>Comedy</Name><Ancestors><BrowseNode><BrowseNodeId>501230</BrowseNodeId><Name>Boxed
+      !binary "ZGF0ZQ==":
+      - !binary |-
+        U2F0LCAyMiBTZXAgMjAxMiAxMzo0MTo0MiBHTVQ=
+      !binary "c2VydmVy":
+      - !binary |-
+        U2VydmVy
+      !binary "Y29udGVudC10eXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "dmFyeQ==":
+      - !binary |-
+        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
+      !binary "bm5jb2VjdGlvbg==":
+      - !binary |-
+        Y2xvc2U=
+      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+    body: <BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><RequestId>0966442c-04b1-4174-bb51-e6cf37f3fe24</RequestId><Arguments><Argument
+      Name="Operation" Value="BrowseNodeLookup"/><Argument Name="Service" Value="AWSECommerceService"/><Argument
+      Name="Signature" Value="JR37iX+Dg2nrP56PRM3y844/H0wESfuTcaUUHaAS4SY="/><Argument
+      Name="AssociateTag" Value="phoet-20"/><Argument Name="Version" Value="2011-08-01"/><Argument
+      Name="BrowseNodeId" Value="599826"/><Argument Name="AWSAccessKeyId" Value="AKIAIBNLWSCV5OXMPD6A"/><Argument
+      Name="Timestamp" Value="2012-09-22T13:41:46Z"/><Argument Name="ResponseGroup"
+      Value="BrowseNodeInfo"/></Arguments><RequestProcessingTime>0.008533</RequestProcessingTime></OperationRequest><BrowseNodes><Request><IsValid>True</IsValid><BrowseNodeLookupRequest><BrowseNodeId>599826</BrowseNodeId><ResponseGroup>BrowseNodeInfo</ResponseGroup></BrowseNodeLookupRequest></Request><BrowseNode><BrowseNodeId>599826</BrowseNodeId><Name>Comedy</Name><Ancestors><BrowseNode><BrowseNodeId>501230</BrowseNodeId><Name>Boxed
       Sets</Name><Ancestors><BrowseNode><BrowseNodeId>2998369011</BrowseNodeId><Name>DVD
       Custom Stores</Name><Ancestors><BrowseNode><BrowseNodeId>2644982011</BrowseNodeId><Name>Custom
       Stores</Name><Ancestors><BrowseNode><BrowseNodeId>2644981011</BrowseNodeId><Name>Specialty
