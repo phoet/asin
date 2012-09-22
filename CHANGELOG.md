@@ -1,3 +1,8 @@
+## 1.0.0
+
+* add requirement to associate_tag in configuration
+* update to latest API changes
+
 ## 0.8.0
 
 * use confiture for configuration
