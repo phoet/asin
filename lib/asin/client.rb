@@ -327,9 +327,6 @@ module ASIN
       elsif type == :mash
         require 'hashie'
         Hashie::Mash.new(data)
-      elsif type == :rash
-        require 'rash'
-        Hashie::Rash.new(data)
       else
         data
       end

@@ -23,9 +23,9 @@ module ASIN
   # [host] the host, which defaults to 'webservices.amazon.com'
   # [logger] a different logger than logging to STDERR (nil for no logging)
   # [version] a custom version of the API calls. Default is 2010-11-01
-  # [item_type] a different class for SimpleItem, use :mash / :rash for Hashie::Mash / Hashie::Rash or :raw for a plain hash
-  # [cart_type] a different class for SimpleCart, use :mash / :rash for Hashie::Mash / Hashie::Rash or :raw for a plain hash
-  # [node_type] a different class for SimpleNode, use :mash / :rash for Hashie::Mash / Hashie::Rash or :raw for a plain hash
+  # [item_type] a different class for SimpleItem, use :mash for Hashie::Mash or :raw for a plain hash
+  # [cart_type] a different class for SimpleCart, use :mash for Hashie::Mash or :raw for a plain hash
+  # [node_type] a different class for SimpleNode, use :mash for Hashie::Mash or :raw for a plain hash
   #
   class Configuration
     include Confiture::Configuration

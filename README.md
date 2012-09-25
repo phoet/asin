@@ -14,13 +14,11 @@ The gem runs smoothly with Rails 3 and is tested against multiple rubies. See *.
 
     gem install asin
     gem install httpclient # optional, see HTTPI
-    gem install rash # optional, see Response Configuration
 
 or in your Gemfile:
 
     gem 'asin'
     gem 'httpclient' # optional, see HTTPI
-    gem 'rash' # optional, see Response Configuration
 
 ## Configuration
 
@@ -127,11 +125,7 @@ but you can override this behavior for using your custom Classes:
     client.configure :cart_type => YourCartClass
     client.configure :node_type => YourNodeClass
 
-You can also use built-in *:raw*, *:mash* or *:rash* types.
-Since *rash* is an additional library, you need to add it to your gemfile if you want to use it:
-
-    gem 'rash'
-
+You can also use built-in *:raw*, *:mash* types.
 ## HTTPI
 
 ASIN uses [HTTPI](https://github.com/rubiii/httpi) as a HTTP-Client adapter.

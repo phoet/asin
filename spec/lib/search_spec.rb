@@ -62,11 +62,6 @@ module ASIN
         @helper.lookup(ANY_ASIN).first.ItemAttributes.Title.should_not be_nil
       end
 
-      it "should return a rash value", :vcr do
-        @helper.configure :item_type => :rash
-        @helper.lookup(ANY_ASIN).first.item_attributes.title.should_not be_nil
-      end
-
       it "should search_keywords and handle a single result", :vcr do
         items = @helper.search_keywords('0471317519')
         items.first.title.should =~ /A Self-Teaching Guide/

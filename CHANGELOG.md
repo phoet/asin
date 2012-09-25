@@ -1,3 +1,8 @@
+## 1.1.0
+
+* remove build in support for Hashie::Rash
+* update gem dependencies
+
 ## 1.0.0
 
 * add requirement to associate_tag in configuration

@@ -1,44 +1,50 @@
 ---
-- !ruby/struct:VCR::HTTPInteraction
-  request: !ruby/struct:VCR::Request
-    method: :get
-    uri: http://webservices.amazon.com:80/onca/xml?AWSAccessKeyId=AKIAIBNLWSCV5OXMPD6A&AssociateTag=phoet-20&BrowseNodeId=599826&Operation=BrowseNodeLookup&ResponseGroup=BrowseNodeInfo&Service=AWSECommerceService&Signature=JR37iX+Dg2nrP56PRM3y844/H0wESfuTcaUUHaAS4SY=&Timestamp=2012-09-22T13:41:46Z&Version=2011-08-01
-    body: 
-    headers: 
-  response: !ruby/struct:VCR::Response
-    status: !ruby/struct:VCR::ResponseStatus
+http_interactions:
+- request:
+    method: get
+    uri: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAIBNLWSCV5OXMPD6A&AssociateTag=phoet-20&BrowseNodeId=599826&Operation=BrowseNodeLookup&ResponseGroup=BrowseNodeInfo&Service=AWSECommerceService&Signature=UB+NuD8bReMd+8UFaQva+uJiYYsM6uefMtPTVysD2dU=&Timestamp=2012-09-25T20:04:51Z&Version=2011-08-01
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
       code: 200
       message: !binary |-
         T0s=
     headers:
-      !binary "ZGF0ZQ==":
+      !binary "RGF0ZQ==":
       - !binary |-
-        U2F0LCAyMiBTZXAgMjAxMiAxMzo0MTo0MiBHTVQ=
-      !binary "c2VydmVy":
+        VHVlLCAyNSBTZXAgMjAxMiAyMDowNDo1MyBHTVQ=
+      !binary "U2VydmVy":
       - !binary |-
         U2VydmVy
-      !binary "Y29udGVudC10eXBl":
+      !binary "Q29udGVudC1UeXBl":
       - !binary |-
         dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
-      !binary "dmFyeQ==":
+      !binary "VmFyeQ==":
       - !binary |-
         QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
-      !binary "bm5jb2VjdGlvbg==":
+      !binary "Tm5jb2VjdGlvbg==":
       - !binary |-
         Y2xvc2U=
-      !binary "dHJhbnNmZXItZW5jb2Rpbmc=":
+      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
       - !binary |-
         Y2h1bmtlZA==
-    body: <BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><RequestId>0966442c-04b1-4174-bb51-e6cf37f3fe24</RequestId><Arguments><Argument
-      Name="Operation" Value="BrowseNodeLookup"/><Argument Name="Service" Value="AWSECommerceService"/><Argument
-      Name="Signature" Value="JR37iX+Dg2nrP56PRM3y844/H0wESfuTcaUUHaAS4SY="/><Argument
-      Name="AssociateTag" Value="phoet-20"/><Argument Name="Version" Value="2011-08-01"/><Argument
-      Name="BrowseNodeId" Value="599826"/><Argument Name="AWSAccessKeyId" Value="AKIAIBNLWSCV5OXMPD6A"/><Argument
-      Name="Timestamp" Value="2012-09-22T13:41:46Z"/><Argument Name="ResponseGroup"
-      Value="BrowseNodeInfo"/></Arguments><RequestProcessingTime>0.008533</RequestProcessingTime></OperationRequest><BrowseNodes><Request><IsValid>True</IsValid><BrowseNodeLookupRequest><BrowseNodeId>599826</BrowseNodeId><ResponseGroup>BrowseNodeInfo</ResponseGroup></BrowseNodeLookupRequest></Request><BrowseNode><BrowseNodeId>599826</BrowseNodeId><Name>Comedy</Name><Ancestors><BrowseNode><BrowseNodeId>501230</BrowseNodeId><Name>Boxed
-      Sets</Name><Ancestors><BrowseNode><BrowseNodeId>2998369011</BrowseNodeId><Name>DVD
-      Custom Stores</Name><Ancestors><BrowseNode><BrowseNodeId>2644982011</BrowseNodeId><Name>Custom
-      Stores</Name><Ancestors><BrowseNode><BrowseNodeId>2644981011</BrowseNodeId><Name>Specialty
-      Stores</Name><Ancestors><BrowseNode><BrowseNodeId>2625373011</BrowseNodeId><Name>Movies
-      &amp; TV</Name></BrowseNode></Ancestors></BrowseNode></Ancestors></BrowseNode></Ancestors></BrowseNode></Ancestors></BrowseNode></Ancestors></BrowseNode></BrowseNodes></BrowseNodeLookupResponse>
-    http_version: '1.1'
+    body:
+      encoding: US-ASCII
+      string: <BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><RequestId>8189583a-defc-4fef-8ac0-c7347b03233e</RequestId><Arguments><Argument
+        Name="Operation" Value="BrowseNodeLookup"/><Argument Name="Service" Value="AWSECommerceService"/><Argument
+        Name="Signature" Value="UB+NuD8bReMd+8UFaQva+uJiYYsM6uefMtPTVysD2dU="/><Argument
+        Name="AssociateTag" Value="phoet-20"/><Argument Name="Version" Value="2011-08-01"/><Argument
+        Name="BrowseNodeId" Value="599826"/><Argument Name="AWSAccessKeyId" Value="AKIAIBNLWSCV5OXMPD6A"/><Argument
+        Name="Timestamp" Value="2012-09-25T20:04:51Z"/><Argument Name="ResponseGroup"
+        Value="BrowseNodeInfo"/></Arguments><RequestProcessingTime>0.009791</RequestProcessingTime></OperationRequest><BrowseNodes><Request><IsValid>True</IsValid><BrowseNodeLookupRequest><BrowseNodeId>599826</BrowseNodeId><ResponseGroup>BrowseNodeInfo</ResponseGroup></BrowseNodeLookupRequest></Request><BrowseNode><BrowseNodeId>599826</BrowseNodeId><Name>Comedy</Name><Ancestors><BrowseNode><BrowseNodeId>501230</BrowseNodeId><Name>Boxed
+        Sets</Name><Ancestors><BrowseNode><BrowseNodeId>2998369011</BrowseNodeId><Name>DVD
+        Custom Stores</Name><Ancestors><BrowseNode><BrowseNodeId>2644982011</BrowseNodeId><Name>Custom
+        Stores</Name><Ancestors><BrowseNode><BrowseNodeId>2644981011</BrowseNodeId><Name>Specialty
+        Stores</Name><Ancestors><BrowseNode><BrowseNodeId>2625373011</BrowseNodeId><Name>Movies
+        &amp; TV</Name></BrowseNode></Ancestors></BrowseNode></Ancestors></BrowseNode></Ancestors></BrowseNode></Ancestors></BrowseNode></Ancestors></BrowseNode></BrowseNodes></BrowseNodeLookupResponse>
+    http_version: 
+  recorded_at: Tue, 25 Sep 2012 20:04:51 GMT
+recorded_with: VCR 2.2.5

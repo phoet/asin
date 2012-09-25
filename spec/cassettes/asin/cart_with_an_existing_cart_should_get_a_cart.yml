@@ -1,0 +1,92 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAIBNLWSCV5OXMPD6A&AssociateTag=phoet-20&Item.0.ASIN=1430218150&Item.0.Quantity=1&Operation=CartCreate&Service=AWSECommerceService&Signature=FVxdF/3QumM2XvK/uhzazFiIzF2iJ7BsjETh6wF2SXo=&Timestamp=2012-09-25T20:04:53Z&Version=2011-08-01
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "RGF0ZQ==":
+      - !binary |-
+        VHVlLCAyNSBTZXAgMjAxMiAyMDowNDo1NCBHTVQ=
+      !binary "U2VydmVy":
+      - !binary |-
+        U2VydmVy
+      !binary "Q29udGVudC1UeXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "VmFyeQ==":
+      - !binary |-
+        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
+      !binary "Tm5jb2VjdGlvbg==":
+      - !binary |-
+        Y2xvc2U=
+      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><CartCreateResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><HTTPHeaders><Header
+        Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>0KMC500KDA7F6DQEMC73</RequestId><Arguments><Argument
+        Name="Service" Value="AWSECommerceService"></Argument><Argument Name="Item.0.Quantity"
+        Value="1"></Argument><Argument Name="Operation" Value="CartCreate"></Argument><Argument
+        Name="Timestamp" Value="2012-09-25T20:04:53Z"></Argument><Argument Name="Version"
+        Value="2011-08-01"></Argument><Argument Name="AssociateTag" Value="phoet-20"></Argument><Argument
+        Name="Signature" Value="FVxdF/3QumM2XvK/uhzazFiIzF2iJ7BsjETh6wF2SXo="></Argument><Argument
+        Name="Item.0.ASIN" Value="1430218150"></Argument><Argument Name="AWSAccessKeyId"
+        Value="AKIAIBNLWSCV5OXMPD6A"></Argument></Arguments><RequestProcessingTime>0.178544998168945</RequestProcessingTime></OperationRequest><Cart><Request><IsValid>True</IsValid><CartCreateRequest><Items><Item><ASIN>1430218150</ASIN><Quantity>1</Quantity></Item></Items></CartCreateRequest></Request><CartId>189-8327440-5036269</CartId><HMAC>wJ2qyTVtmO8al7ANwSfTBxdGjm4=</HMAC><URLEncodedHMAC>wJ2qyTVtmO8al7ANwSfTBxdGjm4%3D</URLEncodedHMAC><PurchaseURL>https://www.amazon.com/gp/cart/aws-merge.html?cart-id=189-8327440-5036269%26associate-id=phoet-20%26hmac=wJ2qyTVtmO8al7ANwSfTBxdGjm4=%26SubscriptionId=AKIAIBNLWSCV5OXMPD6A%26MergeCart=False</PurchaseURL><SubTotal><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></SubTotal><CartItems><SubTotal><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></SubTotal><CartItem><CartItemId>C3G241HVLLB8N6</CartItemId><ASIN>1430218150</ASIN><SellerNickname>Amazon.com</SellerNickname><Quantity>1</Quantity><Title>Learn
+        Objective-C on the Mac (Learn Series)</Title><ProductGroup>Book</ProductGroup><Price><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></Price><ItemTotal><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></ItemTotal></CartItem></CartItems></Cart></CartCreateResponse>
+    http_version: 
+  recorded_at: Tue, 25 Sep 2012 20:04:54 GMT
+- request:
+    method: get
+    uri: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAIBNLWSCV5OXMPD6A&AssociateTag=phoet-20&CartId=189-8327440-5036269&HMAC=wJ2qyTVtmO8al7ANwSfTBxdGjm4=&Operation=CartGet&Service=AWSECommerceService&Signature=G4P9HL1kTeJ0mwaPQNrr8slYqLqrgjggmDIQy9CaGT4=&Timestamp=2012-09-25T20:04:54Z&Version=2011-08-01
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "RGF0ZQ==":
+      - !binary |-
+        VHVlLCAyNSBTZXAgMjAxMiAyMDowNDo1NSBHTVQ=
+      !binary "U2VydmVy":
+      - !binary |-
+        U2VydmVy
+      !binary "Q29udGVudC1UeXBl":
+      - !binary |-
+        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
+      !binary "VmFyeQ==":
+      - !binary |-
+        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
+      !binary "Tm5jb2VjdGlvbg==":
+      - !binary |-
+        Y2xvc2U=
+      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
+      - !binary |-
+        Y2h1bmtlZA==
+    body:
+      encoding: US-ASCII
+      string: <?xml version="1.0" encoding="UTF-8"?><CartGetResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><HTTPHeaders><Header
+        Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>0JRA248GY8MT256BR54R</RequestId><Arguments><Argument
+        Name="Service" Value="AWSECommerceService"></Argument><Argument Name="Operation"
+        Value="CartGet"></Argument><Argument Name="Timestamp" Value="2012-09-25T20:04:54Z"></Argument><Argument
+        Name="Version" Value="2011-08-01"></Argument><Argument Name="AssociateTag"
+        Value="phoet-20"></Argument><Argument Name="Signature" Value="G4P9HL1kTeJ0mwaPQNrr8slYqLqrgjggmDIQy9CaGT4="></Argument><Argument
+        Name="HMAC" Value="wJ2qyTVtmO8al7ANwSfTBxdGjm4="></Argument><Argument Name="CartId"
+        Value="189-8327440-5036269"></Argument><Argument Name="AWSAccessKeyId" Value="AKIAIBNLWSCV5OXMPD6A"></Argument></Arguments><RequestProcessingTime>0.0700430870056152</RequestProcessingTime></OperationRequest><Cart><Request><IsValid>True</IsValid><CartGetRequest><CartId>189-8327440-5036269</CartId><HMAC>wJ2qyTVtmO8al7ANwSfTBxdGjm4=</HMAC></CartGetRequest></Request><CartId>189-8327440-5036269</CartId><HMAC>wJ2qyTVtmO8al7ANwSfTBxdGjm4=</HMAC><URLEncodedHMAC>wJ2qyTVtmO8al7ANwSfTBxdGjm4%3D</URLEncodedHMAC><PurchaseURL>https://www.amazon.com/gp/cart/aws-merge.html?cart-id=189-8327440-5036269%26associate-id=phoet-20%26hmac=wJ2qyTVtmO8al7ANwSfTBxdGjm4=%26SubscriptionId=AKIAIBNLWSCV5OXMPD6A%26MergeCart=False</PurchaseURL><SubTotal><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></SubTotal><CartItems><SubTotal><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></SubTotal><CartItem><CartItemId>C3G241HVLLB8N6</CartItemId><ASIN>1430218150</ASIN><SellerNickname>Amazon.com</SellerNickname><Quantity>1</Quantity><Title>Learn
+        Objective-C on the Mac (Learn Series)</Title><ProductGroup>Book</ProductGroup><Price><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></Price><ItemTotal><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></ItemTotal></CartItem></CartItems></Cart></CartGetResponse>
+    http_version: 
+  recorded_at: Tue, 25 Sep 2012 20:04:54 GMT
+recorded_with: VCR 2.2.5

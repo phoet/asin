@@ -13,10 +13,9 @@ require 'httpclient'
 require 'vcr'
 require 'httpi'
 
-VCR.config do |c|
+VCR.configure do |c|
   c.cassette_library_dir = 'spec/cassettes'
-  c.stub_with :webmock
-  # c.default_cassette_options = { :record => :new_episodes }
+  c.hook_into :webmock
 end
 
 ANY_ASIN            = '1430218150'
