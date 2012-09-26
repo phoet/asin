@@ -2,10 +2,10 @@ PATH
   remote: .
   specs:
     asin (1.0.0)
-      confiture (~> 0.1)
-      crack (~> 0.3)
-      hashie (~> 1.1)
-      httpi (~> 1.1)
+      confiture (>= 0.1)
+      crack (>= 0.3)
+      hashie (>= 1.1)
+      httpi (>= 0.9)
 
 GEM
   remote: http://rubygems.org/
@@ -52,7 +52,7 @@ PLATFORMS
 
 DEPENDENCIES
   asin!
-  httpclient (~> 2.2.3)
+  httpclient (>= 2.2.3)
   pry (~> 0.9.9)
   rake (~> 0.9.2.2)
   rspec (~> 2.11.0)

@@ -18,14 +18,14 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-  s.add_dependency('crack',     '~> 0.3')
-  s.add_dependency('hashie',    '~> 1.1')
-  s.add_dependency('httpi',     '~> 1.1')
-  s.add_dependency('confiture', '~> 0.1')
+  s.add_dependency('crack',     '>= 0.3')
+  s.add_dependency('hashie',    '>= 1.1')
+  s.add_dependency('httpi',     '>= 0.9')
+  s.add_dependency('confiture', '>= 0.1')
 
   s.add_runtime_dependency('jruby-openssl') if RUBY_PLATFORM == 'java'
 
-  s.add_development_dependency('httpclient', '~> 2.2.3')
+  s.add_development_dependency('httpclient', '>= 2.2.3')
 
   s.add_development_dependency('rake',       '~> 0.9.2.2')
   s.add_development_dependency('vcr',        '~> 2.2.5')
