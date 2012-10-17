@@ -1,7 +1,7 @@
 ## 1.1.0
 
-* remove build in support for Hashie::Rash
-* update gem dependencies
+* remove built-in support for Hashie::Rash
+* relaxe and update gem dependencies
 
 ## 1.0.0
 
