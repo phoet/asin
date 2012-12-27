@@ -9,7 +9,7 @@ module ASIN
       end
 
       it "should lookup a browse_node", :vcr do
-          item = @helper.browse_node(ANY_BROWSE_NODE_ID)
+          item = @helper.browse_node(ANY_BROWSE_NODE_ID).first
           item.node_id.should eql(ANY_BROWSE_NODE_ID)
           item.name.should eql('Comedy')
       end

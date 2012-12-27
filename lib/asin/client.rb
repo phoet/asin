@@ -213,7 +213,7 @@ module ASIN
     #
     def browse_node(node_id, params={:ResponseGroup => :BrowseNodeInfo})
       response = call(params.merge(:Operation => :BrowseNodeLookup, :BrowseNodeId => node_id))
-      handle_type(response['BrowseNodeLookupResponse']['BrowseNodes']['BrowseNode'], Configuration.node_type)
+      arrayfy(response['BrowseNodeLookupResponse']['BrowseNodes']['BrowseNode']).map {|item| handle_type(item, Configuration.node_type)}
     end
 
     # Performs an +SimilarityLookup+ REST call against the Amazon API.

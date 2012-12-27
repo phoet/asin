@@ -1,7 +1,11 @@
+## 1.1.1
+
+* fix handling of multiple BrowseNodes https://github.com/phoet/asin/issues/20
+
 ## 1.1.0
 
 * remove built-in support for Hashie::Rash
-* relaxe and update gem dependencies
+* relax and update gem dependencies
 
 ## 1.0.0
 
