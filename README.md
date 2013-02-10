@@ -43,6 +43,9 @@ ASIN is designed as a module, so you can include it into any object you like:
     # lookup an ASIN
     lookup '1430218150'
 
+    # lookup multiple items by ASIN
+    lookup ['1430218150','1934356549']
+
 But you can also use the *instance* method to get a proxy-object:
 
     # just require
