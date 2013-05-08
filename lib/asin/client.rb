@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 require 'httpi'
+require 'rexml/document'
 require 'crack/xml'
 require 'cgi'
 require 'base64'
