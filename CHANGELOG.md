@@ -1,3 +1,7 @@
+## 1.1.2
+
+* compatibility update https://github.com/phoet/asin/issues/22
+
 ## 1.1.1
 
 * fix handling of multiple BrowseNodes https://github.com/phoet/asin/issues/20
