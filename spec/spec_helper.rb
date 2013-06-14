@@ -5,6 +5,9 @@ unless Net.const_defined? :HTTPSession
   class Net::HTTPSession < Net::HTTP::HTTPSession; end
 end
 
+require 'coveralls'
+Coveralls.wear!
+
 require 'rspec'
 require 'asin'
 require 'asin/client' # is somehow needed for jruby

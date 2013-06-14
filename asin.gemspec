@@ -32,4 +32,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency('webmock',    '~> 1.8.7')
   s.add_development_dependency('rspec',      '~> 2.11.0')
   s.add_development_dependency('pry',        '~> 0.9.9')
+  s.add_development_dependency('coveralls')
 end
