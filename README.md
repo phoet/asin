@@ -73,7 +73,7 @@ But you can also use the *instance* method to get a proxy-object:
     => "Learn Objective-C on the Mac (Learn Series)"
     
     # access the internal data representation (Hashie::Mash)
-    item.raw.ItemAttributes.ListPrice.FormattedPrice
+    items.first.raw.ItemAttributes.ListPrice.FormattedPrice
     => $39.99
     
     # search for similar items like the one you already have
