@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    asin (1.1.2)
+    asin (1.2.0)
       confiture (>= 0.1)
       crack (>= 0.3)
       hashie (>= 1.1)

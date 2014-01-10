@@ -1,3 +1,7 @@
+## 1.2.0
+
+* Added more methods to simplify accessing certain nodes. (kyletcarlson) https://github.com/phoet/asin/pull/30
+
 ## 1.1.2
 
 * compatibility update https://github.com/phoet/asin/issues/22
