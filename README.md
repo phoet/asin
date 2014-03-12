@@ -11,6 +11,10 @@ Have a look at the [RDOC](http://rdoc.info/projects/phoet/asin) for this project
 
 The gem runs smoothly with Rails 3 and is tested against multiple rubies. See *.travis.yml* for details.
 
+## Upgrading from Version 1.x
+
+Version 2 removes all the SimpleXXX classes in favor of Hashie::Rash
+
 ## Installation
 
     gem install asin
@@ -72,10 +76,6 @@ But you can also use the *instance* method to get a proxy-object:
     items.first.title
     => "Learn Objective-C on the Mac (Learn Series)"
     
-    # access the internal data representation (Hashie::Mash)
-    items.first.raw.ItemAttributes.ListPrice.FormattedPrice
-    => $39.99
-    
     # search for similar items like the one you already have
     items = client.similar '1430218150'
 
@@ -86,7 +86,7 @@ There is an additional set of methods to support AWS cart operations:
     # create a cart with an item
     cart = client.create_cart({:asin => '1430218150', :quantity => 1})
     cart.items
-    => [<#Hashie::Mash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
+    => [<#Hashie::Rash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
     
     # get an already existing cart from a CartId and HMAC
     cart = client.get_cart('176-9182855-2326919', 'KgeVCA0YJTbuN/7Ibakrk/KnHWA=')
@@ -106,7 +106,7 @@ There is an additional set of methods to support AWS cart operations:
     # update items in the cart
     cart = client.update_items(cart, {:cart_item_id => cart.items.first.CartItemId, :action => :SaveForLater}, {:cart_item_id => cart.items.first.CartItemId, :quantity => 7})
     cart.saved_items
-    => [<#Hashie::Mash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
+    => [<#Hashie::Rash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
 
 It's also possible to access browse nodes:
 
@@ -119,17 +119,6 @@ It's also possible to access browse nodes:
     node.name
     => 'Comedy'
 
-## Response Configuration
-
-ASIN is customizable in the way it returns Responses from Amazon.
-By default it will return *SimpleItem*, *SimpleCart* or *SimpleNode* instances,
-but you can override this behavior for using your custom Classes:
-
-    client.configure :item_type => YourItemClass
-    client.configure :cart_type => YourCartClass
-    client.configure :node_type => YourNodeClass
-
-You can also use built-in *:raw*, *:mash* types.
 ## HTTPI
 
 ASIN uses [HTTPI](https://github.com/rubiii/httpi) as a HTTP-Client adapter.
