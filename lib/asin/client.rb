@@ -324,7 +324,27 @@ module ASIN
     end
 
     def handle_type(data, type)
-      Hashie::Rash.new(data)
+      Hashie::Rash.new(data).tap do |rash|
+        rash.instance_eval do
+          def valid?
+            request.is_valid == 'True'
+          end
+
+          def empty?
+            cart_items.nil?
+          end
+
+          def items
+            return [] unless cart_items
+            cart_items.cart_item.is_a?(Array) ? cart_items.cart_item : [cart_items.cart_item]
+          end
+
+          def saved_items
+            return [] unless saved_for_later_items
+            saved_for_later_items.saved_for_later_item.is_a?(Array) ? saved_for_later_items.saved_for_later_item : [saved_for_later_items.saved_for_later_item]
+          end
+        end
+      end
     end
 
     def create_item_params(items)

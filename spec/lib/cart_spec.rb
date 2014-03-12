@@ -11,8 +11,8 @@ module ASIN
 
       it "should create a cart", :vcr do
         cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1}, {:asin => ANY_OTHER_ASIN, :quantity => 2})
-        cart.request.is_valid.should eql('True')
-        cart.cart_items.should be_nil
+        cart.valid?.should be(true)
+        cart.empty?.should be(false)
       end
 
       it "should handle item paramters" do
@@ -46,7 +46,7 @@ module ASIN
 
         it "should update a cart", :vcr do
           @cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1})
-          item_id = @cart.items.first.CartItemId
+          item_id = @cart.items.first.cart_item_id
           cart = @helper.update_items(@cart, {:cart_item_id => item_id, :action => 'SaveForLater'}, {:cart_item_id => item_id, :quantity => 7})
           cart.saved_items.should have(1).things
           cart.valid?.should be(true)
