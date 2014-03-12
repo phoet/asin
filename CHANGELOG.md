@@ -1,3 +1,7 @@
+## 2.0.0
+
+* configurabel items are no longer supported, in favor of Hashie::Rash
+
 ## 1.2.0
 
 * Added more methods to simplify accessing certain nodes. (kyletcarlson) https://github.com/phoet/asin/pull/30
