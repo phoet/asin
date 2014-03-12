@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency('crack',     '>= 0.3')
   s.add_dependency('hashie',    '>= 1.1')
+  s.add_dependency('rash',      '>= 0.4')
   s.add_dependency('httpi',     '>= 0.9')
   s.add_dependency('confiture', '>= 0.1')
 
@@ -31,6 +32,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency('vcr',        '~> 2.2.5')
   s.add_development_dependency('webmock',    '~> 1.8.7')
   s.add_development_dependency('rspec',      '~> 2.11.0')
-  s.add_development_dependency('pry',        '~> 0.9.9')
-  s.add_development_dependency('coveralls')
 end
