@@ -4,6 +4,7 @@ require 'rexml/document'
 require 'crack/xml'
 require 'cgi'
 require 'base64'
+require 'rash'
 
 # ASIN (Amazon Simple INterface) is a gem for easy access of the Amazon E-Commerce-API.
 # It is simple to configure and use. Since it's very small and flexible, it is easy to extend it to your needs.
@@ -323,14 +324,7 @@ module ASIN
     end
 
     def handle_type(data, type)
-      if type.is_a?(Class)
-        type.new(data)
-      elsif type == :mash
-        require 'hashie'
-        Hashie::Mash.new(data)
-      else
-        data
-      end
+      Hashie::Rash.new(data)
     end
 
     def create_item_params(items)

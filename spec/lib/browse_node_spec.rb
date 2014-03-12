@@ -10,7 +10,7 @@ module ASIN
 
       it "should lookup a browse_node", :vcr do
           item = @helper.browse_node(ANY_BROWSE_NODE_ID).first
-          item.node_id.should eql(ANY_BROWSE_NODE_ID)
+          item.browse_node_id.should eql(ANY_BROWSE_NODE_ID)
           item.name.should eql('Comedy')
       end
     end

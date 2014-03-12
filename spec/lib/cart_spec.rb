@@ -11,8 +11,8 @@ module ASIN
 
       it "should create a cart", :vcr do
         cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1}, {:asin => ANY_OTHER_ASIN, :quantity => 2})
-        cart.valid?.should be(true)
-        cart.empty?.should be(false)
+        cart.request.is_valid.should eql('True')
+        cart.cart_items.should be_nil
       end
 
       it "should handle item paramters" do
