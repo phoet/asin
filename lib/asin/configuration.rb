@@ -38,9 +38,6 @@ module ASIN
       :host          => 'webservices.amazon.com',
       :version       => '2011-08-01',
       :logger        => Logger.new(STDERR),
-      :item_type     => SimpleItem,
-      :cart_type     => SimpleCart,
-      :node_type     => SimpleNode,
     })
   end
 end
