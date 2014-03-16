@@ -10,14 +10,14 @@ module ASIN
 
       it "should find similar items", :vcr do
         items = @helper.similar(ANY_ASIN)
-        items.should have(10).elements
-        items.first.title.should =~ /Programming in Objective-C/
+        expect(items).to have(10).elements
+        expect(items.first.title).to match(/Programming in Objective-C/)
       end
 
       it "should find similar items for multiple asins and different config", :vcr do
         items = @helper.similar(ANY_ASIN, ANY_OTHER_ASIN, :SimilarityType => :Intersection, :ResponseGroup => :Small)
-        items.should have(4).elements
-        items.first.title.should =~ /Beginning iOS 5 Development/
+        expect(items).to have(4).elements
+        expect(items.first.title).to match(/Beginning iOS 5 Development/)
       end
     end
   end

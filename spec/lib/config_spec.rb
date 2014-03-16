@@ -8,31 +8,31 @@ module ASIN
       end
 
       it "should fail with wrong configuration key" do
-        lambda { @helper.configure :wrong => 'key' }.should raise_error(ArgumentError)
+        expect(lambda { @helper.configure :wrong => 'key' }).to raise_error(ArgumentError)
       end
 
       it "should not override the configuration" do
         config = @helper.configure :key => 'wont get overridden'
-        config.key.should_not be_nil
+        expect(config.key).to_not be_nil
 
         config = @helper.configure :secret => 'is also set'
-        config.key.should_not be_nil
-        config.secret.should_not be_nil
+        expect(config.key).to_not be_nil
+        expect(config.secret).to_not be_nil
       end
 
       it "should work with a configuration block" do
         conf = ASIN::Configuration.configure do |config|
           config.key = 'bla'
         end
-        conf.key.should eql('bla')
+        expect(conf.key).to eql('bla')
       end
 
       it "should read configuration from yml" do
         config = ASIN::Configuration.configure :yaml => 'spec/asin.yml'
-        config.secret.should eql('secret_yml')
-        config.key.should eql('key_yml')
-        config.host.should eql('host_yml')
-        config.logger.should eql('logger_yml')
+        expect(config.secret).to eql('secret_yml')
+        expect(config.key).to eql('key_yml')
+        expect(config.host).to eql('host_yml')
+        expect(config.logger).to eql('logger_yml')
       end
 
       it "should read configuration from yml with block" do
@@ -40,8 +40,8 @@ module ASIN
           config.secret = nil
           config.key = yml['secret']
         end
-        conf.secret.should be_nil
-        conf.key.should eql('secret_yml')
+        expect(conf.secret).to be_nil
+        expect(conf.key).to eql('secret_yml')
       end
     end
   end
