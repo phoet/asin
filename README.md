@@ -1,7 +1,8 @@
 ## Infos
 
-[![Build Status](https://secure.travis-ci.org/phoet/asin.png)](http://travis-ci.org/phoet/asin)
-[![Coverage Status](https://coveralls.io/repos/phoet/asin/badge.png)](https://coveralls.io/r/phoet/asin)
+[![Build Status](https://img.shields.io/travis/phoet/asin/master.svg)](https://travis-ci.org/phoet/asin)
+[![Code Climate](https://img.shields.io/codeclimate/github/phoet/asin.svg)](https://codeclimate.com/github/phoet/asin)
+[![Coverage Status](https://img.shields.io/coveralls/phoet/asin/master.svg)](https://coveralls.io/r/phoet/asin?branch=master)
 
 ASIN is a simple, extensible wrapper for parts of the REST-API of Amazon Product Advertising API (aka Associates Web Service aka Amazon E-Commerce Service).
 
