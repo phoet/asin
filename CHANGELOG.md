@@ -1,6 +1,6 @@
 ## 2.0.0
 
-* configurabel items are no longer supported, in favor of Hashie::Rash
+* configurable items are no longer supported, in favor of Hashie::Rash, see upgrading instructions
 
 ## 1.2.0
 

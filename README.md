@@ -11,9 +11,18 @@ Have a look at the [RDOC](http://rdoc.info/projects/phoet/asin) for this project
 
 The gem runs smoothly with Rails 3 and is tested against multiple rubies. See *.travis.yml* for details.
 
+
 ## Upgrading from Version 1.x
 
-Version 2 removes all the SimpleXXX classes in favor of Hashie::Rash
+Version 2 removes all the SimpleXXX classes in favor of Hashie::Rash.
+
+The old api is available if you require the ASIN::Adapter
+
+    require 'asin'
+    require 'asin/adapter'
+
+It's also a good starting point for looking into writing your own API adapter.
+
 
 ## Installation
 
@@ -24,6 +33,7 @@ or in your Gemfile:
 
     gem 'asin'
     gem 'httpclient' # optional, see HTTPI
+
 
 ## Configuration
 
@@ -36,6 +46,7 @@ Rails style initializer (config/initializers/asin.rb):
     end
 
 Have a look at ASIN::Configuration class for all the details.
+
 
 ## Usage
 
@@ -119,6 +130,7 @@ It's also possible to access browse nodes:
     node.name
     => 'Comedy'
 
+
 ## HTTPI
 
 ASIN uses [HTTPI](https://github.com/rubiii/httpi) as a HTTP-Client adapter.
@@ -127,10 +139,12 @@ As a default HTTPI uses _httpclient_ so you should add that dependency to your p
 
     gem 'httpclient'
 
+
 ## Confiture
 
 ASIN uses [Confiture](https://github.com/phoet/confiture) as a Configuration gem.
 See the Confiture documentation for different configuration styles.
+
 
 ## License
 

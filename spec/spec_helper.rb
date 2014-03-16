@@ -11,6 +11,7 @@ Coveralls.wear!
 require 'rspec'
 require 'asin'
 require 'asin/client' # is somehow needed for jruby
+require 'asin/adapter'
 require 'pry'
 require 'httpclient'
 require 'vcr'

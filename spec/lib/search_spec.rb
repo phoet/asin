@@ -74,29 +74,6 @@ module ASIN
         items.first.title.should =~ /Learn Objective-C/
       end
 
-      it "should return a custom item class", :vcr do
-        module TEST
-          class TestItem
-            attr_accessor :testo
-            def initialize(hash)
-              @testo = hash
-            end
-          end
-        end
-        @helper.configure :item_type => TEST::TestItem
-        @helper.lookup(ANY_ASIN).first.testo.should_not be_nil
-      end
-
-      it "should return a raw value", :vcr do
-        @helper.configure :item_type => :raw
-        @helper.lookup(ANY_ASIN).first['ItemAttributes']['Title'].should_not be_nil
-      end
-
-      it "should return a mash value", :vcr do
-        @helper.configure :item_type => :mash
-        @helper.lookup(ANY_ASIN).first.ItemAttributes.Title.should_not be_nil
-      end
-
       it "should search_keywords and handle a single result", :vcr do
         items = @helper.search_keywords('0471317519')
         items.first.title.should =~ /A Self-Teaching Guide/
