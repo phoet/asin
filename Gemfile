@@ -4,6 +4,6 @@ source "http://rubygems.org"
 gemspec
 
 group :development do
-  gem 'pry-plus'
+  gem 'pry-plus', platforms: :ruby
   gem 'coveralls'
 end
