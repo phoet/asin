@@ -215,6 +215,8 @@ module ASIN
   end
 
   module Client
-    prepend(ASIN::Adapter)
+    # REM (ps) this is a workaround for jruby, because they don't support Module.prepend https://github.com/jruby/jruby/issues/751
+    remove_method :handle_type
+    include ASIN::Adapter
   end
 end
