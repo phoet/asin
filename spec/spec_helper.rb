@@ -8,11 +8,11 @@ end
 require 'coveralls'
 Coveralls.wear!
 
+require 'pry' unless defined? JRUBY_VERSION
 require 'rspec'
 require 'asin'
 require 'asin/client' # is somehow needed for jruby
 require 'asin/adapter'
-require 'pry'
 require 'httpclient'
 require 'vcr'
 require 'httpi'
