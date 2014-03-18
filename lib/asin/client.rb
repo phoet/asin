@@ -1,106 +1,10 @@
-# -*- coding: utf-8 -*-
 require 'httpi'
-require 'rexml/document'
+require 'rexml/document' # https://github.com/phoet/asin/pull/23
 require 'crack/xml'
 require 'cgi'
 require 'base64'
 require 'rash'
 
-# ASIN (Amazon Simple INterface) is a gem for easy access of the Amazon E-Commerce-API.
-# It is simple to configure and use. Since it's very small and flexible, it is easy to extend it to your needs.
-#
-# Author: Peter Schröder (mailto:phoetmail@googlemail.com)
-#
-# == Usage
-#
-# The ASIN module is designed as a mixin.
-#
-#   require 'asin'
-#   include ASIN::Client
-#
-# In order to use the Amazon API properly, you need to be a registered user (http://aws.amazon.com).
-#
-# The registration process will give you a +secret-key+ and an +access-key+ (AWSAccessKeyId).
-# Since the latest updates to the service you will need an +associate-tag+.
-#
-# Those are needed to use ASIN (see Configuration for more details):
-#
-#   configure :secret => 'your-secret', :key => 'your-key', :associate_tag => 'your-associate_tag'
-#
-# == Search
-#
-# After configuring your environment you can call the +lookup+ method to retrieve an item via the
-# Amazon Standard Identification Number (ASIN):
-#
-#   item = lookup '1430218150'
-#   item.first.title
-#   => "Learn Objective-C on the Mac (Learn Series)"
-#
-# OR search with fulltext/ASIN/ISBN
-#
-#   items = search 'Learn Objective-C'
-#   items.first.title
-#   => "Learn Objective-C on the Mac (Learn Series)"
-#
-# The item uses a Hashie::Rash as its internal data representation and you can get fetched data from it:
-#
-#   item.item_attributes.list_price.formatted_price
-#   => "$39.99"
-#
-# == Further Configuration
-#
-# If you need more controll over the request that is sent to the
-# Amazon API (http://docs.amazonwebservices.com/AWSECommerceService/latest/DG/index.html),
-# you can override some defaults or add additional query-parameters to the REST calls:
-#
-#   configure :host => 'webservices.amazon.de'
-#   lookup(asin, :ResponseGroup => :Medium)
-#
-# == Cart
-#
-# ASIN helps with AWS cart-operations.
-# It currently supports the CartCreate, CartGet, CartAdd, CartModify and CartClear operations:
-#
-#   cart = create_cart({:asin => '1430218150', :quantity => 1})
-#   cart.valid?
-#   cart.items
-#   => true
-#   => [<#Hashie::Rash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
-#
-#   cart = get_cart('176-9182855-2326919', 'KgeVCA0YJTbuN/7Ibakrk/KnHWA=')
-#   cart.empty?
-#   => false
-#
-#   cart = clear_cart(cart)
-#   cart.empty?
-#   => true
-#
-#   cart = add_items(cart, {:asin => '1430216263', :quantity => 2})
-#   cart.empty?
-#   => false
-#
-#   cart = update_items(cart, {:cart_item_id => cart.items.first.CartItemId, :action => :SaveForLater}, {:cart_item_id => cart.items.first.CartItemId, :quantity => 7})
-#   cart.valid?
-#   cart.saved_items
-#   => true
-#   => [<#Hashie::Rash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
-#
-# == Nodes
-#
-# In order to browse Amazon nodes, you can use +browse_node+ method:
-#
-#   node = browse_node('163357')
-#   node.node_id
-#   => '163357'
-#   node.name
-#   => 'Comedy'
-#   node.children
-#   node.ancestors
-#
-# you can configure the +:ResponseGroup+ option to your needs:
-#
-#   node = browse_node('163357', :ResponseGroup => :TopSellers)
-#
 module ASIN
   module Client
 
@@ -134,13 +38,7 @@ module ASIN
     # Expects an arbitrary number of ASIN (Amazon Standard Identification Number) and returns an array of item:
     #
     #   item = lookup '1430218150'
-    #   item.title
-    #   => "Learn Objective-C on the Mac (Learn Series)"
     #   items = lookup ['1430218150', '0439023521']
-    #   items[0].title
-    #   => "Learn Objective-C on the Mac (Learn Series)"
-    #   items[1].title
-    #   => "The Hunger Games"
     #
     # ==== Options:
     #
@@ -163,8 +61,6 @@ module ASIN
     # Expects a search-string which can be an arbitrary array of strings (ASINs f.e.) and returns a list of items:
     #
     #   items = search_keywords 'Learn', 'Objective-C'
-    #   items.first.title
-    #   => "Learn Objective-C on the Mac (Learn Series)"
     #
     # ==== Options:
     #
@@ -203,13 +99,13 @@ module ASIN
     #
     # Expects a node-id and returns a node:
     #
-    #   node = browse_node '163357'
+    #   node = browse_node '17'
     #
     # ==== Options:
     #
     # Additional parameters for the API call like this:
     #
-    #   browse_node('163357', :ResponseGroup => :TopSellers)
+    #   browse_node('17', :ResponseGroup => :TopSellers)
     #
     # Have a look at the different browse node values on the Amazon-Documentation[http://docs.amazonwebservices.com/AWSECommerceService/latest/DG/index.html]
     #

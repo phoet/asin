@@ -75,17 +75,17 @@ But you can also use the *instance* method to get a proxy-object:
     items = client.lookup '1430218150'
     
     # have a look at the title of the item
-    items.first.title
+    items.first.item_attributes.title
     => Learn Objective-C on the Mac (Learn Series)
     
     # search for any kind of stuff on amazon with keywords
     items = search_keywords 'Learn', 'Objective-C'
-    items.first.title
+    items.first.item_attributes.title
     => "Learn Objective-C on the Mac (Learn Series)"
     
     # search for any kind of stuff on amazon with custom parameters
     search :Keywords => 'Learn Objective-C', :SearchIndex => :Books
-    items.first.title
+    items.first.item_attributes.title
     => "Learn Objective-C on the Mac (Learn Series)"
     
     # search for similar items like the one you already have
@@ -97,27 +97,17 @@ There is an additional set of methods to support AWS cart operations:
     
     # create a cart with an item
     cart = client.create_cart({:asin => '1430218150', :quantity => 1})
-    cart.items
+    cart.cart_items.cart_item
     => [<#Hashie::Rash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
-    
-    # get an already existing cart from a CartId and HMAC
-    cart = client.get_cart('176-9182855-2326919', 'KgeVCA0YJTbuN/7Ibakrk/KnHWA=')
-    cart.empty?
-    => false
     
     # clear everything from the cart
     cart = client.clear_cart(cart)
-    cart.empty?
-    => true
-    
-    # add items to the cart
-    cart = client.add_items(cart, {:asin => '1430216263', :quantity => 2})
-    cart.empty?
-    => false
+    cart.cart_items.cart_item
+    => []
     
     # update items in the cart
     cart = client.update_items(cart, {:cart_item_id => cart.items.first.CartItemId, :action => :SaveForLater}, {:cart_item_id => cart.items.first.CartItemId, :quantity => 7})
-    cart.saved_items
+    cart.saved_for_later_items.saved_for_later_item
     => [<#Hashie::Rash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
 
 It's also possible to access browse nodes:
@@ -125,11 +115,11 @@ It's also possible to access browse nodes:
     client = ASIN::Client.instance
     
     # create a cart with an item
-    node = client.browse_node('163357', :ResponseGroup => :TopSellers)
-    node.node_id
+    node = client.browse_node('17', :ResponseGroup => :TopSellers)
+    node.first.browse_node_id
     => '163357'
-    node.name
-    => 'Comedy'
+    node.first.name
+    => 'Literature & Fiction'
 
 
 ## HTTPI
