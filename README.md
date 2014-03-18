@@ -10,35 +10,35 @@ For more information on the REST calls, have a look at the whole [Amazon E-Comme
 
 Have a look at the [RDOC](http://rdoc.info/projects/phoet/asin) for this project, if you like browsing some docs.
 
-The gem runs smoothly with Rails 3 and is tested against multiple rubies. See *.travis.yml* for details.
+The gem runs smoothly with Rails and is tested against multiple rubies. See *.travis.yml* for details.
 
 
 ## Upgrading from Version 1.x
 
-Version 2 removes all the SimpleXXX classes in favor of Hashie::Rash.
+Version 2 removes all the SimpleXXX classes in favor of [Hashie::Rash](https://github.com/tcocca/rash).
 
-The old api is available if you require the ASIN::Adapter
+The old API is available if you require `ASIN::Adapter`:
 
     require 'asin'
     require 'asin/adapter'
 
-It's also a good starting point for looking into writing your own API adapter.
+It's also a good starting point for looking into writing your own asin-adapter.
 
 
 ## Installation
 
     gem install asin
-    gem install httpclient # optional, see HTTPI
+    gem install curb # optional, see HTTPI
 
 or in your Gemfile:
 
     gem 'asin'
-    gem 'httpclient' # optional, see HTTPI
+    gem 'curb' # optional, see HTTPI
 
 
 ## Configuration
 
-Rails style initializer (config/initializers/asin.rb):
+Rails style initializer (`config/initializers/asin.rb`):
 
     ASIN::Configuration.configure do |config|
       config.secret        = 'your-secret'
@@ -46,7 +46,7 @@ Rails style initializer (config/initializers/asin.rb):
       config.associate_tag = 'your-tag'
     end
 
-Have a look at ASIN::Configuration class for all the details.
+Have a look at `ASIN::Configuration` class for all the details.
 
 
 ## Usage
@@ -139,7 +139,7 @@ See the Confiture documentation for different configuration styles.
 
 ## License
 
-"THE BEER-WARE LICENSE" (Revision 42):
-[ps@nofail.de](mailto:ps@nofail.de) wrote this file. As long as you retain this notice you
-can do whatever you want with this stuff. If we meet some day, and you think
-this stuff is worth it, you can buy me a beer in return Peter Schröder
+"THE (extended) BEER-WARE LICENSE" (Revision 42.0815): [phoet](mailto:ps@nofail.de) contributed to this project.
+
+As long as you retain this notice you can do whatever you want with this stuff.
+If we meet some day, and you think this stuff is worth it, you can buy me some beers in return.
