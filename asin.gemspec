@@ -1,4 +1,3 @@
-# -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
 require "asin/version"
 
@@ -28,8 +27,8 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency('httpclient', '>= 2.2.3')
 
-  s.add_development_dependency('rake',       '~> 0.9.2.2')
-  s.add_development_dependency('vcr',        '~> 2.2.5')
-  s.add_development_dependency('webmock',    '~> 1.8.7')
-  s.add_development_dependency('rspec',      '~> 2.11.0')
+  s.add_development_dependency('rake',       '~> 0.9.2')
+  s.add_development_dependency('vcr',        '~> 2.2')
+  s.add_development_dependency('webmock',    '~> 1.8')
+  s.add_development_dependency('rspec',      '~> 2.11')
 end
