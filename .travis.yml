@@ -1,4 +1,4 @@
-script: "bundle exec rake"
+script: "CODECLIMATE_REPO_TOKEN=eb04e2a7fa1767ae9055bcb6d74aee731b3ada7eff6dad170cedadca3d649fb7 bundle exec rake"
 rvm:
   - 2.0.0
   - 2.1.0
