@@ -8,7 +8,7 @@ require 'rash'
 module ASIN
   module Client
 
-    DIGEST  = OpenSSL::Digest::Digest.new('sha256')
+    DIGEST  = OpenSSL::Digest.new('sha256')
     PATH    = '/onca/xml'
 
     # Convenience method to create an ASIN client.
