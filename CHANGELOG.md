@@ -1,3 +1,7 @@
+## 2.0.1
+
+* get rid of OpenSSL deprecation (davelacy) https://github.com/phoet/asin/pull/36
+
 ## 2.0.0
 
 * configurable items are no longer supported, in favor of Hashie::Rash, see upgrading instructions
