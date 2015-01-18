@@ -3,7 +3,7 @@ source "http://rubygems.org"
 gemspec
 
 group :development do
-  gem 'pry-plus', platforms: :ruby
+  gem 'byebug', platforms: :ruby
 end
 
 group :test do

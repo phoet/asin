@@ -11,7 +11,6 @@ unless Net.const_defined? :HTTPSession
   class Net::HTTPSession < Net::HTTP::HTTPSession; end
 end
 
-require 'pry' unless defined? JRUBY_VERSION
 require 'rspec'
 require 'asin'
 require 'asin/client' # is somehow needed for jruby
