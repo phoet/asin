@@ -20,108 +20,121 @@ Version 2 removes all the SimpleXXX classes in favor of [Hashie::Rash](https://g
 
 The old API is available if you require `ASIN::Adapter`:
 
-    require 'asin'
-    require 'asin/adapter'
+```ruby
+require 'asin'
+require 'asin/adapter'
+```
 
 It's also a good starting point for looking into writing your own asin-adapter.
 
 
 ## Installation
 
-    gem install asin
-    gem install curb # optional, see HTTPI
+```bash
+gem install asin
+gem install curb # optional, see HTTPI
+```
 
 or in your Gemfile:
 
-    gem 'asin'
-    gem 'curb' # optional, see HTTPI
-
+```ruby
+gem 'asin'
+gem 'curb' # optional, see HTTPI
+```
 
 ## Configuration
 
 Rails style initializer (`config/initializers/asin.rb`):
 
-    ASIN::Configuration.configure do |config|
-      config.secret        = 'your-secret'
-      config.key           = 'your-key'
-      config.associate_tag = 'your-tag'
-    end
+```ruby
+ASIN::Configuration.configure do |config|
+  config.secret        = 'your-secret'
+  config.key           = 'your-key'
+  config.associate_tag = 'your-tag'
+end
+```
 
 Have a look at `ASIN::Configuration` class for all the details.
-
 
 ## Usage
 
 ASIN is designed as a module, so you can include it into any object you like:
 
-    # require and include
-    require 'asin'
-    include ASIN::Client
-    
-    # lookup an ASIN
-    lookup '1430218150'
+```ruby
+# require and include
+require 'asin'
+include ASIN::Client
 
-    # lookup multiple items by ASIN
-    lookup ['1430218150','1934356549']
+# lookup an ASIN
+lookup '1430218150'
+
+# lookup multiple items by ASIN
+lookup ['1430218150','1934356549']
+```
 
 But you can also use the *instance* method to get a proxy-object:
 
-    # just require
-    require 'asin'
-    
-    # create an ASIN client
-    client = ASIN::Client.instance
-    
-    # lookup an item with the amazon standard identification number (asin)
-    items = client.lookup '1430218150'
-    
-    # have a look at the title of the item
-    items.first.item_attributes.title
-    => Learn Objective-C on the Mac (Learn Series)
-    
-    # search for any kind of stuff on amazon with keywords
-    items = search_keywords 'Learn', 'Objective-C'
-    items.first.item_attributes.title
-    => "Learn Objective-C on the Mac (Learn Series)"
-    
-    # search for any kind of stuff on amazon with custom parameters
-    search :Keywords => 'Learn Objective-C', :SearchIndex => :Books
-    items.first.item_attributes.title
-    => "Learn Objective-C on the Mac (Learn Series)"
-    
-    # search for similar items like the one you already have
-    items = client.similar '1430218150'
+```ruby
+# just require
+require 'asin'
+
+# create an ASIN client
+client = ASIN::Client.instance
+
+# lookup an item with the amazon standard identification number (asin)
+items = client.lookup '1430218150'
+
+# have a look at the title of the item
+items.first.item_attributes.title
+=> Learn Objective-C on the Mac (Learn Series)
+
+# search for any kind of stuff on amazon with keywords
+items = search_keywords 'Learn', 'Objective-C'
+items.first.item_attributes.title
+=> "Learn Objective-C on the Mac (Learn Series)"
+
+# search for any kind of stuff on amazon with custom parameters
+search :Keywords => 'Learn Objective-C', :SearchIndex => :Books
+items.first.item_attributes.title
+=> "Learn Objective-C on the Mac (Learn Series)"
+
+# search for similar items like the one you already have
+items = client.similar '1430218150'
+```
 
 There is an additional set of methods to support AWS cart operations:
 
-    client = ASIN::Client.instance
-    
-    # create a cart with an item
-    cart = client.create_cart({:asin => '1430218150', :quantity => 1})
-    cart.cart_items.cart_item
-    => [<#Hashie::Rash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
-    
-    # clear everything from the cart
-    cart = client.clear_cart(cart)
-    cart.cart_items.cart_item
-    => []
-    
-    # update items in the cart
-    cart = client.update_items(cart, {:cart_item_id => cart.items.first.CartItemId, :action => :SaveForLater}, {:cart_item_id => cart.items.first.CartItemId, :quantity => 7})
-    cart.saved_for_later_items.saved_for_later_item
-    => [<#Hashie::Rash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
+```ruby
+client = ASIN::Client.instance
+
+# create a cart with an item
+cart = client.create_cart({:asin => '1430218150', :quantity => 1})
+cart.cart_items.cart_item
+=> [<#Hashie::Rash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
+
+# clear everything from the cart
+cart = client.clear_cart(cart)
+cart.cart_items.cart_item
+=> []
+
+# update items in the cart
+cart = client.update_items(cart, {:cart_item_id => cart.items.first.CartItemId, :action => :SaveForLater}, {:cart_item_id => cart.items.first.CartItemId, :quantity => 7})
+cart.saved_for_later_items.saved_for_later_item
+=> [<#Hashie::Rash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
+```
 
 It's also possible to access browse nodes:
 
-    client = ASIN::Client.instance
-    
-    # create a cart with an item
-    node = client.browse_node('17', :ResponseGroup => :TopSellers)
-    node.first.browse_node_id
-    => '163357'
-    node.first.name
-    => 'Literature & Fiction'
+```ruby
+client = ASIN::Client.instance
 
+# create a cart with an item
+node = client.browse_node('17', :ResponseGroup => :TopSellers)
+node.first.browse_node_id
+=> '163357'
+node.first.name
+=> 'Literature & Fiction'
+```
 
 ## HTTPI
 
@@ -129,8 +142,9 @@ ASIN uses [HTTPI](https://github.com/rubiii/httpi) as a HTTP-Client adapter.
 See the HTTPI documentation for how to configure different clients or the logger.
 As a default HTTPI uses _httpclient_ so you should add that dependency to your project:
 
-    gem 'httpclient'
-
+```ruby
+gem 'httpclient'
+```
 
 ## Confiture
 
