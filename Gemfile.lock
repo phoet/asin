@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    asin (2.0.1)
+    asin (2.0.2)
       confiture (>= 0.1)
       crack (>= 0.3)
       hashie (>= 1.1)
@@ -65,3 +65,6 @@ DEPENDENCIES
   rspec (~> 2.11)
   vcr (~> 2.2)
   webmock (~> 1.8)
+
+BUNDLED WITH
+   1.11.2
