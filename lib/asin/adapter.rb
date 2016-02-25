@@ -1,8 +1,8 @@
 module ASIN
   module Adapter
     def handle_type(data, type)
-      Hashie::Rash.new(data).tap do |rash|
-        rash.instance_eval do
+      Hashie::SCHash.new(data).tap do |schash|
+        schash.instance_eval do
           case type
           when :cart
             def url
