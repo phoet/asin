@@ -67,7 +67,7 @@ But you can also use the *instance* method to get a proxy-object:
     => "Learn Objective-C on the Mac (Learn Series)"
     
     # search for any kind of stuff on amazon with custom parameters
-    search :Keywords => 'Learn Objective-C', :SearchIndex => :Books
+    items = client.search :Keywords => 'Learn Objective-C', :SearchIndex => :Books
     items.first.title
     => "Learn Objective-C on the Mac (Learn Series)"
     
