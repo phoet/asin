@@ -112,17 +112,17 @@ client = ASIN::Client.instance
 # create a cart with an item
 cart = client.create_cart({:asin => '1430218150', :quantity => 1})
 cart.cart_items.cart_item
-=> [<#Hashie::Rash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
+# => [<#Hashie::Rash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
 
 # clear everything from the cart
 cart = client.clear_cart(cart)
 cart.cart_items.cart_item
-=> []
+# => []
 
 # update items in the cart
-cart = client.update_items(cart, {:cart_item_id => cart.items.first.CartItemId, :action => :SaveForLater}, {:cart_item_id => cart.items.first.CartItemId, :quantity => 7})
+cart = client.update_items(cart, {:cart_item_id => cart.items.first.CartItemId, :action => :SaveForLater}, {:cart_item_id # => cart.items.first.CartItemId, :quantity => 7})
 cart.saved_for_later_items.saved_for_later_item
-=> [<#Hashie::Rash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
+# => [<#Hashie::Rash ASIN="1430218150" CartItemId="U3G241HVLLB8N6" ... >]
 ```
 
 It's also possible to access browse nodes:
@@ -133,9 +133,9 @@ client = ASIN::Client.instance
 # create a cart with an item
 node = client.browse_node('17', :ResponseGroup => :TopSellers)
 node.first.browse_node_id
-=> '163357'
+# => '163357'
 node.first.name
-=> 'Literature & Fiction'
+# => 'Literature & Fiction'
 ```
 
 ## HTTPI
