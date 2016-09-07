@@ -86,20 +86,22 @@ items = client.lookup '1430218150'
 
 # have a look at the title of the item
 items.first.item_attributes.title
-=> Learn Objective-C on the Mac (Learn Series)
+# => Learn Objective-C on the Mac (Learn Series)
 
 # search for any kind of stuff on amazon with keywords
-items = search_keywords 'Learn', 'Objective-C'
+items = client.search_keywords 'Learn', 'Objective-C'
 items.first.item_attributes.title
-=> "Learn Objective-C on the Mac (Learn Series)"
+# => "Learn Objective-C on the Mac (Learn Series)"
 
 # search for any kind of stuff on amazon with custom parameters
-search :Keywords => 'Learn Objective-C', :SearchIndex => :Books
+items = client.search :Keywords => 'Learn Objective-C', :SearchIndex => :Books
 items.first.item_attributes.title
-=> "Learn Objective-C on the Mac (Learn Series)"
+# => "Learn Objective-C on the Mac (Learn Series)"
 
 # search for similar items like the one you already have
 items = client.similar '1430218150'
+items.first.item_attributes.title
+# => "Beginning iOS 7 Development: Exploring the iOS SDK"
 ```
 
 There is an additional set of methods to support AWS cart operations:
