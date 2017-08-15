@@ -2,44 +2,42 @@
 http_interactions:
 - request:
     method: get
-    uri: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAIBNLWSCV5OXMPD6A&AssociateTag=phoet-20&Operation=ItemSearch&SearchIndex=Music&Service=AWSECommerceService&Signature=QPIOtjpXIlA2c8iUX6Wh062Rq6RwRDxVtjacKkujRyU=&Timestamp=2012-09-25T20:04:45Z&Version=2011-08-01
+    uri: http://webservices.amazon.de/onca/xml?AWSAccessKeyId=AKIAIZFAWKXP4XEATBWQ&AssociateTag=nofail-21&Operation=ItemSearch&SearchIndex=Music&Service=AWSECommerceService&Signature=sILUKtVJ5HTEXfjdRNovdfnjNymgFrwqHE1SasYsU5Y=&Timestamp=2017-08-15T15:36:19Z&Version=2011-08-01
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
-    headers: {}
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.3, ruby 2.4.0 (2016-12-24))
+      Accept:
+      - "*/*"
+      Date:
+      - Tue, 15 Aug 2017 15:36:19 GMT
   response:
     status:
       code: 200
-      message: !binary |-
-        T0s=
+      message: OK
     headers:
-      !binary "RGF0ZQ==":
-      - !binary |-
-        VHVlLCAyNSBTZXAgMjAxMiAyMDowNDo0NyBHTVQ=
-      !binary "U2VydmVy":
-      - !binary |-
-        U2VydmVy
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
-      !binary "VmFyeQ==":
-      - !binary |-
-        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
-      !binary "Tm5jb2VjdGlvbg==":
-      - !binary |-
-        Y2xvc2U=
-      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
-      - !binary |-
-        Y2h1bmtlZA==
+      Date:
+      - Tue, 15 Aug 2017 15:36:19 GMT
+      Server:
+      - Apache-Coyote/1.1
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding,User-Agent
+      Transfer-Encoding:
+      - chunked
     body:
-      encoding: US-ASCII
-      string: ! '<?xml version="1.0" ?><ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><RequestId>b5847fd2-3553-415f-9f66-aef03eb0433f</RequestId><Arguments><Argument
-        Name="Operation" Value="ItemSearch"></Argument><Argument Name="Service" Value="AWSECommerceService"></Argument><Argument
-        Name="Signature" Value="QPIOtjpXIlA2c8iUX6Wh062Rq6RwRDxVtjacKkujRyU="></Argument><Argument
-        Name="AssociateTag" Value="phoet-20"></Argument><Argument Name="Version" Value="2011-08-01"></Argument><Argument
-        Name="AWSAccessKeyId" Value="AKIAIBNLWSCV5OXMPD6A"></Argument><Argument Name="Timestamp"
-        Value="2012-09-25T20:04:45Z"></Argument><Argument Name="SearchIndex" Value="Music"></Argument></Arguments><RequestProcessingTime>0.0021470000000000</RequestProcessingTime></OperationRequest><Items><Request><IsValid>False</IsValid><ItemSearchRequest><ResponseGroup>Small</ResponseGroup><SearchIndex>Music</SearchIndex></ItemSearchRequest><Errors><Error><Code>AWS.MinimumParameterRequirement</Code><Message>Your
+      encoding: UTF-8
+      string: '<?xml version="1.0" ?><ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><HTTPHeaders><Header
+        Name="UserAgent" Value="HTTPClient/1.0 (2.8.3, ruby 2.4.0 (2016-12-24))"></Header></HTTPHeaders><RequestId>6abc8fa0-1abb-447a-8d56-fff719f1dac6</RequestId><Arguments><Argument
+        Name="AWSAccessKeyId" Value="AKIAIZFAWKXP4XEATBWQ"></Argument><Argument Name="AssociateTag"
+        Value="nofail-21"></Argument><Argument Name="Operation" Value="ItemSearch"></Argument><Argument
+        Name="SearchIndex" Value="Music"></Argument><Argument Name="Service" Value="AWSECommerceService"></Argument><Argument
+        Name="Timestamp" Value="2017-08-15T15:36:19Z"></Argument><Argument Name="Version"
+        Value="2011-08-01"></Argument><Argument Name="Signature" Value="sILUKtVJ5HTEXfjdRNovdfnjNymgFrwqHE1SasYsU5Y="></Argument></Arguments><RequestProcessingTime>0.0010450200000000</RequestProcessingTime></OperationRequest><Items><Request><IsValid>False</IsValid><ItemSearchRequest><ResponseGroup>Small</ResponseGroup><SearchIndex>Music</SearchIndex></ItemSearchRequest><Errors><Error><Code>AWS.MinimumParameterRequirement</Code><Message>Your
         request should have atleast 1 of the following parameters: ''Keywords'',''Title'',''Power'',''BrowseNode'',''Artist'',''Author'',''Actor'',''Director'',''AudienceRating'',''Manufacturer'',''MusicLabel'',''Composer'',''Publisher'',''Brand'',''Conductor'',''Orchestra'',''TextStream'',''Cuisine'',''City'',''Neighborhood''.</Message></Error></Errors></Request></Items></ItemSearchResponse>'
     http_version: 
-  recorded_at: Tue, 25 Sep 2012 20:04:45 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Tue, 15 Aug 2017 15:36:19 GMT
+recorded_with: VCR 3.0.3

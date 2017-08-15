@@ -2,13 +2,7 @@ require 'spec_helper'
 
 module ASIN
   describe ASIN do
-    before do
-      options = {:secret => @secret, :key => @key, :associate_tag => @tag}
-      @helper.configure options
-    end
-
     context "cart" do
-
       it "should create a cart", :vcr do
         cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1}, {:asin => ANY_OTHER_ASIN, :quantity => 2})
         expect(cart.valid?).to be_true
@@ -21,7 +15,6 @@ module ASIN
       end
 
       context "with an existing cart" do
-
         it "should clear a cart", :vcr do
           @cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1})
           cart = @helper.clear_cart(@cart)
@@ -51,7 +44,6 @@ module ASIN
           expect(cart).to have(1).saved_items
           expect(cart.valid?).to be_true
         end
-
       end
     end
   end

@@ -2,92 +2,87 @@
 http_interactions:
 - request:
     method: get
-    uri: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAIBNLWSCV5OXMPD6A&AssociateTag=phoet-20&Item.0.ASIN=1430218150&Item.0.Quantity=1&Operation=CartCreate&Service=AWSECommerceService&Signature=cfMtsaSBmsdjvivwfY3b8qLvb4xEUy4zU2c1a++MU/8=&Timestamp=2012-09-25T20:04:54Z&Version=2011-08-01
+    uri: http://webservices.amazon.de/onca/xml?AWSAccessKeyId=AKIAIZFAWKXP4XEATBWQ&AssociateTag=nofail-21&Item.0.ASIN=B008GTZ3KY&Item.0.Quantity=1&Operation=CartCreate&Service=AWSECommerceService&Signature=Oi%2BgIRCsWY5Vle2qVB7eH7NP/AEaOxqSlwwTc5CXINQ=&Timestamp=2017-08-15T15:47:30Z&Version=2011-08-01
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
-    headers: {}
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.3, ruby 2.4.0 (2016-12-24))
+      Accept:
+      - "*/*"
+      Date:
+      - Tue, 15 Aug 2017 15:47:30 GMT
   response:
     status:
       code: 200
-      message: !binary |-
-        T0s=
+      message: OK
     headers:
-      !binary "RGF0ZQ==":
-      - !binary |-
-        VHVlLCAyNSBTZXAgMjAxMiAyMDowNDo1NiBHTVQ=
-      !binary "U2VydmVy":
-      - !binary |-
-        U2VydmVy
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
-      !binary "VmFyeQ==":
-      - !binary |-
-        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
-      !binary "Tm5jb2VjdGlvbg==":
-      - !binary |-
-        Y2xvc2U=
-      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
-      - !binary |-
-        Y2h1bmtlZA==
+      Date:
+      - Tue, 15 Aug 2017 15:47:29 GMT
+      Server:
+      - Apache-Coyote/1.1
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding,User-Agent
+      Transfer-Encoding:
+      - chunked
     body:
-      encoding: US-ASCII
-      string: <?xml version="1.0" encoding="UTF-8"?><CartCreateResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><HTTPHeaders><Header
-        Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>08794EK0TGS8F6R0J6N5</RequestId><Arguments><Argument
-        Name="Service" Value="AWSECommerceService"></Argument><Argument Name="Item.0.Quantity"
-        Value="1"></Argument><Argument Name="Operation" Value="CartCreate"></Argument><Argument
-        Name="Timestamp" Value="2012-09-25T20:04:54Z"></Argument><Argument Name="Version"
-        Value="2011-08-01"></Argument><Argument Name="AssociateTag" Value="phoet-20"></Argument><Argument
-        Name="Signature" Value="cfMtsaSBmsdjvivwfY3b8qLvb4xEUy4zU2c1a++MU/8="></Argument><Argument
-        Name="Item.0.ASIN" Value="1430218150"></Argument><Argument Name="AWSAccessKeyId"
-        Value="AKIAIBNLWSCV5OXMPD6A"></Argument></Arguments><RequestProcessingTime>0.131492137908936</RequestProcessingTime></OperationRequest><Cart><Request><IsValid>True</IsValid><CartCreateRequest><Items><Item><ASIN>1430218150</ASIN><Quantity>1</Quantity></Item></Items></CartCreateRequest></Request><CartId>192-6352781-1036323</CartId><HMAC>pUpWk87PTHSRkzYY1JZMQ64viG4=</HMAC><URLEncodedHMAC>pUpWk87PTHSRkzYY1JZMQ64viG4%3D</URLEncodedHMAC><PurchaseURL>https://www.amazon.com/gp/cart/aws-merge.html?cart-id=192-6352781-1036323%26associate-id=phoet-20%26hmac=pUpWk87PTHSRkzYY1JZMQ64viG4=%26SubscriptionId=AKIAIBNLWSCV5OXMPD6A%26MergeCart=False</PurchaseURL><SubTotal><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></SubTotal><CartItems><SubTotal><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></SubTotal><CartItem><CartItemId>C3G241HVLLB8N6</CartItemId><ASIN>1430218150</ASIN><SellerNickname>Amazon.com</SellerNickname><Quantity>1</Quantity><Title>Learn
-        Objective-C on the Mac (Learn Series)</Title><ProductGroup>Book</ProductGroup><Price><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></Price><ItemTotal><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></ItemTotal></CartItem></CartItems></Cart></CartCreateResponse>
+      encoding: UTF-8
+      string: <?xml version="1.0" ?><CartCreateResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><HTTPHeaders><Header
+        Name="UserAgent" Value="HTTPClient/1.0 (2.8.3, ruby 2.4.0 (2016-12-24))"/></HTTPHeaders><RequestId>0d6b4d47-200b-4cf9-a156-2a005feb4c1b</RequestId><Arguments><Argument
+        Name="AWSAccessKeyId" Value="AKIAIZFAWKXP4XEATBWQ"/><Argument Name="AssociateTag"
+        Value="nofail-21"/><Argument Name="Item.0.ASIN" Value="B008GTZ3KY"/><Argument
+        Name="Item.0.Quantity" Value="1"/><Argument Name="Operation" Value="CartCreate"/><Argument
+        Name="Service" Value="AWSECommerceService"/><Argument Name="Timestamp" Value="2017-08-15T15:47:30Z"/><Argument
+        Name="Version" Value="2011-08-01"/><Argument Name="Signature" Value="Oi+gIRCsWY5Vle2qVB7eH7NP/AEaOxqSlwwTc5CXINQ="/></Arguments><RequestProcessingTime>0.049836863</RequestProcessingTime></OperationRequest><Cart><Request><IsValid>True</IsValid><CartCreateRequest><Items><Item><ASIN>B008GTZ3KY</ASIN><Quantity>1</Quantity></Item></Items></CartCreateRequest></Request><CartId>262-5065554-6542921</CartId><HMAC>0EpG0/gqCedrF/B8IpUz/Ggx7jQ=</HMAC><URLEncodedHMAC>0EpG0%2FgqCedrF%2FB8IpUz%2FGgx7jQ%3D</URLEncodedHMAC></Cart></CartCreateResponse>
     http_version: 
-  recorded_at: Tue, 25 Sep 2012 20:04:55 GMT
+  recorded_at: Tue, 15 Aug 2017 15:47:30 GMT
 - request:
     method: get
-    uri: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAIBNLWSCV5OXMPD6A&AssociateTag=phoet-20&CartId=192-6352781-1036323&HMAC=pUpWk87PTHSRkzYY1JZMQ64viG4=&Item.0.ASIN=1430216263&Item.0.Quantity=2&Operation=CartAdd&Service=AWSECommerceService&Signature=3izDgv/ClrGF57ZNaa/GDkN03FwJRScT3Y6C79pmIqM=&Timestamp=2012-09-25T20:04:55Z&Version=2011-08-01
+    uri: http://webservices.amazon.de/onca/xml?AWSAccessKeyId=AKIAIZFAWKXP4XEATBWQ&AssociateTag=nofail-21&CartId=262-5065554-6542921&HMAC=0EpG0/gqCedrF/B8IpUz/Ggx7jQ=&Item.0.ASIN=1430216263&Item.0.Quantity=2&Operation=CartAdd&Service=AWSECommerceService&Signature=DpUiPudl67jCD/trWQ2cLv5LGrgukn/b2ouDu7lbyvg=&Timestamp=2017-08-15T15:47:30Z&Version=2011-08-01
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
-    headers: {}
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.3, ruby 2.4.0 (2016-12-24))
+      Accept:
+      - "*/*"
+      Date:
+      - Tue, 15 Aug 2017 15:47:30 GMT
   response:
     status:
       code: 200
-      message: !binary |-
-        T0s=
+      message: OK
     headers:
-      !binary "RGF0ZQ==":
-      - !binary |-
-        VHVlLCAyNSBTZXAgMjAxMiAyMDowNDo1NiBHTVQ=
-      !binary "U2VydmVy":
-      - !binary |-
-        U2VydmVy
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
-      !binary "VmFyeQ==":
-      - !binary |-
-        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
-      !binary "Tm5jb2VjdGlvbg==":
-      - !binary |-
-        Y2xvc2U=
-      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
-      - !binary |-
-        Y2h1bmtlZA==
+      Date:
+      - Tue, 15 Aug 2017 15:47:29 GMT
+      Server:
+      - Apache-Coyote/1.1
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding,User-Agent
+      Transfer-Encoding:
+      - chunked
     body:
-      encoding: US-ASCII
-      string: ! '<?xml version="1.0" encoding="UTF-8"?><CartAddResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><HTTPHeaders><Header
-        Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>0KE8K85TK8SJ889BN77G</RequestId><Arguments><Argument
-        Name="AssociateTag" Value="phoet-20"></Argument><Argument Name="Service" Value="AWSECommerceService"></Argument><Argument
-        Name="Item.0.Quantity" Value="2"></Argument><Argument Name="Signature" Value="3izDgv/ClrGF57ZNaa/GDkN03FwJRScT3Y6C79pmIqM="></Argument><Argument
-        Name="Item.0.ASIN" Value="1430216263"></Argument><Argument Name="HMAC" Value="pUpWk87PTHSRkzYY1JZMQ64viG4="></Argument><Argument
-        Name="Operation" Value="CartAdd"></Argument><Argument Name="CartId" Value="192-6352781-1036323"></Argument><Argument
-        Name="AWSAccessKeyId" Value="AKIAIBNLWSCV5OXMPD6A"></Argument><Argument Name="Timestamp"
-        Value="2012-09-25T20:04:55Z"></Argument><Argument Name="Version" Value="2011-08-01"></Argument></Arguments><RequestProcessingTime>0.154760837554932</RequestProcessingTime></OperationRequest><Cart><Request><IsValid>True</IsValid><CartAddRequest><CartId>192-6352781-1036323</CartId><HMAC>pUpWk87PTHSRkzYY1JZMQ64viG4=</HMAC><Items><Item><ASIN>1430216263</ASIN><Quantity>2</Quantity></Item></Items></CartAddRequest></Request><CartId>192-6352781-1036323</CartId><HMAC>pUpWk87PTHSRkzYY1JZMQ64viG4=</HMAC><URLEncodedHMAC>pUpWk87PTHSRkzYY1JZMQ64viG4%3D</URLEncodedHMAC><PurchaseURL>https://www.amazon.com/gp/cart/aws-merge.html?cart-id=192-6352781-1036323%26associate-id=phoet-20%26hmac=pUpWk87PTHSRkzYY1JZMQ64viG4=%26SubscriptionId=AKIAIBNLWSCV5OXMPD6A%26MergeCart=False</PurchaseURL><SubTotal><Amount>7827</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$78.27</FormattedPrice></SubTotal><CartItems><SubTotal><Amount>7827</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$78.27</FormattedPrice></SubTotal><CartItem><CartItemId>C3CFEHHIPJNW3L</CartItemId><ASIN>1430216263</ASIN><SellerNickname>Amazon.com</SellerNickname><Quantity>2</Quantity><Title>Beginning
-        iPhone Development: Exploring the iPhone SDK</Title><ProductGroup>Book</ProductGroup><Price><Amount>2594</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$25.94</FormattedPrice></Price><ItemTotal><Amount>5188</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$51.88</FormattedPrice></ItemTotal></CartItem><CartItem><CartItemId>C3G241HVLLB8N6</CartItemId><ASIN>1430218150</ASIN><SellerNickname>Amazon.com</SellerNickname><Quantity>1</Quantity><Title>Learn
-        Objective-C on the Mac (Learn Series)</Title><ProductGroup>Book</ProductGroup><Price><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></Price><ItemTotal><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></ItemTotal></CartItem></CartItems></Cart></CartAddResponse>'
+      encoding: UTF-8
+      string: '<?xml version="1.0" ?><CartAddResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><HTTPHeaders><Header
+        Name="UserAgent" Value="HTTPClient/1.0 (2.8.3, ruby 2.4.0 (2016-12-24))"/></HTTPHeaders><RequestId>1d8ffd12-c75a-4447-9718-c5623ecd8e1b</RequestId><Arguments><Argument
+        Name="AWSAccessKeyId" Value="AKIAIZFAWKXP4XEATBWQ"/><Argument Name="AssociateTag"
+        Value="nofail-21"/><Argument Name="CartId" Value="262-5065554-6542921"/><Argument
+        Name="HMAC" Value="0EpG0/gqCedrF/B8IpUz/Ggx7jQ="/><Argument Name="Item.0.ASIN"
+        Value="1430216263"/><Argument Name="Item.0.Quantity" Value="2"/><Argument
+        Name="Operation" Value="CartAdd"/><Argument Name="Service" Value="AWSECommerceService"/><Argument
+        Name="Timestamp" Value="2017-08-15T15:47:30Z"/><Argument Name="Version" Value="2011-08-01"/><Argument
+        Name="Signature" Value="DpUiPudl67jCD/trWQ2cLv5LGrgukn/b2ouDu7lbyvg="/></Arguments><RequestProcessingTime>0.14487109</RequestProcessingTime></OperationRequest><Cart><Request><IsValid>True</IsValid><CartAddRequest><CartId>262-5065554-6542921</CartId><HMAC>0EpG0/gqCedrF/B8IpUz/Ggx7jQ=</HMAC><Items><Item><ASIN>1430216263</ASIN><Quantity>2</Quantity></Item></Items></CartAddRequest></Request><CartId>262-5065554-6542921</CartId><HMAC>0EpG0/gqCedrF/B8IpUz/Ggx7jQ=</HMAC><URLEncodedHMAC>0EpG0%2FgqCedrF%2FB8IpUz%2FGgx7jQ%3D</URLEncodedHMAC><PurchaseURL>https://www.amazon.de/gp/cart/aws-merge.html?cart-id=262-5065554-6542921&amp;associate-id=nofail-21&amp;hmac=0EpG0%2FgqCedrF%2FB8IpUz%2FGgx7jQ%3D&amp;SubscriptionId=AKIAIZFAWKXP4XEATBWQ&amp;MergeCart=False</PurchaseURL><SubTotal><Amount>6418</Amount><CurrencyCode>EUR</CurrencyCode><FormattedPrice>EUR
+        64,18</FormattedPrice></SubTotal><CartItems><SubTotal><Amount>6418</Amount><CurrencyCode>EUR</CurrencyCode><FormattedPrice>EUR
+        64,18</FormattedPrice></SubTotal><CartItem><CartItemId>C1FVQEPY2R9OK7</CartItemId><ASIN>1430216263</ASIN><SellerNickname>Amazon.de</SellerNickname><Quantity>2</Quantity><Title>Beginning
+        iPhone Development: Exploring the iPhone SDK</Title><ProductGroup>Book</ProductGroup><Price><Amount>3209</Amount><CurrencyCode>EUR</CurrencyCode><FormattedPrice>EUR
+        32,09</FormattedPrice></Price><ItemTotal><Amount>6418</Amount><CurrencyCode>EUR</CurrencyCode><FormattedPrice>EUR
+        64,18</FormattedPrice></ItemTotal></CartItem></CartItems></Cart></CartAddResponse>'
     http_version: 
-  recorded_at: Tue, 25 Sep 2012 20:04:55 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Tue, 15 Aug 2017 15:47:30 GMT
+recorded_with: VCR 3.0.3

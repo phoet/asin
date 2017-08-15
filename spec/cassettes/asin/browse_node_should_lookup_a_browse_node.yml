@@ -2,49 +2,43 @@
 http_interactions:
 - request:
     method: get
-    uri: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAIBNLWSCV5OXMPD6A&AssociateTag=phoet-20&BrowseNodeId=599826&Operation=BrowseNodeLookup&ResponseGroup=BrowseNodeInfo&Service=AWSECommerceService&Signature=UB+NuD8bReMd+8UFaQva+uJiYYsM6uefMtPTVysD2dU=&Timestamp=2012-09-25T20:04:51Z&Version=2011-08-01
+    uri: http://webservices.amazon.de/onca/xml?AWSAccessKeyId=AKIAIZFAWKXP4XEATBWQ&AssociateTag=nofail-21&BrowseNodeId=78689031&Operation=BrowseNodeLookup&ResponseGroup=BrowseNodeInfo&Service=AWSECommerceService&Signature=LsGkA%2Bm3xDsiysWuNCosAFE40/RjeshpfTnev6bdjG4=&Timestamp=2017-08-15T15:45:20Z&Version=2011-08-01
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
-    headers: {}
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.3, ruby 2.4.0 (2016-12-24))
+      Accept:
+      - "*/*"
+      Date:
+      - Tue, 15 Aug 2017 15:45:20 GMT
   response:
     status:
       code: 200
-      message: !binary |-
-        T0s=
+      message: OK
     headers:
-      !binary "RGF0ZQ==":
-      - !binary |-
-        VHVlLCAyNSBTZXAgMjAxMiAyMDowNDo1MyBHTVQ=
-      !binary "U2VydmVy":
-      - !binary |-
-        U2VydmVy
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
-      !binary "VmFyeQ==":
-      - !binary |-
-        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
-      !binary "Tm5jb2VjdGlvbg==":
-      - !binary |-
-        Y2xvc2U=
-      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
-      - !binary |-
-        Y2h1bmtlZA==
+      Date:
+      - Tue, 15 Aug 2017 15:45:19 GMT
+      Server:
+      - Apache-Coyote/1.1
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding,User-Agent
+      Transfer-Encoding:
+      - chunked
     body:
-      encoding: US-ASCII
-      string: <BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><RequestId>8189583a-defc-4fef-8ac0-c7347b03233e</RequestId><Arguments><Argument
-        Name="Operation" Value="BrowseNodeLookup"/><Argument Name="Service" Value="AWSECommerceService"/><Argument
-        Name="Signature" Value="UB+NuD8bReMd+8UFaQva+uJiYYsM6uefMtPTVysD2dU="/><Argument
-        Name="AssociateTag" Value="phoet-20"/><Argument Name="Version" Value="2011-08-01"/><Argument
-        Name="BrowseNodeId" Value="599826"/><Argument Name="AWSAccessKeyId" Value="AKIAIBNLWSCV5OXMPD6A"/><Argument
-        Name="Timestamp" Value="2012-09-25T20:04:51Z"/><Argument Name="ResponseGroup"
-        Value="BrowseNodeInfo"/></Arguments><RequestProcessingTime>0.009791</RequestProcessingTime></OperationRequest><BrowseNodes><Request><IsValid>True</IsValid><BrowseNodeLookupRequest><BrowseNodeId>599826</BrowseNodeId><ResponseGroup>BrowseNodeInfo</ResponseGroup></BrowseNodeLookupRequest></Request><BrowseNode><BrowseNodeId>599826</BrowseNodeId><Name>Comedy</Name><Ancestors><BrowseNode><BrowseNodeId>501230</BrowseNodeId><Name>Boxed
-        Sets</Name><Ancestors><BrowseNode><BrowseNodeId>2998369011</BrowseNodeId><Name>DVD
-        Custom Stores</Name><Ancestors><BrowseNode><BrowseNodeId>2644982011</BrowseNodeId><Name>Custom
-        Stores</Name><Ancestors><BrowseNode><BrowseNodeId>2644981011</BrowseNodeId><Name>Specialty
-        Stores</Name><Ancestors><BrowseNode><BrowseNodeId>2625373011</BrowseNodeId><Name>Movies
-        &amp; TV</Name></BrowseNode></Ancestors></BrowseNode></Ancestors></BrowseNode></Ancestors></BrowseNode></Ancestors></BrowseNode></Ancestors></BrowseNode></BrowseNodes></BrowseNodeLookupResponse>
+      encoding: UTF-8
+      string: <?xml version="1.0" ?><BrowseNodeLookupResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><HTTPHeaders><Header
+        Name="UserAgent" Value="HTTPClient/1.0 (2.8.3, ruby 2.4.0 (2016-12-24))"/></HTTPHeaders><RequestId>6e9ea7bd-7bc7-45b7-a951-4ecfe14fb01f</RequestId><Arguments><Argument
+        Name="AWSAccessKeyId" Value="AKIAIZFAWKXP4XEATBWQ"/><Argument Name="AssociateTag"
+        Value="nofail-21"/><Argument Name="BrowseNodeId" Value="78689031"/><Argument
+        Name="Operation" Value="BrowseNodeLookup"/><Argument Name="ResponseGroup"
+        Value="BrowseNodeInfo"/><Argument Name="Service" Value="AWSECommerceService"/><Argument
+        Name="Timestamp" Value="2017-08-15T15:45:20Z"/><Argument Name="Version" Value="2011-08-01"/><Argument
+        Name="Signature" Value="LsGkA+m3xDsiysWuNCosAFE40/RjeshpfTnev6bdjG4="/></Arguments><RequestProcessingTime>0.001436015</RequestProcessingTime></OperationRequest><BrowseNodes><Request><IsValid>True</IsValid><BrowseNodeLookupRequest><BrowseNodeId>78689031</BrowseNodeId><ResponseGroup>BrowseNodeInfo</ResponseGroup></BrowseNodeLookupRequest></Request><BrowseNode><BrowseNodeId>78689031</BrowseNodeId><Name>Kategorien</Name><IsCategoryRoot>1</IsCategoryRoot><Children><BrowseNode><BrowseNodeId>1981665031</BrowseNodeId><Name>Damen</Name></BrowseNode><BrowseNode><BrowseNodeId>1981298031</BrowseNodeId><Name>Herren</Name></BrowseNode><BrowseNode><BrowseNodeId>1981210031</BrowseNodeId><Name>Mädchen</Name></BrowseNode><BrowseNode><BrowseNodeId>1981125031</BrowseNodeId><Name>Jungen</Name></BrowseNode><BrowseNode><BrowseNodeId>1981001031</BrowseNodeId><Name>Baby</Name></BrowseNode><BrowseNode><BrowseNodeId>1981410031</BrowseNodeId><Name>Spezielle
+        Anlässe &amp; Arbeitskleidung</Name></BrowseNode></Children><Ancestors><BrowseNode><BrowseNodeId>77028031</BrowseNodeId><Name>Bekleidung</Name></BrowseNode></Ancestors></BrowseNode></BrowseNodes></BrowseNodeLookupResponse>
     http_version: 
-  recorded_at: Tue, 25 Sep 2012 20:04:51 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Tue, 15 Aug 2017 15:45:20 GMT
+recorded_with: VCR 3.0.3

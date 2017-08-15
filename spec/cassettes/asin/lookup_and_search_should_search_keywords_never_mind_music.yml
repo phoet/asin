@@ -2,129 +2,48 @@
 http_interactions:
 - request:
     method: get
-    uri: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAIBNLWSCV5OXMPD6A&AssociateTag=phoet-20&Keywords=nirvana%20never%20mind&Operation=ItemSearch&SearchIndex=Music&Service=AWSECommerceService&Signature=C4gNp/0ZzNcAT5g+uu/v9aQNdAzGKxkxpAjwqZNpsCw=&Timestamp=2012-09-25T20:04:44Z&Version=2011-08-01
+    uri: http://webservices.amazon.de/onca/xml?AWSAccessKeyId=AKIAIZFAWKXP4XEATBWQ&AssociateTag=nofail-21&Keywords=nirvana%20never%20mind&Operation=ItemSearch&SearchIndex=Music&Service=AWSECommerceService&Signature=XTK64qU9FM5npVQdPraJjFIoH8LQfkQ5xHdBqtEThno=&Timestamp=2017-08-15T15:36:19Z&Version=2011-08-01
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
-    headers: {}
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.3, ruby 2.4.0 (2016-12-24))
+      Accept:
+      - "*/*"
+      Date:
+      - Tue, 15 Aug 2017 15:36:19 GMT
   response:
     status:
       code: 200
-      message: !binary |-
-        T0s=
+      message: OK
     headers:
-      !binary "RGF0ZQ==":
-      - !binary |-
-        VHVlLCAyNSBTZXAgMjAxMiAyMDowNDo0NiBHTVQ=
-      !binary "U2VydmVy":
-      - !binary |-
-        U2VydmVy
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
-      !binary "VmFyeQ==":
-      - !binary |-
-        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
-      !binary "Tm5jb2VjdGlvbg==":
-      - !binary |-
-        Y2xvc2U=
-      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
-      - !binary |-
-        Y2h1bmtlZA==
+      Date:
+      - Tue, 15 Aug 2017 15:36:18 GMT
+      Server:
+      - Apache-Coyote/1.1
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding,User-Agent
+      Transfer-Encoding:
+      - chunked
     body:
-      encoding: US-ASCII
-      string: ! '<?xml version="1.0" ?><ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><RequestId>c94a711f-4b21-48cd-b7ab-58e9e7dfe5a1</RequestId><Arguments><Argument
-        Name="Operation" Value="ItemSearch"></Argument><Argument Name="Service" Value="AWSECommerceService"></Argument><Argument
-        Name="Signature" Value="C4gNp/0ZzNcAT5g+uu/v9aQNdAzGKxkxpAjwqZNpsCw="></Argument><Argument
-        Name="AssociateTag" Value="phoet-20"></Argument><Argument Name="Version" Value="2011-08-01"></Argument><Argument
-        Name="Keywords" Value="nirvana never mind"></Argument><Argument Name="AWSAccessKeyId"
-        Value="AKIAIBNLWSCV5OXMPD6A"></Argument><Argument Name="Timestamp" Value="2012-09-25T20:04:44Z"></Argument><Argument
-        Name="SearchIndex" Value="Music"></Argument></Arguments><RequestProcessingTime>0.2324560000000000</RequestProcessingTime></OperationRequest><Items><Request><IsValid>True</IsValid><ItemSearchRequest><Keywords>nirvana
-        never mind</Keywords><ResponseGroup>Small</ResponseGroup><SearchIndex>Music</SearchIndex></ItemSearchRequest></Request><TotalResults>12</TotalResults><TotalPages>2</TotalPages><MoreSearchResultsUrl>http://www.amazon.com/gp/redirect.html?camp=2025&amp;creative=386001&amp;location=http%3A%2F%2Fwww.amazon.com%2Fgp%2Fsearch%3Fkeywords%3Dnirvana%2Bnever%2Bmind%26url%3Dsearch-alias%253Dpopular&amp;linkCode=xm2&amp;tag=phoet-20&amp;SubscriptionId=AKIAIBNLWSCV5OXMPD6A</MoreSearchResultsUrl><Item><ASIN>B000003TA4</ASIN><DetailPageURL>http://www.amazon.com/Nevermind-Nirvana/dp/B000003TA4%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB000003TA4</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-        Details</Description><URL>http://www.amazon.com/Nevermind-Nirvana/dp/tech-data/B000003TA4%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB000003TA4</URL></ItemLink><ItemLink><Description>Add
-        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB000003TA4%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB000003TA4</URL></ItemLink><ItemLink><Description>Add
-        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB000003TA4%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB000003TA4</URL></ItemLink><ItemLink><Description>Add
-        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB000003TA4%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB000003TA4</URL></ItemLink><ItemLink><Description>Tell
-        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B000003TA4%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB000003TA4</URL></ItemLink><ItemLink><Description>All
-        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B000003TA4%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB000003TA4</URL></ItemLink><ItemLink><Description>All
-        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B000003TA4%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB000003TA4</URL></ItemLink></ItemLinks><ItemAttributes><Artist>Nirvana</Artist><Manufacturer>Geffen
-        Records</Manufacturer><ProductGroup>Music</ProductGroup><Title>Nevermind</Title></ItemAttributes></Item><Item><ASIN>B0057GYO9K</ASIN><DetailPageURL>http://www.amazon.com/Nevermind-Nirvana/dp/B0057GYO9K%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0057GYO9K</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-        Details</Description><URL>http://www.amazon.com/Nevermind-Nirvana/dp/tech-data/B0057GYO9K%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0057GYO9K</URL></ItemLink><ItemLink><Description>Add
-        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB0057GYO9K%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0057GYO9K</URL></ItemLink><ItemLink><Description>Add
-        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB0057GYO9K%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0057GYO9K</URL></ItemLink><ItemLink><Description>Add
-        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0057GYO9K%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0057GYO9K</URL></ItemLink><ItemLink><Description>Tell
-        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B0057GYO9K%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0057GYO9K</URL></ItemLink><ItemLink><Description>All
-        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B0057GYO9K%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0057GYO9K</URL></ItemLink><ItemLink><Description>All
-        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B0057GYO9K%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0057GYO9K</URL></ItemLink></ItemLinks><ItemAttributes><Artist>Nirvana</Artist><Manufacturer>Geffen
-        Records</Manufacturer><ProductGroup>Music</ProductGroup><Title>Nevermind</Title></ItemAttributes></Item><Item><ASIN>B002UAJ0BS</ASIN><DetailPageURL>http://www.amazon.com/Nevermind-180-Gram-Vinyl-Nirvana/dp/B002UAJ0BS%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB002UAJ0BS</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-        Details</Description><URL>http://www.amazon.com/Nevermind-180-Gram-Vinyl-Nirvana/dp/tech-data/B002UAJ0BS%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB002UAJ0BS</URL></ItemLink><ItemLink><Description>Add
-        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB002UAJ0BS%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB002UAJ0BS</URL></ItemLink><ItemLink><Description>Add
-        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB002UAJ0BS%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB002UAJ0BS</URL></ItemLink><ItemLink><Description>Add
-        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB002UAJ0BS%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB002UAJ0BS</URL></ItemLink><ItemLink><Description>Tell
-        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B002UAJ0BS%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB002UAJ0BS</URL></ItemLink><ItemLink><Description>All
-        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B002UAJ0BS%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB002UAJ0BS</URL></ItemLink><ItemLink><Description>All
-        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B002UAJ0BS%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB002UAJ0BS</URL></ItemLink></ItemLinks><ItemAttributes><Artist>Nirvana</Artist><Manufacturer>Warner
-        Bros.</Manufacturer><ProductGroup>Music</ProductGroup><Title>Nevermind (180
-        Gram Vinyl)</Title></ItemAttributes></Item><Item><ASIN>B005AAVFDQ</ASIN><DetailPageURL>http://www.amazon.com/Nevermind-4CD-DVD-Super-Deluxe/dp/B005AAVFDQ%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB005AAVFDQ</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-        Details</Description><URL>http://www.amazon.com/Nevermind-4CD-DVD-Super-Deluxe/dp/tech-data/B005AAVFDQ%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005AAVFDQ</URL></ItemLink><ItemLink><Description>Add
-        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB005AAVFDQ%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005AAVFDQ</URL></ItemLink><ItemLink><Description>Add
-        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB005AAVFDQ%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005AAVFDQ</URL></ItemLink><ItemLink><Description>Add
-        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB005AAVFDQ%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005AAVFDQ</URL></ItemLink><ItemLink><Description>Tell
-        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B005AAVFDQ%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005AAVFDQ</URL></ItemLink><ItemLink><Description>All
-        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B005AAVFDQ%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005AAVFDQ</URL></ItemLink><ItemLink><Description>All
-        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B005AAVFDQ%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005AAVFDQ</URL></ItemLink></ItemLinks><ItemAttributes><Artist>Nirvana</Artist><Manufacturer>Geffen</Manufacturer><ProductGroup>Music</ProductGroup><Title>Nevermind
-        [4CD/DVD Super Deluxe]</Title></ItemAttributes></Item><Item><ASIN>B0057GYOA4</ASIN><DetailPageURL>http://www.amazon.com/Nevermind-2-CD-Deluxe-Edition/dp/B0057GYOA4%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0057GYOA4</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-        Details</Description><URL>http://www.amazon.com/Nevermind-2-CD-Deluxe-Edition/dp/tech-data/B0057GYOA4%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0057GYOA4</URL></ItemLink><ItemLink><Description>Add
-        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB0057GYOA4%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0057GYOA4</URL></ItemLink><ItemLink><Description>Add
-        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB0057GYOA4%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0057GYOA4</URL></ItemLink><ItemLink><Description>Add
-        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0057GYOA4%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0057GYOA4</URL></ItemLink><ItemLink><Description>Tell
-        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B0057GYOA4%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0057GYOA4</URL></ItemLink><ItemLink><Description>All
-        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B0057GYOA4%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0057GYOA4</URL></ItemLink><ItemLink><Description>All
-        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B0057GYOA4%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0057GYOA4</URL></ItemLink></ItemLinks><ItemAttributes><Artist>Nirvana</Artist><Manufacturer>Geffen
-        Records</Manufacturer><ProductGroup>Music</ProductGroup><Title>Nevermind [2
-        CD Deluxe Edition]</Title></ItemAttributes></Item><Item><ASIN>B005CK76ZA</ASIN><DetailPageURL>http://www.amazon.com/Nevermind-4-LP-Deluxe-Edition/dp/B005CK76ZA%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB005CK76ZA</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-        Details</Description><URL>http://www.amazon.com/Nevermind-4-LP-Deluxe-Edition/dp/tech-data/B005CK76ZA%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005CK76ZA</URL></ItemLink><ItemLink><Description>Add
-        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB005CK76ZA%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005CK76ZA</URL></ItemLink><ItemLink><Description>Add
-        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB005CK76ZA%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005CK76ZA</URL></ItemLink><ItemLink><Description>Add
-        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB005CK76ZA%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005CK76ZA</URL></ItemLink><ItemLink><Description>Tell
-        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B005CK76ZA%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005CK76ZA</URL></ItemLink><ItemLink><Description>All
-        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B005CK76ZA%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005CK76ZA</URL></ItemLink><ItemLink><Description>All
-        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B005CK76ZA%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB005CK76ZA</URL></ItemLink></ItemLinks><ItemAttributes><Artist>Nirvana</Artist><Manufacturer>Geffen
-        Records</Manufacturer><ProductGroup>Music</ProductGroup><Title>Nevermind [4
-        LP Deluxe Edition]</Title></ItemAttributes></Item><Item><ASIN>B0007OP1HG</ASIN><DetailPageURL>http://www.amazon.com/Classic-Albums-Nirvana-Nevermind/dp/B0007OP1HG%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0007OP1HG</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-        Details</Description><URL>http://www.amazon.com/Classic-Albums-Nirvana-Nevermind/dp/tech-data/B0007OP1HG%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0007OP1HG</URL></ItemLink><ItemLink><Description>Add
-        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB0007OP1HG%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0007OP1HG</URL></ItemLink><ItemLink><Description>Add
-        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB0007OP1HG%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0007OP1HG</URL></ItemLink><ItemLink><Description>Add
-        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0007OP1HG%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0007OP1HG</URL></ItemLink><ItemLink><Description>Tell
-        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B0007OP1HG%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0007OP1HG</URL></ItemLink><ItemLink><Description>All
-        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B0007OP1HG%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0007OP1HG</URL></ItemLink><ItemLink><Description>All
-        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B0007OP1HG%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0007OP1HG</URL></ItemLink></ItemLinks><ItemAttributes><Actor>Nirvana</Actor><Manufacturer>Eagle
-        Rock Ent</Manufacturer><ProductGroup>DVD</ProductGroup><Title>Classic Albums
-        - Nirvana: Nevermind</Title></ItemAttributes></Item><Item><ASIN>B0000088DC</ASIN><DetailPageURL>http://www.amazon.com/Nevermind-Nirvana/dp/B0000088DC%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0000088DC</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-        Details</Description><URL>http://www.amazon.com/Nevermind-Nirvana/dp/tech-data/B0000088DC%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0000088DC</URL></ItemLink><ItemLink><Description>Add
-        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB0000088DC%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0000088DC</URL></ItemLink><ItemLink><Description>Add
-        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB0000088DC%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0000088DC</URL></ItemLink><ItemLink><Description>Add
-        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB0000088DC%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0000088DC</URL></ItemLink><ItemLink><Description>Tell
-        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B0000088DC%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0000088DC</URL></ItemLink><ItemLink><Description>All
-        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B0000088DC%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0000088DC</URL></ItemLink><ItemLink><Description>All
-        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B0000088DC%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB0000088DC</URL></ItemLink></ItemLinks><ItemAttributes><Artist>Nirvana</Artist><Manufacturer>Geffen
-        / SubPop</Manufacturer><ProductGroup>Music</ProductGroup><Title>Nevermind</Title></ItemAttributes></Item><Item><ASIN>B00004WOI3</ASIN><DetailPageURL>http://www.amazon.com/Nevermind-Virgin-Vinyl/dp/B00004WOI3%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB00004WOI3</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-        Details</Description><URL>http://www.amazon.com/Nevermind-Virgin-Vinyl/dp/tech-data/B00004WOI3%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00004WOI3</URL></ItemLink><ItemLink><Description>Add
-        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB00004WOI3%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00004WOI3</URL></ItemLink><ItemLink><Description>Add
-        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB00004WOI3%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00004WOI3</URL></ItemLink><ItemLink><Description>Add
-        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB00004WOI3%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00004WOI3</URL></ItemLink><ItemLink><Description>Tell
-        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B00004WOI3%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00004WOI3</URL></ItemLink><ItemLink><Description>All
-        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B00004WOI3%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00004WOI3</URL></ItemLink><ItemLink><Description>All
-        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B00004WOI3%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB00004WOI3</URL></ItemLink></ItemLinks><ItemAttributes><ProductGroup>Music</ProductGroup><Title>Nevermind
-        - Virgin Vinyl</Title></ItemAttributes></Item><Item><ASIN>B001NTM8F2</ASIN><DetailPageURL>http://www.amazon.com/Never-Mind-Nirvana/dp/B001NTM8F2%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB001NTM8F2</DetailPageURL><ItemLinks><ItemLink><Description>Technical
-        Details</Description><URL>http://www.amazon.com/Never-Mind-Nirvana/dp/tech-data/B001NTM8F2%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB001NTM8F2</URL></ItemLink><ItemLink><Description>Add
-        To Baby Registry</Description><URL>http://www.amazon.com/gp/registry/baby/add-item.html%3Fasin.0%3DB001NTM8F2%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB001NTM8F2</URL></ItemLink><ItemLink><Description>Add
-        To Wedding Registry</Description><URL>http://www.amazon.com/gp/registry/wedding/add-item.html%3Fasin.0%3DB001NTM8F2%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB001NTM8F2</URL></ItemLink><ItemLink><Description>Add
-        To Wishlist</Description><URL>http://www.amazon.com/gp/registry/wishlist/add-item.html%3Fasin.0%3DB001NTM8F2%26SubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB001NTM8F2</URL></ItemLink><ItemLink><Description>Tell
-        A Friend</Description><URL>http://www.amazon.com/gp/pdp/taf/B001NTM8F2%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB001NTM8F2</URL></ItemLink><ItemLink><Description>All
-        Customer Reviews</Description><URL>http://www.amazon.com/review/product/B001NTM8F2%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB001NTM8F2</URL></ItemLink><ItemLink><Description>All
-        Offers</Description><URL>http://www.amazon.com/gp/offer-listing/B001NTM8F2%3FSubscriptionId%3DAKIAIBNLWSCV5OXMPD6A%26tag%3Dphoet-20%26linkCode%3Dxm2%26camp%3D2025%26creative%3D386001%26creativeASIN%3DB001NTM8F2</URL></ItemLink></ItemLinks><ItemAttributes><Author>Nirvana</Author><Manufacturer>Geffen
-        Records</Manufacturer><ProductGroup>Music</ProductGroup><Title>Never Mind</Title></ItemAttributes></Item></Items></ItemSearchResponse>'
+      encoding: UTF-8
+      string: <?xml version="1.0" ?><ItemSearchResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><HTTPHeaders><Header
+        Name="UserAgent" Value="HTTPClient/1.0 (2.8.3, ruby 2.4.0 (2016-12-24))"></Header></HTTPHeaders><RequestId>587b016d-94b8-490a-b650-d745f7876b3f</RequestId><Arguments><Argument
+        Name="AWSAccessKeyId" Value="AKIAIZFAWKXP4XEATBWQ"></Argument><Argument Name="AssociateTag"
+        Value="nofail-21"></Argument><Argument Name="Keywords" Value="nirvana never
+        mind"></Argument><Argument Name="Operation" Value="ItemSearch"></Argument><Argument
+        Name="SearchIndex" Value="Music"></Argument><Argument Name="Service" Value="AWSECommerceService"></Argument><Argument
+        Name="Timestamp" Value="2017-08-15T15:36:19Z"></Argument><Argument Name="Version"
+        Value="2011-08-01"></Argument><Argument Name="Signature" Value="XTK64qU9FM5npVQdPraJjFIoH8LQfkQ5xHdBqtEThno="></Argument></Arguments><RequestProcessingTime>0.0123732820000000</RequestProcessingTime></OperationRequest><Items><Request><IsValid>True</IsValid><ItemSearchRequest><Keywords>nirvana
+        never mind</Keywords><ResponseGroup>Small</ResponseGroup><SearchIndex>Music</SearchIndex></ItemSearchRequest></Request><TotalResults>1</TotalResults><TotalPages>1</TotalPages><MoreSearchResultsUrl>https://www.amazon.de/gp/search?linkCode=xm2&amp;SubscriptionId=AKIAIZFAWKXP4XEATBWQ&amp;keywords=nirvana%20never%20mind&amp;tag=nofail-21&amp;creative=12738&amp;url=search-alias%3Dpopular&amp;camp=2025</MoreSearchResultsUrl><Item><ASIN>B0057GYO9K</ASIN><DetailPageURL>https://www.amazon.de/Nevermind-Nirvana/dp/B0057GYO9K?SubscriptionId=AKIAIZFAWKXP4XEATBWQ&amp;tag=nofail-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=165953&amp;creativeASIN=B0057GYO9K</DetailPageURL><ItemLinks><ItemLink><Description>Add
+        To Wishlist</Description><URL>https://www.amazon.de/gp/registry/wishlist/add-item.html?asin.0=B0057GYO9K&amp;SubscriptionId=AKIAIZFAWKXP4XEATBWQ&amp;tag=nofail-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B0057GYO9K</URL></ItemLink><ItemLink><Description>Tell
+        A Friend</Description><URL>https://www.amazon.de/gp/pdp/taf/B0057GYO9K?SubscriptionId=AKIAIZFAWKXP4XEATBWQ&amp;tag=nofail-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B0057GYO9K</URL></ItemLink><ItemLink><Description>All
+        Customer Reviews</Description><URL>https://www.amazon.de/review/product/B0057GYO9K?SubscriptionId=AKIAIZFAWKXP4XEATBWQ&amp;tag=nofail-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B0057GYO9K</URL></ItemLink><ItemLink><Description>All
+        Offers</Description><URL>https://www.amazon.de/gp/offer-listing/B0057GYO9K?SubscriptionId=AKIAIZFAWKXP4XEATBWQ&amp;tag=nofail-21&amp;linkCode=xm2&amp;camp=2025&amp;creative=12738&amp;creativeASIN=B0057GYO9K</URL></ItemLink></ItemLinks><ItemAttributes><Artist>Nirvana</Artist><Manufacturer>Geffen
+        (Universal Music)</Manufacturer><ProductGroup>Music</ProductGroup><Title>Nevermind</Title></ItemAttributes></Item></Items></ItemSearchResponse>
     http_version: 
-  recorded_at: Tue, 25 Sep 2012 20:04:45 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Tue, 15 Aug 2017 15:36:19 GMT
+recorded_with: VCR 3.0.3
