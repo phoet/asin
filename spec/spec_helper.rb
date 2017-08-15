@@ -12,6 +12,7 @@ unless Net.const_defined? :HTTPSession
 end
 
 require 'rspec'
+require 'rspec/collection_matchers'
 require 'asin'
 require 'asin/client' # is somehow needed for jruby
 require 'asin/adapter'
@@ -19,6 +20,7 @@ require 'httpclient'
 require 'vcr'
 require 'httpi'
 
+HTTPI.adapter = :httpclient
 
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/cassettes'
@@ -26,9 +28,10 @@ VCR.configure do |config|
   config.ignore_hosts 'codeclimate.com'
 end
 
-ANY_ASIN            = '1430218150'
+ANY_ASIN            = 'B008GTZ3KY'
 ANY_OTHER_ASIN      = '1430216263'
-ANY_BROWSE_NODE_ID  = '599826'
+# http://docs.aws.amazon.com/de_de/AWSECommerceService/latest/DG/LocaleDE.html
+ANY_BROWSE_NODE_ID  = '78689031'
 
 RSpec.configure do |config|
   config.mock_with :rspec
@@ -47,11 +50,14 @@ RSpec.configure do |config|
 
     ASIN::Configuration.reset!
     @helper = ASIN::Client.instance
-    @helper.configure :logger => nil
-
-    @secret = ENV['ASIN_SECRET']
-    @key    = ENV['ASIN_KEY']
-    @tag    = ENV['ASIN_TAG']
+    options = {
+      :secret => ENV['ASIN_SECRET'],
+      :key => ENV['ASIN_KEY'],
+      :associate_tag => ENV['ASIN_TAG'],
+      :host => 'webservices.amazon.de',
+      :logger => nil,
+    }
+    @helper.configure options
   end
 end
 

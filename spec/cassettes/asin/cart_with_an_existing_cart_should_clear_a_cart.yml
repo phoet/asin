@@ -2,89 +2,81 @@
 http_interactions:
 - request:
     method: get
-    uri: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAIBNLWSCV5OXMPD6A&AssociateTag=phoet-20&Item.0.ASIN=1430218150&Item.0.Quantity=1&Operation=CartCreate&Service=AWSECommerceService&Signature=JoqOwGx6eDYPihs1kbuC4rfWPCu3WU3mq9hGTNO+zfU=&Timestamp=2012-09-25T20:04:52Z&Version=2011-08-01
+    uri: http://webservices.amazon.de/onca/xml?AWSAccessKeyId=AKIAIZFAWKXP4XEATBWQ&AssociateTag=nofail-21&Item.0.ASIN=B008GTZ3KY&Item.0.Quantity=1&Operation=CartCreate&Service=AWSECommerceService&Signature=No2e3QHJoISopu1UdEuVqJ11PJAv6c7DMsiB2GiVPNk=&Timestamp=2017-08-15T15:47:29Z&Version=2011-08-01
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
-    headers: {}
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.3, ruby 2.4.0 (2016-12-24))
+      Accept:
+      - "*/*"
+      Date:
+      - Tue, 15 Aug 2017 15:47:29 GMT
   response:
     status:
       code: 200
-      message: !binary |-
-        T0s=
+      message: OK
     headers:
-      !binary "RGF0ZQ==":
-      - !binary |-
-        VHVlLCAyNSBTZXAgMjAxMiAyMDowNDo1NCBHTVQ=
-      !binary "U2VydmVy":
-      - !binary |-
-        U2VydmVy
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
-      !binary "VmFyeQ==":
-      - !binary |-
-        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
-      !binary "Tm5jb2VjdGlvbg==":
-      - !binary |-
-        Y2xvc2U=
-      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
-      - !binary |-
-        Y2h1bmtlZA==
+      Date:
+      - Tue, 15 Aug 2017 15:47:29 GMT
+      Server:
+      - Apache-Coyote/1.1
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding,User-Agent
+      Transfer-Encoding:
+      - chunked
     body:
-      encoding: US-ASCII
-      string: <?xml version="1.0" encoding="UTF-8"?><CartCreateResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><HTTPHeaders><Header
-        Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>1EZPMYT8DSE5KDBEE46K</RequestId><Arguments><Argument
-        Name="AssociateTag" Value="phoet-20"></Argument><Argument Name="Service" Value="AWSECommerceService"></Argument><Argument
-        Name="Item.0.Quantity" Value="1"></Argument><Argument Name="Signature" Value="JoqOwGx6eDYPihs1kbuC4rfWPCu3WU3mq9hGTNO+zfU="></Argument><Argument
-        Name="Item.0.ASIN" Value="1430218150"></Argument><Argument Name="Operation"
-        Value="CartCreate"></Argument><Argument Name="AWSAccessKeyId" Value="AKIAIBNLWSCV5OXMPD6A"></Argument><Argument
-        Name="Timestamp" Value="2012-09-25T20:04:52Z"></Argument><Argument Name="Version"
-        Value="2011-08-01"></Argument></Arguments><RequestProcessingTime>0.133136034011841</RequestProcessingTime></OperationRequest><Cart><Request><IsValid>True</IsValid><CartCreateRequest><Items><Item><ASIN>1430218150</ASIN><Quantity>1</Quantity></Item></Items></CartCreateRequest></Request><CartId>175-8494460-6917342</CartId><HMAC>qxBkoOgvkmjBSWjfi4NTV08juA4=</HMAC><URLEncodedHMAC>qxBkoOgvkmjBSWjfi4NTV08juA4%3D</URLEncodedHMAC><PurchaseURL>https://www.amazon.com/gp/cart/aws-merge.html?cart-id=175-8494460-6917342%26associate-id=phoet-20%26hmac=qxBkoOgvkmjBSWjfi4NTV08juA4=%26SubscriptionId=AKIAIBNLWSCV5OXMPD6A%26MergeCart=False</PurchaseURL><SubTotal><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></SubTotal><CartItems><SubTotal><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></SubTotal><CartItem><CartItemId>C3G241HVLLB8N6</CartItemId><ASIN>1430218150</ASIN><SellerNickname>Amazon.com</SellerNickname><Quantity>1</Quantity><Title>Learn
-        Objective-C on the Mac (Learn Series)</Title><ProductGroup>Book</ProductGroup><Price><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></Price><ItemTotal><Amount>2639</Amount><CurrencyCode>USD</CurrencyCode><FormattedPrice>$26.39</FormattedPrice></ItemTotal></CartItem></CartItems></Cart></CartCreateResponse>
+      encoding: UTF-8
+      string: <?xml version="1.0" ?><CartCreateResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><HTTPHeaders><Header
+        Name="UserAgent" Value="HTTPClient/1.0 (2.8.3, ruby 2.4.0 (2016-12-24))"/></HTTPHeaders><RequestId>6ef99e5e-0239-41a3-b3f0-5541a53fb858</RequestId><Arguments><Argument
+        Name="AWSAccessKeyId" Value="AKIAIZFAWKXP4XEATBWQ"/><Argument Name="AssociateTag"
+        Value="nofail-21"/><Argument Name="Item.0.ASIN" Value="B008GTZ3KY"/><Argument
+        Name="Item.0.Quantity" Value="1"/><Argument Name="Operation" Value="CartCreate"/><Argument
+        Name="Service" Value="AWSECommerceService"/><Argument Name="Timestamp" Value="2017-08-15T15:47:29Z"/><Argument
+        Name="Version" Value="2011-08-01"/><Argument Name="Signature" Value="No2e3QHJoISopu1UdEuVqJ11PJAv6c7DMsiB2GiVPNk="/></Arguments><RequestProcessingTime>0.0877506</RequestProcessingTime></OperationRequest><Cart><Request><IsValid>True</IsValid><CartCreateRequest><Items><Item><ASIN>B008GTZ3KY</ASIN><Quantity>1</Quantity></Item></Items></CartCreateRequest></Request><CartId>258-6522543-1205759</CartId><HMAC>L9US8ARUCbVRtpM/4WO6psTZMjU=</HMAC><URLEncodedHMAC>L9US8ARUCbVRtpM%2F4WO6psTZMjU%3D</URLEncodedHMAC></Cart></CartCreateResponse>
     http_version: 
-  recorded_at: Tue, 25 Sep 2012 20:04:53 GMT
+  recorded_at: Tue, 15 Aug 2017 15:47:29 GMT
 - request:
     method: get
-    uri: http://webservices.amazon.com/onca/xml?AWSAccessKeyId=AKIAIBNLWSCV5OXMPD6A&AssociateTag=phoet-20&CartId=175-8494460-6917342&HMAC=qxBkoOgvkmjBSWjfi4NTV08juA4=&Operation=CartClear&Service=AWSECommerceService&Signature=dgfk+3Zp6shV+yY98cExUgq/59Ogup7Y9YC936yrBOw=&Timestamp=2012-09-25T20:04:53Z&Version=2011-08-01
+    uri: http://webservices.amazon.de/onca/xml?AWSAccessKeyId=AKIAIZFAWKXP4XEATBWQ&AssociateTag=nofail-21&CartId=258-6522543-1205759&HMAC=L9US8ARUCbVRtpM/4WO6psTZMjU=&Operation=CartClear&Service=AWSECommerceService&Signature=mF0AxCVVJ4zUtykywq33kzncgZsuW5J4mDTmi0kX9Ro=&Timestamp=2017-08-15T15:47:29Z&Version=2011-08-01
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: ''
-    headers: {}
+    headers:
+      User-Agent:
+      - HTTPClient/1.0 (2.8.3, ruby 2.4.0 (2016-12-24))
+      Accept:
+      - "*/*"
+      Date:
+      - Tue, 15 Aug 2017 15:47:29 GMT
   response:
     status:
       code: 200
-      message: !binary |-
-        T0s=
+      message: OK
     headers:
-      !binary "RGF0ZQ==":
-      - !binary |-
-        VHVlLCAyNSBTZXAgMjAxMiAyMDowNDo1NCBHTVQ=
-      !binary "U2VydmVy":
-      - !binary |-
-        U2VydmVy
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        dGV4dC94bWw7Y2hhcnNldD1VVEYtOA==
-      !binary "VmFyeQ==":
-      - !binary |-
-        QWNjZXB0LUVuY29kaW5nLFVzZXItQWdlbnQ=
-      !binary "Tm5jb2VjdGlvbg==":
-      - !binary |-
-        Y2xvc2U=
-      !binary "VHJhbnNmZXItRW5jb2Rpbmc=":
-      - !binary |-
-        Y2h1bmtlZA==
+      Date:
+      - Tue, 15 Aug 2017 15:47:28 GMT
+      Server:
+      - Apache-Coyote/1.1
+      Content-Type:
+      - text/xml;charset=UTF-8
+      Vary:
+      - Accept-Encoding,User-Agent
+      Transfer-Encoding:
+      - chunked
     body:
-      encoding: US-ASCII
-      string: <?xml version="1.0" encoding="UTF-8"?><CartClearResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><HTTPHeaders><Header
-        Name="UserAgent" Value="Jakarta Commons-HttpClient/3.0.1"></Header></HTTPHeaders><RequestId>0348XRP3Z56ATSK41ZFB</RequestId><Arguments><Argument
-        Name="Service" Value="AWSECommerceService"></Argument><Argument Name="Operation"
-        Value="CartClear"></Argument><Argument Name="Timestamp" Value="2012-09-25T20:04:53Z"></Argument><Argument
-        Name="Version" Value="2011-08-01"></Argument><Argument Name="AssociateTag"
-        Value="phoet-20"></Argument><Argument Name="Signature" Value="dgfk+3Zp6shV+yY98cExUgq/59Ogup7Y9YC936yrBOw="></Argument><Argument
-        Name="HMAC" Value="qxBkoOgvkmjBSWjfi4NTV08juA4="></Argument><Argument Name="CartId"
-        Value="175-8494460-6917342"></Argument><Argument Name="AWSAccessKeyId" Value="AKIAIBNLWSCV5OXMPD6A"></Argument></Arguments><RequestProcessingTime>0.0542919635772705</RequestProcessingTime></OperationRequest><Cart><Request><IsValid>True</IsValid><CartClearRequest><CartId>175-8494460-6917342</CartId><HMAC>qxBkoOgvkmjBSWjfi4NTV08juA4=</HMAC></CartClearRequest></Request><CartId>175-8494460-6917342</CartId><HMAC>qxBkoOgvkmjBSWjfi4NTV08juA4=</HMAC><URLEncodedHMAC>qxBkoOgvkmjBSWjfi4NTV08juA4%3D</URLEncodedHMAC></Cart></CartClearResponse>
+      encoding: UTF-8
+      string: <?xml version="1.0" ?><CartClearResponse xmlns="http://webservices.amazon.com/AWSECommerceService/2011-08-01"><OperationRequest><HTTPHeaders><Header
+        Name="UserAgent" Value="HTTPClient/1.0 (2.8.3, ruby 2.4.0 (2016-12-24))"/></HTTPHeaders><RequestId>a06b59e8-add7-4a39-9280-a4be655ff98f</RequestId><Arguments><Argument
+        Name="AWSAccessKeyId" Value="AKIAIZFAWKXP4XEATBWQ"/><Argument Name="AssociateTag"
+        Value="nofail-21"/><Argument Name="CartId" Value="258-6522543-1205759"/><Argument
+        Name="HMAC" Value="L9US8ARUCbVRtpM/4WO6psTZMjU="/><Argument Name="Operation"
+        Value="CartClear"/><Argument Name="Service" Value="AWSECommerceService"/><Argument
+        Name="Timestamp" Value="2017-08-15T15:47:29Z"/><Argument Name="Version" Value="2011-08-01"/><Argument
+        Name="Signature" Value="mF0AxCVVJ4zUtykywq33kzncgZsuW5J4mDTmi0kX9Ro="/></Arguments><RequestProcessingTime>0.017243885</RequestProcessingTime></OperationRequest><Cart><Request><IsValid>True</IsValid><CartClearRequest><CartId>258-6522543-1205759</CartId><HMAC>L9US8ARUCbVRtpM/4WO6psTZMjU=</HMAC></CartClearRequest></Request><CartId>258-6522543-1205759</CartId><HMAC>L9US8ARUCbVRtpM/4WO6psTZMjU=</HMAC><URLEncodedHMAC>L9US8ARUCbVRtpM%2F4WO6psTZMjU%3D</URLEncodedHMAC></Cart></CartClearResponse>
     http_version: 
-  recorded_at: Tue, 25 Sep 2012 20:04:53 GMT
-recorded_with: VCR 2.2.5
+  recorded_at: Tue, 15 Aug 2017 15:47:29 GMT
+recorded_with: VCR 3.0.3
