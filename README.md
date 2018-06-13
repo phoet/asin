@@ -1,8 +1,6 @@
 ## Infos
 
 [![Build Status](https://img.shields.io/travis/phoet/asin/master.svg)](https://travis-ci.org/phoet/asin)
-[![Code Climate](https://img.shields.io/codeclimate/github/phoet/asin.svg)](https://codeclimate.com/github/phoet/asin)
-[![Coverage Status](http://img.shields.io/codeclimate/coverage/github/phoet/asin.svg)](https://codeclimate.com/github/phoet/asin)
 
 
 ASIN is a simple, extensible wrapper for parts of the REST-API of Amazon Product Advertising API (aka Associates Web Service aka Amazon E-Commerce Service).
@@ -32,14 +30,12 @@ It's also a good starting point for looking into writing your own asin-adapter.
 
 ```bash
 gem install asin
-gem install curb # optional, see HTTPI
 ```
 
 or in your Gemfile:
 
 ```ruby
 gem 'asin'
-gem 'curb' # optional, see HTTPI
 ```
 
 ## Configuration
@@ -136,16 +132,6 @@ node.first.browse_node_id
 # => '163357'
 node.first.name
 # => 'Literature & Fiction'
-```
-
-## HTTPI
-
-ASIN uses [HTTPI](https://github.com/rubiii/httpi) as a HTTP-Client adapter.
-See the HTTPI documentation for how to configure different clients or the logger.
-As a default HTTPI uses _httpclient_ so you should add that dependency to your project:
-
-```ruby
-gem 'httpclient'
 ```
 
 ## Confiture

@@ -138,7 +138,7 @@ module ASIN
             end
 
             def language
-              item_attributes!.languages.language.first.name
+              item_attributes!.languages.language.first['Name']
             end
 
             def formatted_price

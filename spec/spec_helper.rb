@@ -12,13 +12,11 @@ unless Net.const_defined? :HTTPSession
 end
 
 require 'rspec'
+require 'rspec/collection_matchers'
 require 'asin'
-require 'asin/client' # is somehow needed for jruby
 require 'asin/adapter'
-require 'httpclient'
 require 'vcr'
-require 'httpi'
-
+require 'byebug'
 
 VCR.configure do |config|
   config.cassette_library_dir = 'spec/cassettes'
@@ -43,8 +41,6 @@ RSpec.configure do |config|
   end
 
   config.before :each do
-    HTTPI.log = false
-
     ASIN::Configuration.reset!
     @helper = ASIN::Client.instance
     @helper.configure :logger => nil

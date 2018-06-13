@@ -11,8 +11,8 @@ module ASIN
 
       it "should create a cart", :vcr do
         cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1}, {:asin => ANY_OTHER_ASIN, :quantity => 2})
-        expect(cart.valid?).to be_true
-        expect(cart.empty?).to be_false
+        expect(cart.valid?).to be_truthy
+        expect(cart.empty?).to be_falsey
       end
 
       it "should handle item paramters" do
@@ -25,22 +25,22 @@ module ASIN
         it "should clear a cart", :vcr do
           @cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1})
           cart = @helper.clear_cart(@cart)
-          expect(cart.valid?).to be_true
-          expect(cart.empty?).to be_true
+          expect(cart.valid?).to be_truthy
+          expect(cart.empty?).to be_truthy
         end
 
         it "should get a cart", :vcr do
           @cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1})
           cart = @helper.get_cart(@cart.cart_id, @cart.hmac)
-          expect(cart.valid?).to be_true
-          expect(cart.empty?).to be_false
+          expect(cart.valid?).to be_truthy
+          expect(cart.empty?).to be_falsey
         end
 
         it "should add items to a cart", :vcr do
           @cart = @helper.create_cart({:asin => ANY_ASIN, :quantity => 1})
           cart = @helper.add_items(@cart, {:asin => ANY_OTHER_ASIN, :quantity => 2})
-          expect(cart.valid?).to be_true
-          expect(cart.empty?).to be_false
+          expect(cart.valid?).to be_truthy
+          expect(cart.empty?).to be_falsey
           expect(cart).to have(2).items
         end
 
@@ -49,7 +49,7 @@ module ASIN
           item_id = @cart.items.first.cart_item_id
           cart = @helper.update_items(@cart, {:cart_item_id => item_id, :action => 'SaveForLater'}, {:cart_item_id => item_id, :quantity => 7})
           expect(cart).to have(1).saved_items
-          expect(cart.valid?).to be_true
+          expect(cart.valid?).to be_truthy
         end
 
       end
