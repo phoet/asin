@@ -32,14 +32,12 @@ It's also a good starting point for looking into writing your own asin-adapter.
 
 ```bash
 gem install asin
-gem install curb # optional, see HTTPI
 ```
 
 or in your Gemfile:
 
 ```ruby
 gem 'asin'
-gem 'curb' # optional, see HTTPI
 ```
 
 ## Configuration
@@ -136,16 +134,6 @@ node.first.browse_node_id
 # => '163357'
 node.first.name
 # => 'Literature & Fiction'
-```
-
-## HTTPI
-
-ASIN uses [HTTPI](https://github.com/rubiii/httpi) as a HTTP-Client adapter.
-See the HTTPI documentation for how to configure different clients or the logger.
-As a default HTTPI uses _httpclient_ so you should add that dependency to your project:
-
-```ruby
-gem 'httpclient'
 ```
 
 ## Confiture

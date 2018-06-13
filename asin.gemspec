@@ -20,15 +20,12 @@ Gem::Specification.new do |s|
   s.add_dependency('crack',           '>= 0.3')
   s.add_dependency('hashie',          '>= 1.1')
   s.add_dependency('snake_case_hash', '>= 1.0.2')
-  s.add_dependency('httpi',           '>= 0.9')
+  s.add_dependency('http',            '>= 3.0')
   s.add_dependency('confiture',       '>= 0.1')
 
-  s.add_runtime_dependency('jruby-openssl') if RUBY_PLATFORM == 'java'
-
-  s.add_development_dependency('httpclient', '>= 2.2.3')
-
-  s.add_development_dependency('rake',       '~> 0.9.2')
-  s.add_development_dependency('vcr',        '~> 2.2')
-  s.add_development_dependency('webmock',    '~> 1.8')
-  s.add_development_dependency('rspec',      '~> 2.11')
+  s.add_development_dependency('rake',                      '~> 0.9')
+  s.add_development_dependency('vcr',                       '~> 4.0')
+  s.add_development_dependency('webmock',                   '~> 3.4')
+  s.add_development_dependency('rspec',                     '~> 2.11')
+  s.add_development_dependency('rspec-collection_matchers', '~> 1.1')
 end
