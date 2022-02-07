@@ -1,7 +1,7 @@
 module ASIN
   module Adapter
     def handle_type(data, type)
-      Hashie::SCHash.new(data).tap do |schash|
+      Response.create(data).tap do |schash|
         schash.instance_eval do
           case type
           when :cart
@@ -50,14 +50,6 @@ module ASIN
 
             def image_url
               large_image!.url
-            end
-
-            def review
-              EditorialReviews!.EditorialReview!.Content
-            end
-
-            def image_url
-              LargeImage!.URL
             end
 
             # <ItemAttributes>
@@ -138,7 +130,7 @@ module ASIN
             end
 
             def language
-              item_attributes!.languages.language.first['Name']
+              item_attributes!.languages.language.first.name
             end
 
             def formatted_price
@@ -215,8 +207,6 @@ module ASIN
   end
 
   module Client
-    # REM (ps) this is a workaround for jruby, because they don't support Module.prepend https://github.com/jruby/jruby/issues/751
-    remove_method :handle_type
-    include ASIN::Adapter
+    prepend ASIN::Adapter
   end
 end

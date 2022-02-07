@@ -3,7 +3,6 @@ require 'rexml/document' # https://github.com/phoet/asin/pull/23
 require 'crack/xml'
 require 'cgi'
 require 'base64'
-require 'sc_hash'
 
 module ASIN
   module Client
@@ -216,7 +215,7 @@ module ASIN
     end
 
     def handle_type(data, type)
-      Hashie::SCHash.new(data)
+      Response.create(data)
     end
 
     def create_item_params(items)

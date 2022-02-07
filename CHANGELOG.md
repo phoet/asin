@@ -1,3 +1,7 @@
+## 3.0.0
+
+* drop SCHash and convert keys using activesupport
+
 ## 2.1.0
 
 * use the http.rb gem instead of HTTPI adapter

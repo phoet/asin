@@ -19,9 +19,9 @@ Gem::Specification.new do |s|
 
   s.add_dependency('crack',           '>= 0.3')
   s.add_dependency('hashie',          '>= 1.1')
-  s.add_dependency('snake_case_hash', '>= 1.0.2')
   s.add_dependency('http',            '>= 3.0')
   s.add_dependency('confiture',       '>= 0.1')
+  s.add_dependency('activesupport',   '>= 4.0')
 
   s.add_development_dependency('rake',                      '~> 0.9')
   s.add_development_dependency('vcr',                       '~> 4.0')
